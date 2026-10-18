@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0
+
+- Publish as `gh-inference` with the `gh_inference` import and `gh-inference` CLI.
+- Discover public Hugging Face GGUF repositories across model families, without
+  a fixed catalog or quantization whitelist.
+- Select exact variants and revisions; verify commit-pinned downloads by size
+  and SHA-256, including complete split GGUF groups.
+- Preserve the legacy import, resident model reuse, caching, timing and editable limits.
+- Add GitHub-only verification, wheel checks and PyPI trusted publishing.
+
 ## 0.4.0
 
 - Add a GitHub-only `Agent` facade: `run()` returns text and `run_many()` reuses one loaded model.
@@ -43,13 +53,3 @@
 - Add token and runner resource telemetry.
 - Add encrypted BYOK setup for OpenAI-compatible HTTPS providers.
 - Preserve the blocking `ai_call()` API.
-# 0.5.0
-
-- Publish as `gh-inference` with the `gh_inference` import and `gh-inference` CLI.
-- Discover public Hugging Face GGUF repositories across model families, without
-  a fixed catalog or quantization whitelist.
-- Select exact variants and revisions; verify commit-pinned downloads by size
-  and SHA-256, including complete split GGUF groups.
-- Preserve the legacy import, resident model reuse, caching, timing and editable limits.
-- Add GitHub-only verification, wheel checks and PyPI trusted publishing.
-

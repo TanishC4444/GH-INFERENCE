@@ -60,3 +60,46 @@ def test_dynamic_manifest_integrity_roundtrip(tmp_path, monkeypatch):
     assert payload["integrity"]["request_sha256"] == request_sha256(job.request)
     assert "model_spec" in job.request
     assert payload["agent"]["results"][0]["output"]
+
+
+@pytest.mark.parametrize("corrupted", [False, True])
+def test_worker_downloads_all_shards_and_rejects_corruption(tmp_path, monkeypatch, corrupted):
+    import hashlib
+    import io
+    from test_large_models import worker_functions
+    namespace = worker_functions(monkeypatch, tmp_path)
+    parts = [b"first shard", b"second shard"]
+    cfg = copy.deepcopy(MODELS["tinyllama"])
+    cfg["files"] = [{"filename": f"sub/model-{i + 1:05d}-of-00002.gguf",
+                     "size_bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(),
+                     "url": f"https://huggingface.co/example/model/resolve/commit/{i}.gguf"}
+                    for i, data in enumerate(parts)]
+    namespace["config"]["model_spec"] = cfg
+    downloaded = [parts[0], b"corrupt" if corrupted else parts[1]]
+    with patch("urllib.request.urlopen", side_effect=[io.BytesIO(data) for data in downloaded]) as get:
+        if corrupted:
+            with pytest.raises(RuntimeError, match="checksum"):
+                namespace["get_local_model"]("dynamic", 1024)
+        else:
+            first = namespace["get_local_model"]("dynamic", 1024)
+            assert namespace["get_local_model"]("dynamic", 1024) is first
+            assert namespace["_MODEL_STATS"][("dynamic", 1024)]["weights_cached"] is False
+        assert get.call_count == 2
+    assert not list((tmp_path / "model_cache").rglob("*.part"))
+
+
+def test_unknown_context_is_reported_without_inventing_ceiling():
+    metadata = info()
+    metadata.pop("gguf")
+    with patch("gh_ai_runner.hub.requests.get", return_value=Mock(json=lambda: metadata)):
+        key = resolve_model("example/model", "Q8_0")
+    assert MODELS[key]["max_n_ctx"] is None
+    assert MODELS[key]["n_ctx"] == 8192
+
+
+def test_unsafe_filename_is_rejected():
+    metadata = info()
+    metadata["siblings"][0]["rfilename"] = "../model-Q8_0.gguf"
+    with patch("gh_ai_runner.hub.requests.get", return_value=Mock(json=lambda: metadata)):
+        with pytest.raises(ValueError, match="Unsafe"):
+            resolve_model("example/model", "Q8_0")
