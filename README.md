@@ -89,6 +89,8 @@ The `publish.yml` workflow builds and tests the wheel before publishing to PyPI
 using GitHub OIDC, with no stored PyPI token. Configure the PyPI trusted publisher
 for owner `TanishC4444`, repository `GH-INFERENCE`, workflow `publish.yml`, and
 environment `pypi`, then run it with `publish=true` or publish a `v*` release.
+You can also publish by updating `.github/release.json` on `main` to the package
+version; the workflow checks that they match before building and uploading.
 Each version is immutable on PyPI; bump `gh_ai_runner.__version__` for a release.
 
 New repositories are **private by default**. Existing visibility is never changed.
