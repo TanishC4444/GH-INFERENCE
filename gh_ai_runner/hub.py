@@ -100,6 +100,8 @@ def resolve_model(model, quantization=None, *, filename=None, revision="main"):
         raise ValueError("Hub response lacks a pinned commit SHA")
     files = []
     for name in variants[matches[0]]["files"]:
+        if name.startswith("/") or "\\" in name or any(part in ("", ".", "..") for part in name.split("/")):
+            raise ValueError("Unsafe GGUF filename in Hub metadata")
         item = siblings[name]
         digest = item.get("lfs", {}).get("sha256", "")
         size = item.get("size") or item.get("lfs", {}).get("size")
@@ -108,6 +110,9 @@ def resolve_model(model, quantization=None, *, filename=None, revision="main"):
         files.append({"filename": name, "size_bytes": size, "sha256": digest,
                       "url": f"https://huggingface.co/{repo}/resolve/{commit}/{quote(name, safe='/')}"})
     original = MODELS.get(model, {})
+    if not original:
+        original = next((cfg for cfg in list(MODELS.values())
+                         if "files" not in cfg and cfg["url"].split("/resolve/", 1)[0] == "https://huggingface.co/" + repo), {})
     context = original.get("max_n_ctx") or info.get("gguf", {}).get("context_length")
     if type(context) is not int or context < 1:
         context = None
