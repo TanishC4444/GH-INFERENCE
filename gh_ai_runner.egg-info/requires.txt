@@ -1,5 +1,0 @@
-requests>=2.28
-PyNaCl>=1.5
-
-[dev]
-pytest

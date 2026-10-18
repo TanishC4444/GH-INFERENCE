@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass, field
 from enum import Enum
 from typing import Any, Optional
+from urllib.parse import urlsplit
+from .limits import Limits
 
 
 class JobStatus(str, Enum):
@@ -13,6 +16,10 @@ class JobStatus(str, Enum):
     FAILED = "failed"
     CANCELLED = "cancelled"
 
+    @property
+    def is_terminal(self) -> bool:
+        return self in (self.COMPLETED, self.FAILED, self.CANCELLED)
+
 
 @dataclass(frozen=True)
 class RetryPolicy:
@@ -20,9 +27,9 @@ class RetryPolicy:
     delay_seconds: float = 5.0
 
     def __post_init__(self) -> None:
-        if self.max_retries < 0:
+        if type(self.max_retries) is not int or self.max_retries < 0:
             raise ValueError("max_retries must be at least 0")
-        if self.delay_seconds < 0:
+        if not math.isfinite(self.delay_seconds) or self.delay_seconds < 0:
             raise ValueError("delay_seconds must be at least 0")
 
 
@@ -44,10 +51,12 @@ class ProviderConfig:
             raise ValueError("provider name cannot be empty")
         if not self.model.strip():
             raise ValueError("provider model cannot be empty")
-        if not self.base_url.startswith("https://"):
-            raise ValueError("provider base_url must use HTTPS")
+        url = urlsplit(self.base_url)
+        if (url.scheme != "https" or not url.hostname or url.username or url.password
+                or url.query or url.fragment or any(char.isspace() for char in self.base_url)):
+            raise ValueError("provider base_url must be an HTTPS URL without credentials, query, or fragment")
         if self.secret_name != "GH_AI_PROVIDER_API_KEY":
-            raise ValueError("0.2 uses the dedicated GH_AI_PROVIDER_API_KEY secret slot")
+            raise ValueError("Use the dedicated GH_AI_PROVIDER_API_KEY secret slot")
 
     @classmethod
     def groq(cls, model: str) -> ProviderConfig:
@@ -63,12 +72,15 @@ class InferenceRequest:
     prompt: str
     model: str = "tinyllama"
     system: str = "You are a helpful assistant."
-    max_tokens: int = 512
+    max_tokens: Optional[int] = 512
     temperature: float = 0.7
     cache: bool = True
     n_ctx: Optional[int] = None
     provider: Optional[ProviderConfig] = None
     retry_policy: Optional[RetryPolicy] = None
+    limits: Optional[Limits] = None
+    model_options: dict = field(default_factory=dict)
+    generation_options: dict = field(default_factory=dict)
 
 
 @dataclass(frozen=True)
@@ -97,6 +109,16 @@ class IntegrityInfo:
     output_sha256: str = ""
 
 
+@dataclass
+class AgentTimings:
+    total_seconds: float = 0.0
+    download_seconds: float = 0.0
+    load_seconds: float = 0.0
+    refinement_seconds: float = 0.0
+    generation_seconds: float = 0.0
+    remote_seconds: float = 0.0
+
+
 @dataclass(frozen=True)
 class InferenceResult:
     job_id: str
@@ -109,6 +131,7 @@ class InferenceResult:
     resources: ResourceUsage = field(default_factory=ResourceUsage)
     integrity: IntegrityInfo = field(default_factory=IntegrityInfo)
     raw: dict[str, Any] = field(default_factory=dict, repr=False)
+    timings: Optional[AgentTimings] = None
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)

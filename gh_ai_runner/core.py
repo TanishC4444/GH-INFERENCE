@@ -1,9 +1,12 @@
 from __future__ import annotations
 
+import time
+from dataclasses import replace
 from typing import Optional
 
 from .client import GitHubAIRunner
-from .types import RetryPolicy
+from .models import RUNNER_DISK_GB, RUNNER_RAM_GB
+from .types import AgentTimings, InferenceResult, RetryPolicy
 
 
 def ai_call(
@@ -17,7 +20,16 @@ def ai_call(
     n_ctx:        Optional[int] = None,
     repo_name:    str   = "ai-inference-runner",
     verbose:      bool  = True,
-) -> str:
+    *,
+    private:      bool  = True,
+    runner_label: str = "ubuntu-latest",
+    runner_ram_gb: float = RUNNER_RAM_GB,
+    runner_disk_gb: float = RUNNER_DISK_GB,
+    track_time: bool = False,
+    limits=None,
+    model_options=None,
+    generation_options=None,
+) -> str | InferenceResult:
     """
     Run AI inference on GitHub Actions and return the model output.
 
@@ -26,22 +38,31 @@ def ai_call(
         prompt:       The message / question to send to the model.
 
     Optional:
-        model:        "tinyllama" (default) or "llama".
+        model:        A key in gh_ai_runner.MODELS (default: "tinyllama").
         system:       System prompt. Default: "You are a helpful assistant."
-        max_tokens:   Max tokens to generate. Default: 512. Hard limit: 4096.
-        temperature:  0.0 = deterministic, 2.0 = very creative. Default: 0.7.
+        max_tokens:   Max tokens to generate. Default: 512; bounded by model/context.
+        temperature:  Sampling temperature. Default: 0.7; bounds are editable with Limits.
         cache:        Cache model weights between runs. Default: True.
-        n_ctx:        Context window size. Default: 2048 (tinyllama) / 4096 (llama). Max: 8192.
+        n_ctx:        Total context tokens. Default: 8192 (tinyllama: 2048).
+                      Advertised context/RAM policy can be overridden with Limits.
         repo_name:    GitHub repo to create/reuse. Default: "ai-inference-runner".
         verbose:      Print detailed logs. Default: True. Set False for silent mode.
 
     Returns:
-        Model response as a string.
+        Model response as a string, or an InferenceResult with timings when
+        track_time=True. Remote timing includes setup, waiting, and retrieval.
 
     Raises:
         ValueError: If any parameter is out of safe range.
     """
-    runner = GitHubAIRunner(github_token, repo_name=repo_name, verbose=verbose)
+    if type(track_time) is not bool:
+        raise TypeError("track_time must be a bool")
+    started = time.monotonic()
+    runner = GitHubAIRunner(
+        github_token, repo_name=repo_name, verbose=verbose, private=private,
+        runner_label=runner_label, runner_ram_gb=runner_ram_gb, runner_disk_gb=runner_disk_gb,
+        limits=limits,
+    )
     job = runner.submit(
         prompt,
         model=model,
@@ -51,5 +72,11 @@ def ai_call(
         cache=cache,
         n_ctx=n_ctx,
         retry_policy=RetryPolicy(),
+        model_options=model_options,
+        generation_options=generation_options,
     )
-    return job.result().output
+    result = job.result()
+    if track_time:
+        elapsed = time.monotonic() - started
+        return replace(result, timings=AgentTimings(total_seconds=elapsed, remote_seconds=elapsed))
+    return result.output

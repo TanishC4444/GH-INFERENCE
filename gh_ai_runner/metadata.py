@@ -17,11 +17,8 @@ class MetadataStore:
 
     def __init__(self, path: str | Path) -> None:
         self.path = Path(path).expanduser()
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            self.path.parent.chmod(0o700)
-        except OSError:
-            pass
+        # Do not change permissions on an existing user-supplied directory.
+        self.path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
         self._lock = threading.RLock()
         self._initialize()
         try:

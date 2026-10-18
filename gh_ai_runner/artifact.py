@@ -6,7 +6,6 @@ import zipfile
 import requests
 
 from .integrity import text_sha256
-from .logger import _log
 from .repo import API, _headers
 from .types import (
     InferenceResult,
@@ -15,42 +14,6 @@ from .types import (
     ResourceUsage,
     TokenUsage,
 )
-
-
-def _download_output(token, username, repo_name, run_id, verbose, timeout=60):
-    start  = time.time()
-    target = None
-
-    while time.time() - start < timeout:
-        r         = requests.get(
-            f"{API}/repos/{username}/{repo_name}/actions/runs/{run_id}/artifacts",
-            headers=_headers(token),
-        )
-        artifacts = r.json().get("artifacts", [])
-        target    = next((a for a in artifacts if a["name"] == "ai-output"), None)
-        if target:
-            break
-        _log("Waiting for artifact...", verbose=verbose)
-        time.sleep(5)
-
-    if not target:
-        raise RuntimeError("No ai-output artifact found after waiting.")
-
-    r = requests.get(
-        f"{API}/repos/{username}/{repo_name}/actions/artifacts/{target['id']}/zip",
-        headers=_headers(token),
-        allow_redirects=False,
-    )
-    location  = r.headers.get("Location", "")
-    zip_bytes = requests.get(location).content if location else r.content
-
-    with zipfile.ZipFile(io.BytesIO(zip_bytes)) as z:
-        _log(f"Artifact contents: {z.namelist()}", verbose=verbose)
-        name = next((n for n in z.namelist() if n.endswith("output.txt")), None)
-        if not name:
-            raise RuntimeError(f"output.txt not found in artifact. Contents: {z.namelist()}")
-        with z.open(name) as f:
-            return f.read().decode()
 
 
 def _download_result(
@@ -63,14 +26,16 @@ def _download_result(
     verbose,
     timeout=60,
     expected_request_sha256=None,
+    http_timeout=30,
 ):
-    start = time.monotonic()
+    deadline = time.monotonic() + timeout
     target = None
     artifact_name = f"ai-output-{correlation_id}"
-    while time.monotonic() - start < timeout:
+    while time.monotonic() < deadline:
         response = requests.get(
             f"{API}/repos/{username}/{repo_name}/actions/runs/{run_id}/artifacts",
             headers=_headers(token),
+            timeout=min(http_timeout, max(0.001, deadline - time.monotonic())),
         )
         response.raise_for_status()
         target = next(
@@ -79,18 +44,21 @@ def _download_result(
         )
         if target:
             break
-        time.sleep(2)
+        time.sleep(min(2, max(0, deadline - time.monotonic())))
     if not target:
-        raise RuntimeError(f"No {artifact_name} artifact found after waiting.")
+        raise TimeoutError(f"No {artifact_name} artifact found before the deadline")
 
+    if time.monotonic() >= deadline:
+        raise TimeoutError("Timed out before downloading the result artifact")
     response = requests.get(
         f"{API}/repos/{username}/{repo_name}/actions/artifacts/{target['id']}/zip",
         headers=_headers(token),
         allow_redirects=True,
+        timeout=min(http_timeout, max(0.001, deadline - time.monotonic())),
     )
     response.raise_for_status()
     with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
-        name = next((item for item in archive.namelist() if item.endswith("result.json")), None)
+        name = "result.json" if "result.json" in archive.namelist() else None
         if not name:
             raise RuntimeError(f"result.json not found in artifact. Contents: {archive.namelist()}")
         data = json.loads(archive.read(name).decode("utf-8"))
@@ -98,13 +66,20 @@ def _download_result(
     if data.get("job_id") != job_id or data.get("correlation_id") != correlation_id:
         raise IntegrityError("Result identity does not match the requested job", run_id=run_id)
     integrity = data.get("integrity") or {}
-    if integrity and integrity.get("algorithm") != "sha256":
+    if integrity.get("algorithm") != "sha256":
         raise IntegrityError("Result uses an unsupported integrity algorithm", run_id=run_id)
     actual_output_sha256 = text_sha256(data.get("output", ""))
-    if integrity and integrity.get("output_sha256") != actual_output_sha256:
+    if integrity.get("output_sha256") != actual_output_sha256:
         raise IntegrityError("Result output checksum verification failed", run_id=run_id)
     if expected_request_sha256 and integrity.get("request_sha256") != expected_request_sha256:
         raise IntegrityError("Result request checksum verification failed", run_id=run_id)
+    if "agent" in data:
+        actual_agent_sha256 = text_sha256(json.dumps(data["agent"], sort_keys=True, separators=(",", ":")))
+        if integrity.get("agent_sha256") != actual_agent_sha256:
+            raise IntegrityError("Agent result checksum verification failed", run_id=run_id)
+
+    if data.get("error"):
+        raise IntegrityError("Worker reported an unsuccessful inference", run_id=run_id)
 
     usage = data.get("usage") or {}
     resources = data.get("resources") or {}

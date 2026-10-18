@@ -17,7 +17,7 @@ from gh_ai_runner import (
 )
 from gh_ai_runner.artifact import _download_result
 from gh_ai_runner.core import ai_call
-from gh_ai_runner.integrity import request_sha256
+from gh_ai_runner.integrity import request_sha256, text_sha256
 from gh_ai_runner.job import AIJob
 from gh_ai_runner.polling import _find_run
 from gh_ai_runner.repo import _set_actions_secret
@@ -147,6 +147,7 @@ def test_structured_artifact_is_parsed():
         "provider": "local", "output": "answer",
         "usage": {"prompt_tokens": 4, "completion_tokens": 2, "total_tokens": 6},
         "resources": {"cpu_count": 4, "duration_seconds": 1.5},
+        "integrity": {"algorithm": "sha256", "output_sha256": text_sha256("answer")},
     }
     zipped = io.BytesIO()
     with zipfile.ZipFile(zipped, "w") as archive:

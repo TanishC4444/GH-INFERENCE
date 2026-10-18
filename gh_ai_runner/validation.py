@@ -1,51 +1,57 @@
-from .models import (
-    MAX_TEMPERATURE,
-    MAX_TOKENS_LIMIT,
-    MIN_TEMPERATURE,
-    MODELS,
-    RAM_PER_1K_CTX_GB,
-    RUNNER_RAM_GB,
-)
+import math
+
+from .models import DEFAULT_CONTEXT, MODELS, RUNNER_DISK_GB, RUNNER_RAM_GB, model_resources
+from .limits import Limits
 
 
-def _validate(model, max_tokens, temperature, n_ctx):
+def _validate(model, max_tokens, temperature, n_ctx, *, runner_ram_gb=RUNNER_RAM_GB,
+              runner_disk_gb=RUNNER_DISK_GB, cache=True, limits=None):
+    """Validate portable limits before any repository or workflow changes."""
+    if model is not None and model not in MODELS:
+        raise ValueError(f"model must be one of: {list(MODELS)}")
+    limits = limits if limits is not None else Limits()
+    if max_tokens is not None and (type(max_tokens) is not int or max_tokens < 1):
+        raise ValueError("max_tokens must be a positive integer or None")
+    if (isinstance(temperature, bool) or not isinstance(temperature, (int, float))
+            or not math.isfinite(temperature)
+            or (limits.min_temperature is not None and temperature < limits.min_temperature)
+            or (limits.max_temperature is not None and temperature > limits.max_temperature)):
+        raise ValueError("temperature must be finite and within the configured temperature bounds")
+    if n_ctx is not None and (type(n_ctx) is not int or n_ctx < 1):
+        raise ValueError("n_ctx must be a positive integer")
     cfg = MODELS[model] if model is not None else None
-    errors = []
+    context = n_ctx if n_ctx is not None else (cfg["n_ctx"] if cfg else DEFAULT_CONTEXT)
+    if limits.enforce_model_limits and cfg and cfg["max_n_ctx"] and context > cfg["max_n_ctx"]:
+        raise ValueError(f"{model} supports n_ctx up to {cfg['max_n_ctx']:,} tokens; requested {context:,}")
+    if (limits.enforce_model_limits and cfg and cfg["max_output_tokens"] is not None
+            and max_tokens is not None and max_tokens > cfg["max_output_tokens"]):
+        raise ValueError(f"{model} supports max_tokens up to {cfg['max_output_tokens']:,}")
+    if limits.enforce_output_budget and max_tokens is not None and max_tokens >= context:
+        raise ValueError(f"max_tokens={max_tokens} must be less than n_ctx={context}")
+    if cfg:
+        resources = model_resources(model, context, cache, limits=limits)
+        if limits.check_resources and resources["ram_gb"] > runner_ram_gb:
+            raise ValueError(
+                f"{model} at n_ctx={context} needs approximately {resources['ram_gb']:.1f} GB RAM; "
+                f"configured budget is {runner_ram_gb:g} GB. Use a smaller model/context or "
+                "configure runner_ram_gb for a runner that actually has more memory."
+            )
+        if limits.check_resources and resources["disk_gb"] > runner_disk_gb:
+            raise ValueError(
+                f"{model} needs approximately {resources['disk_gb']:.1f} GB free disk "
+                f"including cache overhead; configured budget is {runner_disk_gb:g} GB. "
+                "Use cache=False or a runner with more disk."
+            )
 
-    if not (MIN_TEMPERATURE <= temperature <= MAX_TEMPERATURE):
-        errors.append(
-            f"temperature must be between {MIN_TEMPERATURE} and {MAX_TEMPERATURE}, got {temperature}"
-        )
 
-    if max_tokens < 1:
-        errors.append(f"max_tokens must be at least 1, got {max_tokens}")
-    if max_tokens > MAX_TOKENS_LIMIT:
-        errors.append(f"max_tokens={max_tokens} exceeds hard limit of {MAX_TOKENS_LIMIT}.")
-
-    effective_n_ctx = n_ctx or (cfg["n_ctx"] if cfg else 8192)
-    if cfg and effective_n_ctx > cfg["max_n_ctx"]:
-        errors.append(
-            f"n_ctx={effective_n_ctx} exceeds safe limit of {cfg['max_n_ctx']}. Risk of OOM."
-        )
-    if max_tokens >= effective_n_ctx:
-        errors.append(
-            f"max_tokens={max_tokens} must be less than n_ctx={effective_n_ctx}."
-        )
-
-    base_ram = cfg["size_gb"] if cfg else 0
-    extra_ctx = max(0, effective_n_ctx - cfg["n_ctx"]) if cfg else 0
-    total_ram = base_ram + (extra_ctx / 1000) * RAM_PER_1K_CTX_GB + 1.0
-    if cfg and total_ram > RUNNER_RAM_GB:
-        errors.append(
-            f"Estimated RAM ({total_ram:.1f} GB) exceeds runner limit ({RUNNER_RAM_GB} GB)."
-        )
-
-    if errors:
-        raise ValueError("Validation failed:\n" + "\n".join(f"  - {e}" for e in errors))
-
-    if max_tokens > 2048:
-        print(f"[warn] max_tokens={max_tokens} is large — expect slower inference.")
-    if effective_n_ctx > 4096:
-        print(f"[warn] n_ctx={effective_n_ctx} is large — estimated RAM: {total_ram:.1f} GB.")
-    if temperature > 1.2:
-        print(f"[warn] temperature={temperature} is high — output may be incoherent.")
+def validate_text(prompt, system, cache, limits=None):
+    limits = limits if limits is not None else Limits()
+    if not isinstance(prompt, str) or not prompt.strip():
+        raise ValueError("prompt must be a nonempty string")
+    if not isinstance(system, str):
+        raise TypeError("system must be a string")
+    if type(cache) is not bool:
+        raise TypeError("cache must be a bool")
+    # Leave space for the other workflow inputs, including provider configuration.
+    if limits.max_prompt_chars is not None and len(prompt) + len(system) > limits.max_prompt_chars:
+        raise ValueError(f"Combined prompt and system text must not exceed {limits.max_prompt_chars:,} characters")

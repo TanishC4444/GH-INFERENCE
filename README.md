@@ -1,507 +1,533 @@
-<div align="center">
+# GH-INFERENCE
 
-# ⚡ gh-ai-runner
+**Text in, text out. Quantized models run on GitHub servers.**
 
-### Turn any GitHub repo into a serverless AI inference backend — straight from Python.
+Your Python client only connects, submits prompts, and retrieves answers. Model
+downloads, model loading, inference, and optional prompt refinement all happen
+inside GitHub Actions. No model runtime or GPU is required on your machine.
 
-No server. No GPU. No infrastructure. Just a token, a prompt, and GitHub's own CI runners doing the work.
+## Start
 
-[![PyPI](https://img.shields.io/pypi/v/gh-ai-runner?style=flat-square&logo=pypi&logoColor=white&color=blue)](https://pypi.org/project/gh-ai-runner/)
-[![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Models](https://img.shields.io/badge/models-6-7C3AED?style=flat-square)](#-models)
-[![License](https://img.shields.io/badge/license-MIT-D4A72C?style=flat-square)](LICENSE)
-
-[Overview](#-overview) · [How it works](#-how-it-works) · [Setup](#-setup) · [Quick start](#-quick-start) · [Core concepts](#-core-concepts) · [Full API reference](#-full-api-reference) · [Recipes](#-recipes--example-snippets) · [Models](#-models) · [Security](#-security-model) · [Troubleshooting](#-troubleshooting--faq)
-
-</div>
-
----
-
-## 🧠 Overview
-
-`gh-ai-runner` is a Python orchestration package that turns an ordinary GitHub repository into an on-demand AI workload service. Point it at a prompt, and it provisions an ephemeral GitHub Actions runner, executes a quantized LLM with `llama-cpp-python`, and hands the result back to you — no inference server ever stays online between calls.
-
-**Why this exists:** every GitHub account comes with a large pool of free (or cheap) Actions minutes sitting mostly idle. `gh-ai-runner` treats that compute as a disposable, on-demand inference backend: spin a runner up, load a quantized model, run inference, upload the answer as an artifact, tear the runner down. You get LLM inference without renting a GPU, running a server, or managing infrastructure — the tradeoff is latency (cold starts and model downloads take real time) in exchange for effectively free compute.
-
-**Version 0.3** builds on the 0.2 asynchronous runtime by adding:
-- Concurrent batch dispatch and multi-model comparisons
-- Verified, checksummed results (client- and worker-side SHA-256 digests)
-- Privacy-conscious local job metadata (a SQLite history that deliberately excludes prompts, outputs, and secrets)
-- A "bring your own provider" mode for OpenAI-compatible hosted APIs, as an alternative to local GGUF inference
-
-The original synchronous `ai_call()` function from 0.1.x is still fully supported, so upgrading doesn't break existing code.
-
----
-
-## 🔧 How it works
-
-Every call — sync or async — follows the same underlying lifecycle:
-
-```mermaid
-sequenceDiagram
-    participant App as Python application
-    participant API as GitHub API
-    participant Repo as Runner repository
-    participant Job as Actions runner
-
-    App->>API: Resolve authenticated username
-    App->>Repo: Create or reuse repository
-    App->>Repo: Sync workflow/script when hashes differ
-    App->>API: Dispatch with unique correlation ID
-    API->>Job: Start ephemeral Ubuntu worker
-    Job->>Job: Restore/download GGUF + run llama.cpp
-    Job->>API: Upload output artifact
-    App->>API: Poll exact run title or cancel it
-    App->>API: Download job-specific JSON artifact
-    API-->>App: Return output + usage + resources
-```
-
-Walking through each stage in more depth:
-
-1. **Identity resolution.** The client calls the GitHub API once to resolve which account the token belongs to, so it knows where to create or look for the runner repo.
-2. **Repo provisioning.** If the target repo (`ai-inference-runner` by default) doesn't exist, it's created. If it does, it's reused — nothing is torn down between calls.
-3. **Hash-based sync.** Rather than committing the workflow file and inference script on every single call, the client computes a SHA-256 of each local file and compares it against what's already committed. A commit only happens when something actually changed, which is what makes the second-and-onward calls noticeably faster than the first.
-4. **Dispatch with a correlation ID.** A `workflow_dispatch` event is fired with a randomly generated ID embedded in the run's title (`run-name`). This is the mechanism that makes concurrent jobs safe: polling later looks for an *exact* title match, not "the most recent run," so two jobs racing against each other can't get their results crossed.
-5. **Ephemeral execution.** GitHub spins up a fresh Ubuntu-based runner. It restores a cached GGUF model if one exists, or downloads it fresh from Hugging Face, then runs inference through `llama-cpp-python` entirely inside that throwaway VM.
-6. **Artifact upload.** The worker writes a structured JSON result (output text, token usage, resource stats, digests) and uploads it as a GitHub Actions artifact scoped to that specific run.
-7. **Polling and retrieval.** The client polls the Actions API for the run matching its correlation ID, waits for completion (or lets you cancel it), then downloads and parses the artifact.
-8. **Verification.** Before the result is handed back to you, the client checks the output's SHA-256 digest against what the worker reported. A mismatch means the artifact is rejected rather than silently returned.
-
----
-
-## 📦 Setup
-
-### 1. Install the package
+Install the client in your environment (Python 3.9+):
 
 ```bash
-pip install gh-ai-runner
+pip install gh-inference
+export GH_AI_TOKEN="your-github-token"
 ```
 
-Requires Python 3.9 or newer.
+Use a classic GitHub token with `repo` and `workflow` scopes. Do not commit it.
 
-### 2. Create a GitHub personal access token
+```python
+from gh_inference import Agent
 
-1. Go to **GitHub → Settings → Developer settings → Personal access tokens**.
-2. Generate a token with **`repo`** and **`workflow`** scopes. (`repo` lets the client create/read the runner repository; `workflow` lets it commit workflow files and dispatch runs.)
-3. Store it somewhere safe — an environment variable or secret manager, **not** hardcoded in a script you might commit.
+agent = Agent()
+print(agent.run("Explain recursion briefly."))
+```
+
+That is the whole flow. The first call automatically creates or reuses the
+`ai-inference-runner` repository, installs the workflow, starts a GitHub worker,
+and returns its answer as a plain string. `agent("prompt")` is equivalent.
+You can also pass `Agent(github_token=...)` instead of setting the environment.
+
+`agent.connect()` optionally prepares the repository ahead of the first prompt;
+it is never required. Connecting does not start or reserve a model worker.
+
+## Models and every published GGUF variant
+
+The 16 pinned aliases below remain convenient defaults. Model support is open:
+use any public, ungated Hugging Face **GGUF** repository supported by the installed
+llama.cpp runtime. Search discovers Qwen, Llama, Gemma, Phi, Mistral, DeepSeek,
+SmolLM and other families, with no project parameter-count ceiling. A model being
+discoverable does not mean it fits your runner or its architecture is supported.
+
+```python
+from gh_inference import Agent, search_models, list_quantizations
+
+print(search_models("Qwen3"))
+print(list_quantizations("Qwen/Qwen2.5-0.5B-Instruct-GGUF"))
+agent = Agent(model="Qwen/Qwen2.5-0.5B-Instruct-GGUF", quantization="Q8_0")
+print(agent("Explain quantization in one sentence."))
+```
+
+`quantization` defaults to `Q4_K_M` for repository selections. All published GGUF
+labels can be selected, including Q2/Q3/Q4/Q5/Q6/Q8, K-quants, IQ, TQ and floating
+point variants when provided and supported by your backend. We do not manufacture
+missing variants or convert weights. AWQ/GPTQ/Safetensors require other backends
+and are not accepted by this GGUF CPU runner. Model licenses still apply.
+
+For ambiguous repositories use `Agent(model="owner/repo", filename="exact.gguf")`.
+Split GGUF files are grouped, all shards are checked and downloaded, and the first
+shard is loaded. Incomplete shard groups are excluded. `list_quantizations` lists
+exact filenames and aggregate bytes; projector files are excluded (text only).
+
+Selections resolve metadata once per client process and pin a Hub commit plus
+each file's SHA-256 and size. Workers verify downloads before loading. Subsequent
+jobs reuse the Actions weights cache when eligible; `run_many()` keeps one model
+resident in RAM throughout that job. An Actions job ending releases its RAM.
+Use `revision="commit-or-tag"` for reproducibility; `clear_model_cache()` refreshes
+cached branch metadata. Hub metadata calls download no model weights locally.
+
+Context defaults to about 8K (or a known smaller ceiling). Existing aliases retain
+their documented limits; arbitrary repositories use Hub GGUF `context_length`
+when supplied. If absent, the advertised ceiling is unknown, not invented.
+RAM estimates for arbitrary models are approximate; architecture and KV cache
+shape affect actual usage. `Limits` and `Agent.experimental()` below remain
+available, but cannot create RAM, extend GitHub quotas, or add backend support.
 
 ```bash
-export GH_AI_TOKEN="ghp_xxxxxxxxxxxxxxxxxxxx"
+gh-inference models Qwen3
+gh-inference variants Qwen/Qwen2.5-0.5B-Instruct-GGUF
+gh-inference run "What is recursion?" --model qwen0.5b --track-time
 ```
 
-### 3. Make sure Actions is enabled
+For source development, `pip install -e '.[dev]'` installs this checkout. The
+legacy `gh_ai_runner` import remains supported; new code can use `gh_inference`.
 
-If you're using a brand-new account or a repo created under an organization with restrictive defaults, double check **Settings → Actions → General** allows Actions to run and artifacts to be created.
+## Publishing
 
-That's the entire setup. Everything else — repo creation, workflow files, model downloads — is handled automatically on first use.
+The `publish.yml` workflow builds and tests the wheel before publishing to PyPI
+using GitHub OIDC, with no stored PyPI token. Configure the PyPI trusted publisher
+for owner `TanishC4444`, repository `GH-INFERENCE`, workflow `publish.yml`, and
+environment `pypi`, then run it with `publish=true` or publish a `v*` release.
+Each version is immutable on PyPI; bump `gh_ai_runner.__version__` for a release.
 
----
+New repositories are **private by default**. Existing visibility is never changed.
+Actions must be enabled. Private Actions usage consumes included minutes and can
+incur charges. Use a dedicated repository: the package manages and can overwrite
+`run_inference.py` and `.github/workflows/inference.yml` there.
 
-## 🚀 Quick start
+## Experiments: remove project ceilings
 
 ```python
-import os
-from gh_ai_runner import ai_call
+from gh_ai_runner import Agent
 
-answer = ai_call(
-    github_token=os.environ["GH_AI_TOKEN"],
-    prompt="Explain recursion with one small Python example.",
-    model="qwen",
-    temperature=0.2,
+agent = Agent.experimental(
+    model="qwen0.5b",
+    n_ctx=65536,          # Deliberately above this model's advertised 32K.
+    max_tokens=None,     # Ask the runtime to use remaining context for the answer.
+    track_time=True,
 )
-
-print(answer)
+print(agent.run("Explain context windows."))
+print(agent.last_result.usage)
 ```
 
-On the very first call, `gh-ai-runner` will create the `ai-inference-runner` repo, commit the embedded workflow and inference script, and download/cache the chosen model on the runner. Every call after that reuses the repo and skips re-committing files whose hashes haven't changed.
+`Agent.experimental()` uses `Limits.unrestricted()`, `trim_history=False`, and
+`max_history_turns=None`. It removes our advertised model/output checks, estimated
+RAM/disk rejection, temperature bounds, prompt-character cap, batch-count cap,
+formatting reserves, cache-size threshold, and project workflow-input budget.
+Default context remains 8K (2K for TinyLlama) unless you set `n_ctx`; default answer
+length remains 512 unless you change `max_tokens`. All computation stays on GitHub.
 
----
+This permits an attempt; it does not guarantee that the backend can execute it.
+A bigger `n_ctx` allocates a bigger window. Sending more messages alone does not.
+Going beyond a model's trained/advertised length may require positional scaling
+and can produce poor answers. Disabling memory checks cannot create memory.
 
-## 🧩 Core concepts
-
-| Concept | What it is |
-|---|---|
-| **`ai_call()`** | The simplest entry point — synchronous, blocking, returns a plain string. Best for one-off scripts. |
-| **`GitHubAIRunner`** | The stateful client. Use this when you need async jobs, batches, comparisons, or a custom provider. |
-| **`Job`** | A handle to a single dispatched inference request. Supports `refresh()`, `wait()`, `result()`, `cancel()`. |
-| **`BatchJob`** | A handle to a group of jobs dispatched together, sharing a `batch_id`. |
-| **`InferenceRequest`** | A single prompt + model (+ optional parameters), used when building a batch. |
-| **`InferenceResult`** | The parsed, verified output of a completed job: `.output`, `.usage`, `.resources`. |
-| **`RetryPolicy`** | Configuration for how many times, and how, a job should retry on failure. |
-| **`JobStatus`** | An enum describing where a job currently is in its lifecycle. |
-| **`ProviderConfig`** | Configuration for routing inference to a hosted, OpenAI-compatible API instead of local GGUF. |
-
----
-
-## 📖 Full API reference
-
-### `ai_call()` — the synchronous one-liner
+### Edit individual rules
 
 ```python
-ai_call(
-    github_token: str,
-    prompt: str,
-    model: str = "tinyllama",
-    system: str = "You are a helpful assistant.",
-    max_tokens: int = 512,
-    temperature: float = 0.7,
-    cache: bool = True,
-    n_ctx: int | None = None,
-    repo_name: str = "ai-inference-runner",
-    verbose: bool = True,
-) -> str
-```
+from gh_ai_runner import Agent, Limits
 
-| Parameter | Type | Default | Notes |
-|---|---|---|---|
-| `github_token` | `str` | — | **Required.** Needs `repo` + `workflow` scopes. |
-| `prompt` | `str` | — | **Required.** The user message sent to the model. |
-| `model` | `str` | `"tinyllama"` | One of the keys in the [models table](#-models). |
-| `system` | `str` | `"You are a helpful assistant."` | System prompt controlling behavior/persona. |
-| `max_tokens` | `int` | `512` | Hard-capped at `4096` by validation. |
-| `temperature` | `float` | `0.7` | Range `0.0`–`2.0`. `0.0` = deterministic. |
-| `cache` | `bool` | `True` | Keeps model weights cached on the runner between runs. |
-| `n_ctx` | `int \| None` | `None` (model default) | Context window size, capped at `8192`. |
-| `repo_name` | `str` | `"ai-inference-runner"` | Which repo to create/reuse — useful for isolating concurrent workloads. |
-| `verbose` | `bool` | `True` | Prints step-by-step progress logs. |
-
-Internally this is a thin wrapper: it builds a `GitHubAIRunner`, calls `.submit()`, blocks on `.result()`, and returns just the `.output` string.
-
-### `GitHubAIRunner` — the stateful client
-
-```python
-runner = GitHubAIRunner(github_token: str, repo_name: str = "ai-inference-runner")
-```
-
-Key methods:
-
-| Method | Returns | Purpose |
-|---|---|---|
-| `submit(prompt, **kwargs)` | `Job` | Dispatches a single request without blocking. |
-| `submit_batch(requests: list[InferenceRequest])` | `BatchJob` | Dispatches several requests as one tracked group. |
-| `compare(prompt, models: list[str], **kwargs)` | `ComparisonJob` | Sends one prompt to multiple models for side-by-side results. |
-| `configure_provider(config: ProviderConfig, api_key: str)` | `None` | Encrypts and stores a hosted-provider API key as a repo secret. |
-| `list_jobs(limit: int = 20)` | `list[JobRecord]` | Reads recent job history from local metadata. |
-| `get_job(job_id, attempt=1)` | `Job` | Reconstructs a handle to a previously submitted job. |
-| `resume(job_id)` | `Job` | Alias/helper for picking a job back up after a script restart. |
-
-### `Job` — a single async handle
-
-| Method | Blocking? | Purpose |
-|---|---|---|
-| `.refresh()` | No | Checks current status without waiting. |
-| `.wait(timeout=None)` | Yes | Blocks until the job finishes or the timeout elapses. |
-| `.result(timeout=None)` | Yes | Waits if necessary, then downloads + verifies + parses the artifact into an `InferenceResult`. |
-| `.cancel()` | No | Requests cancellation through the Actions API. |
-
-### `RetryPolicy`
-
-```python
-RetryPolicy(max_retries: int = 0, ...)
-```
-Controls automatic retry behavior on failed dispatch or timeout. Retries reuse the same `job_id` but get distinct correlation IDs (e.g. `<job-id>-1`, `<job-id>-2`), so history stays traceable across attempts.
-
-### `ProviderConfig`
-
-```python
-ProviderConfig.groq(model: str)          # convenience constructor for Groq
-ProviderConfig(name, model, base_url)    # generic OpenAI-compatible endpoint (HTTPS only)
-```
-
-### `InferenceRequest` / `InferenceResult`
-
-`InferenceRequest(prompt: str, model: str = "tinyllama", **kwargs)` is the unit you pass into `submit_batch()`. `InferenceResult` is what comes back from `.result()`, exposing `.output` (str), `.usage` (token counts), and `.resources` (CPU/memory/disk/duration stats reported by the worker).
-
----
-
-## 🍳 Recipes / example snippets
-
-### Basic blocking call
-
-```python
-from gh_ai_runner import ai_call
-
-result = ai_call(
-    github_token="ghp_...",
-    prompt="What's the difference between a list and a tuple in Python?",
+limits = Limits.unrestricted(
+    check_resources=True,
+    max_prompts=100,
+    max_cached_model_gb=6,
+    job_timeout_minutes=90,
 )
-print(result)
+agent = Agent.experimental(limits=limits, n_ctx=16384, max_tokens=2048)
 ```
 
-### Custom persona + longer output
+`Limits()` preserves standard checks. `Limits.unrestricted(**overrides)` disables
+project ceilings and applies your overrides. Both accept every field below. Pass
+the configuration to `Agent`, `GitHubAIRunner`, `ai_call`, or an individual
+`InferenceRequest`/`submit()`; request settings override runner defaults.
+Configurations are immutable: make a new one or use `dataclasses.replace()`.
+
+| `Limits` field | Standard default | Meaning / override |
+| --- | --- | --- |
+| `enforce_model_limits` | `True` | Advertised context and recorded output ceilings; `False` permits attempts beyond them. |
+| `enforce_output_budget` | `True` | Reject an explicit answer limit at least as large as `n_ctx` and reserve the answer during trimming; `False` delegates answer-space handling to the runtime. |
+| `check_resources` | `True` | Estimated RAM/disk checks on client and worker; `False` lets allocation/downloads proceed to real limits. |
+| `max_prompt_chars` | `60000` | Current prompt plus instructions; `None` removes the project check. |
+| `max_workflow_input_chars` | `65000` | Serialized workflow-input budget; `None` removes this budget. GitHub's service limit remains. |
+| `max_prompts` | `32` | Prompts per `run_many()`; `None` removes the count cap. |
+| `min_temperature`, `max_temperature` | `0.0`, `2.0` | Either bound can be `None`; values must still be finite. |
+| `context_reserve_tokens` | `128` | Conservative extra allowance; can be `0`. |
+| `message_overhead_tokens` | `32` | Formatting allowance per message; can be `0`. Actual formatting still uses tokens. |
+| `max_cached_model_gb` | `6.0` | Cache files below this decimal-GB threshold; `None` permits all sizes, `0` skips caching. |
+| `runtime_overhead_gb` | `1.5` | Estimated RAM above weights/context. |
+| `disk_reserve_gb` | `2.0` | Additional estimated free disk. |
+| `ram_per_1k_ctx_gb` | `None` | Use catalog's estimate; a number overrides it. Changing estimates does not change real allocation. |
+| `job_timeout_minutes` | `30` | Remote timeout; unrestricted preset uses `360`. Hosted GitHub jobs have a six-hour service maximum. |
+| `artifact_retention_days` | `3` | Requested result retention, subject to repository policy. |
+| `download_timeout_seconds` | `30` | Model-download socket timeout. |
+| `provider_timeout_seconds` | `300` | Legacy hosted-provider request timeout. |
+| `refiner_min_tokens` | `128` | Minimum prompt size considered for refinement. |
+| `refiner_max_tokens` | `512` | Rewrite ceiling, also bounded by original length and available context. |
+| `refiner_context_fraction` | `0.25` | Context fraction used to plan the rewrite allowance. |
+
+The unrestricted preset sets the three enforcement flags to `False`; optional
+prompt, workflow-budget, batch, temperature, and cache-size limits to `None`;
+formatting reserves to `0`; and remote timeout to `360`. Other defaults remain.
+The experimental agent factory additionally disables trimming and turn-count caps.
+Explicit arguments to the factory override those choices.
+
+### Model loading and sampling
 
 ```python
-result = ai_call(
-    github_token="ghp_...",
-    prompt="Explain black holes",
-    system="You are a physics professor. Be precise and use analogies.",
-    model="llama",
-    max_tokens=1024,
-)
-print(result)
-```
-
-### Deterministic output for reproducible tests
-
-```python
-result = ai_call(
-    github_token="ghp_...",
-    prompt="What is 144 divided by 12?",
-    temperature=0.0,
-    max_tokens=16,
-)
-assert "12" in result
-```
-
-### Silent mode (no progress logs, e.g. inside another CLI tool)
-
-```python
-result = ai_call(
-    github_token="ghp_...",
-    prompt="Summarize the theory of evolution in two sentences.",
-    verbose=False,
+agent = Agent.experimental(
+    n_ctx=65536,
+    max_tokens=4096,
+    model_options={
+        "n_threads": 2,
+        "n_batch": 256,
+        "rope_scaling_type": "yarn",
+        "rope_freq_scale": 0.5,
+        "yarn_orig_ctx": 32768,
+        "yarn_ext_factor": 1.0,
+    },
+    generation_options={"top_k": 40, "top_p": 0.9, "repeat_penalty": 1.1, "seed": 42},
 )
 ```
 
-### Async submit + manual polling loop
+`model_options` forwards JSON-compatible keywords to
+[`llama_cpp.Llama`](https://llama-cpp-python.readthedocs.io/en/latest/api-reference/),
+including CPU threads, batch sizes, KV settings, and positional scaling.
+`rope_scaling_type` accepts a backend integer enum or a name such as `"yarn"` or
+`"linear"`. These are experimental settings, not verified 64K quality claims.
+Increasing context does not retrain the weights. Qwen 7B/14B still apply their
+published factor-4 YaRN recipe above 32K unless you override it. Beyond advertised
+lengths, choose and evaluate scaling yourself. Other entries keep GGUF metadata.
+
+`generation_options` forwards sampling keywords to `create_chat_completion`,
+including `top_k`, `top_p`, `min_p`, penalties, `seed`, and `stop`. It applies to
+main answers; refinement uses separate deterministic sampling. Unknown keywords
+are rejected by the installed backend. Use named `n_ctx`, `max_tokens`, and
+`temperature` arguments for those values. Extra-option dictionaries cannot replace
+the managed model path, CPU/RAM placement, messages, or nonstreaming text contract.
+
+`max_tokens=None` requests remaining context. Standard model-limit enforcement
+still applies a recorded publisher output ceiling; unrestricted mode does not.
+The runtime can shorten an explicit answer allowance to remaining space and stop
+early at EOS. Input exceeding allocated `n_ctx` is rejected by llama-cpp-python.
+Custom policies/options are sent to the worker and covered by request checksums.
+
+### Connection and waiting
 
 ```python
-from gh_ai_runner import GitHubAIRunner, RetryPolicy
-import time
+from gh_ai_runner import Agent, GitHubAIRunner, Limits
 
-runner = GitHubAIRunner(github_token="ghp_...")
-job = runner.submit(
-    "Summarize the tradeoffs of SQLite vs. PostgreSQL.",
-    model="qwen",
-    retry_policy=RetryPolicy(max_retries=1),
+runner = GitHubAIRunner(
+    limits=Limits.unrestricted(job_timeout_minutes=90),
+    completion_timeout=5500,
+    run_discovery_timeout=300,
+    poll_interval=10,
+    http_timeout=60,
+    artifact_timeout=120,
+    workflow_registration_timeout=120,
 )
-
-while True:
-    status = job.refresh()
-    print(f"job {job.job_id}: {status}")
-    if status.is_terminal:          # adjust to however JobStatus exposes this
-        break
-    time.sleep(5)
-
-result = job.result(timeout=900)
-print(result.output)
-print("tokens:", result.usage.total_tokens)
-print("peak memory:", result.resources.memory_total_bytes)
+agent = Agent.experimental(runner=runner, limits=runner.limits)
 ```
 
-### Error handling around a job
+Runner defaults, all in seconds: `completion_timeout=1800`,
+`run_discovery_timeout=180`, `poll_interval=8`, `http_timeout=30`,
+`artifact_timeout=60`, `workflow_registration_timeout=60`. Values must be finite
+and positive; there is no project upper bound. HTTP timeout applies per API
+request. Discovery/completion/artifact deadlines apply to their own phases.
+`agent.run(prompt, timeout=...)` bounds waiting/result retrieval after dispatch,
+not repository preparation or model execution. A client timeout does not cancel
+the remote job. Increase client waiting alongside longer remote job timeouts.
+
+### External limits remain
+
+- [GitHub workflow inputs](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onworkflow_dispatchinputs)
+  have a 65,535-character service limit including history, configuration, escaping,
+  and JSON overhead. Characters are not tokens. This version has no alternate
+  large-prompt transport, even when model context is 128K or larger.
+- [GitHub Actions limits](https://docs.github.com/en/actions/reference/limits)
+  include the six-hour hosted-job maximum, account minutes, concurrency, storage,
+  and API limits. A larger configured timeout cannot extend the service maximum.
+- Real RAM/disk, CPU time, backend numeric ranges, supported architectures and
+  scaling, and model quality remain constraints. Allocation, disk-full, timeout,
+  and worker-termination failures are possible when resource checks are disabled.
+
+The curated 16B catalog is not a mathematical parameter-count cap; larger entries
+need verified GGUF download metadata and appropriate workers. Valid input types,
+checksums, and job identity checks remain required in both presets.
+
+## Choose a model or role
 
 ```python
-from gh_ai_runner import GitHubAIRunner
-
-runner = GitHubAIRunner(github_token="ghp_...")
-
-try:
-    job = runner.submit("Write three pytest test cases for a stack class.", model="qwen")
-    result = job.result(timeout=600)
-    print(result.output)
-except TimeoutError:
-    print(f"Job {job.job_id} didn't finish in time — cancelling.")
-    job.cancel()
-except Exception as e:
-    # Covers dispatch failures, digest-mismatch rejections, and API errors.
-    print(f"Job failed: {e}")
+agent = Agent(model="qwen", instructions="You are a concise coding assistant.")
+answer = agent.run("Write a function that merges overlapping intervals.")
 ```
 
-### Batch dispatch across different models
+The default `qwen0.5b` is a roughly 491 MB Q4_K_M starter model. Larger models can
+provide better answers but take more download time, RAM, and CPU time.
+
+| Model keys | Parameter sizes |
+| --- | --- |
+| `qwen0.5b`, `tinyllama`, `llama`, `qwen` | 0.5B, 1.1B, 1B, 1.5B |
+| `gemma2`, `qwen3b`, `phi3`, `deepseek` | 2B, 3B, 3.8B, 1.5B |
+| `qwen7b`, `qwen-coder7b`, `llama8b`, `gemma9b` | 7B, 7B, 8B, 9B |
+| `mistral12b`, `qwen14b`, `qwen-coder14b`, `deepseek-coder16b` | 12B, 14B, 14B, 16B |
+
+All catalog entries are prequantized GGUF files. Their sizes and SHA-256 hashes
+are recorded in `models.py`; new downloads must match both before loading.
+
+## Reuse one loaded model
 
 ```python
-from gh_ai_runner import GitHubAIRunner, InferenceRequest
-
-runner = GitHubAIRunner("ghp_...")
-batch = runner.submit_batch([
-    InferenceRequest("Summarize this release note.", model="tinyllama"),
-    InferenceRequest("Write three test cases.", model="qwen"),
-    InferenceRequest("Explain this stack trace.", model="phi3"),
+answers = agent.run_many([
+    "Explain a Python list.",
+    "Compare it with a tuple.",
+    "Give a small example using both.",
 ])
-
-for result in batch.results(timeout=900):
-    print(f"[{result.model}] {result.output}\n")
+for answer in answers:
+    print(answer)
 ```
 
-### Head-to-head model comparison
+By default, up to 32 prompts run sequentially in **one GitHub job**. Change
+`Limits.max_prompts` to raise/remove that cap. The full quantized model
+loads into CPU RAM once and remains loaded for all those prompts and refinement
+steps. Memory mapping and GPU offloading are disabled; memory locking is requested,
+subject to the worker OS's permissions.
+
+Separate `run()` calls create separate workers. Hosted GitHub workers cannot keep
+RAM between jobs. Group prompts with `run_many()` to avoid repeated model loading.
+GitHub caches downloaded weights and the Python environment across jobs, although
+caches can be evicted. Model cache keys include the expected weight checksum.
+Setup prefers official prebuilt CPU packages so a new worker normally avoids
+compiling the inference runtime; source compilation is a fallback.
+
+By default, files at least 6 GB skip weight caching because uploading their archive can need
+another model-sized copy on the worker's limited disk. They still load once per
+`run_many()` job, but a new job downloads them again.
+Set `max_cached_model_gb=None` to permit all sizes, or `cache=False` on `Agent`
+to skip weight caching. Unrestricted mode permits all sizes; cache archives can
+still fail if the worker's disk or GitHub cache storage is too small.
+
+## Timing
 
 ```python
-comparison = runner.compare(
-    "Explain optimistic concurrency control.",
-    models=["tinyllama", "qwen", "phi3"],
-    max_tokens=300,
+agent = Agent(track_time=True)
+print(agent.run("What is a B-tree?"))
+print(agent.last_result.timings)
+```
+
+The return value stays plain text. Optional details are in `agent.last_result`
+and `agent.last_results`: token usage, download/load/generation timing, weight-cache
+hits, and within-job model reuse. `agent.last_job` exposes the Actions URL and
+low-level status/cancellation handle.
+
+`total_seconds` measures worker time for that prompt, including shared setup on
+the first prompt. `remote_seconds` measures the full client operation, including
+repository preparation, queuing, waiting, and result retrieval. For `run_many()`,
+the whole-job remote duration appears on every result; do not sum it.
+Override tracking per call with `agent.run(prompt, track_time=True)`.
+
+## Optional prompt refinement
+
+```python
+agent = Agent(refine_prompt=True, track_time=True)
+print(agent.run("Your detailed task and constraints ..."))
+print(agent.last_result.refinement.tokens_saved)
+```
+
+Refinement runs on the **same loaded model on GitHub**, not a separate service or
+second model. Short prompts are skipped. A rewrite is accepted only when it uses
+fewer main-model tokens, finishes normally, and preserves protected numbers, URLs,
+double-quoted literals, and code. Otherwise the original prompt is retained.
+
+It can reduce the main generation's input processing, but adds its own tokens
+and time. Total usage includes that work; `last_result.refinement.usage` reports
+it separately. Shorter input does not shrink model weights or automatically reduce
+the allocated context cache. Literal checks do not guarantee unchanged meaning.
+
+## Conversation and limits
+
+Conversation is remembered on the agent object and passed to subsequent GitHub
+jobs. `run_many()` manages it within the same worker. No prompt/output history is
+automatically written to disk by `Agent`. Use `remember=False` for independent
+prompts and `agent.reset()` to forget previous turns.
+
+Older conversation turns are dropped as needed to leave room for the new prompt
+and answer. Current prompt text is never silently truncated. The main options are:
+
+| Option | Default | Limit |
+| --- | --- | --- |
+| `max_tokens` | 512 | Positive integer or `None`; standard policy checks output/context ceilings |
+| `n_ctx` | 8,192; TinyLlama: 2,048 | Positive integer; advertised ceiling and resource checks are editable policies |
+| `temperature` | 0.7 | Finite number; standard bounds are 0 to 2 |
+| `max_history_turns` | 6 | Any positive integer, or `None` for no exchange-count cap |
+| `trim_history` | `True` | Set `False` to retain all exchanges and pass overflow to the model runtime |
+
+Context includes instructions, history, formatting, and the answer. Worker
+tokenization supplies actual usage; context planning includes a conservative
+formatting allowance. The model can stop before reaching `max_tokens`.
+
+### Context ceilings
+
+The old blanket 8,192-context and 4,096-output caps are removed. Standard starting windows are
+8,192 total tokens, except TinyLlama, whose supported maximum is only 2,048.
+These advertised ceilings are enforced by standard policy and bypassable with
+`enforce_model_limits=False`. They describe support, not a promise that a worker has enough
+RAM or CPU time to use them. The catalog includes each limit's publisher source
+in `MODELS[key]["context_source"]`.
+
+| Model keys | Maximum total context | Separate published output ceiling |
+| --- | ---: | ---: |
+| `tinyllama` | 2,048 | — |
+| `gemma2`, `gemma9b` | 8,192 | — |
+| `qwen0.5b`, `qwen`, `qwen3b` | 32,768 | 8,192 |
+| `qwen7b`, `qwen14b` | 131,072 | 8,192 |
+| `qwen-coder7b`, `qwen-coder14b` | 131,072 | — |
+| `llama`, `llama8b`, `phi3`, `deepseek` | 131,072 | — |
+| `mistral12b`, `deepseek-coder16b` | 131,072 (128K) | — |
+
+`—` means no separate output ceiling is recorded; the available total context
+still bounds generation. It does not mean unlimited or tested long-form output.
+Sources include the [Qwen 0.5B model card](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct),
+[Qwen 7B long-context recipe](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct#processing-long-texts),
+[Gemma 2 model card](https://ai.google.dev/gemma/docs/core/model_card_2), and the
+individual publisher links in the catalog.
+
+```python
+agent = Agent(model="qwen0.5b", n_ctx=32768, max_tokens=8192)
+print(agent.run("Explain the design in detail."))
+```
+
+The answer allowance shares the window with instructions, history, and your prompt.
+Increasing context increases RAM usage even if the current prompt is short. The
+worker automatically enables Qwen's factor-4 YaRN settings above 32,768 tokens for
+the 7B/14B Qwen and Qwen Coder entries. Other models retain the scaling encoded in
+their GGUF files. Long-context quality and peak RAM are not verified at every ceiling.
+
+### When a conversation grows past its window
+
+A 32K model can participate in a conversation totaling 64K tokens across many
+calls. It can only receive one window's worth on any given call. This agent keeps
+the instructions and current prompt, reserves the requested answer allowance,
+and removes the oldest complete user/assistant pairs until the request fits.
+It does not automatically summarize or retrieve the removed messages. Details
+that appeared only in those messages are no longer available to the model.
+
+The default history cap is also six previous exchanges, even when context has
+space. Increase `max_history_turns` or set it to `None` to retain more exchanges; the token
+budget and workflow transport can still trim them earlier. `n_ctx=32768` must be
+set explicitly to use a 32K window instead of the 8K default.
+
+```python
+agent = Agent(model="qwen0.5b", n_ctx=32768, max_history_turns=32)
+print(agent.run("Continue our discussion."))
+print(agent.last_result.dropped_history_turns)  # history removed to fit context/transport
+```
+
+With the default trimming policy, one oversized current prompt is rejected, rather than cut silently. A 64K-token
+prompt cannot fit an allocated 32K window. Standard policy rejects allocations
+above the advertised maximum; experimental mode allows those attempts to reach
+the runtime.
+
+### Experiment without automatic history removal
+
+```python
+agent = Agent(
+    model="qwen0.5b",
+    n_ctx=8192,             # Try 16384 or 32768 in a separate experiment.
+    trim_history=False,
+    track_time=True,
 )
-
-for model, result in comparison.results_by_model().items():
-    print(f"--- {model} ({result.usage.total_tokens} tokens) ---")
-    print(result.output)
+print(agent.run("Remember this fact: my project is called Cedar."))
+print(agent.run("What is my project called?"))
+print(agent.last_result.usage)
 ```
 
-### Parallel calls using isolated repos
+`trim_history=False` disables all automatic history removal: the exchange-count
+cap, token-budget trimming on GitHub, and client-side transport trimming.
+`max_history_turns` is ignored in this mode. Completed exchanges stay on the agent
+until you call `reset()` or discard the object; `remember=False` still disables
+conversation memory entirely. This does not restore messages removed earlier.
 
-Because correlation is per-repo, truly parallel workloads should use **separate repo names** to get independent run queues:
+The full retained history is passed to llama-cpp-python without our pre-generation
+fit check. It does **not** enlarge `n_ctx`, bypass model ceilings or RAM checks, or
+promise that the runtime accepts overflow. The runtime may reject an oversized
+input or shorten generation to the remaining context. Use `Agent.experimental()`
+or custom `Limits` to bypass the separate advertised-ceiling/resource policies.
+Check the Actions job/logs
+via `agent.last_job.actions_url` if a call fails. A failed call does not replace
+the client's previously retained conversation or append its failed prompt.
 
-```python
-import threading
-from gh_ai_runner import ai_call
+GitHub's workflow-input transport limit still applies. When it is exceeded, the
+call fails instead of dropping history, before starting a new worker. Setting a
+32K context and sending 64K of messages therefore does not create 64K memory.
+For controlled comparisons, start fresh agents with the same prompts, disable
+refinement (the default), and vary `n_ctx` while keeping answer length fixed.
 
-TOKEN = "ghp_..."
-results = {}
+Standard policy limits prompt plus instructions to 60,000 characters, and the complete
+workflow-input payload must fit GitHub's limit. Oversized jobs are rejected before
+provisioning. These are **separate transport limits**, not token limits: a model
+can allow 128K context while this version cannot transmit a full 128K-token prompt
+or history through workflow inputs. With `trim_history=True`, history may be trimmed to satisfy transport
+before it reaches the model. Workflow timeout and client completion wait default
+to 30 minutes; both are editable as described above.
+A client timeout does not automatically cancel a job; use `agent.last_job` when
+you need to inspect or cancel it.
 
-def run(key, prompt, repo):
-    results[key] = ai_call(
-        github_token=TOKEN,
-        prompt=prompt,
-        repo_name=repo,
-        verbose=False,
-    )
+Tools, file access, Python callbacks, and shell execution are deliberately out of
+scope. This version is text in, text out.
 
-t1 = threading.Thread(target=run, args=("q1", "Explain DNA replication.", "runner-repo-1"))
-t2 = threading.Thread(target=run, args=("q2", "Explain RNA splicing.", "runner-repo-2"))
+## Larger workers
 
-t1.start(); t2.start()
-t1.join();  t2.join()
-
-print(results["q1"])
-print(results["q2"])
-```
-
-### Bringing your own hosted model (Groq example)
-
-```python
-from gh_ai_runner import GitHubAIRunner, ProviderConfig
-
-runner = GitHubAIRunner("ghp_...")
-groq = ProviderConfig.groq("llama-3.3-70b-versatile")
-
-runner.configure_provider(groq, api_key="gsk_...")
-result = runner.submit("Explain B-trees.", provider=groq).result()
-print(result.output, result.usage)
-```
-
-### Bringing your own hosted model (generic OpenAI-compatible endpoint)
+The default client budget is 8 GB RAM and 14 GB workspace disk. GitHub lists 8 GB
+RAM for standard private Linux workers and 16 GB for public ones. See
+[GitHub runner specifications](https://docs.github.com/en/actions/reference/runners/github-hosted-runners).
 
 ```python
-from gh_ai_runner import GitHubAIRunner, ProviderConfig
+from gh_ai_runner import Agent, GitHubAIRunner
 
-runner = GitHubAIRunner("ghp_...")
-custom = ProviderConfig(
-    name="my-endpoint",
-    model="some-model-id",
-    base_url="https://my-inference-host.example.com/v1",   # must be HTTPS
+runner = GitHubAIRunner(
+    runner_label="your-linux-32gb-runner",
+    runner_ram_gb=32,
+    runner_disk_gb=40,
 )
-
-runner.configure_provider(custom, api_key="sk-...")
-result = runner.submit("Draft a haiku about compilers.", provider=custom).result()
-print(result.output)
+agent = Agent(model="deepseek-coder16b", runner=runner)
+print(agent.run("Explain this algorithm."))
 ```
 
-> Calling `configure_provider()` again **rotates** the previously stored key — there's one provider-key slot per runner repo.
+The runner label must already be available to your repository; changing budgets
+does not purchase hardware. To deliberately create a public standard runner,
+configure a new `repo_name`, `private=False`, and `runner_ram_gb=16`. Existing
+visibility is never changed automatically.
 
-### Resuming and inspecting job history
+RAM/disk estimates are checked before dispatch and available resources are checked
+again on the worker. Large CPU models can be slow even when they fit.
 
-```python
-runner = GitHubAIRunner("ghp_...")
+Quantization shrinks weight storage, not the parameter count. Idealized 16B weights
+take 32 GB at 16 bits or 8 GB at 4 bits; actual Q4_K_M mixes precisions and includes
+scales/metadata. The catalog's 16B file is 10.36 GB. RAM also needs context/KV cache
+and computation buffers. See [llama.cpp quantization](https://github.com/ggml-org/llama.cpp/blob/master/tools/quantize/README.md).
 
-recent = runner.list_jobs(limit=20)
-for record in recent:
-    print(record.job_id, record.status, record.model, record.duration)
+## Existing APIs
 
-resumed = runner.resume(recent[0].job_id)
-print(resumed.refresh())
-```
+`ai_call(token, prompt, ...)` remains a blocking text-returning helper. Explicit
+`track_time=True` returns an `InferenceResult` with `.output` and `.timings`.
+`GitHubAIRunner()` also reads `GH_AI_TOKEN` automatically and retains submission,
+batch/comparison, polling, cancellation, retry, resume, and hosted-provider APIs.
 
-### Disabling persistent metadata
+`submit_batch()` launches independent workflows; `Agent.run_many()` reuses one
+worker/model. Only failed workflow conclusions are automatically retried when
+requested by `RetryPolicy`, avoiding duplicate work after uncertain dispatches.
 
-```python
-# Nothing gets written to ~/.gh_ai_runner/jobs.sqlite3
-runner = GitHubAIRunner("ghp_...", metadata_path=None)
+## Privacy and verification
 
-# Or point it at a custom location, e.g. for a shared/team setup
-runner = GitHubAIRunner("ghp_...", metadata_path="/var/data/gh_ai_runner/jobs.sqlite3")
-```
+Prompts, history, and answers are sent to GitHub. Results are Actions artifacts,
+retained for three days. Public repository permissions and Actions logs matter.
+Checksums verify job identity, requests, output, and structured agent results; they
+are not signatures protecting against a compromised worker/repository.
 
----
+Test/build CI runs on GitHub. The manual **GitHub model smoke test** workflow also
+downloads a real small model and checks that two prompts reuse it in RAM. Client
+orchestration tests use simulated API/model responses. No model runtime is installed
+by this package on the client.
 
-## 🤖 Models
-
-| Key | Model | GGUF size | Default context | Good fit |
-|---|---|---|---|---|
-| `tinyllama` | TinyLlama 1.1B Chat | 0.6 GB | 2,048 | Fast, low-latency answers where quality matters less than speed. |
-| `llama` | Llama 3.2 1B Instruct | 0.7 GB | 4,096 | General-purpose instruction following. |
-| `phi3` | Phi-3.5 Mini Instruct | 2.2 GB | 4,096 | The strongest reasoning of the set — costs more download/cold-start time. |
-| `qwen` | Qwen 2.5 1.5B Instruct | 1.0 GB | 4,096 | Code generation and math-heavy prompts. |
-| `gemma2` | Gemma 2 2B Instruct | 1.6 GB | 4,096 | Balanced chat/instruction quality. |
-| `deepseek` | DeepSeek-R1 1.5B | 1.1 GB | 4,096 | Step-by-step, deliberative reasoning chains. |
-
-**Choosing a model in practice:**
-- Prototyping or a smoke test → `tinyllama` (fastest cold start).
-- General assistant behavior → `llama` or `gemma2`.
-- Anything code- or math-adjacent → `qwen`.
-- A task that benefits from visible step-by-step reasoning → `deepseek`.
-- When quality matters more than speed and you can tolerate a bigger download → `phi3`.
-
-**Limits enforced by validation, regardless of model:** context window ≤ 8,192 tokens, generated output ≤ 4,096 tokens, temperature within `0.0`–`2.0`. The package also estimates required memory from model size plus requested context *before* dispatching, so a job that would obviously exceed the runner's resources fails fast locally instead of burning a full CI run.
-
----
-
-## 🔒 Security model
-
-- **Tokens** are supplied by the caller at runtime and should live in a secret store or environment variable — never hardcoded in source you might commit.
-- **Provider API keys** (for the bring-your-own-provider mode) are encrypted client-side using the target repo's GitHub public key (a "sealed box"), then stored only as the `GH_AI_PROVIDER_API_KEY` Actions secret. They are never passed through workflow inputs and never written into any result artifact.
-- **Result integrity** is enforced two ways: the client computes a SHA-256 digest of the normalized request before dispatch, and the worker computes a digest of the generated output. If job identity, request digest, output digest, or algorithm don't line up on return, the artifact is rejected rather than trusted.
-- **Local job metadata** (`~/.gh_ai_runner/jobs.sqlite3` by default) intentionally excludes prompt text, system text, output text, GitHub tokens, and provider keys — only structural metadata (IDs, status, model, timestamps, token counts, digests) is persisted.
-
----
-
-## 🏗️ Package architecture
-
-```
-gh_ai_runner/
-├── client.py       asynchronous client and secure provider setup
-├── job.py          status, waiting, retry, result, and cancellation handle
-├── batch.py        concurrent batch and comparison handles
-├── metadata.py     privacy-conscious SQLite job metadata
-├── integrity.py    canonical request and output digests
-├── types.py        typed results, telemetry, policies, and errors
-├── core.py         backwards-compatible ai_call wrapper
-├── repo.py         repo creation and hash-based file sync
-├── runner.py       embedded workflow and inference script
-├── models.py       model catalog and resource limits
-├── validation.py   parameter and memory validation
-├── polling.py      workflow run discovery/completion
-├── artifact.py     output download and extraction
-└── logger.py       elapsed-time progress reporting
-```
-
----
-
-## 🩺 Troubleshooting / FAQ
-
-**"My token doesn't work / 403 errors on dispatch."**
-Double check the token has both `repo` and `workflow` scopes — `repo` alone isn't enough to commit workflow files or trigger `workflow_dispatch`.
-
-**"The first call is really slow."**
-Expected — it's creating the repo, committing the workflow and script, and cold-downloading the model on a fresh runner. Every call afterward skips the redundant commits and can reuse the cached model, so latency drops substantially.
-
-**"Two jobs I ran around the same time seem to have swapped results."**
-This shouldn't happen given the correlation-ID + exact-title-match polling design — if you see it, check whether both jobs were dispatched to the *same* `repo_name` with manually reused job IDs. For genuinely parallel workloads, use separate `repo_name`s (see the parallel-calls recipe above).
-
-**"A job times out but I don't know if it's still running on GitHub."**
-Call `.refresh()` on the job handle to check status without blocking, and `.cancel()` if you want to stop it via the Actions API rather than just abandoning the local handle.
-
-**"I don't want any local history kept."**
-Pass `metadata_path=None` when constructing `GitHubAIRunner` to disable the local SQLite metadata store entirely.
-
----
-
-## 🎯 Skills demonstrated
-
-Python package design · REST orchestration · CI as compute · idempotent provisioning · content hashing · polling/event correlation · artifact retrieval · resource validation · open-model deployment
-
----
-
-## 📄 License
-
-MIT © [Tanish Chauhan](https://github.com/TanishC4444)
+MIT license. See [LICENSE](LICENSE).

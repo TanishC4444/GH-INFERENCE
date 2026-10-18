@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import threading
 import time
 from datetime import datetime, timezone
@@ -92,6 +93,11 @@ class AIJob:
             return JobStatus.FAILED
 
     def wait(self, timeout: Optional[float] = None) -> AIJob:
+        if timeout is not None:
+            if not math.isfinite(timeout):
+                raise ValueError("timeout must be finite")
+            if timeout <= 0:
+                raise TimeoutError("Job wait deadline has elapsed")
         deadline = None if timeout is None else time.monotonic() + timeout
         while True:
             if self._cancelled:
@@ -119,27 +125,53 @@ class AIJob:
                     run_id=self.run_id,
                     conclusion=conclusion,
                 )
-            except (JobCancelledError, TimeoutError):
+            except JobCancelledError:
+                self.runner._record_job(self, JobStatus.CANCELLED)
                 raise
-            except JobFailedError:
-                self.runner._record_job(self, JobStatus.FAILED, error=str(conclusion))
-                if self.attempt > self.retry_policy.max_retries or self._cancelled:
+            except TimeoutError:
+                # A client timeout says nothing about the remote job status.
+                raise
+            except JobFailedError as error:
+                self.runner._record_job(self, JobStatus.FAILED, error=error.conclusion or type(error).__name__)
+                if (self.attempt > self.retry_policy.max_retries or self._cancelled
+                        or not self.request):
                     raise
                 if self.retry_policy.delay_seconds:
-                    time.sleep(self.retry_policy.delay_seconds)
+                    delay = self.retry_policy.delay_seconds
+                    if deadline is not None:
+                        delay = min(delay, max(0, deadline - time.monotonic()))
+                    time.sleep(delay)
+                if self._cancelled:
+                    raise JobCancelledError(f"Job {self.job_id} was cancelled", run_id=self.run_id)
+                if deadline is not None and time.monotonic() >= deadline:
+                    raise TimeoutError("Job wait deadline elapsed before retry")
                 self.attempt += 1
                 self.run_id = None
-                self.runner._dispatch(self)
+                try:
+                    self.runner._dispatch(self)
+                except Exception as dispatch_error:
+                    self.runner._record_job(self, JobStatus.FAILED, error=type(dispatch_error).__name__)
+                    raise
 
     def result(self, timeout: Optional[float] = None) -> InferenceResult:
         with self._lock:
             if self._result is not None:
                 return self._result
+        started = time.monotonic()
         self.wait(timeout=timeout)
         try:
-            downloaded = self.runner._download_result(self)
+            if timeout is None:
+                downloaded = self.runner._download_result(self)
+            else:
+                remaining = timeout - (time.monotonic() - started)
+                if remaining <= 0:
+                    raise TimeoutError("Result deadline elapsed before artifact download")
+                downloaded = self.runner._download_result(self, timeout=remaining)
+        except TimeoutError:
+            raise
         except Exception as error:
-            self.runner._record_job(self, JobStatus.FAILED, error=str(error))
+            # Exception messages from remote services can contain sensitive data.
+            self.runner._record_job(self, JobStatus.FAILED, error=type(error).__name__)
             raise
         with self._lock:
             if self._result is None:

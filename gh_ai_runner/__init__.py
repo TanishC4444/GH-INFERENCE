@@ -2,8 +2,17 @@ from .batch import BatchJob, ComparisonJob
 from .client import GitHubAIRunner
 from .core import ai_call
 from .job import AIJob
-from .models import MAX_TEMPERATURE, MAX_TOKENS_LIMIT, MIN_TEMPERATURE, MODELS
+from .limits import Limits
+from .models import (
+    DEFAULT_CONTEXT,
+    MAX_TEMPERATURE,
+    MAX_TOKENS_LIMIT,
+    MIN_TEMPERATURE,
+    MODELS,
+    model_resources,
+)
 from .types import (
+    AgentTimings,
     InferenceRequest,
     InferenceResult,
     IntegrityError,
@@ -18,13 +27,18 @@ from .types import (
     TokenUsage,
 )
 
-__version__ = "0.3.0"
+__version__ = "0.5.0"
 __all__ = [
+    "Limits",
+    "DEFAULT_CONTEXT",
     "MAX_TEMPERATURE",
     "MAX_TOKENS_LIMIT",
     "MIN_TEMPERATURE",
     "MODELS",
     "AIJob",
+    "Agent",
+    "AgentResult",
+    "AgentTimings",
     "BatchJob",
     "ComparisonJob",
     "GitHubAIRunner",
@@ -37,8 +51,15 @@ __all__ = [
     "JobRecord",
     "JobStatus",
     "ProviderConfig",
+    "RefinementInfo",
     "ResourceUsage",
     "RetryPolicy",
     "TokenUsage",
     "ai_call",
+    "model_resources",
 ]
+from .agent import Agent
+from .agent_types import AgentResult, RefinementInfo
+from .hub import search_models, list_quantizations, resolve_model, clear_model_cache
+
+__all__ += ["search_models", "list_quantizations", "resolve_model", "clear_model_cache"]
