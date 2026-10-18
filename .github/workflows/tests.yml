@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -m pip install -e '.[dev]' build
+      - run: python -m pip install PyYAML
       - run: python -m pytest -q
       - run: python -m py_compile examples/console_tour.py showcase.py
       - run: python -m build

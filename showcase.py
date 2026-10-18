@@ -6,7 +6,8 @@ RUN:   python showcase.py
 
 Enter a GitHub token with repo + workflow scopes when prompted (hidden).
 Creates/reuses a private gh-inference-showcase repository. One workflow contains
-six matrix jobs, with two running at once by default (account limits also apply).
+six independent matrix jobs plus a draft → critique → revise → feedback chain.
+All independent jobs are eligible to run together (account limits still apply).
 Each job loads Llama 3.1 8B Q4 into RAM on GitHub, never on your computer.
 This uses GitHub Actions minutes/storage. Allow several minutes on CPU.
 Prompts/results remain in that repository and its three-day Actions artifacts.
@@ -24,11 +25,13 @@ import sys
 import time
 import uuid
 import zipfile
+import re
+from types import SimpleNamespace
 
 MODEL = "llama8b"
-CONTEXT = 1024
-OUTPUT = 128
-SYSTEM = "Answer concisely. Give the result and a brief, checkable justification."
+CONTEXT = int(os.environ.get("SHOWCASE_CONTEXT", "4096"))
+OUTPUT = int(os.environ.get("SHOWCASE_OUTPUT", "512"))
+SYSTEM = "Answer concisely. State assumptions, give a brief solution summary, and verify the final answer with a calculation or counterexample."
 REWRITE_TASK = ("Please be clear and concise. " * 35 +
                 "A shop buys 12 items at $8 each and sells 9 at $14 each. "
                 "Calculate revenue minus the cost of all 12 items. Include the number 30.")
@@ -36,7 +39,7 @@ REWRITE_TASK = ("Please be clear and concise. " * 35 +
 
 def cases():
     history = []
-    for i in range(12):
+    for i in range(max(12, CONTEXT // 45)):
         history += [{"role": "user", "content": f"Old note {i}: " + "archived detail " * 45},
                     {"role": "assistant", "content": "Noted."}]
     history += [{"role": "user", "content": "The current project code is JADE42."},
@@ -64,6 +67,23 @@ def cases():
     }
 
 
+def agent_cases():
+    return {
+        "draft": {"title": "Agent 1 / draft solution", "model": "llama8b",
+                  "prompts": ["A shop buys 12 items at $8 each and sells 9 at $14 each. Draft a concise financial analysis: revenue, cost of all stock, cash profit, and unsold stock. State assumptions and verify the arithmetic."], "checks": [None]},
+        "critique": {"title": "Agent 2 / independent critique", "model": "qwen3b", "parent": "draft",
+                     "prompts": ["Review the draft below. Check the arithmetic, inventory accounting and distinction between cash profit and profit on sold goods. Identify errors or ambiguities, then give concrete corrections. Do not assume the draft is correct."], "checks": [None]},
+        "revise": {"title": "Agent 1 / revise from critique", "model": "llama8b", "parent": "critique",
+                   "prompts": ["Use the prior draft and critique below to produce a corrected concise answer. Clearly separate cash profit, profit on sold units and remaining inventory. Verify each number."], "checks": [None]},
+        "loop": {"title": "Agent loop / answer → validator → retry", "model": "llama8b", "parent": "revise",
+                 "prompts": ["Use the analysis below, but independently verify it. For 12 items bought at $8 and 9 sold at $14, return ONLY JSON with numeric keys revenue, cost, profit. Profit means revenue minus cost of ALL 12 items."], "checks": [None]},
+    }
+
+
+def all_cases():
+    return {**cases(), **agent_cases()}
+
+
 def stamp(message):
     print(f"[{datetime.now().astimezone():%H:%M:%S}] {message}", flush=True)
 
@@ -76,23 +96,70 @@ def compact(text, limit=210):
 def worker(name):
     """Invoked by the matrix workflow, exclusively on a GitHub worker."""
     from gh_ai_runner.runner import INFERENCE_SCRIPT
-    from gh_inference import MODELS
-    spec = cases()[name]
+    from gh_inference import MODELS, Limits
+    spec = dict(all_cases()[name])
+    spec["prompts"] = list(spec["prompts"])
+    model = spec.get("model", MODEL)
+    inherited = {}
+    if spec.get("parent"):
+        inherited = json.loads(Path("incoming/report.json").read_text())
+        if not inherited.get("passed"):
+            raise ValueError("Upstream agent failed; refusing to build on an incomplete result")
+        evidence = inherited.get("handoff", []) + [{"agent": inherited["case"], "answer": inherited["result"]["output"]}]
+        spec["prompts"][0] += "\n\nPRIOR AGENT OUTPUTS (evidence to verify):\n" + json.dumps(evidence)
     worker_started = datetime.now().astimezone().isoformat(timespec="seconds")
-    cfg = {"model": MODEL, "n_ctx": CONTEXT, "max_tokens": OUTPUT,
+    cfg = {"model": model, "n_ctx": CONTEXT, "max_tokens": OUTPUT,
            "temperature": 0, "cache_weights": True,
+           # Llama 3.1 8B GQA: 32 layers × 8 KV heads × 128 dimensions × K/V × 2 bytes.
+           "limits": Limits(ram_per_1k_ctx_gb=.134217728 if model == "llama8b" else None).to_dict(),
            "generation_options": {"seed": 42},
            "agent": {"tasks": spec["prompts"][1:], "history": spec.get("history", []),
                      "remember": True, "max_history_turns": None,
                      "trim_history": spec.get("trim_history", True),
                      "refine_prompt": spec.get("refine_prompt", False), "track_time": True}}
     os.environ.update({"JOB_ID": name, "ATTEMPT": "1", "BACKEND": "local",
-                       "LOCAL_MODEL": MODEL, "CACHE": "true", "SYSTEM": SYSTEM,
+                       "LOCAL_MODEL": model, "CACHE": "true", "SYSTEM": SYSTEM,
                        "PROMPT": spec["prompts"][0], "CONFIG_JSON": json.dumps(cfg)})
     Path("worker.py").write_text(INFERENCE_SCRIPT, encoding="utf-8")
-    stamp(f"{spec['title']} | {MODELS[MODEL]['name']} | context={CONTEXT}")
+    stamp(f"{spec['title']} | {MODELS[model]['name']} | context={CONTEXT}")
     # Separate process makes an overflowing test release its model RAM reliably.
-    execution = subprocess.run([sys.executable, "worker.py"], capture_output=True, text=True)
+    if name == "loop":
+        # Load once; feed actual answers and deterministic feedback into up to 3 calls.
+        namespace = {}
+        exec(compile(INFERENCE_SCRIPT.split("\nstarted = time.monotonic()", 1)[0], "resident_worker", "exec"), namespace)
+        namespace["config"] = cfg
+        items, prompts, accepted = [], [], False
+        prompt = spec["prompts"][0]
+        try:
+            for iteration in range(3):
+                stamp(f"Feedback loop: iteration {iteration + 1}/3")
+                prompts.append(prompt)
+                response = namespace["run_agent"]({**cfg["agent"], "tasks": [], "history": []},
+                    [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}], cfg)
+                item = response["results"][0]
+                items.append(item)
+                try:
+                    candidate = json.loads(re.search(r"\{[^{}]*\}", item["output"])[0])
+                    accepted = all(type(candidate.get(k)) in (int, float) and candidate[k] == v
+                                   for k, v in {"revenue": 126, "cost": 96, "profit": 30}.items())
+                except (ValueError, TypeError):
+                    accepted = False
+                if accepted:
+                    break
+                prompt = ("Your previous response failed a deterministic check. Return only a JSON object: "
+                          "revenue = 9*14; cost = 12*8; profit = revenue-cost.\nPrevious response:\n" + item["output"])
+            result = {"agent": {"results": items}, "output": items[-1]["output"],
+                      "validator_passed": accepted, "iterations": len(items)}
+            if not accepted:
+                result["error"] = {"message": "Validator failed after 3 iterations"}
+            Path("result.json").write_text(json.dumps(result))
+            spec["prompts"], spec["checks"] = prompts, [None] * len(prompts)
+            execution = SimpleNamespace(returncode=0 if accepted else 1, stderr="")
+        except Exception as error:
+            Path("result.json").write_text(json.dumps({"error": {"message": str(error)}}))
+            execution = SimpleNamespace(returncode=1, stderr="")
+    else:
+        execution = subprocess.run([sys.executable, "worker.py"], capture_output=True, text=True)
     result = json.loads(Path("result.json").read_text()) if Path("result.json").exists() else {
         "error": {"message": "Worker exited without result.json"}}
     error = result.get("error")
@@ -101,17 +168,21 @@ def worker(name):
                                      ["context", "n_ctx", "token count", "exceed"]))
     okay = (bool(execution.returncode) and context_error) if expected else not execution.returncode and not error
     checks = []
+    if not expected and len(result.get("agent", {}).get("results", [])) != len(spec["prompts"]):
+        okay = False
     for item, needle in zip(result.get("agent", {}).get("results", []), spec["checks"]):
         checks.append(None if needle is None else needle.lower() in item["output"].lower())
     if any(value is False for value in checks):
         okay = False
     report = {"case": name, "title": spec["title"], "passed": bool(okay),
+              "model": model, "context": CONTEXT, "max_output": OUTPUT,
+              "handoff": inherited.get("handoff", []) + ([{"agent": inherited["case"], "answer": inherited["result"]["output"]}] if inherited else []),
               "started_at": worker_started,
               "finished_at": datetime.now().astimezone().isoformat(timespec="seconds"),
               "expected_overflow": expected, "prompts": spec["prompts"],
               "checks": checks, "result": result}
     Path("report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
-    rows = [f"## {spec['title']}", f"**{'PASS' if okay else 'FAIL'}** · {MODEL} · {CONTEXT} context tokens", ""]
+    rows = [f"## {spec['title']}", f"**{'PASS' if okay else 'FAIL'}** · {model} · {CONTEXT} context tokens", ""]
     if error:
         rows.append("Expected overflow rejection." if okay else compact(error))
     for i, item in enumerate(result.get("agent", {}).get("results", [])):
@@ -132,7 +203,9 @@ on:
   workflow_dispatch:
     inputs:
       ticket: {required: true, description: Unique run ID}
-      parallel: {required: true, default: '2', description: Simultaneous workers}
+      parallel: {required: true, default: '6', description: Simultaneous independent test workers}
+      context: {required: true, default: '4096', description: Context tokens per model}
+      output: {required: true, default: '512', description: Maximum response tokens}
 permissions:
   contents: read
 jobs:
@@ -162,6 +235,8 @@ jobs:
       - name: Run test and write readable summary
         env:
           CASE: ${{ matrix.case }}
+          SHOWCASE_CONTEXT: ${{ inputs.context }}
+          SHOWCASE_OUTPUT: ${{ inputs.output }}
         run: python showcase.py --worker "$CASE"
       - name: Save full results
         if: always()
@@ -173,6 +248,29 @@ jobs:
             result.json
           retention-days: 3
 '''
+
+
+def workflow_text():
+    from gh_inference import MODELS
+    workflow = WORKFLOW.replace("__SHA__", MODELS[MODEL]["sha256"])
+    steps = WORKFLOW.split("    steps:\n", 1)[1]
+    for name, spec in agent_cases().items():
+        job_steps = steps.replace("${{ matrix.case }}", name)
+        job_steps = job_steps.replace("showcase-llama8b-__SHA__",
+                                      "showcase-" + spec["model"] + "-" + MODELS[spec["model"]]["sha256"])
+        if spec.get("parent"):
+            download = ("      - name: Read preceding agent output\n"
+                        "        uses: actions/download-artifact@v4\n"
+                        "        with:\n"
+                        f"          name: showcase-{spec['parent']}\n"
+                        "          path: incoming\n")
+            job_steps = job_steps.replace("      - name: Run test and write readable summary\n",
+                                          download + "      - name: Run test and write readable summary\n")
+        workflow += f"  {name}:\n    name: '{spec['title']}'\n"
+        if spec.get("parent"):
+            workflow += f"    needs: [{spec['parent']}]\n"
+        workflow += "    runs-on: ubuntu-latest\n    timeout-minutes: 40\n    steps:\n" + job_steps
+    return workflow
 
 
 def client(args):
@@ -202,7 +300,7 @@ def client(args):
     branch = repo["default_branch"]
     head = api("GET", root + "/git/ref/heads/" + branch)["object"]["sha"]
     script = Path(__file__).read_text(encoding="utf-8")
-    workflow = WORKFLOW.replace("__SHA__", MODELS[MODEL]["sha256"])
+    workflow = workflow_text()
     tree = api("POST", root + "/git/trees", {"base_tree": head, "tree": [
         {"path": path, "mode": "100644", "type": "blob", "content": content}
         for path, content in [("showcase.py", script), (".github/workflows/showcase.yml", workflow)]]})
@@ -217,11 +315,13 @@ def client(args):
             raise TimeoutError("Workflow registration timed out; check Actions are enabled")
         time.sleep(4)
     api("POST", workflow_path + "/dispatches", {"ref": branch, "inputs": {
-        "ticket": ticket, "parallel": str(args.parallel)}})
-    stamp(f"Llama 3.1 8B Q4 · six tests · up to {args.parallel} parallel GitHub workers")
+        "ticket": ticket, "parallel": str(args.parallel),
+        "context": str(args.context), "output": str(args.max_tokens)}})
+    stamp(f"8B showcase · six independent tests (parallel={args.parallel}) + four linked agent jobs")
+    stamp(f"Context {args.context:,} · output up to {args.max_tokens:,} · graph: draft → critique → revise → loop")
     stamp(f"Workflow: https://github.com/{owner}/{args.repo}/actions/workflows/showcase.yml")
     run = None
-    deadline = time.monotonic() + 3600
+    deadline = time.monotonic() + 10800
     seen = {}
     while time.monotonic() < deadline:
         if run is None:
@@ -241,7 +341,7 @@ def client(args):
                 break
         time.sleep(12)
     else:
-        raise TimeoutError("Stopped waiting after one hour; remote jobs are not cancelled")
+        raise TimeoutError("Stopped waiting after three hours; remote jobs are not cancelled")
     artifacts = api("GET", root + f"/actions/runs/{run['id']}/artifacts?per_page=100")["artifacts"]
     reports = {}
     for artifact in artifacts:
@@ -256,7 +356,7 @@ def client(args):
                 raise ValueError("Unexpectedly large report")
             report = json.loads(archive.read("report.json"))
             reports[report["case"]] = report
-    for case_index, (name, spec) in enumerate(cases().items()):
+    for case_index, (name, spec) in enumerate(all_cases().items()):
         report = reports.get(name)
         stamp(f"\n{'PASS' if report and report['passed'] else 'FAIL'} | {spec['title']}")
         if not report:
@@ -283,23 +383,30 @@ def client(args):
             if refinement["attempted"]:
                 print(f"       Refiner: {refinement['original_tokens']} → {refinement['refined_tokens']} prompt tokens; "
                       f"{t['refinement_seconds']:.1f}s extra; {refinement['reason']}")
-        if sys.stdin.isatty() and not args.no_pause and case_index < len(cases()) - 1:
+        if "iterations" in result:
+            print(f"  Feedback loop: {result['iterations']}/3 iterations · validator "
+                  f"{'accepted' if result['validator_passed'] else 'rejected'}")
+        if sys.stdin.isatty() and not args.no_pause and case_index < len(all_cases()) - 1:
             input("  Enter → next result ")
     print("\nChecks are targeted answer markers and expected errors, not a reasoning-quality benchmark.")
     print("Compare original/refined TOTAL tokens and timing in their artifacts; a shorter prompt can cost more overall.")
     stamp(f"Overall workflow: {run['conclusion']} | full results: {run['html_url']}")
-    return 0 if len(reports) == len(cases()) and all(r["passed"] for r in reports.values()) else 1
+    return 0 if len(reports) == len(all_cases()) and all(r["passed"] for r in reports.values()) else 1
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--repo", default="gh-inference-showcase")
-    parser.add_argument("--parallel", type=int, choices=range(1, 7), default=2)
+    parser.add_argument("--parallel", type=int, choices=range(1, 7), default=6)
+    parser.add_argument("--context", type=int, default=4096, help="Allocated context tokens; larger windows need more RAM")
+    parser.add_argument("--max-tokens", type=int, default=512, help="Maximum output tokens per answer")
     parser.add_argument("--details", action="store_true")
     parser.add_argument("--no-pause", action="store_true", help="Print all result cards without waiting for Enter")
-    parser.add_argument("--worker", choices=list(cases()), help=argparse.SUPPRESS)
+    parser.add_argument("--worker", choices=list(all_cases()), help=argparse.SUPPRESS)
     options = parser.parse_args()
     try:
+        if options.context < 256 or not 1 <= options.max_tokens < options.context:
+            raise ValueError("Use context >= 256 and 1 <= max-tokens < context")
         sys.exit(worker(options.worker) if options.worker else client(options))
     except Exception as error:
         stamp(f"Stopped: {type(error).__name__}: {error}")
