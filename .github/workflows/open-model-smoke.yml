@@ -20,7 +20,7 @@ jobs:
           key: open-smoke-v1
       - run: |
           python -m pip install -e . build
-          python -m pip install --only-binary=llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu 'llama-cpp-python>=0.3.16'
+          python -m pip install --only-binary=llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu 'llama-cpp-python==0.3.36' || python -m pip install 'llama-cpp-python==0.3.36'
       - env:
           REPORT_TOKEN: ${{ github.token }}
         run: python .github/open_model_smoke.py

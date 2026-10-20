@@ -22,7 +22,7 @@ def prepared_runner(**kwargs):
 
 
 def test_catalog_covers_up_to_16b_with_exact_download_metadata():
-    assert len(MODELS) == 16
+    assert len(MODELS) == 20
     assert max(model["parameters_b"] for model in MODELS.values()) == 16
     for model in MODELS.values():
         assert model["size_bytes"] > 0
@@ -30,6 +30,19 @@ def test_catalog_covers_up_to_16b_with_exact_download_metadata():
         assert len(bytes.fromhex(model["sha256"])) == 32
         assert model["quantization"] == "Q4_K_M"
         assert model["url"].endswith(model["filename"])
+
+
+@pytest.mark.parametrize('model', ['glitter-12b', 'gemma-4-12b',
+                                  'gemma-4-styletune-12b', 'rocinante-x-12b'])
+def test_builtin_writers_resolve_offline_and_pin_the_download(model):
+    from gh_inference import resolve_model
+    with patch('gh_ai_runner.hub.requests.get') as get:
+        assert resolve_model(model) == model
+        get.assert_not_called()
+    cfg = MODELS[model]
+    revision = cfg['url'].split('/resolve/')[1].split('/')[0]
+    assert len(bytes.fromhex(revision)) == 20
+    _validate(model, 512, .7, 4096, runner_ram_gb=16)
 
 
 def test_large_model_rejected_before_preparation_on_default_budget():

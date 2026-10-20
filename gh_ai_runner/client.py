@@ -216,6 +216,8 @@ class GitHubAIRunner:
         try:
             self._dispatch(job)
         except requests.RequestException as error:
+            # A timed-out POST may already have dispatched. Preserve identity for recovery.
+            error.job = job
             self._record_job(job, JobStatus.FAILED, error=type(error).__name__)
             raise
         return job

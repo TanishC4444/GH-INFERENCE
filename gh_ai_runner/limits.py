@@ -81,6 +81,12 @@ def validate_options(model_options=None, generation_options=None):
             continue
         if not isinstance(options, dict) or any(not isinstance(key, str) for key in options):
             raise TypeError(f"{label} must be a dict with string keys")
+        template = options.get("chat_template_options") if label == "model_options" else None
+        if template is not None and (not isinstance(template, dict) or
+                any(not isinstance(key, str) for key in template) or
+                set(template) - {"enable_thinking"} or
+                any(type(value) is not bool for value in template.values())):
+            raise ValueError("chat_template_options accepts only boolean enable_thinking")
         if reserved.intersection(options):
             raise ValueError(f"{label} cannot override {sorted(reserved.intersection(options))}; use the named settings")
         json.dumps(options, allow_nan=False)

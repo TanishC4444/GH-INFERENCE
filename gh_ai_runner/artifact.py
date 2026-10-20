@@ -2,6 +2,7 @@ import io
 import json
 import time
 import zipfile
+from dataclasses import fields
 
 import requests
 
@@ -96,17 +97,8 @@ def _download_result(
             total_tokens=int(usage.get("total_tokens", 0)),
         ),
         resources=ResourceUsage(**{
-            field: resources.get(field, default)
-            for field, default in {
-                "cpu_count": 0,
-                "memory_total_bytes": 0,
-                "memory_available_bytes": 0,
-                "disk_total_bytes": 0,
-                "disk_free_bytes": 0,
-                "peak_memory_bytes": 0,
-                "duration_seconds": 0.0,
-                "runner_os": "",
-            }.items()
+            item.name: resources.get(item.name, item.default)
+            for item in fields(ResourceUsage)
         }),
         integrity=IntegrityInfo(
             algorithm=integrity.get("algorithm", "sha256"),

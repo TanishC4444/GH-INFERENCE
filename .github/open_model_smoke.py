@@ -17,7 +17,7 @@ try:
     subprocess.run([sys.executable, "-m", "build"], check=True)
     subprocess.run([sys.executable, "-m", "venv", "/tmp/gh-wheel"], check=True)
     subprocess.run(["/tmp/gh-wheel/bin/pip", "install", *glob.glob("dist/*.whl")], check=True)
-    for command in [["/tmp/gh-wheel/bin/python", "-c", "from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == '0.5.0'"],
+    for command in [["/tmp/gh-wheel/bin/python", "-c", "from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == '0.6.0'"],
                     ["/tmp/gh-wheel/bin/gh-inference", "--help"], ["/tmp/gh-wheel/bin/gh-inference", "models"]]:
         result = subprocess.run(command, cwd="/tmp", capture_output=True, text=True, check=True)
     report["installed_wheel"] = True

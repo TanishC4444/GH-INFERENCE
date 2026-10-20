@@ -27,7 +27,7 @@ from .types import (
     TokenUsage,
 )
 
-__version__ = "0.5.0"
+__version__ = "0.6.0"
 __all__ = [
     "Limits",
     "DEFAULT_CONTEXT",
@@ -60,6 +60,10 @@ __all__ = [
 ]
 from .agent import Agent
 from .agent_types import AgentResult, RefinementInfo
-from .hub import search_models, list_quantizations, resolve_model, clear_model_cache
+from .hub import search_models, list_quantizations, resolve_model, clear_model_cache, add_model
 
-__all__ += ["search_models", "list_quantizations", "resolve_model", "clear_model_cache"]
+__all__ += ["search_models", "list_quantizations", "resolve_model", "clear_model_cache", "add_model"]
+
+from .stress import stress_test
+
+__all__ += ["stress_test"]

@@ -32,6 +32,34 @@ You can also pass `Agent(github_token=...)` instead of setting the environment.
 `agent.connect()` optionally prepares the repository ahead of the first prompt;
 it is never required. Connecting does not start or reserve a model worker.
 
+## Built-in writing models
+
+Four tested Q4_K_M writing models are included as ready-to-use aliases:
+
+| Alias | Model | Weight download |
+| --- | --- | ---: |
+| `glitter-12b` | Gemma 3 Glitter 12B | 7.30 GB |
+| `gemma-4-12b` | Gemma 4 12B Instruct | 7.12 GB |
+| `gemma-4-styletune-12b` | Gemma 4 12B StyleTune | 7.95 GB |
+| `rocinante-x-12b` | Rocinante-X 12B v1 | 7.48 GB |
+
+Downloads are pinned to verified publisher commits and SHA-256 checksums.
+These are weights only; runtime and context need additional RAM. Start with a
+16 GB runner and a 4,096-token context, as used in our scene comparisons:
+
+```python
+from gh_inference import Agent, GitHubAIRunner
+
+writer = Agent(model="glitter-12b", n_ctx=4096,
+               runner=GitHubAIRunner(runner_ram_gb=16))
+print(writer.run("Write a tense scene between two estranged crewmates."))
+```
+
+For either Gemma 4 alias, set
+`model_options={"chat_template_options": {"enable_thinking": False}}`
+to request direct writing without a thinking phase. These models are useful
+candidates, not a guaranteed ranking of literary quality.
+
 ## Models and every published GGUF variant
 
 The 16 pinned aliases below remain convenient defaults. Model support is open:
@@ -56,6 +84,36 @@ missing variants or convert weights. AWQ/GPTQ/Safetensors require other backends
 and are not accepted by this GGUF CPU runner. Model licenses still apply.
 
 For ambiguous repositories use `Agent(model="owner/repo", filename="exact.gguf")`.
+You can also paste a Hugging Face repository URL or an exact GGUF `blob`/`resolve`
+URL directly into `Agent(model=...)`. File links select that file (and its complete
+shard group); repository links default to Q4_K_M. Links are resolved to a pinned
+commit and verified checksums, just like repository names.
+
+```python
+agent = Agent(model="https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF")
+```
+
+For your own public single-file GGUF download on another host, register its link
+with the publisher's actual SHA-256 and byte size:
+
+```python
+from gh_inference import Agent, add_model
+
+model = add_model(
+    "https://your-host.example/writer.gguf",
+    sha256=publisher_sha256,
+    size_bytes=publisher_size_bytes,
+    max_n_ctx=8192,  # optional advertised context ceiling
+)
+agent = Agent(model=model)
+```
+
+Registration lasts for the Python process; each submitted job carries the model
+metadata to its worker. Weights download only on GitHub and are verified before
+loading. Custom hosts must allow unauthenticated HTTPS downloads. The model must
+fit the runner and use a GGUF architecture supported by the installed llama.cpp
+runtime; a link does not add a new inference backend. Resource checks still apply.
+
 Split GGUF files are grouped, all shards are checked and downloaded, and the first
 shard is loaded. Incomplete shard groups are excluded. `list_quantizations` lists
 exact filenames and aggregate bytes; projector files are excluded (text only).
@@ -328,6 +386,172 @@ repository preparation, queuing, waiting, and result retrieval. For `run_many()`
 the whole-job remote duration appears on every result; do not sum it.
 Override tracking per call with `agent.run(prompt, track_time=True)`.
 
+## Controlled writing comparison
+
+```bash
+python examples/writing_benchmark.py --output writing-results.json
+```
+
+With `GH_AI_TOKEN` set, this compares Magnum v4 12B, Gemma 4 12B, Gemma 3 12B,
+Gemma 3 Glitter 12B, and Qwen3.5 9B on strict dialogue, rhetoric, and JSON-scene
+prompts. Five independent jobs reuse one loaded model each for three independent
+samples. The benchmark explicitly configures a 16 GB runner budget, 4K context,
+768 output tokens, four CPU threads, fixed sampling settings, and no automatic
+repair or grammar constraints. It requires a repository whose workers really
+have 16 GB; the budget itself does not upgrade hardware.
+
+The report preserves prompts, pinned GGUF revisions/checksums, full raw samples,
+rule violations, worker resources/runtime version, and Actions URLs. Mechanical
+constraint scores do not measure literary quality, and one sample per case is
+exploratory evidence. A loading/runtime failure is not scored as bad writing.
+Large model downloads and runtime preparation can dominate cold job latency.
+
+Worker environments are pinned to llama-cpp-python 0.3.36 with a versioned cache
+key. New architectures require a compatible runtime, not just a GGUF filename.
+`model_options={"chat_template_options": {"enable_thinking": False}}` binds that
+option to the embedded default template, allowing supported reasoning models to
+produce final artifacts without requesting reasoning. It does not strip or
+rewrite output; unsupported templates fail explicitly. Currently only the boolean
+`enable_thinking` template option is accepted.
+
+`examples/story_turn_contract.json` proposes the next input/output boundary:
+application-owned identities/routing, visibility-filtered context, generated content,
+strict validation, and a committed event. It is a design proposal, not an
+implemented persistent-worker service.
+
+## Efficient draft, review, and revision
+
+```python
+from gh_inference import Agent
+
+agent = Agent(model="qwen0.5b", max_tokens=None, track_time=True)
+answer = agent.review("Write a scene between a cautious pilot and an impatient scientist.",
+                      revisions=2)
+```
+
+This executes writer → reviewer → writer → reviewer → writer in **one job with
+one model load**. Reviews receive the latest draft. Revisions receive that draft
+and its review; obsolete drafts and reviews are not automatically accumulated.
+The method returns the final answer. `last_results` contains every step.
+
+For directed handoffs, multiple reviewers, or sharing selected outputs, use a plan:
+
+```python
+outputs = agent.pipeline("Write a tense two-character scene.", [
+    {"agent": "writer", "instruction": "Draft the scene.", "inputs": []},
+    {"agent": "dialogue-critic", "instruction": "Check distinct character voices.", "inputs": [0]},
+    {"agent": "continuity-critic", "instruction": "Check facts and continuity.", "inputs": [0]},
+    {"agent": "writer", "instruction": "Revise using both reviews.", "inputs": [0, 1, 2]},
+])
+```
+
+Step indices start at zero. An omitted `inputs` selects the preceding step; `[]`
+selects none. References must name earlier steps. Repeated indices are forwarded
+only once, in the supplied order. A reviewer only receives selected source outputs,
+not other reviewers' replies. To broadcast a draft, let several steps reference it;
+to gather feedback, select those review indices on the receiving step.
+
+The client sends the task and plan once. Intermediate outputs remain in worker
+memory; source blocks are formatted once and reused for recipients. Shared source
+text is placed before varying role/instruction text to enable prefix reuse between
+recipients of the same draft. No workflow
+launch, artifact download, or client/GitHub round trip occurs between steps.
+Each model call must still process its supplied context; references do not eliminate
+that computation. Turns execute sequentially, with the same loaded model and
+backend prefix reuse. These methods do not create separate per-agent KV caches or
+persistent multi-runner actors. Step names identify roles, not separate models.
+
+Inspect `last_results[i].agent_id`, `.step_index`, `.input_steps`, `.handoff_chars`,
+and `.handoff_bytes` for routing diagnostics, plus `.usage.prompt_tokens` for actual
+whole-input token usage. Handoff size measures the selected in-memory payload,
+including source labels; it is **not network traffic**. With timing enabled,
+`.timings.routing_seconds` measures preparation of each step's handoff.
+Whole-job resources are shared across results; count them once. Existing Agent
+conversation history is neither sent to a plan nor replaced by it. No automatic
+summarization is performed, and the shared task plus selected inputs must fit the
+configured prompt/context limits. `Limits.max_prompts` bounds the total step count.
+
+## Faster agent discussions on one worker
+
+```bash
+gh-inference discuss "Improve this inference library" --agents 20 --rounds 3 --topology ring
+```
+
+This runs 60 logical turns in **one GitHub job**, with one model kept in RAM.
+Messages pass directly between rounds inside the worker. It avoids 59 workflow
+launches and their setup, polling, and result downloads. Agents take turns on
+one shared model; this mode does not provide 20 simultaneous inference workers.
+Whether it beats independent workers in elapsed time depends on prompt/output
+length and available parallel hardware. It is intended to reduce orchestration
+and repeated computation for small, closely interacting agents.
+
+```python
+from gh_inference import Agent, Limits
+
+agent = Agent(model="qwen0.5b", max_tokens=None, track_time=True,
+              limits=Limits(max_prompts=60))
+rounds = agent.discuss("Improve this inference library", agents=20, rounds=3,
+                       topology="ring")
+print(rounds[-1])  # Last round's 20 replies, in agent order.
+```
+
+`topology="all"` (the Python default) shares the previous round's replies with
+every agent. `topology="ring"` shares only the previous neighbor's reply, reducing
+peer-message entries per later round from N² to N. This changes the discussion's
+information flow; it is an explicit option. Peer replies default to 240 characters.
+Each agent has an identity, and no agent sees partially completed current rounds.
+The existing conversation on the Agent is neither read nor replaced by a discussion.
+`last_results` holds every turn in round order. Whole-job resources are shared
+across all results and must be counted only once.
+
+Repeated generation now lets llama.cpp reuse matching prompt prefixes rather than
+forcing a reset before each reply. The backend compares exact tokens and discards
+nonmatching suffixes; this is computation reuse, not implicit conversation memory.
+See the [backend's prefix matching implementation](https://github.com/abetlen/llama-cpp-python/blob/v0.3.16/llama_cpp/llama.py#L828).
+The worker also caches repeated token-count calculations within a turn. Shared
+model download/load time is attributed only to the first turn.
+
+Both `discuss` and `stress` accept `--max-tokens auto` for dynamic output length,
+subject to remaining context, model limits and job timeout. Long responses can
+increase latency; dynamic length is not itself a speed optimization.
+
+## Twenty-agent interaction stress test
+
+```bash
+gh-inference stress --agents 20 --rounds 3 --output stress-results.json
+```
+
+Use `--topology ring` to reduce peer traffic while retaining independent parallel
+workers; the default remains all-to-all. Or use `stress_test()` from Python. One command compares `qwen0.5b`, `llama`,
+`qwen`, and `tinyllama`: five agents per model, 20 concurrent client calls per
+round, three synchronized rounds, 60 remote jobs total. Each round broadcasts
+all successful agents' previous replies to all agents, capped at 240 characters
+per reply. Agents critique peers and propose improvements. Conversation is
+bounded to the previous round; increase `rounds` for longer interaction.
+GitHub account concurrency and available capacity determine actual simultaneous
+workers. These jobs consume your Actions allowance.
+
+The JSON report saves answers, errors, Actions links, settings, and per-model
+summaries after each round. It separates generation throughput (completion tokens
+per second, including prompt processing) from client latency (including queue and
+setup), process CPU seconds, and process peak memory. CPU seconds include all
+inference process threads, model loading, and refinement; they exclude workflow
+installation/cache steps. `Agent.last_result.resources` exposes these worker
+counters. Resources describe the entire job: for `run_many()`, all results share
+them, so count them once. Old workers without CPU counters report `None`.
+
+Hosted worker energy is unavailable here. `--estimated-worker-watts 40` optionally
+calculates assumed constant watts × inference-worker wall seconds / 3600, labeled
+**estimated Wh**. It excludes provisioning, dependency installation, cache transfer,
+and data-center overhead; it is neither measured power nor total job energy.
+No default wattage is invented.
+
+Use `--models qwen0.5b llama` to choose candidates. Compare both failure rates and
+throughput; the benchmark does not score answer quality or establish a universal
+best model. It resets model RAM every job, so later rounds can reuse downloaded
+weights but do not measure resident-model serving speed. Use `run_many()` when
+measuring repeated inference within one loaded model.
+
 ## Optional prompt refinement
 
 ```python
@@ -386,6 +610,8 @@ in `MODELS[key]["context_source"]`.
 | `qwen-coder7b`, `qwen-coder14b` | 131,072 | — |
 | `llama`, `llama8b`, `phi3`, `deepseek` | 131,072 | — |
 | `mistral12b`, `deepseek-coder16b` | 131,072 (128K) | — |
+| `glitter-12b`, `rocinante-x-12b` | 131,072 | — |
+| `gemma-4-12b`, `gemma-4-styletune-12b` | 262,144 | — |
 
 `—` means no separate output ceiling is recorded; the available total context
 still bounds generation. It does not mean unlimited or tested long-form output.

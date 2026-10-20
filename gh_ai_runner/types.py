@@ -100,6 +100,8 @@ class ResourceUsage:
     peak_memory_bytes: int = 0
     duration_seconds: float = 0.0
     runner_os: str = ""
+    cpu_seconds: Optional[float] = None
+    runtime_version: str = ""
 
 
 @dataclass(frozen=True)
@@ -117,6 +119,7 @@ class AgentTimings:
     refinement_seconds: float = 0.0
     generation_seconds: float = 0.0
     remote_seconds: float = 0.0
+    routing_seconds: float = 0.0
 
 
 @dataclass(frozen=True)

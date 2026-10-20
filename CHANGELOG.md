@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0
+
+- Add built-in, commit-pinned Q4_K_M writing models: Glitter 12B, Gemma 4 12B,
+  Gemma 4 StyleTune 12B, and Rocinante-X 12B.
+- Accept Hugging Face repository and GGUF file links; add `add_model` for public
+  custom HTTPS GGUF downloads with worker-side checksum and size verification.
+- Add resident multi-agent discussion, routed pipelines and draft/review/revise
+  loops with selective handoffs and reusable prompt prefixes.
+- Expand compute diagnostics with CPU time, peak process memory, routing time,
+  runtime version and handoff sizes; add stress and writing benchmarks.
+- Support dynamic output budgets and native thinking-template controls; pin the
+  GitHub inference runtime to llama-cpp-python 0.3.36.
+
 ## 0.5.0
 
 - Publish as `gh-inference` with the `gh_inference` import and `gh-inference` CLI.

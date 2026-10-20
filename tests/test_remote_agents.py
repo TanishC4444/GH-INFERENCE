@@ -125,7 +125,7 @@ def test_worker_keeps_one_model_in_ram_for_all_prompts(tmp_path, monkeypatch):
     assert constructor.call_count == 1
     assert constructor.call_args.kwargs["use_mmap"] is False
     assert constructor.call_args.kwargs["use_mlock"] is True
-    assert llm.reset.call_count == 2
+    llm.reset.assert_not_called()
     first, second = payload["agent"]["results"]
     assert not first["model_reused"] and second["model_reused"]
     assert second["timings"]["load_seconds"] == 0
@@ -162,6 +162,8 @@ def test_agent_artifact_round_trip_verifies_request_and_agent_body(tmp_path, mon
         result = _download_result("t", "u", "r", 1, job.job_id, job.correlation_id,
                                   False, expected_request_sha256=job.request_digest)
     assert result.raw["agent"]["results"][0]["output"] == "answer"
+    assert result.resources.cpu_seconds is not None
+    assert result.resources.cpu_seconds >= 0
 
 
 def test_old_api_returns_text_unless_timing_is_explicit():
@@ -170,3 +172,88 @@ def test_old_api_returns_text_unless_timing_is_explicit():
     with patch("gh_ai_runner.core.GitHubAIRunner", return_value=runner):
         assert ai_call("token", "task") == "answer"
         assert ai_call("token", "task", track_time=True).timings.total_seconds > 0
+
+
+def test_dispatch_error_preserves_job_handle_without_reposting():
+    import requests
+    runner = GitHubAIRunner('test-token', metadata_path=None, verbose=False)
+    runner.prepare = Mock()
+    runner._dispatch = Mock(side_effect=requests.ReadTimeout('uncertain POST'))
+    agent = Agent(runner=runner)
+    with pytest.raises(requests.ReadTimeout) as raised:
+        agent.run('task')
+    assert agent.last_job is raised.value.job
+    assert agent.last_job.job_id
+    runner._dispatch.assert_called_once()
+
+
+@pytest.mark.parametrize('topology', ['all', 'ring'])
+def test_discussion_runs_synchronized_rounds_on_one_loaded_model(tmp_path, monkeypatch, topology):
+    replies = [completion(f'reply-{i}') for i in range(6)]
+    payload, constructor, llm, _ = execute_worker(
+        tmp_path, monkeypatch, ['design a library'], replies,
+        discussion=dict(agents=3, rounds=2, peer_chars=80, topology=topology))
+    assert constructor.call_count == 1
+    results = payload['agent']['results']
+    assert len(results) == 6
+    assert payload['usage']['completion_tokens'] == 12
+    assert not results[0]['model_reused']
+    assert all(item['model_reused'] for item in results[1:])
+    assert all(item['timings']['load_seconds'] == 0 for item in results[1:])
+    prompts = [call.kwargs['messages'][-1]['content'] for call in llm.create_chat_completion.call_args_list]
+    assert all('reply-' not in prompt for prompt in prompts[:3])
+    assert 'Agent 2: reply-2' in prompts[3]
+    if topology == 'all':
+        assert all(f'Agent {i}: reply-{i}' in prompts[3] for i in range(3))
+    else:
+        assert 'reply-0' not in prompts[3] and 'reply-1' not in prompts[3]
+    assert 'reply-3' not in prompts[4]  # never observe current-round answers
+    llm.reset.assert_not_called()
+
+
+def test_discussion_client_dispatches_once_and_preserves_conversation():
+    runner = Mock()
+    runner.submit.return_value.result.return_value = remote_result(['a', 'b', 'c', 'd'])
+    agent = Agent(runner=runner, max_tokens=None)
+    agent._history = [{'role': 'user', 'content': 'private history'}]
+    assert agent.discuss('task', agents=2, rounds=2) == [['a', 'b'], ['c', 'd']]
+    runner.submit.assert_called_once()
+    request = runner.submit.call_args.kwargs
+    assert request['max_tokens'] is None
+    assert not request['agent_config']['history']
+    assert agent._history[0]['content'] == 'private history'
+
+
+@pytest.mark.parametrize('options', [dict(agents=True), dict(rounds=0), dict(topology='bad'),
+                                     dict(agents=20, rounds=3)])
+def test_discussion_rejects_bad_options_before_dispatch(options):
+    runner = Mock()
+    with pytest.raises(ValueError):
+        Agent(runner=runner).discuss('task', **options)
+    runner.submit.assert_not_called()
+
+
+def test_template_options_are_bound_to_formatter_not_model_constructor(tmp_path, monkeypatch):
+    from functools import partial
+    payload, constructor, llm, _ = execute_worker(
+        tmp_path, monkeypatch, ['write final text'], [completion('final text')],
+        inference_options={'model_options': {'chat_template_options': {'enable_thinking': False}}})
+    assert 'chat_template_options' not in constructor.call_args.kwargs
+    assert isinstance(llm.chat_handler, partial)
+    assert llm.chat_handler.keywords == {'enable_thinking': False}
+    assert 'runtime_version' in payload['resources']
+
+
+@pytest.mark.parametrize('value', ['bad', {'enable_thinking': 'no'}, {'messages': []}])
+def test_invalid_template_options_fail_before_dispatch(value):
+    runner = Mock()
+    with pytest.raises(ValueError, match='chat_template_options'):
+        Agent(runner=runner, model_options={'chat_template_options': value})
+    runner.submit.assert_not_called()
+
+
+def test_runtime_version_is_pinned_and_separates_cached_environments():
+    from gh_ai_runner.runner import RUNTIME_VERSION, WORKFLOW_YAML
+    assert f'llama-cpp-python=={RUNTIME_VERSION}' in WORKFLOW_YAML
+    assert f'python311-llama-cpp-{RUNTIME_VERSION}-v5' in WORKFLOW_YAML
+    assert '__RUNTIME_VERSION__' not in WORKFLOW_YAML

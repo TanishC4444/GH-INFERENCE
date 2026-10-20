@@ -3,7 +3,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from gh_inference import MODELS, clear_model_cache, list_quantizations, resolve_model
+from gh_inference import MODELS, add_model, clear_model_cache, list_quantizations, resolve_model
 from gh_ai_runner.integrity import request_sha256
 
 
@@ -103,3 +103,70 @@ def test_unsafe_filename_is_rejected():
     with patch("gh_ai_runner.hub.requests.get", return_value=Mock(json=lambda: metadata)):
         with pytest.raises(ValueError, match="Unsafe"):
             resolve_model("example/model", "Q8_0")
+
+
+@pytest.mark.parametrize('link', [
+    'https://huggingface.co/example/model',
+    'https://huggingface.co/example/model/tree/main',
+    'https://huggingface.co/example/model/blob/main/model-Q8_0.gguf',
+    'https://huggingface.co/example/model/resolve/main/model-Q8_0.gguf?download=true',
+])
+def test_hub_links_resolve_to_same_pinned_model(link):
+    with patch('gh_ai_runner.hub.requests.get', return_value=Mock(json=info)):
+        assert resolve_model(link, 'Q8_0') == resolve_model('example/model', 'Q8_0')
+        assert len(list_quantizations(link)) == 2
+
+
+def test_exact_link_selects_complete_shards_and_encoded_revision():
+    with patch('gh_ai_runner.hub.requests.get', return_value=Mock(json=info)) as get:
+        key = resolve_model('https://huggingface.co/example/model/resolve/refs%2Fpr%2F1/sub/model-IQ4_XS-00002-of-00002.gguf')
+    assert len(MODELS[key]['files']) == 2
+    assert '/revision/refs%2Fpr%2F1' in get.call_args.args[0]
+
+
+@pytest.mark.parametrize('link,kwargs', [
+    ('http://huggingface.co/example/model', {}),
+    ('https://huggingface.co.evil.test/example/model', {}),
+    ('https://huggingface.co/example/model/blob/main/config.json', {}),
+    ('https://huggingface.co/example/model/resolve/dev/model-Q8_0.gguf', {'revision': 'other'}),
+    ('https://huggingface.co/example/model/resolve/main/model-Q8_0.gguf', {'filename': 'other.gguf'}),
+])
+def test_bad_or_conflicting_links_rejected_without_network(link, kwargs):
+    with patch('gh_ai_runner.hub.requests.get') as get:
+        with pytest.raises(ValueError):
+            resolve_model(link, **kwargs)
+        get.assert_not_called()
+
+
+def test_custom_download_registers_and_executes_with_integrity(tmp_path, monkeypatch):
+    from test_remote_agents import execute_worker, completion
+    with patch('gh_ai_runner.hub.requests.get') as get:
+        key = add_model('https://models.example.org/writer.gguf', sha256='B' * 64,
+                        size_bytes=12, max_n_ctx=4096)
+        get.assert_not_called()
+    assert resolve_model(key) == key
+    assert MODELS[key]['files'][0]['sha256'] == 'b' * 64
+    assert MODELS[key]['n_ctx'] == 4096
+    assert add_model('https://models.example.org/writer.gguf', sha256='b' * 64,
+                     size_bytes=12, max_n_ctx=4096) == key
+    cache = tmp_path / 'model_cache' / key
+    cache.mkdir(parents=True)
+    (cache / 'writer.gguf').write_bytes(b'mock weights')
+    payload, _, _, job = execute_worker(tmp_path, monkeypatch, ['Hello'],
+        [completion('Hello back')], inference_options={'model': key})
+    assert payload['integrity']['request_sha256'] == request_sha256(job.request)
+    assert job.request['model_spec']['files'][0]['url'] == 'https://models.example.org/writer.gguf'
+
+
+@pytest.mark.parametrize('kwargs', [
+    {'url': 'http://models.example.org/writer.gguf'},
+    {'url': 'https://user:pass@models.example.org/writer.gguf'},
+    {'url': 'https://models.example.org/..%2Fwriter.gguf'},
+    {'sha256': 'invalid'}, {'size_bytes': True}, {'size_bytes': 0},
+    {'max_n_ctx': -1}, {'ram_per_1k_ctx_gb': float('nan')},
+])
+def test_invalid_custom_download(kwargs):
+    options = {'url': 'https://models.example.org/writer.gguf', 'sha256': 'a' * 64, 'size_bytes': 12}
+    options.update(kwargs)
+    with pytest.raises(ValueError):
+        add_model(**options)

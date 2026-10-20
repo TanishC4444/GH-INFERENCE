@@ -4,7 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional
 
-from .types import AgentTimings, TokenUsage
+from .types import AgentTimings, TokenUsage, ResourceUsage
 
 
 @dataclass
@@ -33,3 +33,11 @@ class AgentResult:
     weights_cached: bool = False
     dropped_history_turns: int = 0
     finish_reason: str = "stop"
+    # Whole worker job; shared across results from run_many(), never sum copies.
+    resources: ResourceUsage = field(default_factory=ResourceUsage)
+    agent_id: str = ""
+    step_index: Optional[int] = None
+    input_steps: list[int] = field(default_factory=list)
+    # In-memory handoff payload; these are not network-transfer counters.
+    handoff_chars: int = 0
+    handoff_bytes: int = 0

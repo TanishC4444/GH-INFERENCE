@@ -1,13 +1,18 @@
 import hashlib
+import inspect
 
 from .models import DISK_RESERVE_GB, MODELS, RUNTIME_OVERHEAD_GB
 from .worker_agent import AGENT_SCRIPT
+from .pipeline import normalize_pipeline
 from .limits import Limits
+
+RUNTIME_VERSION = "0.3.36"
 
 INFERENCE_SCRIPT = r'''
 import hashlib
 import json
 import os
+import importlib.metadata
 import platform
 import resource
 import shutil
@@ -44,7 +49,12 @@ def resource_snapshot(started):
     peak = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
     if platform.system() != "Darwin":
         peak *= 1024
+    try:
+        runtime_version = importlib.metadata.version("llama-cpp-python")
+    except importlib.metadata.PackageNotFoundError:
+        runtime_version = "unavailable"
     return {
+        "runtime_version": runtime_version,
         "cpu_count": os.cpu_count() or 1,
         "memory_total_bytes": memory.get("MemTotal", 0),
         "memory_available_bytes": memory.get("MemAvailable", 0),
@@ -53,6 +63,7 @@ def resource_snapshot(started):
         "peak_memory_bytes": peak,
         "duration_seconds": round(time.monotonic() - started, 3),
         "runner_os": platform.platform(),
+        "cpu_seconds": time.process_time() - cpu_started,
     }
 
 
@@ -164,8 +175,15 @@ def get_local_model(local_model, requested_n_ctx):
         import llama_cpp
         options["rope_scaling_type"] = getattr(
             llama_cpp, "LLAMA_ROPE_SCALING_TYPE_" + options["rope_scaling_type"].upper())
+    template_options = options.pop("chat_template_options", None)
     llm = Llama(model_path=model_path, n_ctx=n_ctx,
                 n_gpu_layers=0, use_mmap=False, use_mlock=True, **options)
+    if template_options is not None:
+        from functools import partial
+        handler = llm._chat_handlers.get("chat_template.default")
+        if handler is None:
+            raise ValueError("chat_template_options requires an embedded default chat template")
+        llm.chat_handler = partial(handler, **template_options)
     _LOADED_MODELS[key] = llm
     _MODEL_STATS[key] = {
         "weights_cached": cached_weights,
@@ -177,7 +195,6 @@ def get_local_model(local_model, requested_n_ctx):
 
 def local_inference(messages, max_tokens, temperature, local_model, requested_n_ctx):
     llm = get_local_model(local_model, requested_n_ctx)
-    llm.reset()
     if max_tokens is None and config.get("limits", {}).get("enforce_model_limits", True):
         max_tokens = model_config(local_model).get("max_output_tokens")
     return llm.create_chat_completion(
@@ -187,6 +204,7 @@ def local_inference(messages, max_tokens, temperature, local_model, requested_n_
 
 
 started = time.monotonic()
+cpu_started = time.process_time()
 job_id = os.environ["JOB_ID"]
 attempt = int(os.environ.get("ATTEMPT", "1"))
 backend = os.environ.get("BACKEND", "local")
@@ -234,7 +252,10 @@ result = {
 
 try:
     if "agent" in config:
-        result["agent"] = run_agent(config["agent"], messages, config)
+        operation = (run_pipeline if "pipeline" in config["agent"] else
+                     run_discussion if "discussion" in config["agent"] else run_agent)
+        result["agent"] = operation(
+            config["agent"], messages, config)
         result["output"] = result["agent"]["results"][-1]["output"]
         result["usage"] = result["agent"]["usage"]
     else:
@@ -267,7 +288,7 @@ finally:
     result["resources"] = resource_snapshot(started)
     with open("result.json", "w", encoding="utf-8") as stream:
         json.dump(result, stream, indent=2)
-'''.replace("\nstarted = time.monotonic()", AGENT_SCRIPT + "\nstarted = time.monotonic()", 1).replace(
+'''.replace("\nstarted = time.monotonic()", inspect.getsource(normalize_pipeline) + "\n" + AGENT_SCRIPT + "\nstarted = time.monotonic()", 1).replace(
     "__MODEL_MAP__", repr(MODELS)
 ).replace(
     "__RUNTIME_OVERHEAD_GB__", repr(RUNTIME_OVERHEAD_GB)
@@ -310,7 +331,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .venv
-          key: venv-${{ runner.os }}-${{ runner.arch }}-python311-llama-cpp-v4
+          key: venv-${{ runner.os }}-${{ runner.arch }}-python311-llama-cpp-__RUNTIME_VERSION__-v5
 
       - name: Cache model weights
         if: ${{ inputs.backend == 'local' && fromJSON(inputs.config).cache_weights }}
@@ -325,8 +346,8 @@ jobs:
           python -m venv .venv
           .venv/bin/pip install --only-binary=llama-cpp-python \
             --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu \
-            'llama-cpp-python>=0.3.16' -q || \
-            CMAKE_ARGS="-DGGML_METAL=off" .venv/bin/pip install 'llama-cpp-python>=0.3.16' -q
+            'llama-cpp-python==__RUNTIME_VERSION__' -q || \
+            CMAKE_ARGS="-DGGML_METAL=off" .venv/bin/pip install 'llama-cpp-python==__RUNTIME_VERSION__' -q
 
       - name: Run inference on GitHub
         env:
@@ -354,6 +375,9 @@ jobs:
           path: result.json
           retention-days: ${{ fromJSON(inputs.config).artifact_retention_days || 3 }}
 """
+
+
+WORKFLOW_YAML = WORKFLOW_YAML.replace("__RUNTIME_VERSION__", RUNTIME_VERSION)
 
 
 def _script_hash():

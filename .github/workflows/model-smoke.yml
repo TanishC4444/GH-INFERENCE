@@ -30,7 +30,7 @@ jobs:
           python -m pip install -e .
           python -m pip install --only-binary=llama-cpp-python \
             --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu \
-            'llama-cpp-python>=0.3.16' || python -m pip install 'llama-cpp-python>=0.3.16'
+            'llama-cpp-python==0.3.36' || python -m pip install 'llama-cpp-python==0.3.36'
       - name: Exercise resident model and reuse
         env:
           LOCAL_MODEL: ${{ inputs.model }}

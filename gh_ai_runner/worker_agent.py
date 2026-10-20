@@ -2,6 +2,7 @@
 
 AGENT_SCRIPT = r'''
 import re
+from functools import lru_cache
 
 
 def run_agent(agent, initial_messages, inference_config):
@@ -35,6 +36,7 @@ def run_agent(agent, initial_messages, inference_config):
     if trim_history and max_turns is not None:
         history = history[-2 * max_turns:]
     system = initial_messages[0]
+    @lru_cache(maxsize=256)
     def count(text):
         return len(llm.tokenize(text.encode(), add_bos=False))
     def fits(messages, output):
@@ -44,7 +46,9 @@ def run_agent(agent, initial_messages, inference_config):
     def generate(messages, output=maximum, temp=temperature, check_context=True, use_options=True):
         if check_context and not fits(messages, output):
             raise ValueError("Prompt/instructions exceed context; shorten input or increase n_ctx")
-        llm.reset()
+        # Let llama.cpp reuse matching prompt prefixes; it discards differing suffixes.
+        if not agent.get("reuse_prefix", True):
+            llm.reset()
         if output is None and policy["enforce_model_limits"]:
             output = model_config(local_model).get("max_output_tokens")
         return llm.create_chat_completion(messages=messages, max_tokens=output, temperature=temp,
@@ -57,8 +61,8 @@ def run_agent(agent, initial_messages, inference_config):
     for index, original in enumerate(tasks):
         task_started = started if index == 0 else time.monotonic()
         timings = {
-            "total_seconds": 0., "download_seconds": stats["download_seconds"] if index == 0 else 0.,
-            "load_seconds": stats["load_seconds"] if index == 0 else 0.,
+            "total_seconds": 0., "download_seconds": stats["download_seconds"] if index == 0 and not was_loaded else 0.,
+            "load_seconds": stats["load_seconds"] if index == 0 and not was_loaded else 0.,
             "refinement_seconds": 0., "generation_seconds": 0., "remote_seconds": 0.,
         }
         original_count = count(original)
@@ -123,4 +127,84 @@ def run_agent(agent, initial_messages, inference_config):
             "finish_reason": response["choices"][0].get("finish_reason", "stop"),
         })
     return {"results": results, "usage": total_usage, "history": history}
+
+
+def run_discussion(agent, initial_messages, inference_config):
+    options = agent["discussion"]
+    count, rounds, peer_chars = (options.get(name) for name in ("agents", "rounds", "peer_chars"))
+    if any(type(value) is not int or value < 1 for value in (count, rounds, peer_chars)):
+        raise ValueError("Discussion counts must be positive integers")
+    topology = options.get("topology", "all")
+    if topology not in ("all", "ring"):
+        raise ValueError("topology must be all or ring")
+    policy = dict(DEFAULT_LIMITS)
+    policy.update(inference_config.get("limits", {}))
+    if policy["max_prompts"] is not None and count * rounds > policy["max_prompts"]:
+        raise ValueError("Discussion exceeds configured max_prompts")
+    task = initial_messages[-1]["content"]
+    turn_config = dict(agent, tasks=[], remember=False, history=[])
+    turn_config.pop("discussion")
+    results, previous = [], []
+    usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+    for round_index in range(rounds):
+        current = []
+        for index in range(count):
+            peers = ([previous[(index - 1) % count]] if topology == "ring" and previous else previous)
+            shared = "\n".join("Agent %d: %s" % (peer, reply[:peer_chars]) for peer, reply in peers)
+            prompt = ("Task: %s\nPrevious round replies:\n%s\n"
+                      "You are Agent %d, round %d. Propose a distinct improvement and test. "
+                      "Address another agent by number when replies are provided."
+                      % (task, shared, index, round_index + 1))
+            if policy["max_prompt_chars"] is not None and len(prompt) + len(initial_messages[0]["content"]) > policy["max_prompt_chars"]:
+                raise ValueError("Discussion prompt exceeds configured max_prompt_chars")
+            messages = [initial_messages[0], {"role": "user", "content": prompt}]
+            response = run_agent(turn_config, messages, inference_config)
+            item = response["results"][0]
+            results.append(item)
+            current.append((index, item["output"]))
+            for name in usage:
+                usage[name] += response["usage"][name]
+        previous = current
+    return {"results": results, "usage": usage, "history": []}
+
+
+def run_pipeline(agent, initial_messages, inference_config):
+    policy = dict(DEFAULT_LIMITS)
+    policy.update(inference_config.get("limits", {}))
+    steps = normalize_pipeline(agent["pipeline"], policy["max_prompts"])
+    # Replies are stored once in results. Recipients reference them by step index;
+    # rendered source blocks are cached, not regenerated for every recipient.
+    results, rendered = [], {}
+    usage = {"prompt_tokens": 0, "completion_tokens": 0, "total_tokens": 0}
+    turn_config = dict(agent, tasks=[], remember=False, history=[])
+    turn_config.pop("pipeline")
+    shared_system = initial_messages[0]["content"] + "\nShared task:\n" + initial_messages[-1]["content"]
+    for index, step in enumerate(steps):
+        routing_started = time.monotonic()
+        for source in step["inputs"]:
+            if source not in rendered:
+                rendered[source] = ("[Step %d / %s]\n%s" %
+                                    (source, steps[source]["agent"], results[source]["output"]))
+        handoff = "\n\n".join(rendered[source] for source in step["inputs"])
+        # Keep common source text ahead of varying role/instruction text so
+        # broadcast recipients can reuse the same computed prompt prefix.
+        system = shared_system
+        prompt = (("Provided outputs:\n" + handoff + "\n\n") if handoff else "")
+        prompt += "Your role: " + step["agent"] + "\n" + step["instruction"]
+        if policy["max_prompt_chars"] is not None and len(system) + len(prompt) > policy["max_prompt_chars"]:
+            raise ValueError("Pipeline prompt exceeds configured max_prompt_chars")
+        handoff_chars, handoff_bytes = len(handoff), len(handoff.encode("utf-8"))
+        routing_seconds = time.monotonic() - routing_started
+        response = run_agent(turn_config, [{"role": "system", "content": system},
+                                          {"role": "user", "content": prompt}], inference_config)
+        item = response["results"][0]
+        item.update(agent_id=step["agent"], step_index=index, input_steps=step["inputs"],
+                    handoff_chars=handoff_chars, handoff_bytes=handoff_bytes)
+        if item["timings"] is not None:
+            item["timings"]["routing_seconds"] = routing_seconds
+            item["timings"]["total_seconds"] += routing_seconds
+        results.append(item)
+        for name in usage:
+            usage[name] += response["usage"][name]
+    return {"results": results, "usage": usage, "history": []}
 '''

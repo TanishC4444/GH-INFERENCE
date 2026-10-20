@@ -13,7 +13,7 @@ MIN_TEMPERATURE = 0.0
 
 def _gguf(name, parameters_b, repo, filename, size_bytes, sha256, n_ctx=DEFAULT_CONTEXT,
           ram_per_1k_ctx_gb=0.25, *, max_n_ctx, context_source,
-          max_output_tokens=None, yarn_original_context=None):
+          max_output_tokens=None, yarn_original_context=None, revision="main"):
     return {
         "name": name, "parameters_b": parameters_b, "quantization": "Q4_K_M",
         "size_bytes": size_bytes, "size_gb": size_bytes / 1e9,
@@ -23,7 +23,7 @@ def _gguf(name, parameters_b, repo, filename, size_bytes, sha256, n_ctx=DEFAULT_
         "max_output_tokens": max_output_tokens,
         "yarn_original_context": yarn_original_context,
         "ram_per_1k_ctx_gb": ram_per_1k_ctx_gb,
-        "url": f"https://huggingface.co/{repo}/resolve/main/{filename}",
+        "url": f"https://huggingface.co/{repo}/resolve/{revision}/{filename}",
         "filename": filename,
     }
 
@@ -156,6 +156,38 @@ MODELS = {
         10364416768, '603bd3f8a0281d16571da7c08bd661ee17ff0d1be6fcbd1b42242da257ef0bb8',
         ram_per_1k_ctx_gb=0.5, max_n_ctx=131072,
         context_source='https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct',
+    ),
+    'gemma-4-styletune-12b': _gguf(
+        'Gemma 4 12B StyleTune', 12.9,
+        'mradermacher/Gemma-4-12B-StyleTune-GGUF',
+        'Gemma-4-12B-StyleTune.Q4_K_M.gguf',
+        7947613824, 'd3e487063f62cf1ed37f7317c93a8e709e6e072a877779ff86b7a73fe904c4a3',
+        max_n_ctx=262144, revision='fb2e8be6efb2905308e57ce248f209c6ddf99983',
+        context_source='https://huggingface.co/mradermacher/Gemma-4-12B-StyleTune-GGUF',
+    ),
+    'rocinante-x-12b': _gguf(
+        'Rocinante-X 12B v1', 12,
+        'bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF',
+        'TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf',
+        7477207712, '1ca25853a19d6b15f9a94f7e5bc86f4cc88bd0c9dea12a00ea55452b4208ade6',
+        max_n_ctx=131072, revision='4302599a9fecd0e250c3790d77a38f3bd791fdd4',
+        context_source='https://huggingface.co/bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF',
+    ),
+    'glitter-12b': _gguf(
+        'Gemma 3 Glitter 12B', 12,
+        'duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF',
+        'Gemma-3-Glitter-12B-Q4_K_M.gguf',
+        7300779616, 'fa414e89caf6cf22d1b71fa9a5e13c934d431b99607606139915bf8608f39719',
+        max_n_ctx=131072, revision='417cddf45b8a6f8977920b251258ec5f58855124',
+        context_source='https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF',
+    ),
+    'gemma-4-12b': _gguf(
+        'Gemma 4 12B Instruct', 12,
+        'unsloth/gemma-4-12b-it-GGUF',
+        'gemma-4-12b-it-Q4_K_M.gguf',
+        7121861440, '0a270ec9fe6b34f4a0d33992b6135117b484ebc4766ab76b51d4ae8c457e4c42',
+        max_n_ctx=262144, revision='fc034cfff751157913579611efad8462ac1be606',
+        context_source='https://huggingface.co/unsloth/gemma-4-12b-it-GGUF',
     ),
 }
 
