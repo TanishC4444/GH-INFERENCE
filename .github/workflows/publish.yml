@@ -32,7 +32,7 @@ jobs:
           python -m venv /tmp/wheel-check
           /tmp/wheel-check/bin/pip install dist/*.whl
           cd /tmp
-          /tmp/wheel-check/bin/python -c 'from gh_inference import Agent, list_quantizations; from gh_ai_runner import __version__; assert __version__ == "0.6.0"'
+          /tmp/wheel-check/bin/python -c 'from gh_inference import Agent, list_quantizations; from gh_ai_runner import __version__; assert __version__ == "0.6.1"'
           /tmp/wheel-check/bin/gh-inference --help
           /tmp/wheel-check/bin/gh-inference models
       - uses: actions/upload-artifact@v4

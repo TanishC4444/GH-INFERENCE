@@ -154,7 +154,7 @@ def get_local_model(local_model, requested_n_ctx):
             if os.path.exists(partial_path):
                 os.remove(partial_path)
     cpu_count = os.cpu_count() or 1
-    threads = max(1, cpu_count - 1) if cpu_count > 2 else cpu_count
+    threads = cpu_count
     download_seconds = time.monotonic() - download_started
     load_started = time.monotonic()
     context_options = {}
@@ -169,7 +169,7 @@ def get_local_model(local_model, requested_n_ctx):
             "yarn_orig_ctx": original_context,
             "yarn_ext_factor": 1.0,
         }
-    options = {"n_threads": threads, "verbose": False, **context_options,
+    options = {"n_threads": threads, "n_gpu_layers": 0, "verbose": False, **context_options,
                **config.get("model_options", {})}
     if isinstance(options.get("rope_scaling_type"), str):
         import llama_cpp
@@ -177,7 +177,7 @@ def get_local_model(local_model, requested_n_ctx):
             llama_cpp, "LLAMA_ROPE_SCALING_TYPE_" + options["rope_scaling_type"].upper())
     template_options = options.pop("chat_template_options", None)
     llm = Llama(model_path=model_path, n_ctx=n_ctx,
-                n_gpu_layers=0, use_mmap=False, use_mlock=True, **options)
+                use_mmap=False, use_mlock=True, **options)
     if template_options is not None:
         from functools import partial
         handler = llm._chat_handlers.get("chat_template.default")

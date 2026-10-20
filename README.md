@@ -759,3 +759,16 @@ orchestration tests use simulated API/model responses. No model runtime is insta
 by this package on the client.
 
 MIT license. See [LICENSE](LICENSE).
+
+### Resident local sessions (0.6.1)
+
+`ResidentSession` runs on the host where it is called and requires a separately installed `llama-cpp-python`. It retains one model's weights while resetting token context and sending only the current system and user messages on every call. It does not dispatch remote work or share weights between GitHub jobs. Calls are serialized; use separate sessions/processes for independent parallelism. Input token counts plus requested output and a conservative template reserve are checked before generation, with no silent trimming. Optional `response_schema` constrains JSON decoding; application validation is still required.
+
+```python
+from gh_inference import ResidentSession
+with ResidentSession("qwen3b", n_ctx=8192) as session:
+    text, diagnostics = session.complete("Review this scoped evidence...", system="Be precise.", max_tokens=800)
+    other, diagnostics = session.complete("A separate task...", max_tokens=800)
+```
+
+Local worker defaults now use all available CPU cores. GPU offload is opt-in through `model_options={"n_gpu_layers": -1}` and requires a compatible runtime and GPU host; this does not provision a GPU on standard Actions runners.

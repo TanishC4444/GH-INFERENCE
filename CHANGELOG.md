@@ -1,3 +1,9 @@
+## 0.6.1
+
+- Add stateless ResidentSession with loaded-weight reuse, token-budget checks and optional constrained JSON output.
+- Use all available CPU cores by default; allow explicit GPU offload on compatible hosts.
+- Preserve independent prompts and reject context overflow without truncation.
+
 # Changelog
 
 ## 0.6.0

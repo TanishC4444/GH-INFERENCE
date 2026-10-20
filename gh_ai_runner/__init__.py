@@ -27,7 +27,7 @@ from .types import (
     TokenUsage,
 )
 
-__version__ = "0.6.0"
+__version__ = "0.6.1"
 __all__ = [
     "Limits",
     "DEFAULT_CONTEXT",
@@ -67,3 +67,6 @@ __all__ += ["search_models", "list_quantizations", "resolve_model", "clear_model
 from .stress import stress_test
 
 __all__ += ["stress_test"]
+
+from .resident import ResidentSession
+__all__ += ["ResidentSession"]
