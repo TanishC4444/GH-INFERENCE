@@ -1,0 +1,59 @@
+{
+  "version": "0.1-proposal",
+  "status": "Design proposal, not an implemented network service",
+  "request_example": {
+    "request_id": "req-42",
+    "story_id": "station-story",
+    "scene_id": "airlock-7",
+    "expected_state_version": 17,
+    "speaker_id": "mira",
+    "recipient_ids": ["sol"],
+    "in_reply_to": "msg-41",
+    "instruction": "Respond to Sol without revealing the launch code.",
+    "constraints": {
+      "min_words": 3,
+      "max_words": 80,
+      "forbidden_terms": ["destiny"],
+      "format": "dialogue_text"
+    }
+  },
+  "context_builder_responsibilities": [
+    "Select the speaker's profile, private memories, relevant established facts, and visible recent dialogue.",
+    "Filter recipient visibility before building the model prompt; other characters' private state is excluded.",
+    "Apply a token budget with space reserved for the reply. Report omitted event IDs and summary versions.",
+    "Keep stable context before changing turn instructions to enable prompt-prefix reuse.",
+    "Retain the complete event log outside model context; summaries are derived views, not replacements for the log."
+  ],
+  "model_output_example": {
+    "text": "Check the hinge. We still have five minutes."
+  },
+  "application_envelope_example": {
+    "message_id": "msg-42",
+    "request_id": "req-42",
+    "story_id": "station-story",
+    "scene_id": "airlock-7",
+    "state_version": 18,
+    "speaker_id": "mira",
+    "recipient_ids": ["sol"],
+    "in_reply_to": "msg-41",
+    "text": "Check the hinge. We still have five minutes.",
+    "validation": {
+      "status": "accepted",
+      "violations": []
+    }
+  },
+  "output_gateway_responsibilities": [
+    "For dialogue, keep application-owned identity and routing outside generated text; optionally wrap plain text without asking the model to generate metadata.",
+    "When structured content is required, parse strictly and reject duplicate keys, wrong types, unknown fields, and invalid speaker IDs.",
+    "Validate constraints and finish_reason before broadcasting or committing state; a length-truncated answer is not treated as complete.",
+    "Return explicit violations or attempt one bounded correction. Preserve the original output and charge correction tokens/time separately.",
+    "Deduplicate retries by request_id and reject stale expected_state_version values.",
+    "The application assigns message IDs, recipients, and state versions. Model text cannot authorize routing or state changes.",
+    "Stream provisional text only to the requesting UI; publish a committed character event after final validation."
+  ],
+  "open_choices": [
+    "First consumer: interactive chat, script editor, or an external app/game.",
+    "Transport and durable state store for persistent character workers.",
+    "Character memory summarizer, retrieval policy, and context size per role."
+  ]
+}

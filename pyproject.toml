@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gh-inference"
+dynamic = ["version"]
+description = "Tiny agents and quantized AI inference running entirely on GitHub Actions"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "Tanish Chauhan" }]
+keywords = ["ai", "llm", "inference", "github-actions", "llama", "serverless"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["requests>=2.28", "PyNaCl>=1.5"]
+
+[project.urls]
+Homepage = "https://github.com/TanishC4444/GH-INFERENCE"
+Repository = "https://github.com/TanishC4444/GH-INFERENCE"
+
+[project.scripts]
+gh-inference = "gh_inference.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gh_ai_runner*", "gh_inference*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "gh_ai_runner.__version__"}
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+ignore = ["UP045"]
