@@ -1,6 +1,0 @@
-{
-  "source_sha": "df6bebe8c4235a08fe5adae5f799c87045f98fc2",
-  "inference": [],
-  "error": "Traceback (most recent call last):\n  File \"/home/runner/work/GH-INFERENCE/GH-INFERENCE/.github/open_model_smoke.py\", line 22, in <module>\n    result = subprocess.run(command, cwd=\"/tmp\", capture_output=True, text=True, check=True)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/tmp/gh-wheel/bin/python', '-c', \"from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == '0.6.0'\"]' returned non-zero exit status 1.\n",
-  "passed": false
-}
