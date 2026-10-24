@@ -760,7 +760,7 @@ by this package on the client.
 
 MIT license. See [LICENSE](LICENSE).
 
-### Resident local sessions (0.6.1)
+### Resident local sessions
 
 `ResidentSession` runs on the host where it is called and requires a separately installed `llama-cpp-python`. It retains one model's weights while resetting token context and sending only the current system and user messages on every call. It does not dispatch remote work or share weights between GitHub jobs. Calls are serialized; use separate sessions/processes for independent parallelism. Input token counts plus requested output and a conservative template reserve are checked before generation, with no silent trimming. Optional `response_schema` constrains JSON decoding; application validation is still required.
 
