@@ -1,0 +1,67 @@
+name: GitHub model smoke test
+on:
+  push:
+    branches: ['codex/simple-text-agents']
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Small catalog model to test on this GitHub worker
+        required: true
+        default: qwen0.5b
+permissions:
+  contents: read
+jobs:
+  inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: model_cache
+          key: smoke-${{ inputs.model }}-${{ hashFiles('gh_ai_runner/models.py') }}
+      - name: Install runtime on GitHub only
+        env:
+          CMAKE_ARGS: -DGGML_METAL=OFF
+        run: |
+          python -m pip install -e .
+          python -m pip install --only-binary=llama-cpp-python \
+            --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu \
+            'llama-cpp-python==0.3.36' || python -m pip install 'llama-cpp-python==0.3.36'
+      - name: Exercise resident model and reuse
+        env:
+          LOCAL_MODEL: ${{ inputs.model }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from gh_ai_runner.runner import INFERENCE_SCRIPT
+
+          os.environ.update({
+              "JOB_ID": "smoke", "ATTEMPT": "1", "BACKEND": "local",
+              "PROMPT": "Please be clear and concise. " * 140 + "Explain a Python list in one short sentence.",
+              "SYSTEM": "You are a concise assistant.", "CACHE": "true",
+              "CONFIG_JSON": json.dumps({
+                  "model": os.environ["LOCAL_MODEL"], "max_tokens": 32,
+                  "temperature": 0, "n_ctx": 2048, "provider_name": "local",
+                  "provider_url": "", "cache_weights": False,
+                  "agent": {"tasks": ["What is 2 plus 2?"], "track_time": True, "refine_prompt": True},
+              }),
+          })
+          exec(compile(INFERENCE_SCRIPT, "run_inference.py", "exec"), {})
+          payload = json.load(open("result.json"))
+          results = payload["agent"]["results"]
+          assert len(results) == 2
+          assert all(item["output"].strip() for item in results)
+          assert results[1]["model_reused"]
+          assert results[1]["timings"]["load_seconds"] == 0
+          print(json.dumps(results, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: model-smoke-result
+          path: result.json

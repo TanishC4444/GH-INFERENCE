@@ -1,0 +1,26 @@
+name: Open model inference smoke
+on:
+  push:
+    paths: ['gh_ai_runner/**', 'gh_inference/**', '.github/open_model_smoke.py', '.github/workflows/open-model-smoke.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/cache@v4
+        with:
+          path: model_cache
+          key: open-smoke-v1
+      - run: |
+          python -m pip install -e . build
+          python -m pip install --only-binary=llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu 'llama-cpp-python==0.3.36' || python -m pip install 'llama-cpp-python==0.3.36'
+      - env:
+          REPORT_TOKEN: ${{ github.token }}
+        run: python .github/open_model_smoke.py
