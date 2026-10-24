@@ -1,0 +1,178 @@
+{
+  "source_sha": "c5cdf8480660666ab01a8881f0177b340ec75ecd",
+  "checks": [
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit": 0,
+      "output": "........................................................................ [ 24%]\n........................................................................ [ 49%]\n........................................................................ [ 73%]\n...................................s.................................... [ 98%]\n....                                                                     [100%]\n291 passed, 1 skipped in 1.14s\n"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+        "-m",
+        "build"
+      ],
+      "exit": 0,
+      "output": "running egg_info\nwriting gh_inference.egg-info/PKG-INFO\nwriting dependency_links to gh_inference.egg-info/dependency_links.txt\nwriting entry points to gh_inference.egg-info/entry_points.txt\nwriting requirements to gh_inference.egg-info/requires.txt\nwriting top-level names to gh_inference.egg-info/top_level.txt\nreading manifest file 'gh_inference.egg-info/SOURCES.txt'\nreading manifest template 'MANIFEST.in'\nadding license file 'LICENSE'\nwriting manifest file 'gh_inference.egg-info/SOURCES.txt'\nrunning sdist\nrunning egg_info\nwriting gh_inference.egg-info/PKG-INFO\nwriting dependency_links to gh_inference.egg-info/dependency_links.txt\nwriting entry points to gh_inference.egg-info/entry_points.txt\nwriting requirements to gh_inference.egg-info/requires.txt\nwriting top-level names to gh_inference.egg-info/top_level.txt\nreading manifest file 'gh_inference.egg-info/SOURCES.txt'\nreading manifest template 'MANIFEST.in'\nadding license file 'LICENSE'\nwriting manifest file 'gh_inference.egg-info/SOURCES.txt'\nrunning check\ncreating gh_inference-0.6.2\ncreating gh_inference-0.6.2/examples\ncreating gh_inference-0.6.2/gh_ai_runner\ncreating gh_inference-0.6.2/gh_inference\ncreating gh_inference-0.6.2/gh_inference.egg-info\ncreating gh_inference-0.6.2/tests\ncopying files to gh_inference-0.6.2...\ncopying CHANGELOG.md -> gh_inference-0.6.2\ncopying LICENSE -> gh_inference-0.6.2\ncopying MANIFEST.in -> gh_inference-0.6.2\ncopying README.md -> gh_inference-0.6.2\ncopying pyproject.toml -> gh_inference-0.6.2\ncopying showcase.py -> gh_inference-0.6.2\ncopying examples/README.md -> gh_inference-0.6.2/examples\ncopying examples/console_tour.py -> gh_inference-0.6.2/examples\ncopying examples/story_turn_contract.json -> gh_inference-0.6.2/examples\ncopying examples/writing_benchmark.py -> gh_inference-0.6.2/examples\ncopying gh_ai_runner/__init__.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/agent.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/agent_types.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/artifact.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/batch.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/client.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/core.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/hub.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/integrity.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/job.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/limits.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/logger.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/metadata.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/models.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/pipeline.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/polling.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/repo.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/resident.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/runner.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/stress.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/types.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/validation.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_ai_runner/worker_agent.py -> gh_inference-0.6.2/gh_ai_runner\ncopying gh_inference/__init__.py -> gh_inference-0.6.2/gh_inference\ncopying gh_inference/__main__.py -> gh_inference-0.6.2/gh_inference\ncopying gh_inference.egg-info/PKG-INFO -> gh_inference-0.6.2/gh_inference.egg-info\ncopying gh_inference.egg-info/SOURCES.txt -> gh_inference-0.6.2/gh_inference.egg-info\ncopying gh_inference.egg-info/dependency_links.txt -> gh_inference-0.6.2/gh_inference.egg-info\ncopying gh_inference.egg-info/entry_points.txt -> gh_inference-0.6.2/gh_inference.egg-info\ncopying gh_inference.egg-info/requires.txt -> gh_inference-0.6.2/gh_inference.egg-info\ncopying gh_inference.egg-info/top_level.txt -> gh_inference-0.6.2/gh_inference.egg-info\ncopying tests/test_context_limits.py -> gh_inference-0.6.2/tests\ncopying tests/test_discussion_cli.py -> gh_inference-0.6.2/tests\ncopying tests/test_editable_limits.py -> gh_inference-0.6.2/tests\ncopying tests/test_hub.py -> gh_inference-0.6.2/tests\ncopying tests/test_large_models.py -> gh_inference-0.6.2/tests\ncopying tests/test_pipeline.py -> gh_inference-0.6.2/tests\ncopying tests/test_reliability.py -> gh_inference-0.6.2/tests\ncopying tests/test_remote_agents.py -> gh_inference-0.6.2/tests\ncopying tests/test_resident.py -> gh_inference-0.6.2/tests\ncopying tests/test_showcase.py -> gh_inference-0.6.2/tests\ncopying tests/test_stress.py -> gh_inference-0.6.2/tests\ncopying tests/test_v02.py -> gh_inference-0.6.2/tests\ncopying tests/test_v03.py -> gh_inference-0.6.2/tests\ncopying tests/test_writing_benchmark.py -> gh_inference-0.6.2/tests\nWriting gh_inference-0.6.2/setup.cfg\nCreating tar archive\nremoving 'gh_inference-0.6.2' (and everything under it)\nrunning egg_info\nwriting gh_inference.egg-info/PKG-INFO\nwriting dependency_links to gh_inference.egg-info/dependency_links.txt\nwriting entry points to gh_inference.egg-info/entry_points.txt\nwriting requirements to gh_inference.egg-info/requires.txt\nwriting top-level names to gh_inference.egg-info/top_level.txt\nreading manifest file 'gh_inference.egg-info/SOURCES.txt'\nreading manifest template 'MANIFEST.in'\nadding license file 'LICENSE'\nwriting manifest file 'gh_inference.egg-info/SOURCES.txt'\nrunning bdist_wheel\nrunning build\nrunning build_py\ncreating build/lib/gh_ai_runner\ncopying gh_ai_runner/integrity.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/logger.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/job.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/hub.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/stress.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/agent.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/agent_types.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/models.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/types.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/worker_agent.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/pipeline.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/metadata.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/validation.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/batch.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/artifact.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/resident.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/client.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/core.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/limits.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/repo.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/runner.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/__init__.py -> build/lib/gh_ai_runner\ncopying gh_ai_runner/polling.py -> build/lib/gh_ai_runner\ncreating build/lib/gh_inference\ncopying gh_inference/__main__.py -> build/lib/gh_inference\ncopying gh_inference/__init__.py -> build/lib/gh_inference\nrunning egg_info\nwriting gh_inference.egg-info/PKG-INFO\nwriting dependency_links to gh_inference.egg-info/dependency_links.txt\nwriting entry points to gh_inference.egg-info/entry_points.txt\nwriting requirements to gh_inference.egg-info/requires.txt\nwriting top-level names to gh_inference.egg-info/top_level.txt\nreading manifest file 'gh_inference.egg-info/SOURCES.txt'\nreading manifest template 'MANIFEST.in'\nadding license file 'LICENSE'\nwriting manifest file 'gh_inference.egg-info/SOURCES.txt'\ninstalling to build/bdist.linux-x86_64/wheel\nrunning install\nrunning install_lib\ncreating build/bdist.linux-x86_64/wheel\ncreating build/bdist.linux-x86_64/wheel/gh_ai_runner\ncopying build/lib/gh_ai_runner/integrity.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/logger.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/job.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/hub.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/stress.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/agent.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/agent_types.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/models.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/types.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/worker_agent.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/pipeline.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/metadata.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/validation.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/batch.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/artifact.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/resident.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/client.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/core.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/limits.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/repo.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/runner.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/__init__.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncopying build/lib/gh_ai_runner/polling.py -> build/bdist.linux-x86_64/wheel/./gh_ai_runner\ncreating build/bdist.linux-x86_64/wheel/gh_inference\ncopying build/lib/gh_inference/__main__.py -> build/bdist.linux-x86_64/wheel/./gh_inference\ncopying build/lib/gh_inference/__init__.py -> build/bdist.linux-x86_64/wheel/./gh_inference\nrunning install_egg_info\nCopying gh_inference.egg-info to build/bdist.linux-x86_64/wheel/./gh_inference-0.6.2-py3.11.egg-info\nrunning install_scripts\ncreating build/bdist.linux-x86_64/wheel/gh_inference-0.6.2.dist-info/WHEEL\ncreating '/home/runner/work/GH-INFERENCE/GH-INFERENCE/dist/.tmp-8u5wzku8/gh_inference-0.6.2-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it\nadding 'gh_ai_runner/__init__.py'\nadding 'gh_ai_runner/agent.py'\nadding 'gh_ai_runner/agent_types.py'\nadding 'gh_ai_runner/artifact.py'\nadding 'gh_ai_runner/batch.py'\nadding 'gh_ai_runner/client.py'\nadding 'gh_ai_runner/core.py'\nadding 'gh_ai_runner/hub.py'\nadding 'gh_ai_runner/integrity.py'\nadding 'gh_ai_runner/job.py'\nadding 'gh_ai_runner/limits.py'\nadding 'gh_ai_runner/logger.py'\nadding 'gh_ai_runner/metadata.py'\nadding 'gh_ai_runner/models.py'\nadding 'gh_ai_runner/pipeline.py'\nadding 'gh_ai_runner/polling.py'\nadding 'gh_ai_runner/repo.py'\nadding 'gh_ai_runner/resident.py'\nadding 'gh_ai_runner/runner.py'\nadding 'gh_ai_runner/stress.py'\nadding 'gh_ai_runner/types.py'\nadding 'gh_ai_runner/validation.py'\nadding 'gh_ai_runner/worker_agent.py'\nadding 'gh_inference/__init__.py'\nadding 'gh_inference/__main__.py'\nadding 'gh_inference-0.6.2.dist-info/licenses/LICENSE'\nadding 'gh_inference-0.6.2.dist-info/METADATA'\nadding 'gh_inference-0.6.2.dist-info/WHEEL'\nadding 'gh_inference-0.6.2.dist-info/entry_points.txt'\nadding 'gh_inference-0.6.2.dist-info/top_level.txt'\nadding 'gh_inference-0.6.2.dist-info/RECORD'\nremoving build/bdist.linux-x86_64/wheel\nSuccessfully built gh_inference-0.6.2.tar.gz and gh_inference-0.6.2-py3-none-any.whl\n* Creating isolated environment: venv+pip...\n* Installing packages in isolated environment:\n  - setuptools>=77\n* Getting build dependencies for sdist...\n* Installed build dependency versions:\n  - setuptools==84.2.1\n* Building sdist...\n* Building wheel from sdist\n* Creating isolated environment: venv+pip...\n* Installing packages in isolated environment:\n  - setuptools>=77\n* Getting build dependencies for wheel...\n* Installed build dependency versions:\n  - setuptools==84.2.1\n* Building wheel...\n"
+    },
+    {
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+        "-m",
+        "twine",
+        "check",
+        "dist/gh_inference-0.6.2-py3-none-any.whl",
+        "dist/gh_inference-0.6.2.tar.gz"
+      ],
+      "exit": 0,
+      "output": "Checking dist/gh_inference-0.6.2-py3-none-any.whl: \u001b[32mPASSED\u001b[0m\nChecking dist/gh_inference-0.6.2.tar.gz: \u001b[32mPASSED\u001b[0m\n"
+    }
+  ],
+  "families": {
+    "Qwen3": [
+      "ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF",
+      "unsloth/Qwen3.8-27B-GGUF",
+      "cdiamond/Qwen3.8-27B-iMatrix-NVFP4-MTP-GGUF"
+    ],
+    "Llama": [
+      "bartowski/Meta-Llama-3.1-8B-Instruct-GGUF",
+      "bartowski/Llama-3.2-3B-Instruct-GGUF",
+      "bartowski/Llama-3.2-1B-Instruct-GGUF"
+    ],
+    "Gemma": [
+      "unsloth/gemma-4-12b-it-GGUF",
+      "unsloth/gemma-4-26B-A4B-it-GGUF",
+      "google/gemma-4-E4B-it-qat-q4_0-gguf"
+    ],
+    "Phi": [
+      "philbert440/Qwen3.8-27B-Uncensored-Cyber-GGUF",
+      "unsloth/Phi-4-mini-instruct-GGUF",
+      "bartowski/microsoft_Phi-4-mini-instruct-GGUF"
+    ],
+    "Mistral": [
+      "MaziyarPanahi/Mistral-7B-v0.1-GGUF",
+      "MaziyarPanahi/Mistral-Small-Instruct-2409-GGUF",
+      "MaziyarPanahi/Mistral-Nemo-Instruct-2407-GGUF"
+    ],
+    "DeepSeek": [
+      "antirez/deepseek-v4.1-flash-gguf",
+      "antirez/deepseek-v4-gguf",
+      "huihui-ai/Huihui-DeepSeek-V4-Flash-0731-abliterated-GGUF"
+    ],
+    "SmolLM": [
+      "unsloth/SmolLM2-135M-Instruct-GGUF",
+      "bartowski/SmolLM2-135M-Instruct-GGUF",
+      "bartowski/HuggingFaceTB_SmolLM3-3B-GGUF"
+    ]
+  },
+  "qwen_variants": {
+    "qwen2.5-0.5b-instruct-fp16.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-fp16.gguf"
+      ],
+      "size_bytes": 1266425696
+    },
+    "qwen2.5-0.5b-instruct-q2_k.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q2_k.gguf"
+      ],
+      "size_bytes": 415182688
+    },
+    "qwen2.5-0.5b-instruct-q3_k_m.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q3_k_m.gguf"
+      ],
+      "size_bytes": 432041824
+    },
+    "qwen2.5-0.5b-instruct-q4_0.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q4_0.gguf"
+      ],
+      "size_bytes": 428730208
+    },
+    "qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q4_k_m.gguf"
+      ],
+      "size_bytes": 491400032
+    },
+    "qwen2.5-0.5b-instruct-q5_0.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q5_0.gguf"
+      ],
+      "size_bytes": 490475360
+    },
+    "qwen2.5-0.5b-instruct-q5_k_m.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q5_k_m.gguf"
+      ],
+      "size_bytes": 522186592
+    },
+    "qwen2.5-0.5b-instruct-q6_k.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q6_k.gguf"
+      ],
+      "size_bytes": 650379104
+    },
+    "qwen2.5-0.5b-instruct-q8_0.gguf": {
+      "files": [
+        "qwen2.5-0.5b-instruct-q8_0.gguf"
+      ],
+      "size_bytes": 675710816
+    }
+  },
+  "Q4_K_M": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "parameters_b": 0.5,
+    "quantization": "Q4_K_M",
+    "files": [
+      {
+        "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+        "size_bytes": 491400032,
+        "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf"
+      }
+    ],
+    "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "size_bytes": 491400032,
+    "size_gb": 0.491400032,
+    "n_ctx": 8192,
+    "max_n_ctx": 32768,
+    "max_output_tokens": 8192,
+    "yarn_original_context": null,
+    "context_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "ram_per_1k_ctx_gb": 0.125,
+    "sha256": "151ac32e1e1d0586f4304ecd9f1184e81d1f2f671c7de1c30da2d0b9d381f703"
+  },
+  "Q8_0": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "parameters_b": 0.5,
+    "quantization": "Q8_0",
+    "files": [
+      {
+        "filename": "qwen2.5-0.5b-instruct-q8_0.gguf",
+        "size_bytes": 675710816,
+        "sha256": "ca59ca7f13d0e15a8cfa77bd17e65d24f6844b554a7b6c12e07a5f89ff76844e",
+        "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q8_0.gguf"
+      }
+    ],
+    "filename": "qwen2.5-0.5b-instruct-q8_0.gguf",
+    "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q8_0.gguf",
+    "size_bytes": 675710816,
+    "size_gb": 0.675710816,
+    "n_ctx": 8192,
+    "max_n_ctx": 32768,
+    "max_output_tokens": 8192,
+    "yarn_original_context": null,
+    "context_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+    "ram_per_1k_ctx_gb": 0.125,
+    "sha256": "537edc0d129fd3167c9dd4ce465fb71591c8c162d477d8b8ea22ce269d28ec14"
+  },
+  "passed": true
+}
