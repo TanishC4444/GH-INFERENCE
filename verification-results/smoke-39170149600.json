@@ -1,0 +1,223 @@
+{
+  "source_sha": "2a73a03cc1db290e20370ab6d2b906a0c968ef4a",
+  "inference": [
+    {
+      "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+      "quantization": "Q4_K_M",
+      "prompt": "What is 2 plus 2? Answer briefly.",
+      "followup": "Name one color.",
+      "results": [
+        {
+          "output": "2 plus 2 is 4.",
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 8,
+            "total_tokens": 38
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 11,
+            "refined_tokens": 11,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 3.253201834000002,
+            "download_seconds": 2.0644781159999965,
+            "load_seconds": 0.6263639659999996,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.4188224810000065,
+            "remote_seconds": 0.0
+          },
+          "model_reused": false,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "output": "Red.",
+          "usage": {
+            "prompt_tokens": 52,
+            "completion_tokens": 2,
+            "total_tokens": 54
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 4,
+            "refined_tokens": 4,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 0.44958980900000256,
+            "download_seconds": 0.0,
+            "load_seconds": 0.0,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.44920520699999855,
+            "remote_seconds": 0.0
+          },
+          "model_reused": true,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    {
+      "repo": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+      "quantization": "Q8_0",
+      "prompt": "What is 2 plus 2? Answer briefly.",
+      "followup": "Name one color.",
+      "results": [
+        {
+          "output": "2 plus 2 is 4.",
+          "usage": {
+            "prompt_tokens": 30,
+            "completion_tokens": 8,
+            "total_tokens": 38
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 11,
+            "refined_tokens": 11,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 3.8543012239999968,
+            "download_seconds": 2.830654494000001,
+            "load_seconds": 0.6307422960000011,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.39222861999999736,
+            "remote_seconds": 0.0
+          },
+          "model_reused": false,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "output": "Red.",
+          "usage": {
+            "prompt_tokens": 52,
+            "completion_tokens": 2,
+            "total_tokens": 54
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 4,
+            "refined_tokens": 4,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 0.40697836599999704,
+            "download_seconds": 0.0,
+            "load_seconds": 0.0,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.40657691100000193,
+            "remote_seconds": 0.0
+          },
+          "model_reused": true,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    {
+      "repo": "bartowski/SmolLM2-135M-Instruct-GGUF",
+      "quantization": "Q4_K_M",
+      "prompt": "What is 2 plus 2? Answer briefly.",
+      "followup": "Name one color.",
+      "results": [
+        {
+          "output": "To find 2 plus 2, we simply add the two numbers together. The result is 4.",
+          "usage": {
+            "prompt_tokens": 31,
+            "completion_tokens": 22,
+            "total_tokens": 53
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 11,
+            "refined_tokens": 11,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 1.7649874840000024,
+            "download_seconds": 1.295797302000004,
+            "load_seconds": 0.20234060399999265,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.2663615409999949,
+            "remote_seconds": 0.0
+          },
+          "model_reused": false,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        },
+        {
+          "output": "One color is blue.",
+          "usage": {
+            "prompt_tokens": 68,
+            "completion_tokens": 5,
+            "total_tokens": 73
+          },
+          "refinement": {
+            "attempted": false,
+            "applied": false,
+            "original_tokens": 4,
+            "refined_tokens": 4,
+            "reason": "disabled",
+            "usage": {
+              "prompt_tokens": 0,
+              "completion_tokens": 0,
+              "total_tokens": 0
+            }
+          },
+          "timings": {
+            "total_seconds": 0.22498326800000257,
+            "download_seconds": 0.0,
+            "load_seconds": 0.0,
+            "refinement_seconds": 0.0,
+            "generation_seconds": 0.22416763400001116,
+            "remote_seconds": 0.0
+          },
+          "model_reused": true,
+          "weights_cached": false,
+          "dropped_history_turns": 0,
+          "finish_reason": "stop"
+        }
+      ]
+    }
+  ],
+  "installed_wheel": true,
+  "passed": true
+}
