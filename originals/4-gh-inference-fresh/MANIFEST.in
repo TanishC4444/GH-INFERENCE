@@ -1,0 +1,2 @@
+include CHANGELOG.md showcase.py
+recursive-include examples *.py *.json *.md

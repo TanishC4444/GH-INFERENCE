@@ -1,0 +1,218 @@
+# gh-ai-runner
+
+[![PyPI version](https://badge.fury.io/py/gh-ai-runner.svg)](https://badge.fury.io/py/gh-ai-runner)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+
+**Serverless AI inference via GitHub Actions. No server. No GPU. No infrastructure.**
+
+Run open-source LLMs directly through GitHub's free CI/CD runners — just a GitHub token and a prompt. `gh-ai-runner` handles everything else: repo creation, workflow setup, model downloading, caching, and output retrieval.
+
+Built by [Tanish Chauhan](https://github.com/TanishC4444)
+
+---
+
+## What's new in 0.1.16
+
+- **5 models** — added Phi-3.5 Mini, Qwen 2.5 1.5B, Gemma 2 2B, and DeepSeek-R1 1.5B
+- **Smart sync** — runner files are only committed when their content actually changes, saving 10-20s per call
+- **Faster polling** — run detection reduced from 4s to 2s, completion polling from 12s to 8s
+
+---
+
+## How it works
+
+When you call `ai_call()`:
+
+1. Creates a GitHub repo (once, automatically)
+2. Commits a workflow + inference script — only if they've changed
+3. Dispatches a `workflow_dispatch` GitHub Actions run
+4. The runner downloads and caches the model (GGUF quantized)
+5. Runs inference via `llama-cpp-python`
+6. Uploads the output as an artifact
+7. Downloads and returns the output to you as a string
+
+No server is ever running between calls. Each call spins up a fresh GitHub Actions runner, runs inference, and shuts down.
+
+---
+
+## Install
+
+```bash
+pip install gh-ai-runner
+```
+
+**Requirements:**
+- Python 3.9+
+- A GitHub account with a personal access token (PAT)
+- Token scopes needed: `repo`, `workflow`
+
+---
+
+## Quickstart
+
+```python
+from gh_ai_runner import ai_call
+
+result = ai_call(
+    github_token="ghp_...",
+    prompt="explain recursion in simple terms",
+)
+
+print(result)
+```
+
+On first run, `gh-ai-runner` will:
+- Create a repo called `ai-inference-runner` on your GitHub account
+- Set up the workflow automatically
+- Download and cache TinyLlama 1.1B (~0.6 GB)
+
+Subsequent calls reuse the cached repo and model.
+
+---
+
+## Examples
+
+**Basic question**
+```python
+from gh_ai_runner import ai_call
+
+result = ai_call(
+    github_token="ghp_...",
+    prompt="what is the difference between a list and a tuple in Python?",
+)
+print(result)
+```
+
+**Custom system prompt**
+```python
+result = ai_call(
+    github_token="ghp_...",
+    prompt="explain black holes",
+    system="You are a physics professor. Be precise and use analogies.",
+    model="llama",
+    max_tokens=1024,
+)
+print(result)
+```
+
+**Reasoning with DeepSeek-R1**
+```python
+result = ai_call(
+    github_token="ghp_...",
+    prompt="if a bat and ball cost $1.10 and the bat costs $1 more than the ball, how much is the ball?",
+    model="deepseek",
+    temperature=0.0,
+)
+print(result)
+```
+
+**Coding with Qwen 2.5**
+```python
+result = ai_call(
+    github_token="ghp_...",
+    prompt="write a Python function that checks if a string is a palindrome",
+    model="qwen",
+)
+print(result)
+```
+
+**Deterministic output (temperature=0)**
+```python
+result = ai_call(
+    github_token="ghp_...",
+    prompt="what is 144 divided by 12?",
+    temperature=0.0,
+    max_tokens=16,
+)
+print(result)
+```
+
+**Silent mode**
+```python
+result = ai_call(
+    github_token="ghp_...",
+    prompt="summarize the theory of evolution",
+    verbose=False,
+)
+print(result)
+```
+
+**Parallel calls (use separate repo per call)**
+```python
+import threading
+from gh_ai_runner import ai_call
+
+TOKEN = "ghp_..."
+results = {}
+
+def run(key, prompt, repo):
+    results[key] = ai_call(
+        github_token=TOKEN,
+        prompt=prompt,
+        repo_name=repo,
+        verbose=False,
+    )
+
+t1 = threading.Thread(target=run, args=("q1", "explain DNA", "runner-repo-1"))
+t2 = threading.Thread(target=run, args=("q2", "explain RNA", "runner-repo-2"))
+
+t1.start(); t2.start()
+t1.join();  t2.join()
+
+print(results["q1"])
+print(results["q2"])
+```
+
+> **Note:** Parallel calls must use different `repo_name` values. Each repo has its own independent run queue.
+
+---
+
+## Parameters
+
+| Parameter | Type | Default | Required | Description |
+|---|---|---|---|---|
+| `github_token` | `str` | — | Yes | GitHub PAT with `repo` and `workflow` scopes |
+| `prompt` | `str` | — | Yes | The message or question to send to the model |
+| `model` | `str` | `"tinyllama"` | No | Which model to use. See Models section below |
+| `system` | `str` | `"You are a helpful assistant."` | No | System prompt that controls model behavior |
+| `max_tokens` | `int` | `512` | No | Max tokens to generate. Hard limit: 4096 |
+| `temperature` | `float` | `0.7` | No | Randomness. `0.0` = deterministic, `2.0` = very creative |
+| `cache` | `bool` | `True` | No | Cache model weights between runs. Strongly recommended |
+| `n_ctx` | `int` | `None` | No | Context window size. Defaults to model built-in. Max: 8192 |
+| `repo_name` | `str` | `"ai-inference-runner"` | No | GitHub repo to create or reuse |
+| `verbose` | `bool` | `True` | No | Print step-by-step logs. Set `False` for silent mode |
+
+---
+
+## Models
+
+| Key | Model | Size | Default Context | Best For |
+|---|---|---|---|---|
+| `tinyllama` | TinyLlama 1.1B Chat Q4_K_M | 0.6 GB | 2048 | Fast, simple factual answers |
+| `llama` | Llama 3.2 1B Instruct Q4_K_M | 0.7 GB | 4096 | General instruction following |
+| `phi3` | Phi-3.5 Mini Instruct Q4_K_M | 2.2 GB | 4096 | Reasoning, best overall quality |
+| `qwen` | Qwen 2.5 1.5B Instruct Q4_K_M | 1.0 GB | 4096 | Coding and math |
+| `gemma2` | Gemma 2 2B Instruct Q4_K_M | 1.6 GB | 4096 | Instruction following, chat |
+| `deepseek` | DeepSeek-R1 1.5B Q4_K_M | 1.1 GB | 4096 | Step-by-step reasoning |
+
+All models are quantized GGUF files from HuggingFace. No HuggingFace token required.
+
+---
+
+## Context and output size
+
+The context window (`n_ctx`) is the total number of tokens the model can see at once — this includes your system prompt, your prompt, and the generated output combined. Max across all models is 8192.
+
+---
+
+## Changelog
+
+### 0.1.16
+- Renamed package from `github-ai` to `gh-ai-runner`
+- Added models: `phi3`, `qwen`, `gemma2`, `deepseek`
+- Smart file sync: runner files only committed when changed (saves ~15s per call)
+- Faster polling: run detection 4s -> 2s, completion poll 12s -> 8s
+
+### 0.1.1
+- Initial release with `tinyllama` and `llama` models

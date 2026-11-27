@@ -1,0 +1,2 @@
+[console_scripts]
+gh-inference = gh_inference.__main__:main

@@ -1,0 +1,1570 @@
+{
+  "review": {
+    "answer": "Step 0 / writer\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"",
+    "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39336451681",
+    "results": [
+      {
+        "output": "Mira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 58,
+          "completion_tokens": 92,
+          "total_tokens": 150
+        },
+        "timings": {
+          "total_seconds": 3.208525519000034,
+          "download_seconds": 2.8452999970340898e-05,
+          "load_seconds": 0.5836138299999902,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.3572417110000288,
+          "remote_seconds": 34.459913834,
+          "routing_seconds": 3.1760000069880334e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 5,
+          "refined_tokens": 5,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "stop",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14700843008,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411718144,
+          "peak_memory_bytes": 701345792,
+          "duration_seconds": 10.017,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 31.525030223999998
+        },
+        "agent_id": "writer",
+        "step_index": 0,
+        "input_steps": [],
+        "handoff_chars": 0,
+        "handoff_bytes": 0
+      },
+      {
+        "output": "Step 0 / writer\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 170,
+          "completion_tokens": 98,
+          "total_tokens": 268
+        },
+        "timings": {
+          "total_seconds": 2.9248894959999916,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.924076351999986,
+          "remote_seconds": 34.459913834,
+          "routing_seconds": 1.3054000021384127e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 117,
+          "refined_tokens": 117,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "stop",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14700843008,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411718144,
+          "peak_memory_bytes": 701345792,
+          "duration_seconds": 10.017,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 31.525030223999998
+        },
+        "agent_id": "reviewer",
+        "step_index": 1,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 343,
+        "handoff_bytes": 343
+      },
+      {
+        "output": "Step 0 / writer\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"\nMira: \"I'm not sure if this is a good idea. I've been thinking about it for a while now.\"\nSol: \"I'm not sure either. I've been thinking about it for a while now.\"",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 275,
+          "completion_tokens": 98,
+          "total_tokens": 373
+        },
+        "timings": {
+          "total_seconds": 3.8825035969999817,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.881371935000004,
+          "remote_seconds": 34.459913834,
+          "routing_seconds": 1.6040999980759807e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 222,
+          "refined_tokens": 222,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "stop",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14700843008,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411718144,
+          "peak_memory_bytes": 701345792,
+          "duration_seconds": 10.017,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 31.525030223999998
+        },
+        "agent_id": "writer",
+        "step_index": 2,
+        "input_steps": [
+          0,
+          1
+        ],
+        "handoff_chars": 706,
+        "handoff_bytes": 706
+      }
+    ],
+    "verification": {
+      "turns": 3,
+      "model_loads": 1,
+      "worker_seconds": 10.017,
+      "routing_seconds": 3.227100000913197e-05,
+      "selected_source_references": 3,
+      "handoff_bytes": 1049,
+      "all_handoff_sizes_verified": true
+    }
+  },
+  "broadcast": {
+    "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39336451825",
+    "plan": [
+      {
+        "agent": "writer",
+        "instruction": "Draft a concise plan for reliable inference.",
+        "inputs": []
+      },
+      {
+        "agent": "critic-0",
+        "instruction": "Review the draft from perspective 0: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-1",
+        "instruction": "Review the draft from perspective 1: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-2",
+        "instruction": "Review the draft from perspective 2: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-3",
+        "instruction": "Review the draft from perspective 3: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-4",
+        "instruction": "Review the draft from perspective 4: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-5",
+        "instruction": "Review the draft from perspective 5: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-6",
+        "instruction": "Review the draft from perspective 6: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-7",
+        "instruction": "Review the draft from perspective 7: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-8",
+        "instruction": "Review the draft from perspective 8: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-9",
+        "instruction": "Review the draft from perspective 9: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-10",
+        "instruction": "Review the draft from perspective 10: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-11",
+        "instruction": "Review the draft from perspective 11: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-12",
+        "instruction": "Review the draft from perspective 12: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-13",
+        "instruction": "Review the draft from perspective 13: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-14",
+        "instruction": "Review the draft from perspective 14: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-15",
+        "instruction": "Review the draft from perspective 15: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-16",
+        "instruction": "Review the draft from perspective 16: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-17",
+        "instruction": "Review the draft from perspective 17: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-18",
+        "instruction": "Review the draft from perspective 18: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "critic-19",
+        "instruction": "Review the draft from perspective 19: give one concrete failure case and a test.",
+        "inputs": [
+          0,
+          0
+        ]
+      },
+      {
+        "agent": "editor",
+        "instruction": "Combine the draft and all feedback into a prioritized revision.",
+        "inputs": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          0,
+          1
+        ]
+      }
+    ],
+    "results": [
+      {
+        "output": "To improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data, handling missing values, and normalizing or scaling the data if necessary.\n\n2. **Model Selection**: Choose the appropriate model for",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 44,
+          "completion_tokens": 64,
+          "total_tokens": 108
+        },
+        "timings": {
+          "total_seconds": 3.244191981,
+          "download_seconds": 2.3855999998545485e-05,
+          "load_seconds": 0.7119064219999984,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.0329837119999965,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 3.2559999993964084e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 8,
+          "refined_tokens": 8,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "writer",
+        "step_index": 0,
+        "input_steps": [],
+        "handoff_chars": 0,
+        "handoff_bytes": 0
+      },
+      {
+        "output": "Review the draft from perspective 0: give one concrete failure case and a test.\n\n[Step 0 / writer]\nTo improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data, handling",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.535398299999997,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.534290310000003,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.6239999993672427e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-0",
+        "step_index": 1,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "Review the draft from perspective 1: give one concrete failure case and a test.\n\n[Step 0 / writer]\nTo improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data, handling",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4692745109999947,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4681932460000056,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.5113999999982752e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-1",
+        "step_index": 2,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4849174019999936,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4839005730000068,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.3197999997771603e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-2",
+        "step_index": 3,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4572679589999993,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.456269253000002,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.0922999997831084e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-3",
+        "step_index": 4,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4700151790000007,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.469012036999999,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1827000001574106e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-4",
+        "step_index": 5,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Inefficient Data Preprocessing\n\n**Failure Case:**\n- **Data Preprocessing**: The data preprocessing step is not optimized for inference efficiency. The data is already cleaned and normalized, but the preprocessing steps are still taking a significant amount of time.\n\n**Test:**\n- **Test Data**:",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4631016359999975,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4620932930000023,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1067999999170297e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-5",
+        "step_index": 6,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4855644969999986,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4847471580000047,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 8.936999996933537e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-6",
+        "step_index": 7,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Inefficient Data Preprocessing\n\n**Failure Case:**\n- **Data Preprocessing**: The data preprocessing step is not optimized for inference efficiency. The data is already cleaned and normalized, but the preprocessing steps are still taking a significant amount of time.\n\n**Test:**\n- **Test Data**:",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.4576667570000055,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.456668166,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1096000001487027e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-7",
+        "step_index": 8,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Inefficient Data Preprocessing\n\n**Failure Case:**\n- **Data Preprocessing**: The data preprocessing step is not optimized for inference efficiency. The data is already cleaned and normalized, but the preprocessing steps are still taking a significant amount of time.\n\n**Test:**\n- **Test Data**:",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.459191337000007,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4583793230000026,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 9.125000005383299e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-8",
+        "step_index": 9,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 130,
+          "completion_tokens": 64,
+          "total_tokens": 194
+        },
+        "timings": {
+          "total_seconds": 2.46038944499999,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.45957085900001,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 9.750999993229925e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 92,
+          "refined_tokens": 92,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-9",
+        "step_index": 10,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.5169870869999897,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.5161818659999966,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1356000001683242e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-10",
+        "step_index": 11,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "Review the draft from perspective 11: give one concrete failure case and a test.\n\n[Step 0 / writer]\nTo improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data,",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.502214104999993,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.5013972499999966,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 8.825999998407497e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-11",
+        "step_index": 12,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "Review the draft from perspective 12: give one concrete failure case and a test.\n\n[Step 0 / writer]\nTo improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data,",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.4777731759999995,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4767753040000002,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1817000000746702e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-12",
+        "step_index": 13,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** Clean the dataset by removing rows with missing values and outliers, and normalizing",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.460478164999998,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4594729359999974,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.0150999997904364e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-13",
+        "step_index": 14,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.4604155399999854,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.459416309000005,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 9.981999994579382e-06
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-14",
+        "step_index": 15,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "Review the draft from perspective 15: give one concrete failure case and a test.\n\n[Step 0 / writer]\nTo improve inference efficiency while maintaining accurate resource tracking, consider the following plan:\n\n1. **Data Preprocessing**: Ensure that your data is clean and ready for inference. This includes cleaning the data,",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.479760209999995,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.478746299000008,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.123900000266076e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-15",
+        "step_index": 16,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.4764980299999877,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.47549042899999,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1732999993796511e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-16",
+        "step_index": 17,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** Clean the dataset by removing rows with missing values and outliers, and normalizing",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.474405305999994,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.4733988109999956,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.0811999999305044e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-17",
+        "step_index": 18,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "Review the draft from perspective 18: give one concrete failure case and a test.\n\n### Concrete Failure Case and Test\n\n**Failure Case:** \n- **Data Preprocessing**: The data contains a large number of missing values, which can significantly impact the inference process. For example, if the data contains missing values,",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.5098479730000065,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.508848807999996,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1565000008317838e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-18",
+        "step_index": 19,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 132,
+          "completion_tokens": 64,
+          "total_tokens": 196
+        },
+        "timings": {
+          "total_seconds": 2.4637120559999914,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.462711466000002,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 1.1572999994768907e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 93,
+          "refined_tokens": 93,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "critic-19",
+        "step_index": 20,
+        "input_steps": [
+          0
+        ],
+        "handoff_chars": 374,
+        "handoff_bytes": 374
+      },
+      {
+        "output": "### Failure Case and Test: Data Preprocessing\n\n**Failure Case:** \n- **Scenario:** You are working with a large dataset that contains a significant amount of missing values and outliers.\n- **Test:** \n  - **Data Preprocessing:** \n    - **Step 0:** Clean the dataset by removing rows with",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1620,
+          "completion_tokens": 64,
+          "total_tokens": 1684
+        },
+        "timings": {
+          "total_seconds": 16.31843180099999,
+          "download_seconds": 0.0,
+          "load_seconds": 0.0,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 16.311676508999994,
+          "remote_seconds": 92.499037375,
+          "routing_seconds": 5.9047999997119405e-05
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1584,
+          "refined_tokens": 1584,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": true,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14949945344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411832832,
+          "peak_memory_bytes": 823296000,
+          "duration_seconds": 69.129,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 234.586996109
+        },
+        "agent_id": "editor",
+        "step_index": 21,
+        "input_steps": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "handoff_chars": 6931,
+        "handoff_bytes": 6931
+      }
+    ],
+    "verification": {
+      "turns": 22,
+      "model_loads": 1,
+      "worker_seconds": 69.129,
+      "routing_seconds": 0.0002886369999757221,
+      "selected_source_references": 41,
+      "handoff_bytes": 14411,
+      "all_handoff_sizes_verified": true
+    }
+  },
+  "note": "Live tests verify one resident model and exact routing/size counters; no independent per-role KV caches. A later prompt-layout refinement places shared source text before role instructions and is covered by unit tests, without a separate speed claim."
+}

@@ -1,0 +1,1438 @@
+{
+  "files": [
+    {
+      "path": "originals/1-github-ai/.DS_Store",
+      "sha256": "53d7cda43f0565874242aeccffbc1e8983dff8a26ab703786b724611c31ab2e1",
+      "size": 8196
+    },
+    {
+      "path": "originals/1-github-ai/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "originals/1-github-ai/.github/release.json",
+      "sha256": "84662bffc139953d36fcd65fd80fa24a5911cc5b68276e029415b14b12e06277",
+      "size": 21
+    },
+    {
+      "path": "originals/1-github-ai/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "originals/1-github-ai/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "originals/1-github-ai/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "originals/1-github-ai/.github/workflows/publish.yml",
+      "sha256": "5ec13ecdb0e052d8ae211a886d9bf73c42f6e89b6e122e9e386091f114df039f",
+      "size": 1879
+    },
+    {
+      "path": "originals/1-github-ai/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "originals/1-github-ai/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "originals/1-github-ai/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "originals/1-github-ai/.pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "size": 37
+    },
+    {
+      "path": "originals/1-github-ai/.pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "size": 191
+    },
+    {
+      "path": "originals/1-github-ai/.pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "size": 302
+    },
+    {
+      "path": "originals/1-github-ai/.pytest_cache/v/cache/lastfailed",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "originals/1-github-ai/.pytest_cache/v/cache/nodeids",
+      "sha256": "f6e13c40edc31822bd9cae9a8b0b1411b559483edb80e5492b62c89ab2d73210",
+      "size": 29365
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/.gitignore",
+      "sha256": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+      "size": 35
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.16.5/14696991019613252288",
+      "sha256": "3c1d205419f5a7c8f07f05a3d20d98b7c943fa0055085bf6251d3678b37bc1af",
+      "size": 220
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.16.5/3166222749186761997",
+      "sha256": "5b36ada3d261f714837babd9c5ac4071d4860c2df4618023d3b2306b9a432acc",
+      "size": 772
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.16.5/612426795041013428",
+      "sha256": "0df377f30d11e385e82199346898cec7a1ab977e39697d9a0228d057a8a3b114",
+      "size": 604
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.16.5/7787461256227992777",
+      "sha256": "9965794e7dab02c168e8f98a66ecfb2e2792d702d9db6147c845f4ea0021ce2b",
+      "size": 172
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.17.1/15944040423648118138",
+      "sha256": "e267ab23c98a1cabe2fd040ea68f05f3e3ce532daf1ab0606411e493abe94314",
+      "size": 364
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/0.17.1/7604825864089853149",
+      "sha256": "678426b545062f601a14cd72af5464b1d2bccc75732f1a29fc6fcd6c6bfdd09c",
+      "size": 884
+    },
+    {
+      "path": "originals/1-github-ai/.ruff_cache/CACHEDIR.TAG",
+      "sha256": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+      "size": 43
+    },
+    {
+      "path": "originals/1-github-ai/CHANGELOG.md",
+      "sha256": "5c1b6d9c448d64f74426afb4e866c9bf960b043490e220c4f4c2ced7aa4c4dc2",
+      "size": 3827
+    },
+    {
+      "path": "originals/1-github-ai/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "originals/1-github-ai/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "originals/1-github-ai/README.md",
+      "sha256": "bc217c96e9e393343740c8e01b90cb9c47b1e74621aed403bf9585779ffb8bd3",
+      "size": 40668
+    },
+    {
+      "path": "originals/1-github-ai/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "originals/1-github-ai/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "originals/1-github-ai/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "originals/1-github-ai/examples/vision_smoke.py",
+      "sha256": "54b9b5fe5f0e7a2e67b7042b7d8ee860fe1491faf815b6bc613565bbd7f8ea10",
+      "size": 1466
+    },
+    {
+      "path": "originals/1-github-ai/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__init__.py",
+      "sha256": "08ee781c58fa1a706047fd6865bb176da306a2c623558a506e35a1ee71268206",
+      "size": 1562
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/__init__.cpython-312.pyc",
+      "sha256": "f1ae7f5f341dc1c152b3509db6e2754b24afe8107bf558abdfb906898b86f168",
+      "size": 1140
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/agent.cpython-312.pyc",
+      "sha256": "a34449ed861dbce884938e98333c86fbc0283e76c75e7734db219584d0a67592",
+      "size": 8422
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/agent_types.cpython-312.pyc",
+      "sha256": "7d3b5adc4d672c4521f0f19d23113f12940e2a31c84627e43fe04e5f8a17de6d",
+      "size": 2031
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/artifact.cpython-312.pyc",
+      "sha256": "f47faa9ae81c6785936d339c3b2188f17617e7857df3d54b87c729024827a953",
+      "size": 6124
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/batch.cpython-312.pyc",
+      "sha256": "b14748f5c7a10d28ecbcf62046f437837f567c22b22e063cb220d6b45f907c06",
+      "size": 4909
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/client.cpython-312.pyc",
+      "sha256": "70ea3373fad5705c3c40dc3dc6d9eb634f7fbe3d20b26fba3a57ae31641a843a",
+      "size": 23265
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/core.cpython-312.pyc",
+      "sha256": "ca7117ddd4280ba2c0cc075922e51a30bb1743f58c05b44552333594a6187df9",
+      "size": 3357
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/integrity.cpython-312.pyc",
+      "sha256": "84d107547b1151ff8422d7199580e4ac31df857a4aa72e2fa04b29ded83b5962",
+      "size": 1918
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/job.cpython-312.pyc",
+      "sha256": "909f44e87bc41038e0e06e85da7830a7e9a421ea27a3caca66737c8fa05c3e30",
+      "size": 11242
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/local.cpython-312.pyc",
+      "sha256": "6e5c23a6eb60b64b080dad1f89ba39fee5c8268815c4ae5a91dc8d492a01be35",
+      "size": 10729
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/logger.cpython-312.pyc",
+      "sha256": "826a5fde59733c1e36e65d0765fe2ef665c8e0190baadff9899922027fffe405",
+      "size": 997
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/metadata.cpython-312.pyc",
+      "sha256": "76affd0da045b53f54bd782be21c4a59f15a1e8b42457994b7aa8c0c10a98db4",
+      "size": 8063
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/models.cpython-312.pyc",
+      "sha256": "43a73afe834d75a51cc231469d9b408ab54d4b47ceed5034202e88223e2ca39d",
+      "size": 6203
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/polling.cpython-312.pyc",
+      "sha256": "b021c5161ff63e9b77f9ba3fc5dba5dd83aed0807e2efc62bc09e3e5ff61fdd4",
+      "size": 3280
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/repo.cpython-312.pyc",
+      "sha256": "2ad80485452a144324692e492c16dcb3efe55d412fabdb0d60b1da99c15ac3c8",
+      "size": 8247
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/runner.cpython-312.pyc",
+      "sha256": "154b7f1957af5a7e6fb9e147c277f11cced79e5e9556e1c0b5b8796f22747271",
+      "size": 12996
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/types.cpython-312.pyc",
+      "sha256": "3b0277d7584f9c7a748a17327ddaf00512e1c16c13edb788a88b5abecb773f38",
+      "size": 9392
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/validation.cpython-312.pyc",
+      "sha256": "607239aef866852a1f8ca9dddea0f462f952712b3034a5836a99faa7defb513f",
+      "size": 3211
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/__pycache__/worker_agent.cpython-312.pyc",
+      "sha256": "0803556f53b83326de005c9979bd9d524b94e6eaf592af822b01be628ea399b9",
+      "size": 6488
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/agent.py",
+      "sha256": "2ab011725d9d16edd6d627f2912863e4ab4b1fc8b4a87499078d633a9ffcbbed",
+      "size": 13407
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/hub.py",
+      "sha256": "29dff45589df1f41484df835da8d81bdd51892beca3eddae76f5011f19fd1537",
+      "size": 12263
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/runner.py",
+      "sha256": "ec360bdad0f1c6983813447b851cd633788f51c6ef4e83eb397c83968e4a0f47",
+      "size": 16600
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "originals/1-github-ai/gh_ai_runner/worker_agent.py",
+      "sha256": "8103112521ed2178bae2a74e5eaa224af4c657718adf76cd21e1b51ffe0e09a5",
+      "size": 13791
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/PKG-INFO",
+      "sha256": "8c24cf640e1380204d0d99c065b701ab6a6a9003c272ee9bbb2fb2a1b066ce2a",
+      "size": 39591
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/SOURCES.txt",
+      "sha256": "46a7873f590c43bfb9906f593e030fe4eb60717b1579a79ec17df0b92467e36a",
+      "size": 1287
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/entry_points.txt",
+      "sha256": "9cdc25cf3616621051027db8abda5e50c69c8c8bf41498854a85ef8390901fad",
+      "size": 60
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/requires.txt",
+      "sha256": "545a11556fee264092a70c9f1ffdfb35903e0f01f23733724941196361ab2811",
+      "size": 41
+    },
+    {
+      "path": "originals/1-github-ai/gh_inference.egg-info/top_level.txt",
+      "sha256": "f5fc4e68798db6619421b5712e14c70233475867c976ad23e9d8bbca22da7815",
+      "size": 26
+    },
+    {
+      "path": "originals/1-github-ai/handoff-results.json",
+      "sha256": "8f12c201fd9d9f7e955475cff1b468b46ed9fad655737637dd4b923cd5134b35",
+      "size": 54446
+    },
+    {
+      "path": "originals/1-github-ai/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "originals/1-github-ai/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "originals/1-github-ai/skills/distinct-writing/SKILL.md",
+      "sha256": "bead6f79a5e3c4d343a1868d270b9b33f55fedc9bf36c83bafddfa6ac1b9178c",
+      "size": 4624
+    },
+    {
+      "path": "originals/1-github-ai/skills/distinct-writing/references/research.md",
+      "sha256": "226f6b076b8b098ddb8924ea62b32e5a48d72c8fc2972211b2bfc11debb8af51",
+      "size": 4124
+    },
+    {
+      "path": "originals/1-github-ai/speed-results.json",
+      "sha256": "3a3e2217858b78f5bb085ff50e99a9165b236cbac55f60652d351fba31b43ec3",
+      "size": 133228
+    },
+    {
+      "path": "originals/1-github-ai/stress-results-initial.json",
+      "sha256": "859f416642bd193f17a2deb29af22a08dfcea6432db18876fe6da0561ece598a",
+      "size": 87201
+    },
+    {
+      "path": "originals/1-github-ai/stress-results.json",
+      "sha256": "bee2e7fbcc1ae7846542867e5abe3df78f3d64c66f370e5c6f727fb73d52f55e",
+      "size": 153404
+    },
+    {
+      "path": "originals/1-github-ai/style-report.txt",
+      "sha256": "b5f2e32002d94e84997e7c288040624d820ae71d34d82112d08b4c63584af4ff",
+      "size": 8430
+    },
+    {
+      "path": "originals/1-github-ai/style-results.json",
+      "sha256": "ac6bce7398fd40014fefd828e67874ed63148f9c26efcdb269bb220d0edee07c",
+      "size": 29765
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_vision.py",
+      "sha256": "2ebd3b7dcd5e6a5522df9f949cb48080baf4fa65f1938121f8e8fbca9cd939ec",
+      "size": 12587
+    },
+    {
+      "path": "originals/1-github-ai/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "originals/1-github-ai/writing-report.txt",
+      "sha256": "8840679be2e5111fb71a063f528a8fc53d0c5df62e6142a1182ec994ef41e825",
+      "size": 19986
+    },
+    {
+      "path": "originals/1-github-ai/writing-results.json",
+      "sha256": "017ae8da1b2399baabf380e99dccf0bd10d71e8c6ebd53603acda81102f64eb5",
+      "size": 84984
+    },
+    {
+      "path": "originals/2-gh-ai-runner/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "originals/2-gh-ai-runner/README.md",
+      "sha256": "84dd404a53a6442d218a78433720ce5b3a17490c98065ab75a35fb63db613d8d",
+      "size": 6413
+    },
+    {
+      "path": "originals/2-gh-ai-runner/dist/gh_ai_runner-0.1.6-py3-none-any.whl",
+      "sha256": "b379c56e84a8315c582403467895b22cfc3f2c09cc6c1a56a7de364a0d794767",
+      "size": 14149
+    },
+    {
+      "path": "originals/2-gh-ai-runner/dist/gh_ai_runner-0.1.6.tar.gz",
+      "sha256": "d38e5735f4b3d2034cddfd309209199176e7b554ebed253b0ac6ccb3d82f22f5",
+      "size": 13887
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/__init__.py",
+      "sha256": "a6a01177ccdd5fc133d6c5a6dc7cb1b53358970d52df41b5bb4a6280caa2baf4",
+      "size": 217
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/artifact.py",
+      "sha256": "7c7e448139bef8b3523ee320211e98425c50e5f230b95e17f66dd9f96143b626",
+      "size": 1468
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/core.py",
+      "sha256": "9da30ecb2521807c4acbc4da67109ec1ef553862129baa33595cc662dd877ec3",
+      "size": 4724
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/logger.py",
+      "sha256": "f647a60ba5d034ba34f9fbf414b25a75ba05e1258cc6a3197731e6056965a244",
+      "size": 349
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/models.py",
+      "sha256": "0a0c3774cc814efa36b771865e4ea72b7f0bb02107d4f5265be23cddfce8501d",
+      "size": 2788
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/polling.py",
+      "sha256": "72da05357239ede32e740297cef8717237c5ddee068617a8072e245e68b92354",
+      "size": 2145
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/repo.py",
+      "sha256": "b9d24025c09f3e8f44f2ece22d56a43b254524de17cc8479bebca72334284e59",
+      "size": 4194
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/runner.py",
+      "sha256": "b179d0a962837fbb4e0e4757bc7ca96bf4f0e18ed460a0124621f712c3e79b47",
+      "size": 5471
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner/validation.py",
+      "sha256": "f1dbd0503d2101d46845d01cdaf16fde2bcee9dc97bb09bc79fb20e2c620dfe8",
+      "size": 1817
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner.egg-info/PKG-INFO",
+      "sha256": "ef2baf63b30f33b56b4e0bbf0e216be2b04b6e0e30dc0fbbcd72b9aebbeedb06",
+      "size": 7189
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner.egg-info/SOURCES.txt",
+      "sha256": "a130bb7ebc071691a9e151d3ab6ff8a47bec5cffe6be27f6c0e059f5afacc521",
+      "size": 423
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner.egg-info/requires.txt",
+      "sha256": "572fef348121c255c6160b7d4cd191d96710f2310cb918b1bb8c45c417c68356",
+      "size": 29
+    },
+    {
+      "path": "originals/2-gh-ai-runner/gh_ai_runner.egg-info/top_level.txt",
+      "sha256": "d44537a3985e0a98fb93605e0ebcd37912bea38c4173f863b4e58be2aad09113",
+      "size": 13
+    },
+    {
+      "path": "originals/2-gh-ai-runner/pyproject.toml",
+      "sha256": "f2dce44c1d3edb07b33bc8fbb6a26caecc0443fe9eed34be49f49f41750a740d",
+      "size": 916
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/release.json",
+      "sha256": "70a4f822e1875ee9af9b605bd1f55b4d1f6f261db320e1759182d4af73fc68c4",
+      "size": 21
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/publish.yml",
+      "sha256": "5f4922706fc77518da595f244ed30ed9d95a9bcfc9b10436bea056264c0aebba",
+      "size": 1879
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/resident-smoke.yml",
+      "sha256": "e43d5b8190de31851d20019571583e906744e121e1168662b6d3c7d9f7d9309a",
+      "size": 1400
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "originals/3-gh-inference-source/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "originals/3-gh-inference-source/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "originals/3-gh-inference-source/CHANGELOG.md",
+      "sha256": "c355c9d4c6e7127c1322bc546c8182cdcc696792cbdd80b01bab5a7d8e2cc82c",
+      "size": 4123
+    },
+    {
+      "path": "originals/3-gh-inference-source/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "originals/3-gh-inference-source/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "originals/3-gh-inference-source/README.md",
+      "sha256": "5961a35d1b2095d722f99ce8ccf7df2d1cf0639e4a88b12dc3c205f00608abf0",
+      "size": 40015
+    },
+    {
+      "path": "originals/3-gh-inference-source/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "originals/3-gh-inference-source/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "originals/3-gh-inference-source/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "originals/3-gh-inference-source/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/__init__.py",
+      "sha256": "d43afd58aaa77d31c25f705818a25dd85401322e5973f93ea1053aa72fc8a8c0",
+      "size": 1565
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/agent.py",
+      "sha256": "91f0f3c9220104ff63548aaa663f437aebd8364cf599ec4c8446d19f98f5f5c2",
+      "size": 12164
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/hub.py",
+      "sha256": "4b7c20a48e94f168c7695dd1d023a26931a8be7f4d8b2f60a92f30a6e439a6ad",
+      "size": 10212
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/resident.py",
+      "sha256": "ef245ab3cfa27ce692af31185f1667e55f405c0226ef096f877b29e499408186",
+      "size": 5174
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/runner.py",
+      "sha256": "27adc8ba1c41ac53ae273162ea117d7f3e0f1930076b9ffcd0b80f61354698b5",
+      "size": 15930
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_ai_runner/worker_agent.py",
+      "sha256": "e282d1683b4735ef1ea143f4739bdecc159d2ffa4beddf4f19c6c5f15f7c1977",
+      "size": 12466
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "originals/3-gh-inference-source/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "originals/3-gh-inference-source/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "originals/3-gh-inference-source/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_resident.py",
+      "sha256": "682949d4b233a70d56ca2465252010eb58f58bf6b5eb9488f0e717107d571d72",
+      "size": 2183
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "originals/3-gh-inference-source/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39170046480.json",
+      "sha256": "4d9d9c768bea8e3b0739f18a4f4c0ec70684384259276d490e4c4cb975baf260",
+      "size": 16413
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39170149593.json",
+      "sha256": "c01a2e269db9c274b7716f1144b2d5ef148285d2dd9e73dda69c4ca60f2ca776",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39170239270.json",
+      "sha256": "528d577a80a4b4f4994965d5965192fec945b11b975cede45958aa72de18f6da",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39170662582.json",
+      "sha256": "2ff219d72aa50c90adcfec681e374446f94485d1042fda542cfcc60ece046e56",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39171163080.json",
+      "sha256": "0f99c9c042413be9dc87ea78936d5d0262bd28546823e03751019b5ec9ac6253",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39172435855.json",
+      "sha256": "f72adf23b22346a02b821abadabcc8e20b741b11e0486f309577f545dd1cebfd",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39173850132.json",
+      "sha256": "5b9bbb6492fa613a9123497b452b8134547b18c740ac3a97cf780fbafca498f3",
+      "size": 16405
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39175424951.json",
+      "sha256": "0a5575b7436f98f917f297b06467eff01ae2587dd7c2bff00632be475e88b7a6",
+      "size": 16476
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39362392295.json",
+      "sha256": "2d3317759cd1f7855e378afb5c9dcabb08ebc18314d16b34619d2c9e9d7cc5a3",
+      "size": 17920
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39503242719.json",
+      "sha256": "49e603f82e7751b6fba53ac019d48e55c84b7098a77e7e6d2ad12ec3b5bd4ace",
+      "size": 18301
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/39503399818.json",
+      "sha256": "9ba6283ce7a716be202e6ddb83ea875492bb2e9fd9641365f8b6eb9b9d5b97ed",
+      "size": 18301
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/smoke-39170149600.json",
+      "sha256": "4116d5149ff7d96536e1009d89aa9789393f1af3fb1ff5aa25d3d3ef59e7fee6",
+      "size": 6652
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/smoke-39362392293.json",
+      "sha256": "5037c7226a4161f2bc9a96c30070890eee012391c9e32a76011a70867561ec2e",
+      "size": 6662
+    },
+    {
+      "path": "originals/3-gh-inference-source/verification-results/smoke-39503242684.json",
+      "sha256": "ff71e783ff6282150ee18329a4cbcef26cacc4030d7b9b6a5bd2becc24a3248f",
+      "size": 829
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/release.json",
+      "sha256": "70a4f822e1875ee9af9b605bd1f55b4d1f6f261db320e1759182d4af73fc68c4",
+      "size": 21
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/publish.yml",
+      "sha256": "5f4922706fc77518da595f244ed30ed9d95a9bcfc9b10436bea056264c0aebba",
+      "size": 1879
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/resident-smoke.yml",
+      "sha256": "e43d5b8190de31851d20019571583e906744e121e1168662b6d3c7d9f7d9309a",
+      "size": 1400
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/CHANGELOG.md",
+      "sha256": "c355c9d4c6e7127c1322bc546c8182cdcc696792cbdd80b01bab5a7d8e2cc82c",
+      "size": 4123
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/README.md",
+      "sha256": "5961a35d1b2095d722f99ce8ccf7df2d1cf0639e4a88b12dc3c205f00608abf0",
+      "size": 40015
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/__init__.py",
+      "sha256": "d43afd58aaa77d31c25f705818a25dd85401322e5973f93ea1053aa72fc8a8c0",
+      "size": 1565
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/agent.py",
+      "sha256": "91f0f3c9220104ff63548aaa663f437aebd8364cf599ec4c8446d19f98f5f5c2",
+      "size": 12164
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/hub.py",
+      "sha256": "4b7c20a48e94f168c7695dd1d023a26931a8be7f4d8b2f60a92f30a6e439a6ad",
+      "size": 10212
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/resident.py",
+      "sha256": "ef245ab3cfa27ce692af31185f1667e55f405c0226ef096f877b29e499408186",
+      "size": 5174
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/runner.py",
+      "sha256": "27adc8ba1c41ac53ae273162ea117d7f3e0f1930076b9ffcd0b80f61354698b5",
+      "size": 15930
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_ai_runner/worker_agent.py",
+      "sha256": "e282d1683b4735ef1ea143f4739bdecc159d2ffa4beddf4f19c6c5f15f7c1977",
+      "size": 12466
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_resident.py",
+      "sha256": "682949d4b233a70d56ca2465252010eb58f58bf6b5eb9488f0e717107d571d72",
+      "size": 2183
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39170046480.json",
+      "sha256": "4d9d9c768bea8e3b0739f18a4f4c0ec70684384259276d490e4c4cb975baf260",
+      "size": 16413
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39170149593.json",
+      "sha256": "c01a2e269db9c274b7716f1144b2d5ef148285d2dd9e73dda69c4ca60f2ca776",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39170239270.json",
+      "sha256": "528d577a80a4b4f4994965d5965192fec945b11b975cede45958aa72de18f6da",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39170662582.json",
+      "sha256": "2ff219d72aa50c90adcfec681e374446f94485d1042fda542cfcc60ece046e56",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39171163080.json",
+      "sha256": "0f99c9c042413be9dc87ea78936d5d0262bd28546823e03751019b5ec9ac6253",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39172435855.json",
+      "sha256": "f72adf23b22346a02b821abadabcc8e20b741b11e0486f309577f545dd1cebfd",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39173850132.json",
+      "sha256": "5b9bbb6492fa613a9123497b452b8134547b18c740ac3a97cf780fbafca498f3",
+      "size": 16405
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39175424951.json",
+      "sha256": "0a5575b7436f98f917f297b06467eff01ae2587dd7c2bff00632be475e88b7a6",
+      "size": 16476
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39362392295.json",
+      "sha256": "2d3317759cd1f7855e378afb5c9dcabb08ebc18314d16b34619d2c9e9d7cc5a3",
+      "size": 17920
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39503242719.json",
+      "sha256": "49e603f82e7751b6fba53ac019d48e55c84b7098a77e7e6d2ad12ec3b5bd4ace",
+      "size": 18301
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/39503399818.json",
+      "sha256": "9ba6283ce7a716be202e6ddb83ea875492bb2e9fd9641365f8b6eb9b9d5b97ed",
+      "size": 18301
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/smoke-39170149600.json",
+      "sha256": "4116d5149ff7d96536e1009d89aa9789393f1af3fb1ff5aa25d3d3ef59e7fee6",
+      "size": 6652
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/smoke-39362392293.json",
+      "sha256": "5037c7226a4161f2bc9a96c30070890eee012391c9e32a76011a70867561ec2e",
+      "size": 6662
+    },
+    {
+      "path": "originals/4-gh-inference-fresh/verification-results/smoke-39503242684.json",
+      "sha256": "ff71e783ff6282150ee18329a4cbcef26cacc4030d7b9b6a5bd2becc24a3248f",
+      "size": 829
+    }
+  ],
+  "histories": [
+    {
+      "snapshot": "1-github-ai",
+      "head": "2ac0fbdba448c9d7171c9f49ec54765437effcf2",
+      "refs": [
+        {
+          "sha": "2ac0fbdba448c9d7171c9f49ec54765437effcf2",
+          "ref": "refs/heads/main"
+        },
+        {
+          "sha": "2ac0fbdba448c9d7171c9f49ec54765437effcf2",
+          "ref": "refs/remotes/origin/HEAD"
+        },
+        {
+          "sha": "2ac0fbdba448c9d7171c9f49ec54765437effcf2",
+          "ref": "refs/remotes/origin/main"
+        },
+        {
+          "sha": "1b9f2f426dced929e92cd49b2c02f5faa77d1554",
+          "ref": "refs/tags/v0.1.0"
+        }
+      ]
+    },
+    {
+      "snapshot": "2-gh-ai-runner",
+      "head": "87c6e6f868d2020b36e0b2ce0a9ccd1a809618cb",
+      "refs": [
+        {
+          "sha": "87c6e6f868d2020b36e0b2ce0a9ccd1a809618cb",
+          "ref": "refs/heads/main"
+        },
+        {
+          "sha": "87c6e6f868d2020b36e0b2ce0a9ccd1a809618cb",
+          "ref": "refs/remotes/origin/main"
+        },
+        {
+          "sha": "1b9f2f426dced929e92cd49b2c02f5faa77d1554",
+          "ref": "refs/tags/v0.1.0"
+        }
+      ]
+    },
+    {
+      "snapshot": "3-gh-inference-source",
+      "head": "060ed17e8409ef92a361ef8660532a6f355397e8",
+      "refs": [
+        {
+          "sha": "060ed17e8409ef92a361ef8660532a6f355397e8",
+          "ref": "refs/heads/main"
+        },
+        {
+          "sha": "060ed17e8409ef92a361ef8660532a6f355397e8",
+          "ref": "refs/remotes/origin/HEAD"
+        },
+        {
+          "sha": "060ed17e8409ef92a361ef8660532a6f355397e8",
+          "ref": "refs/remotes/origin/main"
+        },
+        {
+          "sha": "1b9f2f426dced929e92cd49b2c02f5faa77d1554",
+          "ref": "refs/tags/v0.1.0"
+        }
+      ]
+    },
+    {
+      "snapshot": "4-gh-inference-fresh",
+      "head": "caf4b05cd33442e8ff6bf8c73bd4a205ab9ccce7",
+      "refs": [
+        {
+          "sha": "caf4b05cd33442e8ff6bf8c73bd4a205ab9ccce7",
+          "ref": "refs/heads/main"
+        }
+      ]
+    }
+  ]
+}
