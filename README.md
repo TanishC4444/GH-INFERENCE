@@ -4,6 +4,10 @@ Maintained source for `gh-inference`, including the legacy `gh_ai_runner`
 import. See [reconciliation notes and preserved experiments](https://github.com/TanishC4444/GH-INFERENCE/blob/main/docs/reconciliation/README.md)
 for the relationship to the older `github-ai` project.
 
+All four original local inference copies, including their complete Git histories
+and uncommitted files, are recoverable from the
+[verified originals branch](https://github.com/TanishC4444/GH-INFERENCE/tree/preservation/inference-originals-2026-11-26).
+
 **Text and experimental image input. Quantized models run on GitHub servers.**
 
 Your Python client only connects, submits prompts, and retrieves answers. Model

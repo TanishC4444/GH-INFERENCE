@@ -37,8 +37,24 @@ The related writing guidance is retained under `skills/distinct-writing/`.
 
 The older `gh-inference-source` and `gh-inference-fresh` snapshots contained the
 same source files and older verification reports that had already been removed
-from the maintained repository. They remain in the separate full local backup
-rather than being restored as current release evidence.
+from the maintained repository. Their exact originals, including full Git
+histories, are preserved in this repository's
+[originals branch](https://github.com/TanishC4444/GH-INFERENCE/tree/preservation/inference-originals-2026-11-26)
+rather than being presented as current release evidence.
+
+## Complete recovery from GitHub
+
+The `preservation/inference-originals-2026-11-26` branch contains an archive of
+all 602 files from the four original local folders, including `.git` histories,
+uncommitted and ignored files, packaging outputs, caches, and experiment records.
+Its manifest records a checksum for every file. The included `restore.py` checks
+the archive and all extracted files, and requires a new or empty destination.
+
+Recovery was tested using a fresh clone of that branch from GitHub: all 602 file
+checksums matched and `git fsck --full` passed for all four restored repositories.
+A separate local backup is therefore not required to recover these snapshots.
+Keep the originals branch; it is deliberately separate from the maintained code.
+Future local changes are not included automatically.
 
 ## Validation
 
@@ -62,9 +78,10 @@ installation on the execution host; installing the client does not require
 ## Retiring old copies
 
 Keep one active clone of GH-INFERENCE. The desktop `github-ai`, old
-`gh-ai-runner:`, and the two older inference snapshots can be retired after the
-reconciled branch and complete filesystem backup are verified. Keep the backup
-outside any folder being removed. Local experimental output is not evidence
+`gh-ai-runner:`, and the two older inference snapshots can be retired: their
+complete originals can be restored from the verified GitHub preservation branch.
+Update tools or editable installs that reference an old local path before
+removing it. Local experimental output is not evidence
 that a similarly named GitHub worker repository is unused.
 
 Retain `ai-inference-runner`: it is the client's default worker repository.
