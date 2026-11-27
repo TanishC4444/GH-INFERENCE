@@ -3,6 +3,7 @@
 AGENT_SCRIPT = r'''
 import re
 from functools import lru_cache
+from urllib.parse import urlsplit
 
 
 def run_agent(agent, initial_messages, inference_config):
@@ -16,6 +17,22 @@ def run_agent(agent, initial_messages, inference_config):
     context = inference_config.get("n_ctx") or model_config(local_model)["n_ctx"]
     maximum = inference_config.get("max_tokens", 512)
     temperature = float(inference_config.get("temperature", .7))
+    images = agent.get("images", [])
+    if "images" in agent:
+        if (not isinstance(images, (list, tuple)) or len(images) != 1
+                or not model_config(local_model).get("vision_chat_format")):
+            raise ValueError("Images require a registered vision model and exactly one image")
+        for image in images:
+            if not isinstance(image, str):
+                raise ValueError("Image must be a public HTTPS URL")
+            url = urlsplit(image)
+            if (url.scheme != "https" or not url.hostname or url.username or url.password
+                    or url.fragment or any(char.isspace() for char in image)):
+                raise ValueError("Image must be a public HTTPS URL")
+        if agent.get("refine_prompt"):
+            raise ValueError("Prompt refinement is unsupported with images")
+        if inference_config.get("model_options", {}).get("chat_template_options") is not None:
+            raise ValueError("chat_template_options is unsupported with images")
     key = (local_model, context)
     was_loaded = key in _LOADED_MODELS
     llm = get_local_model(local_model, context)
@@ -40,7 +57,7 @@ def run_agent(agent, initial_messages, inference_config):
     def count(text):
         return len(llm.tokenize(text.encode(), add_bos=False))
     def fits(messages, output):
-        return (policy["context_reserve_tokens"] + sum(count(item["content"]) +
+        return (1024 * len(images) + policy["context_reserve_tokens"] + sum(count(item["content"]) +
                 policy["message_overhead_tokens"] for item in messages) +
                 ((output or 0) if policy["enforce_output_budget"] else 0) <= context)
     def generate(messages, output=maximum, temp=temperature, check_context=True, use_options=True):
@@ -51,6 +68,10 @@ def run_agent(agent, initial_messages, inference_config):
             llm.reset()
         if output is None and policy["enforce_model_limits"]:
             output = model_config(local_model).get("max_output_tokens")
+        if images:
+            messages = [dict(message) for message in messages]
+            messages[-1]["content"] = [{"type": "text", "text": messages[-1]["content"]}] + [
+                {"type": "image_url", "image_url": {"url": url}} for url in images]
         return llm.create_chat_completion(messages=messages, max_tokens=output, temperature=temp,
                                           **(inference_config.get("generation_options", {}) if use_options else {}))
     def usage_of(response):

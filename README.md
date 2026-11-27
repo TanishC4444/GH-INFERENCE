@@ -1,6 +1,10 @@
 # GH-INFERENCE
 
-**Text in, text out. Quantized models run on GitHub servers.**
+Maintained source for `gh-inference`, including the legacy `gh_ai_runner`
+import. See [reconciliation notes and preserved experiments](https://github.com/TanishC4444/GH-INFERENCE/blob/main/docs/reconciliation/README.md)
+for the relationship to the older `github-ai` project.
+
+**Text and experimental image input. Quantized models run on GitHub servers.**
 
 Your Python client only connects, submits prompts, and retrieves answers. Model
 downloads, model loading, inference, and optional prompt refinement all happen
@@ -702,7 +706,7 @@ A client timeout does not automatically cancel a job; use `agent.last_job` when
 you need to inspect or cancel it.
 
 Tools, file access, Python callbacks, and shell execution are deliberately out of
-scope. This version is text in, text out.
+scope. Experimental image input is described below.
 
 ## Larger workers
 
@@ -772,3 +776,42 @@ with ResidentSession("qwen3b", n_ctx=8192) as session:
 ```
 
 Local worker defaults now use all available CPU cores. GPU offload is opt-in through `model_options={"n_gpu_layers": -1}` and requires a compatible runtime and GPU host; this does not provision a GPU on standard Actions runners.
+
+## Experimental vision inference on GitHub
+
+Register a matched language GGUF and vision projector from the same public Hub
+repository using `add_vision_model`. Supported handlers are `moondream2` (default)
+and `llava-1-5`; select files compatible with the pinned llama-cpp-python runtime.
+Both downloads are pinned to one commit and checked for size and SHA-256. The
+projector counts toward the RAM, disk, and cache estimates.
+
+```python
+from gh_inference import Agent, add_vision_model
+
+model = add_vision_model(
+    "owner/compatible-vision-GGUF",  # replace with a real publisher repository
+    filename="model-Q4_K_M.gguf",
+    projector_filename="mmproj-f16.gguf",
+    chat_format="moondream2",
+)
+agent = Agent(model=model, remember=False, n_ctx=4096, max_tokens=128)
+print(agent.run("Describe this image.", images=["https://your-host.example/image.png"]))
+```
+
+`images` accepts exactly one public HTTPS URL, only on `run()`/`__call__()`.
+The GitHub worker fetches it; private/local files and prompt refinement with images
+are unsupported. Subsequent conversation retains text only, so resend the image
+when needed. Image tokens reserve an estimated 1,024 context positions; the runtime
+still enforces the actual context limit. Increase context only within the selected
+model's supported window. Images can use additional memory beyond the estimates.
+Workflow transport limits still apply to URLs and metadata.
+
+Run the real smoke test with a configured `GH_AI_TOKEN`:
+
+```bash
+python examples/vision_smoke.py OWNER/REPO WEIGHTS.gguf MMPROJ.gguf https://HOST/IMAGE.png
+```
+
+It prints the answer, Actions URL, and token usage. A nonempty answer verifies
+execution, not visual accuracy. This VLM path has offline mocked coverage; real
+model compatibility and image quality still need a successful Actions smoke run.

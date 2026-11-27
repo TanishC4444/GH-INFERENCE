@@ -1,4 +1,4 @@
-"""Text in, text out. All model work happens on GitHub Actions."""
+"""Remote text and experimental image inference on GitHub Actions."""
 from __future__ import annotations
 
 import math
@@ -82,9 +82,9 @@ class Agent:
     def __call__(self, prompt, **kwargs):
         return self.run(prompt, **kwargs)
 
-    def run(self, prompt, *, timeout=None, track_time=None):
+    def run(self, prompt, *, timeout=None, track_time=None, images=None):
         """Return plain text. Inspect last_result for optional diagnostics."""
-        return self.run_many([prompt], timeout=timeout, track_time=track_time)[0]
+        return self._run_many([prompt], timeout=timeout, track_time=track_time, images=images)[0]
 
     def run_many(self, prompts, *, timeout=None, track_time=None):
         """Return text answers from one GitHub job; load the model only once."""
@@ -137,7 +137,7 @@ class Agent:
                           "inputs": [draft, draft + 1]})
         return self.pipeline(prompt, steps, timeout=timeout, track_time=track_time)[-1]
 
-    def _run_many(self, prompts, *, timeout=None, track_time=None, discussion=None, pipeline=None):
+    def _run_many(self, prompts, *, timeout=None, track_time=None, discussion=None, pipeline=None, images=None):
         if not isinstance(prompts, (list, tuple)) or not prompts:
             raise ValueError("prompts must be a nonempty list or tuple")
         if self.limits.max_prompts is not None and len(prompts) > self.limits.max_prompts:
@@ -149,6 +149,23 @@ class Agent:
             raise ValueError("timeout must be finite and positive")
         if track_time is not None and type(track_time) is not bool:
             raise TypeError("track_time must be a bool")
+        if images is not None:
+            from urllib.parse import urlsplit
+            if not isinstance(images, (list, tuple)) or len(images) != 1:
+                raise ValueError("images must contain exactly one public HTTPS image URL")
+            for image in images:
+                if not isinstance(image, str):
+                    raise ValueError("Image must be a public HTTPS URL")
+                url = urlsplit(image)
+                if (url.scheme != "https" or not url.hostname or url.username or url.password
+                        or url.fragment or any(char.isspace() for char in image)):
+                    raise ValueError("Image must be a public HTTPS URL")
+            if not MODELS[self.model].get("vision_chat_format"):
+                raise ValueError("images requires a model registered with add_vision_model")
+            if self.model_options.get("chat_template_options") is not None:
+                raise ValueError("chat_template_options is unsupported with images")
+            if self.refine_prompt:
+                raise ValueError("Prompt refinement is unsupported with images")
         enabled = self.track_time if track_time is None else track_time
         with self._lock:
             started = time.monotonic()
@@ -159,6 +176,8 @@ class Agent:
                 "trim_history": self.trim_history,
                 "history": self._history if self.remember else [],
             }
+            if images is not None:
+                config["images"] = list(images)
             if discussion is not None:
                 config.update(discussion=discussion, remember=False, history=[])
             if pipeline is not None:

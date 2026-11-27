@@ -175,6 +175,14 @@ def get_local_model(local_model, requested_n_ctx):
         import llama_cpp
         options["rope_scaling_type"] = getattr(
             llama_cpp, "LLAMA_ROPE_SCALING_TYPE_" + options["rope_scaling_type"].upper())
+    if cfg.get("vision_chat_format"):
+        if options.get("chat_template_options") is not None:
+            raise ValueError("chat_template_options cannot override a vision handler")
+        from llama_cpp.llama_chat_format import MoondreamChatHandler, Llava15ChatHandler
+        handler_class = {"moondream2": MoondreamChatHandler, "llava-1-5": Llava15ChatHandler}[cfg["vision_chat_format"]]
+        options["chat_handler"] = handler_class(
+            clip_model_path=os.path.join(cache_dir, cfg["projector_filename"]), verbose=False)
+        options["logits_all"] = True
     template_options = options.pop("chat_template_options", None)
     llm = Llama(model_path=model_path, n_ctx=n_ctx,
                 use_mmap=False, use_mlock=True, **options)
@@ -331,7 +339,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .venv
-          key: venv-${{ runner.os }}-${{ runner.arch }}-python311-llama-cpp-__RUNTIME_VERSION__-v5
+          key: venv-${{ runner.os }}-${{ runner.arch }}-python311-llama-cpp-__RUNTIME_VERSION__-v6
 
       - name: Cache model weights
         if: ${{ inputs.backend == 'local' && fromJSON(inputs.config).cache_weights }}
@@ -348,6 +356,7 @@ jobs:
             --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu \
             'llama-cpp-python==__RUNTIME_VERSION__' -q || \
             CMAKE_ARGS="-DGGML_METAL=off" .venv/bin/pip install 'llama-cpp-python==__RUNTIME_VERSION__' -q
+          .venv/bin/pip install 'Pillow>=10,<12' -q
 
       - name: Run inference on GitHub
         env:

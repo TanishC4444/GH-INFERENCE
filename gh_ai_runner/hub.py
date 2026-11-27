@@ -202,3 +202,39 @@ def resolve_model(model, quantization=None, *, filename=None, revision="main"):
     # Content-addressed keys never change; independent submissions can safely reuse them.
     MODELS.setdefault(key, cfg)
     return key
+
+
+def add_vision_model(model, *, filename, projector_filename, chat_format="moondream2", revision="main"):
+    """Register matched GGUF weights/projector from one pinned public Hub repo.
+
+    Supported formats: moondream2 and llava-1-5. Both files are verified by workers.
+    """
+    if chat_format not in ("moondream2", "llava-1-5"):
+        raise ValueError("chat_format must be moondream2 or llava-1-5")
+    if (not isinstance(projector_filename, str) or projector_filename.startswith("/")
+            or "\\" in projector_filename
+            or any(part in ("", ".", "..") for part in projector_filename.split("/"))):
+        raise ValueError("Unsafe projector filename")
+    key = resolve_model(model, filename=filename, revision=revision)
+    cfg = dict(MODELS[key])
+    repo = _repository(_model_link(model, None, revision)[0])
+    commit = cfg["files"][0]["url"].split("/resolve/", 1)[1].split("/", 1)[0]
+    info = _info(repo, commit)
+    item = next((p for p in info.get("siblings", []) if p.get("rfilename") == projector_filename), {})
+    lfs = item.get("lfs") or {}
+    digest = lfs.get("sha256", "")
+    size = item.get("size") or lfs.get("size")
+    if (not isinstance(digest, str) or not re.fullmatch(r"[a-f0-9]{64}", digest)
+            or type(size) is not int or size < 1):
+        raise ValueError("Projector requires published LFS SHA-256 and size")
+    if projector_filename in [f["filename"] for f in cfg["files"]]:
+        raise ValueError("Projector must be separate from model weights")
+    cfg["files"] = cfg["files"] + [{"filename": projector_filename, "size_bytes": size,
+        "sha256": digest, "url": f"https://huggingface.co/{repo}/resolve/{commit}/{quote(projector_filename, safe='/')}"}]
+    cfg.update(projector_filename=projector_filename, vision_chat_format=chat_format)
+    cfg["size_bytes"] += size
+    cfg["size_gb"] = cfg["size_bytes"] / 1e9
+    cfg["sha256"] = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()
+    vision_key = "vlm-" + cfg["sha256"][:24]
+    MODELS.setdefault(vision_key, cfg)
+    return vision_key

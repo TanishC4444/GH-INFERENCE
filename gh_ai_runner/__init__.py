@@ -70,3 +70,6 @@ __all__ += ["stress_test"]
 
 from .resident import ResidentSession
 __all__ += ["ResidentSession"]
+
+from .hub import add_vision_model
+__all__ += ["add_vision_model"]

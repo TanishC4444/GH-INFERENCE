@@ -29,10 +29,11 @@ jobs:
       - run: python -m build && python -m twine check dist/*
       - name: Verify installed wheel outside checkout
         run: |
+          export GH_INFERENCE_EXPECTED_VERSION=$(python -c 'import json; print(json.load(open(".github/release.json"))["version"])')
           python -m venv /tmp/wheel-check
           /tmp/wheel-check/bin/pip install dist/*.whl
           cd /tmp
-          /tmp/wheel-check/bin/python -c 'from gh_inference import Agent, list_quantizations; from gh_ai_runner import __version__; assert __version__ == "0.6.2"'
+          /tmp/wheel-check/bin/python -c 'import os; from gh_inference import Agent, list_quantizations; from gh_ai_runner import __version__; assert __version__ == os.environ["GH_INFERENCE_EXPECTED_VERSION"]'
           /tmp/wheel-check/bin/gh-inference --help
           /tmp/wheel-check/bin/gh-inference models
       - uses: actions/upload-artifact@v4
