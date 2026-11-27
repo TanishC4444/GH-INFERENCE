@@ -14,13 +14,23 @@ from gh_ai_runner.runner import INFERENCE_SCRIPT
 report = {"source_sha": os.environ["GITHUB_SHA"], "inference": []}
 failed = False
 try:
-    subprocess.run([sys.executable, "-m", "build"], check=True)
+    published_version = os.environ.get("GH_INFERENCE_TEST_PYPI_VERSION")
+    if not published_version:
+        subprocess.run([sys.executable, "-m", "build"], check=True)
     subprocess.run([sys.executable, "-m", "venv", "/tmp/gh-wheel"], check=True)
-    subprocess.run(["/tmp/gh-wheel/bin/pip", "install", *glob.glob("dist/*.whl")], check=True)
+    distribution = (["--index-url", "https://pypi.org/simple", "gh-inference==" + published_version]
+                    if published_version else glob.glob("dist/*.whl"))
+    subprocess.run(["/tmp/gh-wheel/bin/pip", "install", *distribution], check=True)
     for command in [["/tmp/gh-wheel/bin/python", "-c", f"from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == {__version__!r}"],
                     ["/tmp/gh-wheel/bin/gh-inference", "--help"], ["/tmp/gh-wheel/bin/gh-inference", "models"]]:
         result = subprocess.run(command, cwd="/tmp", capture_output=True, text=True, check=True)
     report["installed_wheel"] = True
+    report["package_version"] = __version__
+    report["distribution_source"] = "pypi" if published_version else "source-built-wheel"
+    if published_version:
+        import gh_inference
+        if __version__ != published_version or "site-packages" not in gh_inference.__file__:
+            raise RuntimeError("Smoke test must import the exact installed PyPI distribution")
     selections = [("Qwen/Qwen2.5-0.5B-Instruct-GGUF", "Q4_K_M"),
                   ("Qwen/Qwen2.5-0.5B-Instruct-GGUF", "Q8_0"),
                   ("bartowski/SmolLM2-135M-Instruct-GGUF", "Q4_K_M")]

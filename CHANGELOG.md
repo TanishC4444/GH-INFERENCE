@@ -1,9 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.6.3
 
 - Reconcile experimental image input, projector registration, and vision tests from local development.
-- Retain ResidentSession, current worker CPU/GPU options, and the existing release metadata.
+- Retain ResidentSession and current worker CPU/GPU options.
 - Preserve local research outputs under docs/reconciliation/desktop-evidence.
 - Keep Python 3.9 CI on a compatible runner; remove stale smoke-test version checks
   and retain branch verification as artifacts without generating extra commits.

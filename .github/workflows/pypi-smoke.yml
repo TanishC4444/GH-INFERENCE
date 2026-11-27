@@ -1,0 +1,60 @@
+name: Verify published PyPI package
+on:
+  workflow_run:
+    workflows: ['Publish Python package']
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  installed-package:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact published distribution
+        run: |
+          VERSION=$(python -c 'import json; print(json.load(open(".github/release.json"))["version"])')
+          echo "GH_INFERENCE_TEST_PYPI_VERSION=$VERSION" >> "$GITHUB_ENV"
+          for attempt in $(seq 1 12); do
+            if python -m pip install --no-cache-dir --index-url https://pypi.org/simple "gh-inference==$VERSION" pytest PyYAML; then
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+      - name: Test installed package outside source checkout
+        run: |
+          mkdir -p "$RUNNER_TEMP/pypi-contract/.github"
+          cp -R tests "$RUNNER_TEMP/pypi-contract/tests"
+          cp .github/verify_release.py .github/open_model_smoke.py "$RUNNER_TEMP/pypi-contract/.github/"
+          cd "$RUNNER_TEMP/pypi-contract"
+          python -c 'import os, gh_inference; assert gh_inference.__version__ == os.environ["GH_INFERENCE_TEST_PYPI_VERSION"]; assert "site-packages" in gh_inference.__file__'
+          python -m pytest -q tests
+          gh-inference --help
+          gh-inference models
+      - uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/pypi-contract/model_cache
+          key: pypi-smoke-models-v1
+      - name: Install execution runtime on GitHub
+        run: |
+          python -m pip install --only-binary=llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu 'llama-cpp-python==0.3.36' || python -m pip install 'llama-cpp-python==0.3.36'
+      - name: Run real inference using installed PyPI code
+        env:
+          GITHUB_REF_NAME: pypi-verification
+          REPORT_TOKEN: ${{ github.token }}
+        run: |
+          cd "$RUNNER_TEMP/pypi-contract"
+          python .github/open_model_smoke.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: published-pypi-verification
+          path: ${{ runner.temp }}/pypi-contract/verification-results/*.json

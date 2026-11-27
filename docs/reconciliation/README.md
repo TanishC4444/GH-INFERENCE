@@ -10,8 +10,7 @@ The reconciliation starts from GH-INFERENCE commit `224cae6` and brings in the
 uncommitted experimental vision implementation from the desktop `github-ai`
 checkout. It retains the newer `ResidentSession` API, current release metadata,
 all available CPU cores by default, and the worker's configurable GPU option.
-The library version remains 0.6.2 until a separate release is prepared; these
-source changes are recorded under Unreleased in the changelog.
+These combined source changes are included in the 0.6.3 patch release.
 
 The image path includes matched, commit-pinned GGUF weights and projector
 registration, checksum verification, an image-aware worker, a smoke-test example,
@@ -44,17 +43,16 @@ rather than being presented as current release evidence.
 
 ## Complete recovery from GitHub
 
-The `preservation/inference-originals-2026-11-26` branch contains an archive of
-all 602 files from the four original local folders, including `.git` histories,
+The `preservation/inference-originals-2026-11-26` branch contains all 272 original
+working files as ordinary browsable Git files under `originals/`. This includes
 uncommitted and ignored files, packaging outputs, caches, and experiment records.
-Its manifest records a checksum for every file. The included `restore.py` checks
-the archive and all extracted files, and requires a new or empty destination.
+The original commit histories are retained as ancestors of its import commit;
+the manifest records the original branch/tag identifiers and file checksums.
 
-Recovery was tested using a fresh clone of that branch from GitHub: all 602 file
-checksums matched and `git fsck --full` passed for all four restored repositories.
-A separate local backup is therefore not required to recover these snapshots.
-Keep the originals branch; it is deliberately separate from the maintained code.
-Future local changes are not included automatically.
+A fresh GitHub clone verified all 272 working-file checksums and every recorded
+history/reference. No archive extraction or separate backup is required to use
+these files and histories. Keep that branch for historical versions and main
+for maintained development. Future local changes are not included automatically.
 
 ## Validation
 
