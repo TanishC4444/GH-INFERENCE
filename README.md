@@ -1,3 +1,5 @@
+> **Archived duplicate.** Continue in [TanishC4444/GH-INFERENCE](https://github.com/TanishC4444/GH-INFERENCE). This repository's source branches and release tags are preserved there under `history/github-ai/`. The old copy remains available read-only.
+
 # github-ai
 
 Historical source for the `gh-ai-runner` package. Current development and fixes
