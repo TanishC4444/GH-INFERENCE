@@ -1,3 +1,7 @@
+> **Maintained successor:** Current development is in [GH-INFERENCE](https://github.com/TanishC4444/GH-INFERENCE), published as `gh-inference`. The reconciled implementation preserves the `gh_ai_runner` import and adds the newer agent, resident-session, and experimental vision APIs. See the [reconciliation notes](https://github.com/TanishC4444/GH-INFERENCE/blob/main/docs/reconciliation/README.md).
+>
+> This repository retains the historical `gh-ai-runner` package source and release history. The documentation below describes that older version. Keep existing integrations on their tested version until migration has been checked.
+
 <div align="center">
 
 # ⚡ gh-ai-runner
