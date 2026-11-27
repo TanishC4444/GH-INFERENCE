@@ -1,5 +1,8 @@
 name: Verify published PyPI package
 on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/pypi-smoke.yml', '.github/open_model_smoke.py']
   workflow_run:
     workflows: ['Publish Python package']
     types: [completed]
@@ -8,7 +11,7 @@ permissions:
   contents: read
 jobs:
   installed-package:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -33,6 +36,8 @@ jobs:
         run: |
           mkdir -p "$RUNNER_TEMP/pypi-contract/.github"
           cp -R tests "$RUNNER_TEMP/pypi-contract/tests"
+          cp -R examples "$RUNNER_TEMP/pypi-contract/examples"
+          cp showcase.py "$RUNNER_TEMP/pypi-contract/"
           cp .github/verify_release.py .github/open_model_smoke.py "$RUNNER_TEMP/pypi-contract/.github/"
           cd "$RUNNER_TEMP/pypi-contract"
           python -c 'import os, gh_inference; assert gh_inference.__version__ == os.environ["GH_INFERENCE_TEST_PYPI_VERSION"]; assert "site-packages" in gh_inference.__file__'
