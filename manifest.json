@@ -1,0 +1,3016 @@
+{
+  "archive": "inference-originals.tar.gz",
+  "sha256": "e237d59f95c735a50f63b0c0ecee4bba04c226b6bc4ac1d2e4a6e0b2b846604c",
+  "files": [
+    {
+      "path": "1-github-ai/.DS_Store",
+      "sha256": "53d7cda43f0565874242aeccffbc1e8983dff8a26ab703786b724611c31ab2e1",
+      "size": 8196
+    },
+    {
+      "path": "1-github-ai/.git/COMMIT_EDITMSG",
+      "sha256": "346b4e79fa060b6466103bf0d5f0a6685566eda9c2270c519e1dcee47e5d4077",
+      "size": 7
+    },
+    {
+      "path": "1-github-ai/.git/FETCH_HEAD",
+      "sha256": "47bb277f15808993538d6b2391033005caf30ac3d58b4a50f66a808ca6913eb3",
+      "size": 100
+    },
+    {
+      "path": "1-github-ai/.git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "size": 21
+    },
+    {
+      "path": "1-github-ai/.git/ORIG_HEAD",
+      "sha256": "08797a39babc2500f977680a00d483708274b1a06e4f3c0ff44aa783681ff9cf",
+      "size": 41
+    },
+    {
+      "path": "1-github-ai/.git/config",
+      "sha256": "1884a4de6b62bb5136728204384aea883bb66089233661c49a7a5ed25ca894ec",
+      "size": 343
+    },
+    {
+      "path": "1-github-ai/.git/description",
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "size": 73
+    },
+    {
+      "path": "1-github-ai/.git/hooks/applypatch-msg.sample",
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "size": 478
+    },
+    {
+      "path": "1-github-ai/.git/hooks/commit-msg.sample",
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "size": 896
+    },
+    {
+      "path": "1-github-ai/.git/hooks/fsmonitor-watchman.sample",
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "size": 4726
+    },
+    {
+      "path": "1-github-ai/.git/hooks/post-update.sample",
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "size": 189
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-applypatch.sample",
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "size": 424
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-commit.sample",
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+      "size": 1643
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-merge-commit.sample",
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "size": 416
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-push.sample",
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "size": 1374
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-rebase.sample",
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "size": 4898
+    },
+    {
+      "path": "1-github-ai/.git/hooks/pre-receive.sample",
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "size": 544
+    },
+    {
+      "path": "1-github-ai/.git/hooks/prepare-commit-msg.sample",
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "size": 1492
+    },
+    {
+      "path": "1-github-ai/.git/hooks/push-to-checkout.sample",
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "size": 2783
+    },
+    {
+      "path": "1-github-ai/.git/hooks/update.sample",
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "size": 3650
+    },
+    {
+      "path": "1-github-ai/.git/index",
+      "sha256": "8c7c44111fafd97292b15fd8494b1d486507b26a9828e2d00400c4ea1f6f40cc",
+      "size": 2793
+    },
+    {
+      "path": "1-github-ai/.git/info/exclude",
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "size": 240
+    },
+    {
+      "path": "1-github-ai/.git/logs/HEAD",
+      "sha256": "09518164a1c3f16b3d9001b4b3a65c722bd98a6c4b8e3a822a67badc06da622f",
+      "size": 1071
+    },
+    {
+      "path": "1-github-ai/.git/logs/refs/heads/main",
+      "sha256": "09518164a1c3f16b3d9001b4b3a65c722bd98a6c4b8e3a822a67badc06da622f",
+      "size": 1071
+    },
+    {
+      "path": "1-github-ai/.git/logs/refs/remotes/origin/HEAD",
+      "sha256": "3a00ae75f10ba1a4cef5f115d4602eb162b222f240a1e76983372ecc4690b687",
+      "size": 201
+    },
+    {
+      "path": "1-github-ai/.git/logs/refs/remotes/origin/main",
+      "sha256": "a5d30d793c9f52ed2bb0753236ec5582f6c40e3b93f73bb47e070c11c7840366",
+      "size": 800
+    },
+    {
+      "path": "1-github-ai/.git/objects/06/2892aa5db3783e1aed8b0cc371af18eb1f9e36",
+      "sha256": "99b14be4894550b6b0b188c842a74a238e9a4a5b0794aa2e64f1978a44e5afca",
+      "size": 56
+    },
+    {
+      "path": "1-github-ai/.git/objects/0a/3f66bc6a9eb2df492401e51cf87e6824e00e20",
+      "sha256": "98a4d1c657009e708f0f6a50569d8816a4fc1305f9abd057a5332294f9e5d100",
+      "size": 321
+    },
+    {
+      "path": "1-github-ai/.git/objects/0b/800a6cd6a6dd57e116ad759b64caa2ff4869cb",
+      "sha256": "1163dc7e67bbf8deceb847efb6f77bca0446a5947e99730b10cea773ad246672",
+      "size": 112
+    },
+    {
+      "path": "1-github-ai/.git/objects/0d/4442a2bbef5c476d488a47d09b036d1bd77236",
+      "sha256": "9d553df9216aba8e3ad6040bd83a54f17c0dc2c7db65b3b793bb440ecf04c970",
+      "size": 322
+    },
+    {
+      "path": "1-github-ai/.git/objects/0e/2b51382d1fce2b98c8f1a9162597e804ac5a68",
+      "sha256": "7f02e181370073d5b7c87b7138d8b0cff491d6987c3fd773b1f1f331da21484e",
+      "size": 9586
+    },
+    {
+      "path": "1-github-ai/.git/objects/11/511b8f2d7d5795c08520c20c2a60904f820778",
+      "sha256": "c4e84c0694132e29a275d63b3c470e1c6fa15cb201e974f3c0d9fd1c78d87ae1",
+      "size": 5288
+    },
+    {
+      "path": "1-github-ai/.git/objects/11/d5af8cb4cc442a74383ee1cca0fb0aea51f7f8",
+      "sha256": "b20b0c6a8eb3596e5defff7ef7b38836711d683de02cf504566a039397b2abd9",
+      "size": 188
+    },
+    {
+      "path": "1-github-ai/.git/objects/12/92f5b56f1eae74878b77ab2f95c44043ff4cee",
+      "sha256": "3664b3bd49c32c071bc931a0c6a091101106a4c5e3f624344e850684d85e9ce4",
+      "size": 321
+    },
+    {
+      "path": "1-github-ai/.git/objects/13/d62d7ba7600ba8725c0f62b1364d5de0bea6bc",
+      "sha256": "39c179cf5711bfd35e37d9e1f38725c957e38569d911a8db91b8d5060843e5a5",
+      "size": 113
+    },
+    {
+      "path": "1-github-ai/.git/objects/16/302d10b9f9a2f79e08249d7bd184f3e445ee16",
+      "sha256": "6679a85f4a74df66f275b1659e1f21bce6054ba98c9acbe98d5f217b09563845",
+      "size": 322
+    },
+    {
+      "path": "1-github-ai/.git/objects/16/9ea73e59b337b14bbdf5de0b2e7ad686c6aaea",
+      "sha256": "301a198a7b312749efec0577242f7d359d63ff17fc6ad3dda331438eb0a97cf2",
+      "size": 448
+    },
+    {
+      "path": "1-github-ai/.git/objects/16/d161c7cb78706ccfbfa786c60a3e356ba276c1",
+      "sha256": "ea663192bbe97f15c412b170ed397d153a0f7cb9ec312f01cf5c36f2b930f5ed",
+      "size": 9936
+    },
+    {
+      "path": "1-github-ai/.git/objects/19/f02caccd97f9d4f27f22123ee0f82885365189",
+      "sha256": "7bc02e268ee294cb63c501a0e8ca39bcae5c18844f9d48e00fea6158fcc62411",
+      "size": 185
+    },
+    {
+      "path": "1-github-ai/.git/objects/1a/9de42e594d88bba95aee73567086c86f0127b6",
+      "sha256": "6dccfa293bca2ae2590293952af2fa44bb63997f98be9c3978f7162fc2c56e81",
+      "size": 421
+    },
+    {
+      "path": "1-github-ai/.git/objects/1b/81d52df5fd9a8dfa62c21650898c007d4c9503",
+      "sha256": "4d74a6c189e61f28cbda41fdf30e3931780fd56dd00228a403eab58235ec46f3",
+      "size": 737
+    },
+    {
+      "path": "1-github-ai/.git/objects/1f/01200a927fa870dd3b805349627d0b42fe19e6",
+      "sha256": "4c8606ea61bce29377d7d23b4ee2e2ed1273b416b62daf15c97381750c6bc1ac",
+      "size": 569
+    },
+    {
+      "path": "1-github-ai/.git/objects/1f/45a2de22d0f44aab159827a4607a94b61ecd7a",
+      "sha256": "611379374f9cdfd3b79035f499ceb200c0980b158bcba504afb65c715629581f",
+      "size": 1919
+    },
+    {
+      "path": "1-github-ai/.git/objects/27/a2264b57c4641d5645039eec59497af457e373",
+      "sha256": "36cc46331d86a8b91c4480ddd135129fe30700d9f88f5ba697dae2e8b615a425",
+      "size": 306
+    },
+    {
+      "path": "1-github-ai/.git/objects/2a/c0fbdba448c9d7171c9f49ec54765437effcf2",
+      "sha256": "748ccb0f31946b145b022b00565722b2e3b9bf398179a4dd26a88210853b7b11",
+      "size": 162
+    },
+    {
+      "path": "1-github-ai/.git/objects/3e/913a4dc6aa2d9be923b44db5f11fea3df9d84f",
+      "sha256": "15a4a818388b7ebc381e38d31152f3f869d835dc18ff628ba4174aa70085600c",
+      "size": 232
+    },
+    {
+      "path": "1-github-ai/.git/objects/3f/66660e08ff6d0093b351d1edf4dd87be5b0915",
+      "sha256": "95cf2c55128f76aabeea9447f882b7e8c322039cc8d19e3cbe51549dde34dc0b",
+      "size": 792
+    },
+    {
+      "path": "1-github-ai/.git/objects/41/f49b4ddf0ec349fe14b1b5aace799586629508",
+      "sha256": "0aa3bff8588248c05ed853e13116de5efd83340d5fd624705d618981612c10f1",
+      "size": 26853
+    },
+    {
+      "path": "1-github-ai/.git/objects/4d/9145e0d3c887f992fa3bffecb3585a81811b1c",
+      "sha256": "5e53b8b161f299b73db63c2dbea58f05318f129eff000652ac2674ef352888e7",
+      "size": 244
+    },
+    {
+      "path": "1-github-ai/.git/objects/4f/cdae93310f8ed06f0e93ab9212e86e68fc4386",
+      "sha256": "e9de6e97f5f6b501a917229766732835d5139df7ba28d34e22643bd2df194bc9",
+      "size": 142
+    },
+    {
+      "path": "1-github-ai/.git/objects/50/fb0d94861d10709d74d24c7bc31098c16bf87f",
+      "sha256": "97741cbe605b4fdde537735446f92d6533550eb9ba6c2e3dee7a059498fb09a0",
+      "size": 1646
+    },
+    {
+      "path": "1-github-ai/.git/objects/51/7e67360a549caba2a81a293ec9c9de539ad655",
+      "sha256": "79ac180244a3382612ba8e794b6b8fdd82fc744383ea5dca7e163ffc7040b924",
+      "size": 162
+    },
+    {
+      "path": "1-github-ai/.git/objects/52/f18256788753fe471484b41aa3ff15ce264d20",
+      "sha256": "e6f6859fa627c080b88d096272f07b6ac49d85fb5bd83e0520638053a2fc9398",
+      "size": 4366
+    },
+    {
+      "path": "1-github-ai/.git/objects/53/f157aef2cdc6db418d4b2929178165c956257f",
+      "sha256": "cc37a691202836b562ad1272d6a1383c00ce3355b8950e12f03c0d979b753148",
+      "size": 1588
+    },
+    {
+      "path": "1-github-ai/.git/objects/57/1b68b98a8e9fcd78905d56a5ca80660b192c8a",
+      "sha256": "3afffd39a58086e170fd376bc62768c9dfb33e79709be5da33b8b5d88f4342d4",
+      "size": 1129
+    },
+    {
+      "path": "1-github-ai/.git/objects/5d/bfde77d898cb7874611fdc01de87183fecbbed",
+      "sha256": "ae8fe1e74b4a92bbd09e02724f165c94be6b594d68035b48f2d342e0145838ee",
+      "size": 3249
+    },
+    {
+      "path": "1-github-ai/.git/objects/5d/dab45d29ac7082260171c2fe30d0b513b78796",
+      "sha256": "4a4ffb0f4c9c5c1cec678fcc112a5ec51f8016e07bcd515e3f7a6b029eac8cc5",
+      "size": 859
+    },
+    {
+      "path": "1-github-ai/.git/objects/5f/639fad54a8d301391dca06c4831f7c34f70556",
+      "sha256": "b329575e504295d988d9862c4d5e0b4a1bb4063e5ba15b5bb84aff26d9983884",
+      "size": 2463
+    },
+    {
+      "path": "1-github-ai/.git/objects/68/529c1161a7f3ff57733814d01324c3e7dbaa8d",
+      "sha256": "7c8512147b4336a1c378c79dbf2c8b0ef2a9671c53c0f47ab9f358e65f5f5b77",
+      "size": 1281
+    },
+    {
+      "path": "1-github-ai/.git/objects/70/9319d0b76aca3aae0ca0a1fb6615286b154c5b",
+      "sha256": "b5f9458edbf3acaaa930520e84be2ac2a4b5798dfdc98847ced4edd4c874d478",
+      "size": 189
+    },
+    {
+      "path": "1-github-ai/.git/objects/82/c1f3eecc24918ecdc83f7e711e4646191734ee",
+      "sha256": "4410bed52fca682c3e5f2a627be6b5e5c3194728c022424069f3c7f2bfd3a177",
+      "size": 2446
+    },
+    {
+      "path": "1-github-ai/.git/objects/89/320d62e9a81cbf5b7c6b8e12276b6883e5b8dc",
+      "sha256": "77423057efe7235d2df33378148faba204e97aad0695cabcd102368383342847",
+      "size": 569
+    },
+    {
+      "path": "1-github-ai/.git/objects/8b/85282b2eebe4b7cab7966df6aa5256b13cd686",
+      "sha256": "c40ad1dbd01a1a081fe23fb44c30f687d5d4571050fe54c7e023574e325a266c",
+      "size": 30975
+    },
+    {
+      "path": "1-github-ai/.git/objects/93/270db8ec3f5e6c367334c0428f31b51752b000",
+      "sha256": "fef91788d2e7126428beb90f99ab0430051b6de6097107fe9e6eec0bcf979b79",
+      "size": 82
+    },
+    {
+      "path": "1-github-ai/.git/objects/96/7f5ba7fde881ee59dd4cdbc3d01a6a54429c35",
+      "sha256": "81176d95c4242ab764ef6c9c9a1f333477b3a70b820079194ca29a01af21277e",
+      "size": 4133
+    },
+    {
+      "path": "1-github-ai/.git/objects/99/7fe0a774cc9f7a240530611c88e9d1a542a89f",
+      "sha256": "0d6a8af8444f7b44886d66d74e5fa3fbd5d207134e49621325544721d3360b85",
+      "size": 31536
+    },
+    {
+      "path": "1-github-ai/.git/objects/9e/5c68b3af58ec0b9b58d03b7021d70cd84e088d",
+      "sha256": "8eb11f1ae88aef9248d39038fcee74e39c9896550dbaef9f7cf412772ae8d2ca",
+      "size": 377
+    },
+    {
+      "path": "1-github-ai/.git/objects/ad/16b00908a042f0de7f2a4b33f4cf1484eff177",
+      "sha256": "446ff99193c94e310b6f44c780c71d41a85de463572e4415c0875dd081d4adf1",
+      "size": 1180
+    },
+    {
+      "path": "1-github-ai/.git/objects/ad/7d8e2949f0bb805f44c40ee904347732dc0aba",
+      "sha256": "9bec6743212835ad447c5696791a2803091b94cfb2de0968b12b588c8c67069c",
+      "size": 40327
+    },
+    {
+      "path": "1-github-ai/.git/objects/b1/72c72cd7091798ab835dd9057608de0f17bb41",
+      "sha256": "46501556df855d0272b4c9d3d0882a4278635379329addc7da40e50a9ec8863f",
+      "size": 875
+    },
+    {
+      "path": "1-github-ai/.git/objects/b3/d13d28642579e40b7d3f9eb3b50cb3e2f0e742",
+      "sha256": "800c3a9af67336cd55d8492d15d0bfd2377aa0aefc2dc076b52c4cdc74c4b225",
+      "size": 288
+    },
+    {
+      "path": "1-github-ai/.git/objects/b4/2be72fce2d1a18bfbcb61853903c7965cee485",
+      "sha256": "64328f9d73ce7b01221612d282ee4117d575a16a357c6e96c482d940f17be539",
+      "size": 195
+    },
+    {
+      "path": "1-github-ai/.git/objects/b7/e6389ab613a4ce4740d2d7203e81eecb76dcf5",
+      "sha256": "ea5841985d8827e54e329dd6a50ab989e617e1d8312fb7436865f5cd9da4abce",
+      "size": 195
+    },
+    {
+      "path": "1-github-ai/.git/objects/b9/4fe40251a2871e660688b1569ccc3131aa6ce7",
+      "sha256": "e154d215ae515b7605d63681ede95801ad4df2992c72be8ab0f97bad40f4805b",
+      "size": 3448
+    },
+    {
+      "path": "1-github-ai/.git/objects/be/67fb84673f1fdbfc25269ea45a62287f50f903",
+      "sha256": "284507fb66012016256377c4ad4b3b5b24b378a4f4dc2ee405cebff49593c021",
+      "size": 569
+    },
+    {
+      "path": "1-github-ai/.git/objects/bf/a51b6501426a5349075c24448055a6a51625e5",
+      "sha256": "429d3f8788e25a51e49eba51d1a70bd71d4e7ebb7a8535a9a72a13ba6b61ff11",
+      "size": 3488
+    },
+    {
+      "path": "1-github-ai/.git/objects/c5/cce2c4370ad969f0473542ef4dab76130c1665",
+      "sha256": "ddbd7802596b47bc528d05b66069c48a7f9c8a5e8483e92e7bf90432f1dafd53",
+      "size": 196
+    },
+    {
+      "path": "1-github-ai/.git/objects/c7/13076f9864444eabf1b3e90af1009def2e4304",
+      "sha256": "b68a36e942eeb22ddb8a43f4e64b2f777d8c930b101b2649dd40b52545fd3ddf",
+      "size": 222
+    },
+    {
+      "path": "1-github-ai/.git/objects/cd/165e9d9a01ba3c17c6b3a6dd14df6554f1227f",
+      "sha256": "204005514c17b6ed8aa8ff448a3764fae9b81a5e277186e5399f78ace95afd2a",
+      "size": 73
+    },
+    {
+      "path": "1-github-ai/.git/objects/d3/4879c95fce771ff74216585d601ff5819f56e2",
+      "sha256": "92814b5eab17d0ba97c79244f1c4557e27add0203894aae6b0eb1ad5a91fa61c",
+      "size": 1678
+    },
+    {
+      "path": "1-github-ai/.git/objects/dc/263be5cad63512d48d5579d2900adad21fec40",
+      "sha256": "a00ad27ae9728457f5758d2063da810b3b8248a012c8b1efd5d93658525202ac",
+      "size": 3997
+    },
+    {
+      "path": "1-github-ai/.git/objects/dd/9ecff205511a86d48acc7a98b2d857ab5259d7",
+      "sha256": "2990396995f30bc5fb54d8e2afc123cce9b57259f03547d438daed575f062162",
+      "size": 486
+    },
+    {
+      "path": "1-github-ai/.git/objects/e3/19215020ebed6c2f203f8d458ba30bd8076e6d",
+      "sha256": "7aa453e104e5073c600fa78050dfbe1ba126efba165bb9a101f3c372c779e1e0",
+      "size": 1627
+    },
+    {
+      "path": "1-github-ai/.git/objects/e5/fb8a80dbe1d68b4069369abc43be288d28c4d6",
+      "sha256": "18d4b0b66ce1adebe765fa4c6b1c89ff1ea7839ff0bca6f3e9e8a6138b060351",
+      "size": 4931
+    },
+    {
+      "path": "1-github-ai/.git/objects/e6/3c54279b93af9c459f4f10f3a47d4939fd8d3b",
+      "sha256": "cc157f84fe210b3215fbe5f64c6754ab952cf514164d918b8cacf60ed3eefe3e",
+      "size": 1499
+    },
+    {
+      "path": "1-github-ai/.git/objects/e8/aa07416954778d149b65127878a57512b709a2",
+      "sha256": "b5e30d5a77799120cb311567d6979d1d1ae86bcdc1ca87735096140c87ea8280",
+      "size": 56
+    },
+    {
+      "path": "1-github-ai/.git/objects/ea/f1878c0ca3c8b706b24189ae979c671181dda7",
+      "sha256": "33c5d1c1065647bcd5e811cd78fa99c7bf830ba64f7b55ab3bcb0c7217eb86f5",
+      "size": 391
+    },
+    {
+      "path": "1-github-ai/.git/objects/f5/2adbd7db4ee617b7a76b50b18ca8eed406b6e2",
+      "sha256": "fdb67270cf5790d732fc38d6515e0df125270e31e8f0f106ab0a54ddf7fd2e20",
+      "size": 3304
+    },
+    {
+      "path": "1-github-ai/.git/objects/pack/pack-3ca1b63db48b5391e1cf1eab724a1d8cb2d1408a.idx",
+      "sha256": "83184e330f14a40d72521d092775e450d937710453b9577ee73cfff63071026d",
+      "size": 3256
+    },
+    {
+      "path": "1-github-ai/.git/objects/pack/pack-3ca1b63db48b5391e1cf1eab724a1d8cb2d1408a.pack",
+      "sha256": "4560c21577147e6e8a3a81a4fac5f68dda44708afbbb967031d2c8abb9b11fa7",
+      "size": 126155
+    },
+    {
+      "path": "1-github-ai/.git/packed-refs",
+      "sha256": "74d42f18f59f5831b1dd011ee7af7ec6d7b98999a624dfe777b3f096bd5ca9f1",
+      "size": 170
+    },
+    {
+      "path": "1-github-ai/.git/refs/heads/main",
+      "sha256": "6b39e4e4c4065ab45690b9287a573d6329eac9cce61cc909674523453ffbb23f",
+      "size": 41
+    },
+    {
+      "path": "1-github-ai/.git/refs/remotes/origin/HEAD",
+      "sha256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+      "size": 30
+    },
+    {
+      "path": "1-github-ai/.git/refs/remotes/origin/main",
+      "sha256": "6b39e4e4c4065ab45690b9287a573d6329eac9cce61cc909674523453ffbb23f",
+      "size": 41
+    },
+    {
+      "path": "1-github-ai/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "1-github-ai/.github/release.json",
+      "sha256": "84662bffc139953d36fcd65fd80fa24a5911cc5b68276e029415b14b12e06277",
+      "size": 21
+    },
+    {
+      "path": "1-github-ai/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "1-github-ai/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "1-github-ai/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "1-github-ai/.github/workflows/publish.yml",
+      "sha256": "5ec13ecdb0e052d8ae211a886d9bf73c42f6e89b6e122e9e386091f114df039f",
+      "size": 1879
+    },
+    {
+      "path": "1-github-ai/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "1-github-ai/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "1-github-ai/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "1-github-ai/.pytest_cache/.gitignore",
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+      "size": 37
+    },
+    {
+      "path": "1-github-ai/.pytest_cache/CACHEDIR.TAG",
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+      "size": 191
+    },
+    {
+      "path": "1-github-ai/.pytest_cache/README.md",
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+      "size": 302
+    },
+    {
+      "path": "1-github-ai/.pytest_cache/v/cache/lastfailed",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "1-github-ai/.pytest_cache/v/cache/nodeids",
+      "sha256": "f6e13c40edc31822bd9cae9a8b0b1411b559483edb80e5492b62c89ab2d73210",
+      "size": 29365
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/.gitignore",
+      "sha256": "9e3a60f1e6ec4ae60215c11d54b171392745ec25e9dded433d5bd921363af316",
+      "size": 35
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.16.5/14696991019613252288",
+      "sha256": "3c1d205419f5a7c8f07f05a3d20d98b7c943fa0055085bf6251d3678b37bc1af",
+      "size": 220
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.16.5/3166222749186761997",
+      "sha256": "5b36ada3d261f714837babd9c5ac4071d4860c2df4618023d3b2306b9a432acc",
+      "size": 772
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.16.5/612426795041013428",
+      "sha256": "0df377f30d11e385e82199346898cec7a1ab977e39697d9a0228d057a8a3b114",
+      "size": 604
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.16.5/7787461256227992777",
+      "sha256": "9965794e7dab02c168e8f98a66ecfb2e2792d702d9db6147c845f4ea0021ce2b",
+      "size": 172
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.17.1/15944040423648118138",
+      "sha256": "e267ab23c98a1cabe2fd040ea68f05f3e3ce532daf1ab0606411e493abe94314",
+      "size": 364
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/0.17.1/7604825864089853149",
+      "sha256": "678426b545062f601a14cd72af5464b1d2bccc75732f1a29fc6fcd6c6bfdd09c",
+      "size": 884
+    },
+    {
+      "path": "1-github-ai/.ruff_cache/CACHEDIR.TAG",
+      "sha256": "5953156d7e0c564a427251316eaf26f8870e6483ae2197f916b630e4f93e31ae",
+      "size": 43
+    },
+    {
+      "path": "1-github-ai/CHANGELOG.md",
+      "sha256": "5c1b6d9c448d64f74426afb4e866c9bf960b043490e220c4f4c2ced7aa4c4dc2",
+      "size": 3827
+    },
+    {
+      "path": "1-github-ai/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "1-github-ai/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "1-github-ai/README.md",
+      "sha256": "bc217c96e9e393343740c8e01b90cb9c47b1e74621aed403bf9585779ffb8bd3",
+      "size": 40668
+    },
+    {
+      "path": "1-github-ai/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "1-github-ai/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "1-github-ai/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "1-github-ai/examples/vision_smoke.py",
+      "sha256": "54b9b5fe5f0e7a2e67b7042b7d8ee860fe1491faf815b6bc613565bbd7f8ea10",
+      "size": 1466
+    },
+    {
+      "path": "1-github-ai/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__init__.py",
+      "sha256": "08ee781c58fa1a706047fd6865bb176da306a2c623558a506e35a1ee71268206",
+      "size": 1562
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/__init__.cpython-312.pyc",
+      "sha256": "f1ae7f5f341dc1c152b3509db6e2754b24afe8107bf558abdfb906898b86f168",
+      "size": 1140
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/agent.cpython-312.pyc",
+      "sha256": "a34449ed861dbce884938e98333c86fbc0283e76c75e7734db219584d0a67592",
+      "size": 8422
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/agent_types.cpython-312.pyc",
+      "sha256": "7d3b5adc4d672c4521f0f19d23113f12940e2a31c84627e43fe04e5f8a17de6d",
+      "size": 2031
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/artifact.cpython-312.pyc",
+      "sha256": "f47faa9ae81c6785936d339c3b2188f17617e7857df3d54b87c729024827a953",
+      "size": 6124
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/batch.cpython-312.pyc",
+      "sha256": "b14748f5c7a10d28ecbcf62046f437837f567c22b22e063cb220d6b45f907c06",
+      "size": 4909
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/client.cpython-312.pyc",
+      "sha256": "70ea3373fad5705c3c40dc3dc6d9eb634f7fbe3d20b26fba3a57ae31641a843a",
+      "size": 23265
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/core.cpython-312.pyc",
+      "sha256": "ca7117ddd4280ba2c0cc075922e51a30bb1743f58c05b44552333594a6187df9",
+      "size": 3357
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/integrity.cpython-312.pyc",
+      "sha256": "84d107547b1151ff8422d7199580e4ac31df857a4aa72e2fa04b29ded83b5962",
+      "size": 1918
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/job.cpython-312.pyc",
+      "sha256": "909f44e87bc41038e0e06e85da7830a7e9a421ea27a3caca66737c8fa05c3e30",
+      "size": 11242
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/local.cpython-312.pyc",
+      "sha256": "6e5c23a6eb60b64b080dad1f89ba39fee5c8268815c4ae5a91dc8d492a01be35",
+      "size": 10729
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/logger.cpython-312.pyc",
+      "sha256": "826a5fde59733c1e36e65d0765fe2ef665c8e0190baadff9899922027fffe405",
+      "size": 997
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/metadata.cpython-312.pyc",
+      "sha256": "76affd0da045b53f54bd782be21c4a59f15a1e8b42457994b7aa8c0c10a98db4",
+      "size": 8063
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/models.cpython-312.pyc",
+      "sha256": "43a73afe834d75a51cc231469d9b408ab54d4b47ceed5034202e88223e2ca39d",
+      "size": 6203
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/polling.cpython-312.pyc",
+      "sha256": "b021c5161ff63e9b77f9ba3fc5dba5dd83aed0807e2efc62bc09e3e5ff61fdd4",
+      "size": 3280
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/repo.cpython-312.pyc",
+      "sha256": "2ad80485452a144324692e492c16dcb3efe55d412fabdb0d60b1da99c15ac3c8",
+      "size": 8247
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/runner.cpython-312.pyc",
+      "sha256": "154b7f1957af5a7e6fb9e147c277f11cced79e5e9556e1c0b5b8796f22747271",
+      "size": 12996
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/types.cpython-312.pyc",
+      "sha256": "3b0277d7584f9c7a748a17327ddaf00512e1c16c13edb788a88b5abecb773f38",
+      "size": 9392
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/validation.cpython-312.pyc",
+      "sha256": "607239aef866852a1f8ca9dddea0f462f952712b3034a5836a99faa7defb513f",
+      "size": 3211
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/__pycache__/worker_agent.cpython-312.pyc",
+      "sha256": "0803556f53b83326de005c9979bd9d524b94e6eaf592af822b01be628ea399b9",
+      "size": 6488
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/agent.py",
+      "sha256": "2ab011725d9d16edd6d627f2912863e4ab4b1fc8b4a87499078d633a9ffcbbed",
+      "size": 13407
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/hub.py",
+      "sha256": "29dff45589df1f41484df835da8d81bdd51892beca3eddae76f5011f19fd1537",
+      "size": 12263
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/runner.py",
+      "sha256": "ec360bdad0f1c6983813447b851cd633788f51c6ef4e83eb397c83968e4a0f47",
+      "size": 16600
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "1-github-ai/gh_ai_runner/worker_agent.py",
+      "sha256": "8103112521ed2178bae2a74e5eaa224af4c657718adf76cd21e1b51ffe0e09a5",
+      "size": 13791
+    },
+    {
+      "path": "1-github-ai/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "1-github-ai/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/PKG-INFO",
+      "sha256": "8c24cf640e1380204d0d99c065b701ab6a6a9003c272ee9bbb2fb2a1b066ce2a",
+      "size": 39591
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/SOURCES.txt",
+      "sha256": "46a7873f590c43bfb9906f593e030fe4eb60717b1579a79ec17df0b92467e36a",
+      "size": 1287
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/entry_points.txt",
+      "sha256": "9cdc25cf3616621051027db8abda5e50c69c8c8bf41498854a85ef8390901fad",
+      "size": 60
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/requires.txt",
+      "sha256": "545a11556fee264092a70c9f1ffdfb35903e0f01f23733724941196361ab2811",
+      "size": 41
+    },
+    {
+      "path": "1-github-ai/gh_inference.egg-info/top_level.txt",
+      "sha256": "f5fc4e68798db6619421b5712e14c70233475867c976ad23e9d8bbca22da7815",
+      "size": 26
+    },
+    {
+      "path": "1-github-ai/handoff-results.json",
+      "sha256": "8f12c201fd9d9f7e955475cff1b468b46ed9fad655737637dd4b923cd5134b35",
+      "size": 54446
+    },
+    {
+      "path": "1-github-ai/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "1-github-ai/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "1-github-ai/skills/distinct-writing/SKILL.md",
+      "sha256": "bead6f79a5e3c4d343a1868d270b9b33f55fedc9bf36c83bafddfa6ac1b9178c",
+      "size": 4624
+    },
+    {
+      "path": "1-github-ai/skills/distinct-writing/references/research.md",
+      "sha256": "226f6b076b8b098ddb8924ea62b32e5a48d72c8fc2972211b2bfc11debb8af51",
+      "size": 4124
+    },
+    {
+      "path": "1-github-ai/speed-results.json",
+      "sha256": "3a3e2217858b78f5bb085ff50e99a9165b236cbac55f60652d351fba31b43ec3",
+      "size": 133228
+    },
+    {
+      "path": "1-github-ai/stress-results-initial.json",
+      "sha256": "859f416642bd193f17a2deb29af22a08dfcea6432db18876fe6da0561ece598a",
+      "size": 87201
+    },
+    {
+      "path": "1-github-ai/stress-results.json",
+      "sha256": "bee2e7fbcc1ae7846542867e5abe3df78f3d64c66f370e5c6f727fb73d52f55e",
+      "size": 153404
+    },
+    {
+      "path": "1-github-ai/style-report.txt",
+      "sha256": "b5f2e32002d94e84997e7c288040624d820ae71d34d82112d08b4c63584af4ff",
+      "size": 8430
+    },
+    {
+      "path": "1-github-ai/style-results.json",
+      "sha256": "ac6bce7398fd40014fefd828e67874ed63148f9c26efcdb269bb220d0edee07c",
+      "size": 29765
+    },
+    {
+      "path": "1-github-ai/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "1-github-ai/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "1-github-ai/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "1-github-ai/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "1-github-ai/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "1-github-ai/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "1-github-ai/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "1-github-ai/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "1-github-ai/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "1-github-ai/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "1-github-ai/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "1-github-ai/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "1-github-ai/tests/test_vision.py",
+      "sha256": "2ebd3b7dcd5e6a5522df9f949cb48080baf4fa65f1938121f8e8fbca9cd939ec",
+      "size": 12587
+    },
+    {
+      "path": "1-github-ai/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "1-github-ai/writing-report.txt",
+      "sha256": "8840679be2e5111fb71a063f528a8fc53d0c5df62e6142a1182ec994ef41e825",
+      "size": 19986
+    },
+    {
+      "path": "1-github-ai/writing-results.json",
+      "sha256": "017ae8da1b2399baabf380e99dccf0bd10d71e8c6ebd53603acda81102f64eb5",
+      "size": 84984
+    },
+    {
+      "path": "2-gh-ai-runner/.git/COMMIT_EDITMSG",
+      "sha256": "1f2110568627307becae713f8b808f3d9d912d4b2a24ed6a78605f03f7437d3c",
+      "size": 6
+    },
+    {
+      "path": "2-gh-ai-runner/.git/FETCH_HEAD",
+      "sha256": "d42f08812c09d60d2a11acc0b4443da1ccefa9b6634cd739c2c6b2417811fe63",
+      "size": 100
+    },
+    {
+      "path": "2-gh-ai-runner/.git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "size": 21
+    },
+    {
+      "path": "2-gh-ai-runner/.git/ORIG_HEAD",
+      "sha256": "97de2fe9afae002f06932c308f59825a219f48b6c15dd5dcffa522c2025331cf",
+      "size": 41
+    },
+    {
+      "path": "2-gh-ai-runner/.git/config",
+      "sha256": "4adc3aafc1c9238c177676009ed7bf3d8fffa22bd230384836f2b7767c100490",
+      "size": 310
+    },
+    {
+      "path": "2-gh-ai-runner/.git/description",
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "size": 73
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/applypatch-msg.sample",
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "size": 478
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/commit-msg.sample",
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "size": 896
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/fsmonitor-watchman.sample",
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "size": 4726
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/post-update.sample",
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "size": 189
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-applypatch.sample",
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "size": 424
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-commit.sample",
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+      "size": 1643
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-merge-commit.sample",
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "size": 416
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-push.sample",
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "size": 1374
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-rebase.sample",
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "size": 4898
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/pre-receive.sample",
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "size": 544
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/prepare-commit-msg.sample",
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "size": 1492
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/push-to-checkout.sample",
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "size": 2783
+    },
+    {
+      "path": "2-gh-ai-runner/.git/hooks/update.sample",
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "size": 3650
+    },
+    {
+      "path": "2-gh-ai-runner/.git/index",
+      "sha256": "21a9d534a047f805ffe82abac2316ebb26c359f2e5d101d57920921dcabe86b5",
+      "size": 1914
+    },
+    {
+      "path": "2-gh-ai-runner/.git/info/exclude",
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "size": 240
+    },
+    {
+      "path": "2-gh-ai-runner/.git/logs/HEAD",
+      "sha256": "0e89556b47dcecbb81510e447493cf6afe21c8526c9298ecd080daefe6b69a7a",
+      "size": 816
+    },
+    {
+      "path": "2-gh-ai-runner/.git/logs/refs/heads/main",
+      "sha256": "0e89556b47dcecbb81510e447493cf6afe21c8526c9298ecd080daefe6b69a7a",
+      "size": 816
+    },
+    {
+      "path": "2-gh-ai-runner/.git/logs/refs/remotes/origin/main",
+      "sha256": "d7be45a1a219ac62cf16783618ada0d74c44acb8a41a4e4375a87405cb735cf7",
+      "size": 958
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/00/2763aa21f90ce75235fd9a82be9f3dacf3a0c3",
+      "sha256": "d13e1dc5273f4baa691db061abb197d15817197cfde0ca8faf7e39b782d6c746",
+      "size": 195
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/02/0cf9316db04030668d751ec304a63b618c38e6",
+      "sha256": "4c1899b74ab6d3007442a8d639055699be4fd11e887a4efc860da74b63a3264c",
+      "size": 4763
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/02/4c67e3ef87d27fdb59f2e599a53cc91322047b",
+      "sha256": "0b79121e6590a4c09896d7f6af4d401d69ee1e8a517596e4f75c1e2836ff8fcc",
+      "size": 196
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/04/1ba5a100e011faa67a91b92d81c13354b9181c",
+      "sha256": "966932db4f53236b87c906dd8833375ee9e1d20a005026c5a82267e9d3129c66",
+      "size": 161
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/06/924b6d1cf65a2a883eec2957de3d4a28979028",
+      "sha256": "645579dce1dd7b4209b9159349e71ee8fa4393ba4693b3fbb853edfd1d1f4913",
+      "size": 29
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/06/9259046adbb09eae6f8532a758183eed93a071",
+      "sha256": "066f8b8f6543376d113ba53661911af33750dd0fbd9b330fbb26fd70f5ce7cde",
+      "size": 1412
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/0d/7ce3a182b2c8608ff90a61b1cc3e9c6e643881",
+      "sha256": "93be9b99eca9b5870d6398c71cb08bda22e8ef92408397345a0a5e304d199bae",
+      "size": 195
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/12/4c260b8c142cd89a76c61820e9d9c05b3382df",
+      "sha256": "c9cd3c08c6796b259a5e80a4989ead270e24910ce6be12aa7c38f0e5afda685c",
+      "size": 223
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/13/126aec1ffd987de1c62a8a91c196a98f4dcf07",
+      "sha256": "4c3d537479bc24e74dd5d473026851627d13d6f2ef08a0551e4bcea82f39d4ad",
+      "size": 16011
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/16/6bf5ca02e41d1d5303cc5350d1ed5d228a1d71",
+      "sha256": "4706dc18f9e6dee471ec842aad669da9b8e739cb145034e319fbaea01733085d",
+      "size": 306
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/1b/9f2f426dced929e92cd49b2c02f5faa77d1554",
+      "sha256": "e3015a3dd137d4e2950b18f07501681b64de787fec7999950ad7befae383907c",
+      "size": 143
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/1b/c39b214be91eb305840008516d479d47b3bbe2",
+      "sha256": "3c511b9ea0f56800a27173a5d64e1489d0a7385a1a61bc2d765e66e30ed6014c",
+      "size": 827
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/1e/776d1dfbeaa7c97ecbbfe3d16562744bde3f6f",
+      "sha256": "11f409a1b6a7c9a538f9c8ddcd767b676532a206ceb281333df50d074f4931cb",
+      "size": 161
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/21/0d23f374874e28a98aaa4b3190661eb8b9e773",
+      "sha256": "756ac04d121e10272b40503819133b8eb77ea0e7e6740b3ebbfae6799f5c9cd1",
+      "size": 5131
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/21/cd34836e157caf7eae33e484cfa5da381c839d",
+      "sha256": "30a4e83d2e13ab4d63a976e032ee5464d82abaf9edcd975a65cac4e00156dd1e",
+      "size": 196
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/23/199b7f4f65aa9548d5b768fb403d8047d375d7",
+      "sha256": "2df2e05ef18c6a371bef266689ce8351fbe119d5812008bcabf3c0b22dfe2d8d",
+      "size": 1131
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/29/c777928f4fe62425e9127b47e799f1cb5e3832",
+      "sha256": "5583365edca35daf8ddfc2d3cf16930b1c1320068ef3de5037d376a2e24a78c6",
+      "size": 223
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/33/6ba8fc0716e44d42d3989e5f7eca33e7d205ad",
+      "sha256": "bdd742b40d117822b62fd6aad7fbb891efb51043119def09adce6b96fe8e0d01",
+      "size": 12362
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/35/1e3a5a619fe978a9ab3e506b627c973b6d2400",
+      "sha256": "55eb5fdd1251388d68a34e0bd10a15570c94c1f38779fd61c56f8db923a45325",
+      "size": 1715
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/3f/0e4b36aa71c8c9700aeb4b6182f8d95b16a83e",
+      "sha256": "59fd440e19fd0cae14d0e7700c4ca3a28e7ab0a8512b60db06861254ab260baf",
+      "size": 149
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/43/93ab2628d3298f72c0f7a8eb77d93d7f0b4448",
+      "sha256": "a9229d87b592f614d66690346efed467b7d7ad153ab732f6dc2e968a70d4ccfe",
+      "size": 112
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/46/24abc28f9d7999c7773b9f28f38f09e7b1cf32",
+      "sha256": "f5bcb68217ba4e28d174d84bb10732d7990e69350def1f9f68a7124d0de7701b",
+      "size": 230
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/4b/825dc642cb6eb9a060e54bf8d69288fbee4904",
+      "sha256": "e72602cad67ed061ec84b13e92568f873172efac19a512a1b561dbf54e2c8426",
+      "size": 15
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/4d/3eddc001023d0a922a5489afc0bd8a5cbf5bed",
+      "sha256": "0cfcfab51f2cf50cd597b4f489805cf5767fbdb64bf582c08f98aad40ad8115e",
+      "size": 112
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/4d/7095a685486deea7c7110c00ceadedfe258c49",
+      "sha256": "cd8930e77722f082874c2e5e4ae59eb873b424840afba4fc7c61e4386f82f5fb",
+      "size": 2939
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/4f/56d8c1e6e527681747e637b38e0246e0322ee3",
+      "sha256": "1822da4021aed38d5f9d00a286fc7a04d739887712942fcaffcbf18b8042d51f",
+      "size": 13667
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/51/dee22f05a31a147146fbafca1901793d51d865",
+      "sha256": "f0d358212288a39b76ac491888137f07c31daea6998497162dd22d31a7e820bb",
+      "size": 11664
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/53/fc08565d7aa4e0d42642bd06c483a43e554e58",
+      "sha256": "4201fe35b077e2c7090da1d04fcc12ce739768e53e8f1121e52e285945cf98c6",
+      "size": 770
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/5a/c566ea30298214279c0ea2fb7e68660ecdff27",
+      "sha256": "107b975fc97a05871df7117dbd731a5182bcea29a3561c8632fc329d7b73e42e",
+      "size": 1919
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/63/cd059b96bb0537f0108b0d9aef9a2a95a3a429",
+      "sha256": "349bc41e6fc56b0a6e93546e062443016293598fe5edafb2e632786b8cf14c85",
+      "size": 304
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/65/a2320bf7b4244c7b854fbab1ce6cfaa03af4ee",
+      "sha256": "997f640214a409fb480f87c055c6c1e7d1230ca302b888d54a2cd1b6c857a237",
+      "size": 223
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/66/03570dbf2300975e16614635335d0aac8e148f",
+      "sha256": "0aa4b1851dfbc7200ad8711a68c71ac6d73f563c042a8b28bc26800a0d9f371c",
+      "size": 539
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/66/bbfef630e08167b63c1183fc6d37a7a6c0ab51",
+      "sha256": "f08db94478ee06aaac9d717f599fcdfe132d1b89985b09e9424ae176eaebc2c4",
+      "size": 149
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/67/6146462caecd7e3a8ec5889ca1c356b7f6fdba",
+      "sha256": "f56e5f4aef18a7f430fb525c2cdf4c458f824c74260d046a73f9fedb1ea7aafe",
+      "size": 656
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/6d/bfc3fa13daad2a286a0aae331bdca7f5b77d1d",
+      "sha256": "1ac141a52a39fb923ffbfe8f8b3f64574909dbe8b186d27370b760358126950e",
+      "size": 358
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/70/da02bc7b62b34ec4531ee11da237287cbfcef1",
+      "sha256": "c47e64f601fc8f294e832a8bc43958aaffe4b4471831d85bca9d1f7bda7a4b9b",
+      "size": 52
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/72/87eaaebd43adb80aad0dcbcb58b7fbf35000a0",
+      "sha256": "1a4ed5f77f74472ea0133d263c9716b7aa463daa764489f9d1984144ff633f5e",
+      "size": 822
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/7a/021e9a98b1f628e75be9e5c585f7bdd0b2761a",
+      "sha256": "8c0f8eaa3db7ebcd0d317bb3f5a5e09a9a74b8ab8d92f96ae4ae97584d881554",
+      "size": 2577
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/7c/df3fdbf14702d30bbaba74d8c32813b1e3569a",
+      "sha256": "bdb3a8455de1b01689863dff86b59baee97f132165614f97d7df40cf2071023a",
+      "size": 160
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/87/c6e6f868d2020b36e0b2ce0a9ccd1a809618cb",
+      "sha256": "eed850eaeb42f22c1b7df2b1691907a644c0307e60d364254f3a6bae6e115c87",
+      "size": 161
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/88/ac6ff01683a81a62298bb1882f211ddf649122",
+      "sha256": "af14239628734a2ad3c45dfec4e32a07c058d06eda4ce4c1d4ca5bff618ceec9",
+      "size": 44
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc",
+      "sha256": "a25e48d49327f35569e5d25fc64cce3822b7d1402ff13fb8a031139543510477",
+      "size": 16
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/8c/e362050e032142ae22166fd6bf6c17ffde122b",
+      "sha256": "3cf54d3b98092924cc1d5015e478e95f1714d797847cacf6e81e47992216b702",
+      "size": 26
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/92/c6d499b6e36a0871ddd396f4a808a2d9c1c565",
+      "sha256": "d4c762dd716bb61d9662b78fa2edf06147d1de405c40b9507444293265841c8e",
+      "size": 305
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/94/1bc303a9f5bd2876333398bf4c3c047eefb198",
+      "sha256": "9e0a3c1564ded0fa54880313b18137076ad8b8702503464afc4386bd86024cd3",
+      "size": 1041
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/94/3bb85bac094a856ddefb21504dd7aa96ebe73f",
+      "sha256": "fe7a9749d71645f18a17e272a80045f00c13c3e97e7feb629bac9210827a0a16",
+      "size": 305
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/95/886f93681280ea675dedcdf01b1045b4aab35f",
+      "sha256": "03e8e9922fc1308eadee67ad7c5958c6c1fdbd785e3ac6edc1be618a37701d94",
+      "size": 13771
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/9a/4f28cce3ecb385171d3d1eebf06725bc2c71ee",
+      "sha256": "f1386a1186caad6e6225f41f11ef64bf5758c96279943f82228b16807ae188e6",
+      "size": 536
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/9a/bf399d01c0ee1a6f1a7f992d9b22a13efc3a48",
+      "sha256": "cfad89f0416051d68ada81acb71621b543a4bb5897f6471b850c66e7bff6176e",
+      "size": 744
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/9d/5c1b9d4f9de07fc4e50f62abba52a897838353",
+      "sha256": "70dd476b6e6dd566afb0fa7397dd53f4bb565e02ab5576a6814e6bef87c9e0c9",
+      "size": 919
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/9e/d6179d003c62bc8cb98721a3461917202a852e",
+      "sha256": "be472f801941595799dd7be4c9dcf7cf68acff0821f80eaa7895ec9ca59ae9ba",
+      "size": 541
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/a1/7097f7171fd37158da91cbdff4504cdbab2e1e",
+      "sha256": "b6c5f649b0f8d52a438a9a45289a0449d31eefcf9773a9cb142aa0614744072a",
+      "size": 755
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/a8/466e6a59aa709ccc658aae49a8a5665b80ac61",
+      "sha256": "72784236cb7f4df17c53cd8d7b76c2ad6c0644a1201590524e899db9f5562ece",
+      "size": 11660
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/ab/1b4c9d48e3ecd13e73436bd9ca8a59df8abbc0",
+      "sha256": "80a6f02c3a112e41fbd66d6f93d8255d2a92bcf2c0bf3e495f7bbb96c76a4643",
+      "size": 305
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/b0/ac8c5c84cbbff013b8c7824fb22d5b22864ce6",
+      "sha256": "c73fcf5ac446f8e034e5854c410f48dbbe9ede212ef74c642fb02b0d3d5a574d",
+      "size": 196
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/b5/d863130dd93d1e34822022a81f36bcddf991d0",
+      "sha256": "1c3179eecccfd642442c675bac34370973f3e3964354df1e47d6b06cacd6eb22",
+      "size": 112
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/b5/f6a3a38c8b39afc4d1ad6bd4f085c40fc57082",
+      "sha256": "b5313350b26ec0e2f2847c326764b6a5290ebb579d9062e8c9d7a79e22f2ee1c",
+      "size": 541
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/c1/2300d944672ab707080a6e941d60cf7dfa55bc",
+      "sha256": "eb8b94e34b125930b8783c8995be6b611e3e15fca6cf6aeea0a16f23700a91dc",
+      "size": 13080
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/c3/488316cc9f2dbc4f10a4d1ce8177f51c986415",
+      "sha256": "47f30606745af2035b1843aa82933d728da05eb8d38a606277f2e96ffc9fef52",
+      "size": 655
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/c7/61cc2a3cef0d1767395d6bc80b7f10b1846b23",
+      "sha256": "7735adf4be5f218633ecdc01d28aa91e75e5ca23e70756894d439328eb0046ce",
+      "size": 2946
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/c7/c8cc1b6f59bd124c473736936dc2d3b6d9e0d0",
+      "sha256": "8d2a987b68a219a5fe42023b7b3201f50f9fa19afd2d0619c3a1b275f361a757",
+      "size": 12340
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/cf/dcd50770025511307329a70ae21a5387495166",
+      "sha256": "2906c24f479d015224de22af1799580e724dc929dc574633f6d9ef08ac1fc9ef",
+      "size": 149
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/d7/b957d48061faf338f8314cfb8268944b6ac9ca",
+      "sha256": "463836fb34c916b386604b6c0f28b8c3a652590b9c7b430fe3c9db307e4ddc6d",
+      "size": 149
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/da/2959e78d3e6082b988a44f82e0075e4b45dac6",
+      "sha256": "790ff5d01db20257730c67d92aafc9df95751f86cab2e410468609954224e8dd",
+      "size": 661
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/db/a65083da6bf40b143e49316377528067acaabe",
+      "sha256": "04e09ad275b17bdeffa971dd413cfd1c970a245ccf36cb0d98336b64740f7c6d",
+      "size": 149
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/de/2c9c839c900211a3bf535b0ef80f6780531778",
+      "sha256": "293442d2328803d016256a84597ab33e8c24027d2921b4cccb6e5fbb7231a08d",
+      "size": 2834
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/e6/8a285561b20e9c6d2fbdb9eeea4b86335d9b6a",
+      "sha256": "0df034860f55427d0c1eb5328f9328b451a64edd76a20830384d41be9c8afbe2",
+      "size": 1553
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/ec/acdb454c50c20fd79a0c78581b673ac0906649",
+      "sha256": "039c5a55c77ec26316068c007c10aa8e753b335ca175d23d624449bc385f9e65",
+      "size": 787
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/ec/dec29cbb01ceeb0dd29dd46a9a79e6ce71e84f",
+      "sha256": "3eda6ff0106ebd965ae482ac4241e12140544d054bab66b455253a7904421b70",
+      "size": 2588
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/f0/54d838e35b188062135f57e5a4218b37e41c09",
+      "sha256": "27f8131531c65de6e339368c7f573e2f717350ea3abab2adf5a53fe196e98ed8",
+      "size": 1759
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/f1/af6afbb92a969d118d051ae5ef9d3418e79a93",
+      "sha256": "2ff5a23fba1e63ba21f888359403c5e318a079ee50c585a6ec9021f3bd0de646",
+      "size": 200
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/f6/89739e48516173f3ad0f8110d41c30482a20c8",
+      "sha256": "3db7777e2e5da791b3a6df45e38d789be8a807aa39db0231fa0889367ba05885",
+      "size": 535
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/f8/fb5e0babdced54431b688e1847cad8df5e3307",
+      "sha256": "42e45c4d5c15dc9b1af5d6522ee1f7b34859aa281619784a0da89672d55fde83",
+      "size": 226
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/fa/92d86fbc33f530890b60108a7c591f245bb1d8",
+      "sha256": "aada10cdcd1e9c6309f6b049fbe25c668810110cadccd5de6bb7a6271549eb69",
+      "size": 119
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/ff/838764807cfe0e51c3f2ef8dd12454a9087e1f",
+      "sha256": "9dff6777cb24bfbc3d0e8bac04673e6e4ebab947842b29d0622269d83ccc14af",
+      "size": 161
+    },
+    {
+      "path": "2-gh-ai-runner/.git/objects/ff/ec8ca0d00b51341e2a7295fd52948a10aa81f5",
+      "sha256": "7dd4c1f52f5605554bc2eea7563ced1c307326e7cc62aa673456f6b8bcd00235",
+      "size": 3193
+    },
+    {
+      "path": "2-gh-ai-runner/.git/refs/heads/main",
+      "sha256": "665ddaa152c91a177d170e01ea1c1a4b88b6e67150ea3804293e354886ffb80b",
+      "size": 41
+    },
+    {
+      "path": "2-gh-ai-runner/.git/refs/remotes/origin/main",
+      "sha256": "665ddaa152c91a177d170e01ea1c1a4b88b6e67150ea3804293e354886ffb80b",
+      "size": 41
+    },
+    {
+      "path": "2-gh-ai-runner/.git/refs/tags/v0.1.0",
+      "sha256": "97de2fe9afae002f06932c308f59825a219f48b6c15dd5dcffa522c2025331cf",
+      "size": 41
+    },
+    {
+      "path": "2-gh-ai-runner/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "2-gh-ai-runner/README.md",
+      "sha256": "84dd404a53a6442d218a78433720ce5b3a17490c98065ab75a35fb63db613d8d",
+      "size": 6413
+    },
+    {
+      "path": "2-gh-ai-runner/dist/gh_ai_runner-0.1.6-py3-none-any.whl",
+      "sha256": "b379c56e84a8315c582403467895b22cfc3f2c09cc6c1a56a7de364a0d794767",
+      "size": 14149
+    },
+    {
+      "path": "2-gh-ai-runner/dist/gh_ai_runner-0.1.6.tar.gz",
+      "sha256": "d38e5735f4b3d2034cddfd309209199176e7b554ebed253b0ac6ccb3d82f22f5",
+      "size": 13887
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/__init__.py",
+      "sha256": "a6a01177ccdd5fc133d6c5a6dc7cb1b53358970d52df41b5bb4a6280caa2baf4",
+      "size": 217
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/artifact.py",
+      "sha256": "7c7e448139bef8b3523ee320211e98425c50e5f230b95e17f66dd9f96143b626",
+      "size": 1468
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/core.py",
+      "sha256": "9da30ecb2521807c4acbc4da67109ec1ef553862129baa33595cc662dd877ec3",
+      "size": 4724
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/logger.py",
+      "sha256": "f647a60ba5d034ba34f9fbf414b25a75ba05e1258cc6a3197731e6056965a244",
+      "size": 349
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/models.py",
+      "sha256": "0a0c3774cc814efa36b771865e4ea72b7f0bb02107d4f5265be23cddfce8501d",
+      "size": 2788
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/polling.py",
+      "sha256": "72da05357239ede32e740297cef8717237c5ddee068617a8072e245e68b92354",
+      "size": 2145
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/repo.py",
+      "sha256": "b9d24025c09f3e8f44f2ece22d56a43b254524de17cc8479bebca72334284e59",
+      "size": 4194
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/runner.py",
+      "sha256": "b179d0a962837fbb4e0e4757bc7ca96bf4f0e18ed460a0124621f712c3e79b47",
+      "size": 5471
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner/validation.py",
+      "sha256": "f1dbd0503d2101d46845d01cdaf16fde2bcee9dc97bb09bc79fb20e2c620dfe8",
+      "size": 1817
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner.egg-info/PKG-INFO",
+      "sha256": "ef2baf63b30f33b56b4e0bbf0e216be2b04b6e0e30dc0fbbcd72b9aebbeedb06",
+      "size": 7189
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner.egg-info/SOURCES.txt",
+      "sha256": "a130bb7ebc071691a9e151d3ab6ff8a47bec5cffe6be27f6c0e059f5afacc521",
+      "size": 423
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner.egg-info/dependency_links.txt",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size": 1
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner.egg-info/requires.txt",
+      "sha256": "572fef348121c255c6160b7d4cd191d96710f2310cb918b1bb8c45c417c68356",
+      "size": 29
+    },
+    {
+      "path": "2-gh-ai-runner/gh_ai_runner.egg-info/top_level.txt",
+      "sha256": "d44537a3985e0a98fb93605e0ebcd37912bea38c4173f863b4e58be2aad09113",
+      "size": 13
+    },
+    {
+      "path": "2-gh-ai-runner/pyproject.toml",
+      "sha256": "f2dce44c1d3edb07b33bc8fbb6a26caecc0443fe9eed34be49f49f41750a740d",
+      "size": 916
+    },
+    {
+      "path": "3-gh-inference-source/.git/FETCH_HEAD",
+      "sha256": "b4d37df9d0e7cb96284db6db4ff07be0dcb79c5af56ad8ea3408335accf1ef1e",
+      "size": 218
+    },
+    {
+      "path": "3-gh-inference-source/.git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "size": 21
+    },
+    {
+      "path": "3-gh-inference-source/.git/config",
+      "sha256": "330d51ed7b29c856049e58568f4b590cca99c3bb3877e65037570d732c13832f",
+      "size": 319
+    },
+    {
+      "path": "3-gh-inference-source/.git/description",
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "size": 73
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/applypatch-msg.sample",
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "size": 478
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/commit-msg.sample",
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "size": 896
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/fsmonitor-watchman.sample",
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "size": 4726
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/post-update.sample",
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "size": 189
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-applypatch.sample",
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "size": 424
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-commit.sample",
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+      "size": 1643
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-merge-commit.sample",
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "size": 416
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-push.sample",
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "size": 1374
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-rebase.sample",
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "size": 4898
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/pre-receive.sample",
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "size": 544
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/prepare-commit-msg.sample",
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "size": 1492
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/push-to-checkout.sample",
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "size": 2783
+    },
+    {
+      "path": "3-gh-inference-source/.git/hooks/update.sample",
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "size": 3650
+    },
+    {
+      "path": "3-gh-inference-source/.git/index",
+      "sha256": "ac18feea7c3c400e8fd398b4e019dfbbf44a0ad9c9b9aded667e7fec7334899d",
+      "size": 7061
+    },
+    {
+      "path": "3-gh-inference-source/.git/info/exclude",
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "size": 240
+    },
+    {
+      "path": "3-gh-inference-source/.git/logs/HEAD",
+      "sha256": "c05479f5e320485276c9a4b997bc30984d6944c35839077da0c34bac325d7635",
+      "size": 204
+    },
+    {
+      "path": "3-gh-inference-source/.git/logs/refs/heads/main",
+      "sha256": "c05479f5e320485276c9a4b997bc30984d6944c35839077da0c34bac325d7635",
+      "size": 204
+    },
+    {
+      "path": "3-gh-inference-source/.git/logs/refs/remotes/origin/HEAD",
+      "sha256": "c05479f5e320485276c9a4b997bc30984d6944c35839077da0c34bac325d7635",
+      "size": 204
+    },
+    {
+      "path": "3-gh-inference-source/.git/objects/pack/pack-67d8019cfba6d297b77a14035c80ea3fccfd3d5c.idx",
+      "sha256": "aba9f579057b06a8d0e8198415b01eb1686c5703711efe80dd9c836e3752336e",
+      "size": 3368
+    },
+    {
+      "path": "3-gh-inference-source/.git/objects/pack/pack-67d8019cfba6d297b77a14035c80ea3fccfd3d5c.pack",
+      "sha256": "264b2702ddf91104534b95dffc8fb6375912b8aaf88181f7812cc91af4206561",
+      "size": 130387
+    },
+    {
+      "path": "3-gh-inference-source/.git/objects/pack/pack-a721f980eaa6f1ea6bb46c5addd5d9d66bf55560.idx",
+      "sha256": "6ac1ec6fe5d27a4d54b199ead12ca17037a31dae72be9692f1c0fcc358a4d4c3",
+      "size": 9444
+    },
+    {
+      "path": "3-gh-inference-source/.git/objects/pack/pack-a721f980eaa6f1ea6bb46c5addd5d9d66bf55560.pack",
+      "sha256": "ce327636ade68be83c030bfbcf3e8a8084e56bdf881472700c1425f06075de6c",
+      "size": 380979
+    },
+    {
+      "path": "3-gh-inference-source/.git/packed-refs",
+      "sha256": "7a86a3927664b41a499e47be3f982f3501040f183ce5e388e18d7a369bdccc00",
+      "size": 112
+    },
+    {
+      "path": "3-gh-inference-source/.git/refs/heads/main",
+      "sha256": "27fe46df35512850e1d3b8cd85ffd4a2109bd613888dba16e1339edead772e1b",
+      "size": 41
+    },
+    {
+      "path": "3-gh-inference-source/.git/refs/remotes/origin/HEAD",
+      "sha256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4",
+      "size": 30
+    },
+    {
+      "path": "3-gh-inference-source/.git/refs/tags/v0.1.0",
+      "sha256": "97de2fe9afae002f06932c308f59825a219f48b6c15dd5dcffa522c2025331cf",
+      "size": 41
+    },
+    {
+      "path": "3-gh-inference-source/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "3-gh-inference-source/.github/release.json",
+      "sha256": "70a4f822e1875ee9af9b605bd1f55b4d1f6f261db320e1759182d4af73fc68c4",
+      "size": 21
+    },
+    {
+      "path": "3-gh-inference-source/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/publish.yml",
+      "sha256": "5f4922706fc77518da595f244ed30ed9d95a9bcfc9b10436bea056264c0aebba",
+      "size": 1879
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/resident-smoke.yml",
+      "sha256": "e43d5b8190de31851d20019571583e906744e121e1168662b6d3c7d9f7d9309a",
+      "size": 1400
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "3-gh-inference-source/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "3-gh-inference-source/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "3-gh-inference-source/CHANGELOG.md",
+      "sha256": "c355c9d4c6e7127c1322bc546c8182cdcc696792cbdd80b01bab5a7d8e2cc82c",
+      "size": 4123
+    },
+    {
+      "path": "3-gh-inference-source/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "3-gh-inference-source/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "3-gh-inference-source/README.md",
+      "sha256": "5961a35d1b2095d722f99ce8ccf7df2d1cf0639e4a88b12dc3c205f00608abf0",
+      "size": 40015
+    },
+    {
+      "path": "3-gh-inference-source/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "3-gh-inference-source/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "3-gh-inference-source/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "3-gh-inference-source/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/__init__.py",
+      "sha256": "d43afd58aaa77d31c25f705818a25dd85401322e5973f93ea1053aa72fc8a8c0",
+      "size": 1565
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/agent.py",
+      "sha256": "91f0f3c9220104ff63548aaa663f437aebd8364cf599ec4c8446d19f98f5f5c2",
+      "size": 12164
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/hub.py",
+      "sha256": "4b7c20a48e94f168c7695dd1d023a26931a8be7f4d8b2f60a92f30a6e439a6ad",
+      "size": 10212
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/resident.py",
+      "sha256": "ef245ab3cfa27ce692af31185f1667e55f405c0226ef096f877b29e499408186",
+      "size": 5174
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/runner.py",
+      "sha256": "27adc8ba1c41ac53ae273162ea117d7f3e0f1930076b9ffcd0b80f61354698b5",
+      "size": 15930
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "3-gh-inference-source/gh_ai_runner/worker_agent.py",
+      "sha256": "e282d1683b4735ef1ea143f4739bdecc159d2ffa4beddf4f19c6c5f15f7c1977",
+      "size": 12466
+    },
+    {
+      "path": "3-gh-inference-source/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "3-gh-inference-source/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "3-gh-inference-source/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "3-gh-inference-source/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_resident.py",
+      "sha256": "682949d4b233a70d56ca2465252010eb58f58bf6b5eb9488f0e717107d571d72",
+      "size": 2183
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "3-gh-inference-source/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39170046480.json",
+      "sha256": "4d9d9c768bea8e3b0739f18a4f4c0ec70684384259276d490e4c4cb975baf260",
+      "size": 16413
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39170149593.json",
+      "sha256": "c01a2e269db9c274b7716f1144b2d5ef148285d2dd9e73dda69c4ca60f2ca776",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39170239270.json",
+      "sha256": "528d577a80a4b4f4994965d5965192fec945b11b975cede45958aa72de18f6da",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39170662582.json",
+      "sha256": "2ff219d72aa50c90adcfec681e374446f94485d1042fda542cfcc60ece046e56",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39171163080.json",
+      "sha256": "0f99c9c042413be9dc87ea78936d5d0262bd28546823e03751019b5ec9ac6253",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39172435855.json",
+      "sha256": "f72adf23b22346a02b821abadabcc8e20b741b11e0486f309577f545dd1cebfd",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39173850132.json",
+      "sha256": "5b9bbb6492fa613a9123497b452b8134547b18c740ac3a97cf780fbafca498f3",
+      "size": 16405
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39175424951.json",
+      "sha256": "0a5575b7436f98f917f297b06467eff01ae2587dd7c2bff00632be475e88b7a6",
+      "size": 16476
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39362392295.json",
+      "sha256": "2d3317759cd1f7855e378afb5c9dcabb08ebc18314d16b34619d2c9e9d7cc5a3",
+      "size": 17920
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39503242719.json",
+      "sha256": "49e603f82e7751b6fba53ac019d48e55c84b7098a77e7e6d2ad12ec3b5bd4ace",
+      "size": 18301
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/39503399818.json",
+      "sha256": "9ba6283ce7a716be202e6ddb83ea875492bb2e9fd9641365f8b6eb9b9d5b97ed",
+      "size": 18301
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/smoke-39170149600.json",
+      "sha256": "4116d5149ff7d96536e1009d89aa9789393f1af3fb1ff5aa25d3d3ef59e7fee6",
+      "size": 6652
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/smoke-39362392293.json",
+      "sha256": "5037c7226a4161f2bc9a96c30070890eee012391c9e32a76011a70867561ec2e",
+      "size": 6662
+    },
+    {
+      "path": "3-gh-inference-source/verification-results/smoke-39503242684.json",
+      "sha256": "ff71e783ff6282150ee18329a4cbcef26cacc4030d7b9b6a5bd2becc24a3248f",
+      "size": 829
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/COMMIT_EDITMSG",
+      "sha256": "cd2c711750efae74e0c39022551ba00f76b1848bc62e6f2cff05b16985677a15",
+      "size": 50
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/HEAD",
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80",
+      "size": 21
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/config",
+      "sha256": "cae33efdb02cf774435c1ff9cb16bcc1014606908530c6e1dc727615fe3e8cda",
+      "size": 137
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/description",
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee",
+      "size": 73
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/applypatch-msg.sample",
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7",
+      "size": 478
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/commit-msg.sample",
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437",
+      "size": 896
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/fsmonitor-watchman.sample",
+      "sha256": "e0549964e93897b519bd8e333c037e51fff0f88ba13e086a331592bf801fa1d0",
+      "size": 4726
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/post-update.sample",
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5",
+      "size": 189
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-applypatch.sample",
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475",
+      "size": 424
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-commit.sample",
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a",
+      "size": 1643
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-merge-commit.sample",
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53",
+      "size": 416
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-push.sample",
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a",
+      "size": 1374
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-rebase.sample",
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3",
+      "size": 4898
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/pre-receive.sample",
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989",
+      "size": 544
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/prepare-commit-msg.sample",
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619",
+      "size": 1492
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/push-to-checkout.sample",
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f",
+      "size": 2783
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/hooks/update.sample",
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106",
+      "size": 3650
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/index",
+      "sha256": "a24741328b2c8eb770b6279acd2a8c9d30ea875f3ccbcf58e57bcfd5ee2fd720",
+      "size": 7061
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/info/exclude",
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1",
+      "size": 240
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/logs/HEAD",
+      "sha256": "99caf44285342fe0a11f49e21787acedfe5f24ceac6ba077af50646b746b8694",
+      "size": 231
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/logs/refs/heads/main",
+      "sha256": "99caf44285342fe0a11f49e21787acedfe5f24ceac6ba077af50646b746b8694",
+      "size": 231
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/00/a9cf9f7ca91d459adbb70121188a8623a8436f",
+      "sha256": "06e533f75368c9bd1e360f0f5b9090b23990a8bee00ace4a18577d51d5eed7d2",
+      "size": 4177
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/06/8c113d370ed5430c430b6743757f77e010bc48",
+      "sha256": "f1228559df78687d7eaa128b7ea06dc318761bbdc33effaab78a2ca233000d98",
+      "size": 170
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/10/45ed8aa383b59414e549355f76849ef80ee6ff",
+      "sha256": "affd058f3b0819fb04848ef0080589ff7ef274671464f63e761336fe244375f4",
+      "size": 6049
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/12/4ce3ba99e2a9cceaacfc056964314fadd7dfb2",
+      "sha256": "b2fee77b5a913e8628a2a851321ec6e90b1ca9efdf48fc130d775da7826ea0f7",
+      "size": 3012
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/12/6eac7f96833a24606727055733167c65a420cd",
+      "sha256": "a5e7f97cb3bac938049cb1886bed73ceb952ed2b508981e36e2508dc8b4e8aff",
+      "size": 3011
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/13/e4599607424ec9b325c3086955bce52454cb8b",
+      "sha256": "0a25b954b31067c2d3c75135495d661472cbd9d49387e9bf9e339a7a6923b314",
+      "size": 183
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/16/6ab4ee4b652016725f7e44b3284c6ab08388c7",
+      "sha256": "c191afdc11824f5c945fe0c06107c88d79a5e4d32046c0f60f061ae36eb6241f",
+      "size": 3672
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/18/da89c7f0242576fc23f565aaa068eb48b31bed",
+      "sha256": "f34727aa95c8f55612a33e4c7daee478d604d66258075b29160439619a767ec2",
+      "size": 1074
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/18/fdbb457369c0b93352c221fccceac80b9d63b6",
+      "sha256": "413a90b7e2ae88348ffa4c6cf7d22cb5ef1e6c2f5172e921149d10a3f8cc4b3e",
+      "size": 901
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/1b/81d52df5fd9a8dfa62c21650898c007d4c9503",
+      "sha256": "4d74a6c189e61f28cbda41fdf30e3931780fd56dd00228a403eab58235ec46f3",
+      "size": 737
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/1b/c7fa1d866ae5ad482e8f26920872cef5aadd01",
+      "sha256": "c0c523f05c90f8d0a0cfae6d81bf52bcb61dd1e69bed7669c9074765a7a0a3f5",
+      "size": 1140
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/26/076b8e2dfeb500c75e262dda78f585e7752947",
+      "sha256": "8a687fe65d99456e113dcbc27cfad5aab4ddcdea0c36da4717a2e04c416f6550",
+      "size": 37
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/29/969d08501120286429f3366d195eed8609712d",
+      "sha256": "28a6b69cd72dc780014f15388639cfad923e7b0f9efdf24757deedc291ba7488",
+      "size": 3014
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/2e/1747a121d722388fc18d590ca4c6d883cea68e",
+      "sha256": "136f809cad9c9359bf399d046e5bb663a208290497d86012ac40981fd8f05a94",
+      "size": 3015
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/32/f1e35df97d053396798d843fb319149d6b3835",
+      "sha256": "805105e5a24c9ef41adc8f12ae2324079927fd817a006bd11de732bbbd05f11d",
+      "size": 1763
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/3a/272268d1c721beb105672f30a40e65667780f2",
+      "sha256": "57a300dd38300da84968acfba4ccd55584a5d9745b6c9b123a05d675164fa707",
+      "size": 85
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/3b/3c3e5f1508d685e575e6d3589259d9ae7da68b",
+      "sha256": "1c96e9967c947cd202f1a97f241466a9dbeed7d3f49bb393d3aa51891e7e0c78",
+      "size": 4005
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/3e/913a4dc6aa2d9be923b44db5f11fea3df9d84f",
+      "sha256": "15a4a818388b7ebc381e38d31152f3f869d835dc18ff628ba4174aa70085600c",
+      "size": 232
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/40/b2061d9edb42c74a23f741d2c70fecf7140b21",
+      "sha256": "bbe6fe3b3ad54a296b5c9ccedc3bb7f4987eb523c9be2dcc5cbbc319387cedd2",
+      "size": 1256
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/41/b2c116f2fa767858ff7c7ae880e3ae09fc7fb3",
+      "sha256": "a9b418140ba01c859916f55b2f64b9a52596eec36e4460c766d2414e5cdeef8e",
+      "size": 1061
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/42/601128a7a6b1d0942c490573432185338a2617",
+      "sha256": "2fe9f099f4843e1f61d073b845340b28e6d56efbaefe601b3a32f5cd40980e89",
+      "size": 4143
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/46/796792f79cfc71df4dbe61d69878c68554f56f",
+      "sha256": "edc7aa493ad4f6eb3c011aa0b562e401c84cbfe154cfb466c7abe04665d60551",
+      "size": 920
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/4d/eff10329d02885a141363446bde8a7d964eb0d",
+      "sha256": "09e51b3e7fc6c7bd52f77f4acdefd7bf0da7d266fb4bcd25bb24d2afe3a999a8",
+      "size": 1338
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/4f/c56f64076403b5ab109b99b46c44c2dd738d3b",
+      "sha256": "eea479d85e1c28ba160aa89a705fc1c5195e55383056070ac5b7b63706617356",
+      "size": 1328
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/57/f71b028c11080ed070bcddfc1f79bf8429cd26",
+      "sha256": "0b41c6d8ab0e52a9397e7b708de81335fff5f409b3ece95ef65e6e017df31bcf",
+      "size": 2459
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/58/154a4a0e01ae463e93d0ed858d5a78aeecb215",
+      "sha256": "fe6da8d5355281f8b98da6a0fdbf3107a461f30faa9bde1a14be14387103d321",
+      "size": 17504
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/5a/a4b600c26843b594fb99e3849ebc040be01c52",
+      "sha256": "a031ff866a207f93b04dbf330fc6deab637a6e1bb4bf72458ed8babc171b0889",
+      "size": 2588
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/5b/29dbc2e198ca21691192697e8d2a9d6f8d5879",
+      "sha256": "425ad7677b34675ff32cb8291f709e3a16fcf46375cb008b2d65d945dc53db5a",
+      "size": 9248
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/5c/1f1079eb88797cac2f493b1028a155981eed65",
+      "sha256": "3b7fb18ab1aa1c222f4d4fedb4b987eff695b5e2382bcd8f5c4cb9d22555b9e7",
+      "size": 1541
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/5f/639fad54a8d301391dca06c4831f7c34f70556",
+      "sha256": "b329575e504295d988d9862c4d5e0b4a1bb4063e5ba15b5bb84aff26d9983884",
+      "size": 2463
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/5f/927260efd87f66baf850d266bfa90cef7a751f",
+      "sha256": "1c81acf3681b64876d3c8aab7c372798f48e6bf4ea6c7a6e82255b99a6cff5bb",
+      "size": 3610
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/62/252e7573d6786ae5a92a9bca47b2f917d98f5e",
+      "sha256": "5dae07f1b1eeca409c2672209545f662a79480dfacd4c732bc61f619b4da9de8",
+      "size": 129
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/65/f2632883ddeef98ea6f8734b8b61e2ed86540f",
+      "sha256": "47995f7eea32df22b128901f48cde644928f2771f182513b2ac7debac7aee19b",
+      "size": 458
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/6d/d4714159982d30f24330a192ea32abca2500f2",
+      "sha256": "0356e8642ff308c31f8821f48da87c0e52c6498a2217ed432b621528718e6b43",
+      "size": 2090
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/6d/f2ca375ba87aa563d4505dd48df79be955e144",
+      "sha256": "b606346420a01bf5d3d77e990709f299765e73427429a154cd9bc1393560f338",
+      "size": 1141
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/71/049ff51dcd60a12cf7b0fda89d46d35425a2f4",
+      "sha256": "d5ca041147e4692caadd77d26a4fba4e12ce2017ca8c7800730cf8fddbcaf265",
+      "size": 1189
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/71/f811fc12ccfd4009655e601d04e949112cd11f",
+      "sha256": "06d2e5045b792a0065184a741ed748e1a4f970551d4b1213dea13abfd35b06e7",
+      "size": 599
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/73/c8aa70245738e421cc212119aa4a17cd1e8557",
+      "sha256": "5c67685289260bcc2576b0e3841896076011a1f1c8cba43633428b579ad7f37b",
+      "size": 494
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/7c/55b61af7dbad9c06f0fd73cfb26233e51d9fd4",
+      "sha256": "eedc59394417b5bc660c0950a3bb3cdd3f9dbcd807aeeaf6666d6aed0270f0fe",
+      "size": 1534
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/7c/d12c85f4beaf1584de7dc66173e00c516dae79",
+      "sha256": "8a83cd2fd479f8c1275b4335f55ac4faac60b90dbbf5ee561be6a86640128000",
+      "size": 3294
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/87/de253731e0fe031e100d858a5c6da3c5855cf6",
+      "sha256": "f9296f4c975e01603c719876123926f6721ce9e2bc2527299685e749003a7731",
+      "size": 1428
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/8c/661a91e78ed1ae0f15390aeb8ff11c224a085c",
+      "sha256": "d2e5db86856cedec6fe02b395e3789a0bdda41fd31588fda0a852ef71c9d6dbf",
+      "size": 1860
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/9c/5ae99aecb58daadaa3e9d3390791d81c63b0a2",
+      "sha256": "8745b028bf65078c9e9d026ff07a98e271d0b3153ee7b86af025609f2c04a4f4",
+      "size": 3006
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/9c/6f80bde67f875da592b5454ffbcc789c1a9107",
+      "sha256": "f0d67d681f1b60bdca322ce888f17ffe043cb6adb095c49c2d25a19066c65b7f",
+      "size": 1213
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/9d/e6ccddd15051e07314f0b1e8aeaaf8f9231451",
+      "sha256": "0d132b9cbc8c5ff0776d557b3b08bf6a0c0f1c1685671725cdaaf4aafd985d1b",
+      "size": 1295
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a0/e90a0768fe14dee58df12105f673980b9d77c9",
+      "sha256": "0a2bf703837be4939d476b104e8b2af3eab509e0731985e19e6663c8c851c8e6",
+      "size": 1682
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a3/c029999b4ea5c79147e722e082e772160ebbb1",
+      "sha256": "c10ec07d3f72f2d97193baa7a1e315c18bae8bf73221320d9fdb02c69f0b635b",
+      "size": 83
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a3/c7a8241f107cf77a85f6325f96df4e1ef40ee9",
+      "sha256": "49806d7069efd698142b5f98c0ed56b02d6006a15655881f552a73d2d555932c",
+      "size": 478
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a4/0d8014711dcb8da75998b30e668617e776ef85",
+      "sha256": "ae8ac027a9112d3722862f37442706767bb387430640a2ef3b15b1422ac8abec",
+      "size": 3260
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a5/99b9f6fa06c047f37ba1e43ffef0a0983130f8",
+      "sha256": "c2e6ddb854c43041b3b9e21f6d99778a55da1048b3805d4c9b862e8566270379",
+      "size": 498
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a7/6c913f30f13f2b3ac034282354b5fbd5c27bcf",
+      "sha256": "359434de78bad09375e6b3e1dec74780faa6c1c8c667c672eccef07dcfff380d",
+      "size": 721
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a8/3da307df2d195c4624beafbc9f3a5921b3dcc2",
+      "sha256": "5b1bf7f75e6e06e2091e11a7dfbd29beae57596385ca0135c45de31336623ede",
+      "size": 3016
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/a8/3e861bd75a94531209018111d6236a89ec84ac",
+      "sha256": "edd7ff8e069cf8cef66bdbe3161fe3d769817275992f5136110392fdb7772a94",
+      "size": 773
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/af/6d692dda3b3246b7740608ea5323739e985046",
+      "sha256": "5b8cc77ba75fb0dcd25aaddd4260a5282afe7ef3ca271cecfcf80f7ec8d6a79c",
+      "size": 5423
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b0/9a6acb479ad811838202c9b335fe23214337b9",
+      "sha256": "b32f72b0a78528bd97d03f8de1ab05781fd209127e75b1cd95b4c4f8880f2373",
+      "size": 3033
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b1/fb95f12e23d5cf8204761eff489b72dc292e7d",
+      "sha256": "f2cdf40cd0bd25b18a7150bdb2633991a7767b4a9a7624ee82425ac3726d1849",
+      "size": 5679
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b4/430ac0d3698e3db54989d42925b43eebddcb97",
+      "sha256": "5db31e2f234d7a46a2e13b8e8ceafd03d9e2ee1ea3f6508265f4f97f5531d16a",
+      "size": 2459
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b4/f968b82a888e7912400727d323627e614e0294",
+      "sha256": "7ff64ac42ab3de67702936908bb61f018f616172ce1ab0299e28649f67b462f0",
+      "size": 622
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b7/16f82ff4c8169e98edd6f0b0c43bc971040999",
+      "sha256": "2353025a8c50652bd2c759d1d41fd21915644e929615df9fa207c355b0eb099c",
+      "size": 2819
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/b8/1d370edfcb9352d3666175cadcbcb30d60d204",
+      "sha256": "6746f0159a41b9c1f8e2fe7678948f4de9d6b7055d166b5bb01609bd7f8cfc0c",
+      "size": 1429
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/be/d4a86c91547bd2c9b67aa5bc76d28751fe4b6d",
+      "sha256": "e9457c50d55fa675c32828c977d8aa87a836d29a4908e907feaf6c146d79dbda",
+      "size": 311
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/c3/488316cc9f2dbc4f10a4d1ce8177f51c986415",
+      "sha256": "47f30606745af2035b1843aa82933d728da05eb8d38a606277f2e96ffc9fef52",
+      "size": 655
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/c5/a317d1c7a66f623da5b84b4915db25f9791bbe",
+      "sha256": "b3997ae1614b5e4279b347f8bab360090cd4bfc486111004fb3899effd6f29d0",
+      "size": 3011
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/c5/e9708ba06fb1f07a789528e73e7a211aeea809",
+      "sha256": "a8d13b539ff694c58b4818bb34ef2bc62cec6dd4f6068ebbed1f4d265d0123bb",
+      "size": 629
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/c6/87eb6da38c1f7b267e02e02bb11ce7d3e915ff",
+      "sha256": "34924415ecaca5690d9779c0696dd105624cbd0b9da39cccc2b85c34aa69871f",
+      "size": 688
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/c7/50c15fa404bd349a0741e6681d2bfb7f866f93",
+      "sha256": "e50bad28505fb079a587b9ebb9fe6d4e47b38534d976acfb72bd3df20cf322de",
+      "size": 2316
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/ca/f4b05cd33442e8ff6bf8c73bd4a205ab9ccce7",
+      "sha256": "34151145d800d708701705801706bc8c159dd6aa6510b35095c77b13e71ca6a7",
+      "size": 178
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/ce/00fe67b2d7acd19dbe46d34c6f3a84ecfec920",
+      "sha256": "59a392d30489e13062a2d305d2eb221125d62cc1518a98f607d0ba8e1fbb2e6b",
+      "size": 5244
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/d0/41edc9b811d5420f1d3f925ea1dd651c7f54ca",
+      "sha256": "00cb9a49260ba9ec52e516d31fd4bac4c60c61df2f1f0349b8cea49cc5e260bf",
+      "size": 1068
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/d0/770fe06fd78842a35af7992e53085e56d9d155",
+      "sha256": "83bd64f7df68bfd01f4304a7e1ad53f56afef84aa5a2677dde7feaecc283aa2f",
+      "size": 473
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/d0/c86b982cf61b914635549126a7e91febb09cc2",
+      "sha256": "da2c02a0edafa2fe36a3f792540ae77a59015204c5924cb090a931b4d9c61976",
+      "size": 3788
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/d7/4a950574b81e27c8a868aeb052884837f02db3",
+      "sha256": "5521946fbe5557ad0f7b67397cae68285ea71ee9b67ae9a7949c5eca78460bc2",
+      "size": 535
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/dc/e12f75586732a0414bf6e7185f518a4b63b36b",
+      "sha256": "4e28a5017530cd6de85b011788a0c556e27b390ac19ccbf474bd57ca46e614da",
+      "size": 2020
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/dc/e60d9f568d6f2653fa6c6f36e42d0ab1374481",
+      "sha256": "922662d2704cb8d20eb80b69a9ee84ae1e07b751da7498917e4d7e6c754860a6",
+      "size": 3295
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/e4/3e72b0bd06c3f95618eddd55855ba3e5c4fd46",
+      "sha256": "06e771006ebe876714dcc0a1c4c8c3d7f9463aaae6f8814a7261ae2f410ec6eb",
+      "size": 622
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/e9/18654b970bd8c541e8493a655145739d235f1b",
+      "sha256": "5f81c53c0916fa2f64d21add4f241f8cdae55e1daab93f51d688de2e75ade4f6",
+      "size": 225
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/eb/b6e2b3e5f1b776453ddb7c9cb3464378100a72",
+      "sha256": "738a54279b2048b8021d5d13ae128b3f2b4808f7ecaca78efc5212e2d6e125f8",
+      "size": 2355
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/ef/614c3712f325a703881b5a9805f73f01059700",
+      "sha256": "425d6e57ed66990ce11e6df404c5361cd24f4197503b3615d448510c13822ece",
+      "size": 85
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/f4/f9f5170b5dbea00844a7a79d40b2100b1ec155",
+      "sha256": "5cfb77b24c6bd5a1cf2b9317f6c9890676ee82ce785bd53d474ec2fd47e1b3ca",
+      "size": 2419
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/f7/b5c2786be988d0ecc3e786ed770bd9410a3606",
+      "sha256": "f01307388219c35525f10149cb84cd4218096269dbc27ad1b241fc1987dc95e4",
+      "size": 3483
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/f9/448e193fd44354d2c99a734ac3eea93308e7d9",
+      "sha256": "8b02165c13c99b259b33c392ceac0e82842e20b1ca2cf42304440cd2196f1ba8",
+      "size": 465
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/objects/fc/59601582f2e42214395e9f58fb7602fc2e4c70",
+      "sha256": "1152f50586f73cf6bd8a294e1776f10ad8fc38bbddcd330b0df4477962513313",
+      "size": 354
+    },
+    {
+      "path": "4-gh-inference-fresh/.git/refs/heads/main",
+      "sha256": "0e17c417d0c339b0fc4b98e78ccd2ea8eb55661549ebc7a384f42195ef52627c",
+      "size": 41
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/open_model_smoke.py",
+      "sha256": "c9625c12bead68deb4862631aae7b05fdd74d635c7f10caba5b43e0500aa917a",
+      "size": 3354
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/release.json",
+      "sha256": "70a4f822e1875ee9af9b605bd1f55b4d1f6f261db320e1759182d4af73fc68c4",
+      "size": 21
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/verify_release.py",
+      "sha256": "a158f4354c9860b07e8700d03b28158717cd1ed94d834172737e2964f2d65650",
+      "size": 2177
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/model-smoke.yml",
+      "sha256": "652e448f64059ba3d6756af9bb3ecd16c83b53a6850818023c6c42c2fc2a700a",
+      "size": 2521
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/open-model-smoke.yml",
+      "sha256": "3768f58a80df0bd515b0bc112914b78e5323c83dd6cdf57cee6fc462058ac1d6",
+      "size": 896
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/publish.yml",
+      "sha256": "5f4922706fc77518da595f244ed30ed9d95a9bcfc9b10436bea056264c0aebba",
+      "size": 1879
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/resident-smoke.yml",
+      "sha256": "e43d5b8190de31851d20019571583e906744e121e1168662b6d3c7d9f7d9309a",
+      "size": 1400
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/tests.yml",
+      "sha256": "b70a52d5bac478327e3de17c3954df01be04afd2fe1cbae377d3783b52e57585",
+      "size": 572
+    },
+    {
+      "path": "4-gh-inference-fresh/.github/workflows/verify-release.yml",
+      "sha256": "e470a041217be8e72ddb5e2ceb7835d1215317bf32bc4c8aeba445f8baf08fa5",
+      "size": 551
+    },
+    {
+      "path": "4-gh-inference-fresh/.gitignore",
+      "sha256": "37a6151e19c472bc0188f2f27c3e5aa7c51f6c0610b9aef35f00f85325c3c622",
+      "size": 83
+    },
+    {
+      "path": "4-gh-inference-fresh/CHANGELOG.md",
+      "sha256": "c355c9d4c6e7127c1322bc546c8182cdcc696792cbdd80b01bab5a7d8e2cc82c",
+      "size": 4123
+    },
+    {
+      "path": "4-gh-inference-fresh/LICENSE",
+      "sha256": "2913b094761b7455460995de90cab3bb2387143b47c80d8d21ba620f04c7376c",
+      "size": 1070
+    },
+    {
+      "path": "4-gh-inference-fresh/MANIFEST.in",
+      "sha256": "39f6d45d9ac0e0d4a4b32f90c8dbed8305717f7211f1d1635d02aac720c7be18",
+      "size": 77
+    },
+    {
+      "path": "4-gh-inference-fresh/README.md",
+      "sha256": "5961a35d1b2095d722f99ce8ccf7df2d1cf0639e4a88b12dc3c205f00608abf0",
+      "size": 40015
+    },
+    {
+      "path": "4-gh-inference-fresh/examples/README.md",
+      "sha256": "d56d44cce02598be7b5a9e4f41adf668432b40b2e2aa6307d70972a4e2c96e04",
+      "size": 2078
+    },
+    {
+      "path": "4-gh-inference-fresh/examples/console_tour.py",
+      "sha256": "26fe28174d7be1a3c7948133b0dc931cc82c345476fbea5ca6b6770b4594a3eb",
+      "size": 13311
+    },
+    {
+      "path": "4-gh-inference-fresh/examples/story_turn_contract.json",
+      "sha256": "cd2f79b8cc0f0cb8a99e4cbc5bd0009c942d1fe27af5ed71b708fde202649528",
+      "size": 2868
+    },
+    {
+      "path": "4-gh-inference-fresh/examples/writing_benchmark.py",
+      "sha256": "07902de5d70eddefcad4f5328fcbfd6dfedaee10b39506873ae850c9190bd386",
+      "size": 13483
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/__init__.py",
+      "sha256": "d43afd58aaa77d31c25f705818a25dd85401322e5973f93ea1053aa72fc8a8c0",
+      "size": 1565
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/agent.py",
+      "sha256": "91f0f3c9220104ff63548aaa663f437aebd8364cf599ec4c8446d19f98f5f5c2",
+      "size": 12164
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/agent_types.py",
+      "sha256": "5fd861067af8d215bfd38a1f4b123930869df93061a4b3c8ab5a4533d8059efd",
+      "size": 1385
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/artifact.py",
+      "sha256": "58943ae4e7b924b56e77aad6de92fe79a16a834236edb9dd82ecb2c03a640b3e",
+      "size": 4132
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/batch.py",
+      "sha256": "7beacbe2406ae39ca0a7ff3a6d246b555367e9d0d08dfb24a994549c91467f79",
+      "size": 2160
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/client.py",
+      "sha256": "9205b168b987305d83ae5a13f782984e1b417dab4d69ea849b7712e849a53775",
+      "size": 21342
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/core.py",
+      "sha256": "586bd1aa511f9a73b436e6bb2e3653913e6c7f6419865830cac5f123bfd1dd13",
+      "size": 3044
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/hub.py",
+      "sha256": "4b7c20a48e94f168c7695dd1d023a26931a8be7f4d8b2f60a92f30a6e439a6ad",
+      "size": 10212
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/integrity.py",
+      "sha256": "44c5df9944fc59123026fb8f0896698680ea04b856bf2bd2accecb14397b41ee",
+      "size": 1325
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/job.py",
+      "sha256": "4800283f97c0739e96fbfd7d773696c2ba89459f4abc4445fec4f8f07967da4e",
+      "size": 8074
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/limits.py",
+      "sha256": "dc35b145fa51eb37f29403ce4e0f32e1cc1664237fbd03ac82f882291f8373ed",
+      "size": 4730
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/logger.py",
+      "sha256": "ea6ccaa709a3e1f210cc483064749e1e72e5d2896190b50206e1048f5e3789d0",
+      "size": 363
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/metadata.py",
+      "sha256": "72e5bccb0ca4d24d6c75a5e8c3d00d2719eee84c7958254cc7a1f9a2d5cb7376",
+      "size": 4683
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/models.py",
+      "sha256": "e00080eaade07edd902429d2ef3b627d5769dfdaf12646174bb9b4da9e93ecbc",
+      "size": 10322
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/pipeline.py",
+      "sha256": "30e8b314752dd500daccf2e434396f93c71bd6f4296e94025db111b80c58e9e9",
+      "size": 1388
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/polling.py",
+      "sha256": "bd9c5b8ecbbb6e389d8d914efec4683232c480f7d926159b1c0b7b7a9895e998",
+      "size": 2472
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/repo.py",
+      "sha256": "917af593283dcfab67a0464423b104bf8c97516364b497f2f766e42bbe7c0cce",
+      "size": 5845
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/resident.py",
+      "sha256": "ef245ab3cfa27ce692af31185f1667e55f405c0226ef096f877b29e499408186",
+      "size": 5174
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/runner.py",
+      "sha256": "27adc8ba1c41ac53ae273162ea117d7f3e0f1930076b9ffcd0b80f61354698b5",
+      "size": 15930
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/stress.py",
+      "sha256": "0a544607958a98828c6a0279a44dbd18c3150b9455255d47ab3b77c8853c8a40",
+      "size": 7576
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/types.py",
+      "sha256": "9f924340e2821dcff1c8ca7612f13d6b2d2e775c21a1a1bcd8393a731e869754",
+      "size": 5125
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/validation.py",
+      "sha256": "2286e9ab506ca9267200880f628e52f6876d85cf4a6eea7ba0aa7566d5acd706",
+      "size": 3574
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_ai_runner/worker_agent.py",
+      "sha256": "e282d1683b4735ef1ea143f4739bdecc159d2ffa4beddf4f19c6c5f15f7c1977",
+      "size": 12466
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_inference/__init__.py",
+      "sha256": "88954a390f21a1d3884f2c77bb2b8cf229d527452e7bfce843614d79ae56a496",
+      "size": 151
+    },
+    {
+      "path": "4-gh-inference-fresh/gh_inference/__main__.py",
+      "sha256": "390f22e8192441d826ddf970becd1d1aa08042fabbc4865705c26d5daecd31ff",
+      "size": 4169
+    },
+    {
+      "path": "4-gh-inference-fresh/pyproject.toml",
+      "sha256": "d7af4ac34d5e72a3f7937e47e9502642187905eed6c23dddedb9a1dd33ae6b1a",
+      "size": 1114
+    },
+    {
+      "path": "4-gh-inference-fresh/showcase.py",
+      "sha256": "c4a4980152d48d1d077cd91e9f9dc1b243c625e7917dd3c15e56b3bf69540547",
+      "size": 23652
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_context_limits.py",
+      "sha256": "184e90f3d36d6fa7d63b9ff81716600b120926c4798e5fe4f9c70da33eee95a3",
+      "size": 7079
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_discussion_cli.py",
+      "sha256": "ba91d7ce3332c1967c4d1adb089cf7505c8e29f6d72e0f4d427c630aee368866",
+      "size": 968
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_editable_limits.py",
+      "sha256": "bc76bc2777d2cb066f096a73628f69501c75ff23ce2ef794e6636af9db5084b1",
+      "size": 7205
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_hub.py",
+      "sha256": "3be4ddc6aec93176fd6f29c5a3cda1246940a2ec976f12057ac1aaa0b5c61aa6",
+      "size": 7890
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_large_models.py",
+      "sha256": "93bc1543062b39d99413d3f3bf7c0ecadb2760114ea8bbd415022d1425d37a0c",
+      "size": 6901
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_pipeline.py",
+      "sha256": "58937946bae2fc288f4e62ce7fdddd107b9047288a3a54ce55ac1b7dd34dba48",
+      "size": 7342
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_reliability.py",
+      "sha256": "1c9b465a2d3e72b872cd7e323f6a7e29d59142cc1ba3c02000e213f2c7a10fb6",
+      "size": 10905
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_remote_agents.py",
+      "sha256": "c194920f816ed999dce2b6a7a01d4b69ad563a3c499af103373e5d92bd42e209",
+      "size": 11791
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_resident.py",
+      "sha256": "682949d4b233a70d56ca2465252010eb58f58bf6b5eb9488f0e717107d571d72",
+      "size": 2183
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_showcase.py",
+      "sha256": "0acfbe666a23123a923c4d5bc205802353bdb7ae54d4bc4f694ef2438f3d6478",
+      "size": 3037
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_stress.py",
+      "sha256": "c695c26a46e64db8435a6903753b358faf8e8e31e081f146b6d3d485026b7ec0",
+      "size": 2935
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_v02.py",
+      "sha256": "66643a1cdfbebe0f96a340e86d2a12920aa9fe5895efdedd903f57155864f3e2",
+      "size": 9412
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_v03.py",
+      "sha256": "fe3f0d0453637b0cd698c8cc6638f26dab95c1d326d6c79b6c694c187c8526a6",
+      "size": 7622
+    },
+    {
+      "path": "4-gh-inference-fresh/tests/test_writing_benchmark.py",
+      "sha256": "14f30dd2116b51eeb4d41da36f64d4fb9cd26b7973b60a8f11400f6913fee922",
+      "size": 2775
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39170046480.json",
+      "sha256": "4d9d9c768bea8e3b0739f18a4f4c0ec70684384259276d490e4c4cb975baf260",
+      "size": 16413
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39170149593.json",
+      "sha256": "c01a2e269db9c274b7716f1144b2d5ef148285d2dd9e73dda69c4ca60f2ca776",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39170239270.json",
+      "sha256": "528d577a80a4b4f4994965d5965192fec945b11b975cede45958aa72de18f6da",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39170662582.json",
+      "sha256": "2ff219d72aa50c90adcfec681e374446f94485d1042fda542cfcc60ece046e56",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39171163080.json",
+      "sha256": "0f99c9c042413be9dc87ea78936d5d0262bd28546823e03751019b5ec9ac6253",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39172435855.json",
+      "sha256": "f72adf23b22346a02b821abadabcc8e20b741b11e0486f309577f545dd1cebfd",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39173850132.json",
+      "sha256": "5b9bbb6492fa613a9123497b452b8134547b18c740ac3a97cf780fbafca498f3",
+      "size": 16405
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39175424951.json",
+      "sha256": "0a5575b7436f98f917f297b06467eff01ae2587dd7c2bff00632be475e88b7a6",
+      "size": 16476
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39362392295.json",
+      "sha256": "2d3317759cd1f7855e378afb5c9dcabb08ebc18314d16b34619d2c9e9d7cc5a3",
+      "size": 17920
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39503242719.json",
+      "sha256": "49e603f82e7751b6fba53ac019d48e55c84b7098a77e7e6d2ad12ec3b5bd4ace",
+      "size": 18301
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/39503399818.json",
+      "sha256": "9ba6283ce7a716be202e6ddb83ea875492bb2e9fd9641365f8b6eb9b9d5b97ed",
+      "size": 18301
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/smoke-39170149600.json",
+      "sha256": "4116d5149ff7d96536e1009d89aa9789393f1af3fb1ff5aa25d3d3ef59e7fee6",
+      "size": 6652
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/smoke-39362392293.json",
+      "sha256": "5037c7226a4161f2bc9a96c30070890eee012391c9e32a76011a70867561ec2e",
+      "size": 6662
+    },
+    {
+      "path": "4-gh-inference-fresh/verification-results/smoke-39503242684.json",
+      "sha256": "ff71e783ff6282150ee18329a4cbcef26cacc4030d7b9b6a5bd2becc24a3248f",
+      "size": 829
+    }
+  ]
+}
