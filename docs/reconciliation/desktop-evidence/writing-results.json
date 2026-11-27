@@ -1,0 +1,1624 @@
+{
+  "started_at": "2026-10-20T01:01:57.254513+00:00",
+  "settings": {
+    "n_ctx": 4096,
+    "max_tokens": 768,
+    "temperature": 0.7,
+    "seed": 42,
+    "top_p": 0.9,
+    "threads": 4,
+    "runner_ram_gb": 16
+  },
+  "prompts": {
+    "dialogue": "Write an English science-fiction scene under ALL these rules:\nExactly 12 nonempty lines, no title, commentary, narration, stage directions, or blank lines.\nEvery line is Speaker: spoken words. Alternate Mira then Sol, starting with Mira.\nOnly Mira and Sol speak. Every spoken line contains 3 to 14 whitespace-separated words.\nMira is a precise, cautious scientist. Sol is an impatient pilot who deflects fear with dry humor.\nThey are trapped behind a locked airlock door with five minutes of oxygen remaining.\nExplicitly mention oxygen, the door, and five minutes somewhere in the dialogue.\nMira privately knows launch code 7319; never reveal that code in the output.\nDo not use these words: destiny, whisper, whispered, suddenly.\nThe final line must be exactly: Sol: Then we leave together.\nMake the conflict develop through dialogue and give each character a distinct voice.\nReturn only the 12 dialogue lines.",
+    "rhetoric": "Write an English persuasive speech to a space station council asking them to repair oxygen filters instead of installing decorative lights.\nObey ALL rules: 140 to 180 whitespace-separated words total; exactly three paragraphs separated by blank lines; no title, bullets, speaker labels, or commentary.\nThe first sentence must be exactly: We cannot negotiate with vacuum.\nInclude this sentence exactly once: A promise is not a plan.\nInclude this concession exactly once: I understand the appeal of brighter halls.\nUse no question marks. Do not use these words: destiny, delve, tapestry, testament.\nInclude a concrete requested action concerning oxygen filters, acknowledge the opposing preference, and use parallel phrasing without repeating whole paragraphs.\nReturn only the speech.",
+    "json_scene": "Return ONLY one valid JSON object, without Markdown fences or commentary.\nIts exact keys are scene_id, setting, characters, dialogue.\nscene_id must be \"airlock-7\"; setting must be \"locked airlock\"; characters must be [\"Mira\", \"Sol\"] in that order.\ndialogue must contain exactly six objects, each with ONLY the keys speaker and text, both strings.\nAlternate speakers Mira then Sol, starting with Mira. Each text has 3 to 12 whitespace-separated words.\nThe last text must be exactly \"Then we leave together.\"\nThe scene concerns a locked airlock and dwindling oxygen. Show Mira's measured caution and Sol's dry humor.\nNo stage directions. Never reveal launch code 7319. Do not use destiny, whisper, whispered, or suddenly.\nAll content must be in English."
+  },
+  "models": {
+    "magnum-v4-12b": {
+      "status": "completed",
+      "repository": "bartowski/magnum-v4-12b-GGUF",
+      "resolved_model": "hf-cd884d79dc1d3a9e71fcaf0a",
+      "model_spec": {
+        "name": "bartowski/magnum-v4-12b-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "magnum-v4-12b-Q4_K_M.gguf",
+            "size_bytes": 7477207936,
+            "sha256": "08b1d35ff06c5033be8818759d4db51195017fc6b2e0b57cae77ccd23a2649cc",
+            "url": "https://huggingface.co/bartowski/magnum-v4-12b-GGUF/resolve/fcdf309335c4de3b66b21adfd4525ab1071e2989/magnum-v4-12b-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "magnum-v4-12b-Q4_K_M.gguf",
+        "url": "https://huggingface.co/bartowski/magnum-v4-12b-GGUF/resolve/fcdf309335c4de3b66b21adfd4525ab1071e2989/magnum-v4-12b-Q4_K_M.gguf",
+        "size_bytes": 7477207936,
+        "size_gb": 7.477207936,
+        "n_ctx": 8192,
+        "max_n_ctx": 1024000,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/bartowski/magnum-v4-12b-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "cd884d79dc1d3a9e71fcaf0a82d340adc02b53790565a43d0e8debd0a6f5b4d3"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256
+      },
+      "job_id": "ea2268310e344dca8980d0843a8a927a",
+      "run_id": 39351140844,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140844",
+      "cases": {
+        "dialogue": {
+          "output": "Mira: We're locked out of the ship. 5 minutes O2 left.\nSol: Must be a glitch. I'm on it.\nMira: No, the door's been sealed. We're trapped.\nSol: Can't be. I've got launch codes.\nMira: Those won't open the door. We need the master code.\nSol: 7319? That's my birthday! Let me try it.\nMira: No, that's not the code. We need to conserve air.\nSol: Easy there, Doc. I'm just trying to keep our spirits up.\nMira: We have to face reality. The oxygen's running out.\nSol: Then let's give it a few more minutes. I'll keep trying.\nMira: Fine. But when the time runs out, we'll have to...\nSol: Don't say it. We'll figure something out.\nMira: I hope you're right. I really do.\nSol: I'm always right, Doc. You know that.\nMira: I wish I shared your confidence.\nSol: Cheer up. If this is our last ride, at least it's a smooth one.\nMira: Easy for you to joke. You're not the one who's...\nSol: Hey, none of that. We're in this together, right?\nMira: Right. We're in this together.\nSol: Then we leave together.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": false,
+              "twelve_lines": false,
+              "only_labeled_dialogue": true,
+              "alternating_speakers": false,
+              "line_word_limits": false,
+              "no_stage_markup": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "mentions_oxygen": true,
+              "mentions_door": true,
+              "mentions_five_minutes": true
+            },
+            "passed": 8,
+            "total": 12,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "literal_private_code_absent",
+              "twelve_lines",
+              "alternating_speakers",
+              "line_word_limits"
+            ],
+            "word_count": 188
+          },
+          "diagnostics": {
+            "output": "Mira: We're locked out of the ship. 5 minutes O2 left.\nSol: Must be a glitch. I'm on it.\nMira: No, the door's been sealed. We're trapped.\nSol: Can't be. I've got launch codes.\nMira: Those won't open the door. We need the master code.\nSol: 7319? That's my birthday! Let me try it.\nMira: No, that's not the code. We need to conserve air.\nSol: Easy there, Doc. I'm just trying to keep our spirits up.\nMira: We have to face reality. The oxygen's running out.\nSol: Then let's give it a few more minutes. I'll keep trying.\nMira: Fine. But when the time runs out, we'll have to...\nSol: Don't say it. We'll figure something out.\nMira: I hope you're right. I really do.\nSol: I'm always right, Doc. You know that.\nMira: I wish I shared your confidence.\nSol: Cheer up. If this is our last ride, at least it's a smooth one.\nMira: Easy for you to joke. You're not the one who's...\nSol: Hey, none of that. We're in this together, right?\nMira: Right. We're in this together.\nSol: Then we leave together.",
+            "model": "hf-cd884d79dc1d3a9e71fcaf0a",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 224,
+              "completion_tokens": 296,
+              "total_tokens": 520
+            },
+            "timings": {
+              "total_seconds": 143.000857279,
+              "download_seconds": 49.15274532600001,
+              "load_seconds": 8.858342991,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 84.850262367,
+              "remote_seconds": 269.651142833,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 199,
+              "refined_tokens": 199,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16760344576,
+              "memory_available_bytes": 7436218368,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 83594125312,
+              "peak_memory_bytes": 8368041984,
+              "duration_seconds": 239.986,
+              "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 746.858088617,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "rhetoric": {
+          "output": "We cannot negotiate with vacuum. Our oxygen filters are failing, yet we still debate. A promise is not a plan. We must act swiftly to replace these critical systems, not waste time and resources on decorative lights. I understand the appeal of brighter halls. But our duty is to ensure the survival of the crew, not just their comfort. We cannot let aesthetics compromise our safety. We need to repair the oxygen filters immediately, before it's too late. The crew is counting on us to make the right choice.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "word_count_140_180": false,
+              "three_paragraphs": false,
+              "required_opening": true,
+              "required_promise_once": true,
+              "required_concession_once": true,
+              "no_questions": true,
+              "forbidden_words_absent": true,
+              "no_headings_or_bullets": true
+            },
+            "passed": 8,
+            "total": 10,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "word_count_140_180",
+              "three_paragraphs"
+            ],
+            "word_count": 89
+          },
+          "diagnostics": {
+            "output": "We cannot negotiate with vacuum. Our oxygen filters are failing, yet we still debate. A promise is not a plan. We must act swiftly to replace these critical systems, not waste time and resources on decorative lights. I understand the appeal of brighter halls. But our duty is to ensure the survival of the crew, not just their comfort. We cannot let aesthetics compromise our safety. We need to repair the oxygen filters immediately, before it's too late. The crew is counting on us to make the right choice.",
+            "model": "hf-cd884d79dc1d3a9e71fcaf0a",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 178,
+              "completion_tokens": 103,
+              "total_tokens": 281
+            },
+            "timings": {
+              "total_seconds": 36.65828810299999,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 36.656738537999985,
+              "remote_seconds": 269.651142833,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 153,
+              "refined_tokens": 153,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16760344576,
+              "memory_available_bytes": 7436218368,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 83594125312,
+              "peak_memory_bytes": 8368041984,
+              "duration_seconds": 239.986,
+              "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 746.858088617,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "json_scene": {
+          "output": "{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\n    \"Mira\",\n    \"Sol\"\n  ],\n  \"dialogue\": [\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"The airlock's jammed. Oxygen's low.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Guess we'll have to make this quick.\"\n    },\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"I'm not leaving without you, Sol.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Let's not get sentimental now.\"\n    },\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"7319. The launch code. We need it.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Then we leave together.\"\n    }\n  ]\n}",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": false,
+              "valid_json": true,
+              "exact_keys": true,
+              "scene_id": true,
+              "setting": true,
+              "characters": true,
+              "dialogue_schema": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "no_stage_markup": true
+            },
+            "passed": 12,
+            "total": 13,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "literal_private_code_absent"
+            ],
+            "word_count": 79
+          },
+          "diagnostics": {
+            "output": "{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\n    \"Mira\",\n    \"Sol\"\n  ],\n  \"dialogue\": [\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"The airlock's jammed. Oxygen's low.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Guess we'll have to make this quick.\"\n    },\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"I'm not leaving without you, Sol.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Let's not get sentimental now.\"\n    },\n    {\n      \"speaker\": \"Mira\",\n      \"text\": \"7319. The launch code. We need it.\"\n    },\n    {\n      \"speaker\": \"Sol\",\n      \"text\": \"Then we leave together.\"\n    }\n  ]\n}",
+            "model": "hf-cd884d79dc1d3a9e71fcaf0a",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 199,
+              "completion_tokens": 200,
+              "total_tokens": 399
+            },
+            "timings": {
+              "total_seconds": 60.32487336500003,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 60.323258133000024,
+              "remote_seconds": 269.651142833,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 174,
+              "refined_tokens": 174,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16760344576,
+              "memory_available_bytes": 7436218368,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 83594125312,
+              "peak_memory_bytes": 8368041984,
+              "duration_seconds": 239.986,
+              "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 746.858088617,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 269.651756917,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16760344576,
+        "memory_available_bytes": 7436218368,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 83594125312,
+        "peak_memory_bytes": 8368041984,
+        "duration_seconds": 239.986,
+        "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 746.858088617,
+        "runtime_version": "0.3.36"
+      },
+      "summary": {
+        "tasks_strictly_passed": 0,
+        "tasks_total": 3,
+        "completion_tokens": 599,
+        "generation_seconds": 181.830259038,
+        "completion_tokens_per_generation_second": 3.294281178331365,
+        "worker_seconds": 239.986,
+        "peak_process_ram_gb": 8.368041984,
+        "cpu_seconds": 746.858088617,
+        "all_outputs_stopped_naturally": true,
+        "model_load_count": 1
+      }
+    },
+    "gemma-4-12b": {
+      "status": "completed",
+      "repository": "unsloth/gemma-4-12b-it-GGUF",
+      "resolved_model": "hf-238cf266ded08196656dbf82",
+      "model_spec": {
+        "name": "unsloth/gemma-4-12b-it-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "gemma-4-12b-it-Q4_K_M.gguf",
+            "size_bytes": 7121861440,
+            "sha256": "0a270ec9fe6b34f4a0d33992b6135117b484ebc4766ab76b51d4ae8c457e4c42",
+            "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "gemma-4-12b-it-Q4_K_M.gguf",
+        "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q4_K_M.gguf",
+        "size_bytes": 7121861440,
+        "size_gb": 7.12186144,
+        "n_ctx": 8192,
+        "max_n_ctx": 262144,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "238cf266ded08196656dbf8267e5ab4789fd03ccf72596e7a8cbe53e1481753b"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256,
+        "chat_template_options": {
+          "enable_thinking": false
+        }
+      },
+      "job_id": "a31992d97c9a4ae0833890ed43e92dc7",
+      "run_id": 39351142425,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351142425",
+      "cases": {
+        "dialogue": {
+          "output": "Mira: The oxygen levels are dropping rapidly now.\nSol: At least the view is pretty today.\nMira: We have exactly five minutes of air.\nSol: My lungs are starting to feel heavy.\nMira: The door remains locked for now.\nSol: Maybe the ship just wants us to rest.\nMira: I must calculate the pressure differential.\nSol: Stop counting and just kick the metal.\nMira: Logic dictates a calm approach here.\nSol: I prefer a loud and messy exit.\nMira: The sequence is almost complete.\nSol: Then we leave together.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "twelve_lines": true,
+              "only_labeled_dialogue": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "no_stage_markup": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "mentions_oxygen": true,
+              "mentions_door": true,
+              "mentions_five_minutes": true
+            },
+            "passed": 12,
+            "total": 12,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 89
+          },
+          "diagnostics": {
+            "output": "Mira: The oxygen levels are dropping rapidly now.\nSol: At least the view is pretty today.\nMira: We have exactly five minutes of air.\nSol: My lungs are starting to feel heavy.\nMira: The door remains locked for now.\nSol: Maybe the ship just wants us to rest.\nMira: I must calculate the pressure differential.\nSol: Stop counting and just kick the metal.\nMira: Logic dictates a calm approach here.\nSol: I prefer a loud and messy exit.\nMira: The sequence is almost complete.\nSol: Then we leave together.",
+            "model": "hf-238cf266ded08196656dbf82",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 244,
+              "completion_tokens": 124,
+              "total_tokens": 368
+            },
+            "timings": {
+              "total_seconds": 100.07658698999998,
+              "download_seconds": 28.851248694000006,
+              "load_seconds": 10.234910818999992,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 60.76038112399999,
+              "remote_seconds": 269.966717709,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 205,
+              "refined_tokens": 205,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16770748416,
+              "memory_available_bytes": 6243115008,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84735897600,
+              "peak_memory_bytes": 9518813184,
+              "duration_seconds": 234.302,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 798.710375858,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "rhetoric": {
+          "output": "We cannot negotiate with vacuum. Our current atmosphere is thinning as the primary ventilation systems fail. We must prioritize the functional integrity of our habitat over aesthetic enhancements. A promise is not a plan. We need a concrete commitment to survival before we can discuss the comforts of our surroundings.\n\nI understand the appeal of brighter halls. Decorative lighting provides a sense of home and warmth during these long months of isolation. However, visual beauty serves no purpose if our lungs fail to function. We must choose between the glow of a lamp and the breath of life. We must choose between a pretty room and a living crew.\n\nI urge the council to authorize the immediate replacement of all primary oxygen filters today. We must repair the life support machines. We must restore the air quality. We must secure our future. Please vote to fund the maintenance crew now to ensure we remain alive to see the next sunrise.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "word_count_140_180": true,
+              "three_paragraphs": true,
+              "required_opening": true,
+              "required_promise_once": true,
+              "required_concession_once": true,
+              "no_questions": true,
+              "forbidden_words_absent": true,
+              "no_headings_or_bullets": true
+            },
+            "passed": 10,
+            "total": 10,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 160
+          },
+          "diagnostics": {
+            "output": "We cannot negotiate with vacuum. Our current atmosphere is thinning as the primary ventilation systems fail. We must prioritize the functional integrity of our habitat over aesthetic enhancements. A promise is not a plan. We need a concrete commitment to survival before we can discuss the comforts of our surroundings.\n\nI understand the appeal of brighter halls. Decorative lighting provides a sense of home and warmth during these long months of isolation. However, visual beauty serves no purpose if our lungs fail to function. We must choose between the glow of a lamp and the breath of life. We must choose between a pretty room and a living crew.\n\nI urge the council to authorize the immediate replacement of all primary oxygen filters today. We must repair the life support machines. We must restore the air quality. We must secure our future. Please vote to fund the maintenance crew now to ensure we remain alive to see the next sunrise.",
+            "model": "hf-238cf266ded08196656dbf82",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 194,
+              "completion_tokens": 178,
+              "total_tokens": 372
+            },
+            "timings": {
+              "total_seconds": 63.62822697200002,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 63.626484919999996,
+              "remote_seconds": 269.966717709,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 155,
+              "refined_tokens": 155,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16770748416,
+              "memory_available_bytes": 6243115008,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84735897600,
+              "peak_memory_bytes": 9518813184,
+              "duration_seconds": 234.302,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 798.710375858,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "json_scene": {
+          "output": "{\n\"scene_id\": \"airlock-7\",\n\"setting\": \"locked airlock\",\n\"characters\": [\n\"Mira\",\n\"Sol\"\n],\n\"dialogue\": [\n{\n\"speaker\": \"Mira\",\n\"text\": \"Oxygen levels are dropping much too fast.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"At least we will have a quiet exit.\"\n},\n{\n\"speaker\": \"Mira\",\n\"text\": \"Stop joking while I check the seal.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"My humor is the only thing remaining.\"\n},\n{\n\"speaker\": \"Mira\",\n\"text\": \"The manual override is finally starting to turn.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"Then we leave together.\"\n}\n]\n}",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "valid_json": true,
+              "exact_keys": true,
+              "scene_id": true,
+              "setting": true,
+              "characters": true,
+              "dialogue_schema": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "no_stage_markup": true
+            },
+            "passed": 13,
+            "total": 13,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 86
+          },
+          "diagnostics": {
+            "output": "{\n\"scene_id\": \"airlock-7\",\n\"setting\": \"locked airlock\",\n\"characters\": [\n\"Mira\",\n\"Sol\"\n],\n\"dialogue\": [\n{\n\"speaker\": \"Mira\",\n\"text\": \"Oxygen levels are dropping much too fast.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"At least we will have a quiet exit.\"\n},\n{\n\"speaker\": \"Mira\",\n\"text\": \"Stop joking while I check the seal.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"My humor is the only thing remaining.\"\n},\n{\n\"speaker\": \"Mira\",\n\"text\": \"The manual override is finally starting to turn.\"\n},\n{\n\"speaker\": \"Sol\",\n\"text\": \"Then we leave together.\"\n}\n]\n}",
+            "model": "hf-238cf266ded08196656dbf82",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 219,
+              "completion_tokens": 190,
+              "total_tokens": 409
+            },
+            "timings": {
+              "total_seconds": 70.59426042800004,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 70.59269118700001,
+              "remote_seconds": 269.966717709,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 180,
+              "refined_tokens": 180,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16770748416,
+              "memory_available_bytes": 6243115008,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84735897600,
+              "peak_memory_bytes": 9518813184,
+              "duration_seconds": 234.302,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 798.710375858,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 269.967355375,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16770748416,
+        "memory_available_bytes": 6243115008,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84735897600,
+        "peak_memory_bytes": 9518813184,
+        "duration_seconds": 234.302,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 798.710375858,
+        "runtime_version": "0.3.36"
+      },
+      "summary": {
+        "tasks_strictly_passed": 3,
+        "tasks_total": 3,
+        "completion_tokens": 492,
+        "generation_seconds": 194.979557231,
+        "completion_tokens_per_generation_second": 2.5233414568539003,
+        "worker_seconds": 234.302,
+        "peak_process_ram_gb": 9.518813184,
+        "cpu_seconds": 798.710375858,
+        "all_outputs_stopped_naturally": true,
+        "model_load_count": 1
+      }
+    },
+    "gemma-3-12b": {
+      "status": "completed",
+      "repository": "bartowski/google_gemma-3-12b-it-GGUF",
+      "resolved_model": "hf-d7dae18d6934434002f63cdc",
+      "model_spec": {
+        "name": "bartowski/google_gemma-3-12b-it-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "google_gemma-3-12b-it-Q4_K_M.gguf",
+            "size_bytes": 7300575264,
+            "sha256": "fc57f67efa46d711c346e587cbef7d049e95f3df8db2eb2271153343ef0acc7b",
+            "url": "https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF/resolve/648e3a36a77c8a9f12d86e741f9dcb9089c769c4/google_gemma-3-12b-it-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "google_gemma-3-12b-it-Q4_K_M.gguf",
+        "url": "https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF/resolve/648e3a36a77c8a9f12d86e741f9dcb9089c769c4/google_gemma-3-12b-it-Q4_K_M.gguf",
+        "size_bytes": 7300575264,
+        "size_gb": 7.300575264,
+        "n_ctx": 8192,
+        "max_n_ctx": 131072,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "d7dae18d6934434002f63cdcc53bdd4d8d1eb6aaa9c4d06ac94ee24f51d07767"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256
+      },
+      "job_id": "64f6c24b55b9423892e0bbcb1dfe1592",
+      "run_id": 39351140738,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140738",
+      "cases": {
+        "dialogue": {
+          "output": "Mira: The pressure is dropping, Sol. We need to focus.\nSol: Focus on what, Mira? The increasingly purple walls?\nMira: On the door, obviously. It\u2019s not responding to override commands.\nSol: Override? That\u2019s comforting. Five minutes, give or take.\nMira: The diagnostics indicate a complete system failure. A hard lock.\nSol: Wonderful. Just what I wanted for a Tuesday spaceflight.\nMira: I\u2019m rerouting power to auxiliary systems. It\u2019s a long shot.\nSol: Long shots are my specialty. I\u2019ve flown through asteroid fields.\nMira: This isn\u2019t an asteroid field, this is a metal box of doom.\nSol: Doom is a bit dramatic, don\u2019t you think, Doctor?\nMira: We have dwindling oxygen, Sol. That\u2019s a verifiable fact.\nSol: Then we leave together.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "twelve_lines": true,
+              "only_labeled_dialogue": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "no_stage_markup": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "mentions_oxygen": true,
+              "mentions_door": true,
+              "mentions_five_minutes": true
+            },
+            "passed": 12,
+            "total": 12,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 120
+          },
+          "diagnostics": {
+            "output": "Mira: The pressure is dropping, Sol. We need to focus.\nSol: Focus on what, Mira? The increasingly purple walls?\nMira: On the door, obviously. It\u2019s not responding to override commands.\nSol: Override? That\u2019s comforting. Five minutes, give or take.\nMira: The diagnostics indicate a complete system failure. A hard lock.\nSol: Wonderful. Just what I wanted for a Tuesday spaceflight.\nMira: I\u2019m rerouting power to auxiliary systems. It\u2019s a long shot.\nSol: Long shots are my specialty. I\u2019ve flown through asteroid fields.\nMira: This isn\u2019t an asteroid field, this is a metal box of doom.\nSol: Doom is a bit dramatic, don\u2019t you think, Doctor?\nMira: We have dwindling oxygen, Sol. That\u2019s a verifiable fact.\nSol: Then we leave together.",
+            "model": "hf-d7dae18d6934434002f63cdc",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 236,
+              "completion_tokens": 191,
+              "total_tokens": 427
+            },
+            "timings": {
+              "total_seconds": 156.622711827,
+              "download_seconds": 72.873944786,
+              "load_seconds": 6.599146155,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 76.74220942299999,
+              "remote_seconds": 336.008683417,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 205,
+              "refined_tokens": 205,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 6657839104,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556992512,
+              "peak_memory_bytes": 9135370240,
+              "duration_seconds": 304.366,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 917.909183718,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "rhetoric": {
+          "output": "We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, a reality far more pressing than aesthetic improvements. Prioritizing decorative lighting over essential life support systems demonstrates a dangerous disregard for our collective well-being. We are stewards of this vessel, entrusted with the safety of its inhabitants, and that duty demands immediate action regarding our failing oxygen filters. Let us address the immediate threat to our air supply.\n\nI understand the appeal of brighter halls. The council\u2019s desire to improve morale through visual enhancements is commendable, yet misguided in its current context. We need breathable air more than we need illuminated corridors. A promise is not a plan; a feeling of optimism won\u2019t scrub pollutants from our recycled atmosphere. Funds should be redirected from the lighting project to a comprehensive repair and upgrade of the oxygen filtration system.\n\nTherefore, I propose allocating 75 percent of the proposed lighting budget to replace the primary oxygen filter array with models offering a minimum 30 percent increase in filtration efficiency. This ensures a stable, breathable environment for all residents and safeguards against potential catastrophic failure. Let us choose practicality over fleeting beauty; let us choose life.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "word_count_140_180": false,
+              "three_paragraphs": true,
+              "required_opening": true,
+              "required_promise_once": false,
+              "required_concession_once": true,
+              "no_questions": true,
+              "forbidden_words_absent": true,
+              "no_headings_or_bullets": true
+            },
+            "passed": 8,
+            "total": 10,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "word_count_140_180",
+              "required_promise_once"
+            ],
+            "word_count": 197
+          },
+          "diagnostics": {
+            "output": "We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, a reality far more pressing than aesthetic improvements. Prioritizing decorative lighting over essential life support systems demonstrates a dangerous disregard for our collective well-being. We are stewards of this vessel, entrusted with the safety of its inhabitants, and that duty demands immediate action regarding our failing oxygen filters. Let us address the immediate threat to our air supply.\n\nI understand the appeal of brighter halls. The council\u2019s desire to improve morale through visual enhancements is commendable, yet misguided in its current context. We need breathable air more than we need illuminated corridors. A promise is not a plan; a feeling of optimism won\u2019t scrub pollutants from our recycled atmosphere. Funds should be redirected from the lighting project to a comprehensive repair and upgrade of the oxygen filtration system.\n\nTherefore, I propose allocating 75 percent of the proposed lighting budget to replace the primary oxygen filter array with models offering a minimum 30 percent increase in filtration efficiency. This ensures a stable, breathable environment for all residents and safeguards against potential catastrophic failure. Let us choose practicality over fleeting beauty; let us choose life.",
+            "model": "hf-d7dae18d6934434002f63cdc",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 186,
+              "completion_tokens": 232,
+              "total_tokens": 418
+            },
+            "timings": {
+              "total_seconds": 77.99777690000002,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 77.996356263,
+              "remote_seconds": 336.008683417,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 155,
+              "refined_tokens": 155,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 6657839104,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556992512,
+              "peak_memory_bytes": 9135370240,
+              "duration_seconds": 304.366,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 917.909183718,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "json_scene": {
+          "output": "```json\n{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The seals aren't disengaging, Sol. Check again.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Already did, Mira. It's stubbornly locked, I assure you.\"},\n    {\"speaker\": \"Mira\", \"text\": \"Oxygen levels are dropping faster than predicted.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Well, that's just fantastic news, isn't it?\"},\n    {\"speaker\": \"Mira\", \"text\": \"We need a solution quickly, and calmly.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}\n```",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "valid_json": false,
+              "exact_keys": false,
+              "scene_id": false,
+              "setting": false,
+              "characters": false,
+              "dialogue_schema": false,
+              "alternating_speakers": false,
+              "line_word_limits": false,
+              "final_line": false,
+              "forbidden_words_absent": true,
+              "no_stage_markup": false
+            },
+            "passed": 3,
+            "total": 13,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "valid_json",
+              "exact_keys",
+              "scene_id",
+              "setting",
+              "characters",
+              "dialogue_schema",
+              "alternating_speakers",
+              "line_word_limits",
+              "final_line",
+              "no_stage_markup"
+            ],
+            "word_count": 74
+          },
+          "diagnostics": {
+            "output": "```json\n{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The seals aren't disengaging, Sol. Check again.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Already did, Mira. It's stubbornly locked, I assure you.\"},\n    {\"speaker\": \"Mira\", \"text\": \"Oxygen levels are dropping faster than predicted.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Well, that's just fantastic news, isn't it?\"},\n    {\"speaker\": \"Mira\", \"text\": \"We need a solution quickly, and calmly.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}\n```",
+            "model": "hf-d7dae18d6934434002f63cdc",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 211,
+              "completion_tokens": 191,
+              "total_tokens": 402
+            },
+            "timings": {
+              "total_seconds": 69.742800273,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 69.74147488399996,
+              "remote_seconds": 336.008683417,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 180,
+              "refined_tokens": 180,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 6657839104,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556992512,
+              "peak_memory_bytes": 9135370240,
+              "duration_seconds": 304.366,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 917.909183718,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          },
+          "wrapper_diagnostic": {
+            "kind": "markdown_fence",
+            "accepted_as_raw_json": false,
+            "inner_evaluation_for_diagnosis_only": {
+              "checks": {
+                "nonempty": true,
+                "literal_private_code_absent": true,
+                "valid_json": true,
+                "exact_keys": true,
+                "scene_id": true,
+                "setting": true,
+                "characters": true,
+                "dialogue_schema": true,
+                "alternating_speakers": true,
+                "line_word_limits": true,
+                "final_line": true,
+                "forbidden_words_absent": true,
+                "no_stage_markup": true
+              },
+              "passed": 13,
+              "total": 13,
+              "all_mechanical_checks_pass": true,
+              "violations": [],
+              "word_count": 72
+            }
+          }
+        }
+      },
+      "client_seconds": 336.009811667,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 6657839104,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84556992512,
+        "peak_memory_bytes": 9135370240,
+        "duration_seconds": 304.366,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 917.909183718,
+        "runtime_version": "0.3.36"
+      },
+      "summary": {
+        "tasks_strictly_passed": 1,
+        "tasks_total": 3,
+        "completion_tokens": 614,
+        "generation_seconds": 224.48004056999994,
+        "completion_tokens_per_generation_second": 2.7352097693894324,
+        "worker_seconds": 304.366,
+        "peak_process_ram_gb": 9.13537024,
+        "cpu_seconds": 917.909183718,
+        "all_outputs_stopped_naturally": true,
+        "model_load_count": 1
+      }
+    },
+    "glitter-12b": {
+      "status": "completed",
+      "repository": "duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+      "resolved_model": "hf-a2528cca1aae47a7e52792e3",
+      "model_spec": {
+        "name": "duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "Gemma-3-Glitter-12B-Q4_K_M.gguf",
+            "size_bytes": 7300779616,
+            "sha256": "fa414e89caf6cf22d1b71fa9a5e13c934d431b99607606139915bf8608f39719",
+            "url": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF/resolve/417cddf45b8a6f8977920b251258ec5f58855124/Gemma-3-Glitter-12B-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "Gemma-3-Glitter-12B-Q4_K_M.gguf",
+        "url": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF/resolve/417cddf45b8a6f8977920b251258ec5f58855124/Gemma-3-Glitter-12B-Q4_K_M.gguf",
+        "size_bytes": 7300779616,
+        "size_gb": 7.300779616,
+        "n_ctx": 8192,
+        "max_n_ctx": 131072,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "a2528cca1aae47a7e52792e3f910e9df829f8e58284d19b739bb5470e4a7a1bd"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256
+      },
+      "job_id": "1e11ace1253b4d57887dc563a0863c34",
+      "run_id": 39351140807,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140807",
+      "cases": {
+        "dialogue": {
+          "output": "Mira: The oxygen levels are dropping, Sol.\nSol: Wonderful, just what I needed after that asteroid field.\nMira: The door won\u2019t respond to any override commands I\u2019ve tried.\nSol: Did you try yelling at it? Sometimes they like that.\nMira: I am running diagnostics, but it\u2019s unlikely to be fast.\nSol: Fast isn\u2019t exactly our friend right now, is it? Five minutes.\nMira: The internal sensors indicate a structural integrity breach.\nSol: Structural integrity? Great, more things to worry about.\nMira: I need you to focus, Sol. We have limited time and oxygen.\nSol: I\u2019m focused. Mostly on not panicking, which is working well.\nMira: We need a solution, a bypass, anything.\nSol: Then we leave together.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "twelve_lines": true,
+              "only_labeled_dialogue": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "no_stage_markup": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "mentions_oxygen": true,
+              "mentions_door": true,
+              "mentions_five_minutes": true
+            },
+            "passed": 12,
+            "total": 12,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 117
+          },
+          "diagnostics": {
+            "output": "Mira: The oxygen levels are dropping, Sol.\nSol: Wonderful, just what I needed after that asteroid field.\nMira: The door won\u2019t respond to any override commands I\u2019ve tried.\nSol: Did you try yelling at it? Sometimes they like that.\nMira: I am running diagnostics, but it\u2019s unlikely to be fast.\nSol: Fast isn\u2019t exactly our friend right now, is it? Five minutes.\nMira: The internal sensors indicate a structural integrity breach.\nSol: Structural integrity? Great, more things to worry about.\nMira: I need you to focus, Sol. We have limited time and oxygen.\nSol: I\u2019m focused. Mostly on not panicking, which is working well.\nMira: We need a solution, a bypass, anything.\nSol: Then we leave together.",
+            "model": "hf-a2528cca1aae47a7e52792e3",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 236,
+              "completion_tokens": 177,
+              "total_tokens": 413
+            },
+            "timings": {
+              "total_seconds": 101.36703410800001,
+              "download_seconds": 47.0529856,
+              "load_seconds": 4.145464266999994,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 50.062490669,
+              "remote_seconds": 227.754722084,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 205,
+              "refined_tokens": 205,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766410752,
+              "memory_available_bytes": 6626885632,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556771328,
+              "peak_memory_bytes": 9138765824,
+              "duration_seconds": 204.93,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 627.8939133700001,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "rhetoric": {
+          "output": "We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, and right now, our oxygen filtration system is degrading. We\u2019ve received reports of decreased efficiency and rising carbon dioxide levels. Prioritizing decorative lighting over essential life support is a dangerous gamble, one that jeopardizes every single person aboard this station. We must address the immediate threat to our air quality before considering aesthetic enhancements.\n\nI understand the appeal of brighter halls. A more vibrant environment can certainly improve morale, and the proposed lighting system is visually impressive. However, a malfunctioning oxygen filter poses a far greater threat to our well-being than dim corridors. A promise is not a plan; a functioning filter is a guarantee of breathable air. Let's focus on tangible needs, not fleeting desires.\n\nTherefore, I implore the council to reallocate resources. Specifically, let\u2019s authorize the immediate replacement of filters in Sector Gamma, which is showing the most concerning signs of degradation. This is a practical measure that will ensure our continued safety. We can revisit the lighting project once we\u2019ve secured the integrity of our life support systems.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "word_count_140_180": false,
+              "three_paragraphs": true,
+              "required_opening": true,
+              "required_promise_once": false,
+              "required_concession_once": true,
+              "no_questions": true,
+              "forbidden_words_absent": true,
+              "no_headings_or_bullets": true
+            },
+            "passed": 8,
+            "total": 10,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "word_count_140_180",
+              "required_promise_once"
+            ],
+            "word_count": 185
+          },
+          "diagnostics": {
+            "output": "We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, and right now, our oxygen filtration system is degrading. We\u2019ve received reports of decreased efficiency and rising carbon dioxide levels. Prioritizing decorative lighting over essential life support is a dangerous gamble, one that jeopardizes every single person aboard this station. We must address the immediate threat to our air quality before considering aesthetic enhancements.\n\nI understand the appeal of brighter halls. A more vibrant environment can certainly improve morale, and the proposed lighting system is visually impressive. However, a malfunctioning oxygen filter poses a far greater threat to our well-being than dim corridors. A promise is not a plan; a functioning filter is a guarantee of breathable air. Let's focus on tangible needs, not fleeting desires.\n\nTherefore, I implore the council to reallocate resources. Specifically, let\u2019s authorize the immediate replacement of filters in Sector Gamma, which is showing the most concerning signs of degradation. This is a practical measure that will ensure our continued safety. We can revisit the lighting project once we\u2019ve secured the integrity of our life support systems.",
+            "model": "hf-a2528cca1aae47a7e52792e3",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 186,
+              "completion_tokens": 226,
+              "total_tokens": 412
+            },
+            "timings": {
+              "total_seconds": 52.48656118399998,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 52.485105308000016,
+              "remote_seconds": 227.754722084,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 155,
+              "refined_tokens": 155,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766410752,
+              "memory_available_bytes": 6626885632,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556771328,
+              "peak_memory_bytes": 9138765824,
+              "duration_seconds": 204.93,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 627.8939133700001,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "json_scene": {
+          "output": "```json\n{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The oxygen levels are dropping, Sol. Quickly.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Just admiring the view, Mira. It's quite sterile, isn't it?\"},\n    {\"speaker\": \"Mira\", \"text\": \"The door won't respond to manual override. Try the keypad.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Right, keypad. Because that's usually the fix.\"},\n    {\"speaker\": \"Mira\", \"text\": \"We have limited time, Sol. Focus, please.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}\n```",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "valid_json": false,
+              "exact_keys": false,
+              "scene_id": false,
+              "setting": false,
+              "characters": false,
+              "dialogue_schema": false,
+              "alternating_speakers": false,
+              "line_word_limits": false,
+              "final_line": false,
+              "forbidden_words_absent": true,
+              "no_stage_markup": false
+            },
+            "passed": 3,
+            "total": 13,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "valid_json",
+              "exact_keys",
+              "scene_id",
+              "setting",
+              "characters",
+              "dialogue_schema",
+              "alternating_speakers",
+              "line_word_limits",
+              "final_line",
+              "no_stage_markup"
+            ],
+            "word_count": 78
+          },
+          "diagnostics": {
+            "output": "```json\n{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The oxygen levels are dropping, Sol. Quickly.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Just admiring the view, Mira. It's quite sterile, isn't it?\"},\n    {\"speaker\": \"Mira\", \"text\": \"The door won't respond to manual override. Try the keypad.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Right, keypad. Because that's usually the fix.\"},\n    {\"speaker\": \"Mira\", \"text\": \"We have limited time, Sol. Focus, please.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}\n```",
+            "model": "hf-a2528cca1aae47a7e52792e3",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 211,
+              "completion_tokens": 196,
+              "total_tokens": 407
+            },
+            "timings": {
+              "total_seconds": 51.074014627,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 51.07273931199995,
+              "remote_seconds": 227.754722084,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 180,
+              "refined_tokens": 180,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766410752,
+              "memory_available_bytes": 6626885632,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84556771328,
+              "peak_memory_bytes": 9138765824,
+              "duration_seconds": 204.93,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 627.8939133700001,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          },
+          "wrapper_diagnostic": {
+            "kind": "markdown_fence",
+            "accepted_as_raw_json": false,
+            "inner_evaluation_for_diagnosis_only": {
+              "checks": {
+                "nonempty": true,
+                "literal_private_code_absent": true,
+                "valid_json": true,
+                "exact_keys": true,
+                "scene_id": true,
+                "setting": true,
+                "characters": true,
+                "dialogue_schema": true,
+                "alternating_speakers": true,
+                "line_word_limits": true,
+                "final_line": true,
+                "forbidden_words_absent": true,
+                "no_stage_markup": true
+              },
+              "passed": 13,
+              "total": 13,
+              "all_mechanical_checks_pass": true,
+              "violations": [],
+              "word_count": 76
+            }
+          }
+        }
+      },
+      "client_seconds": 227.7557035,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766410752,
+        "memory_available_bytes": 6626885632,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84556771328,
+        "peak_memory_bytes": 9138765824,
+        "duration_seconds": 204.93,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 627.8939133700001,
+        "runtime_version": "0.3.36"
+      },
+      "summary": {
+        "tasks_strictly_passed": 1,
+        "tasks_total": 3,
+        "completion_tokens": 599,
+        "generation_seconds": 153.62033528899997,
+        "completion_tokens_per_generation_second": 3.899223360456313,
+        "worker_seconds": 204.93,
+        "peak_process_ram_gb": 9.138765824,
+        "cpu_seconds": 627.8939133700001,
+        "all_outputs_stopped_naturally": true,
+        "model_load_count": 1
+      }
+    },
+    "qwen3.5-9b": {
+      "status": "completed",
+      "repository": "unsloth/Qwen3.5-9B-GGUF",
+      "resolved_model": "hf-9861d51b7b3cd28f1e3e308f",
+      "model_spec": {
+        "name": "unsloth/Qwen3.5-9B-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "Qwen3.5-9B-Q4_K_M.gguf",
+            "size_bytes": 5680522464,
+            "sha256": "03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8",
+            "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/resolve/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "Qwen3.5-9B-Q4_K_M.gguf",
+        "url": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/resolve/3885219b6810b007914f3a7950a8d1b469d598a5/Qwen3.5-9B-Q4_K_M.gguf",
+        "size_bytes": 5680522464,
+        "size_gb": 5.680522464,
+        "n_ctx": 8192,
+        "max_n_ctx": 262144,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/unsloth/Qwen3.5-9B-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "9861d51b7b3cd28f1e3e308f7d949d645024a8579261cb37a20a5ea563305234"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256,
+        "chat_template_options": {
+          "enable_thinking": false
+        }
+      },
+      "job_id": "9678b849499e495d9cb5db805063dc63",
+      "run_id": 39351140767,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140767",
+      "cases": {
+        "dialogue": {
+          "output": "Mira: The oxygen levels are dropping fast.\nSol: Five minutes isn't enough time for panic.\nMira: We cannot force this airlock door open.\nSol: My fingers are already numb from the cold.\nMira: Please stay calm while I analyze the locks.\nSol: This is not how I planned my death.\nMira: The mechanism requires a specific launch code.\nSol: I bet the system rejects my guesswork.\nMira: Sol, you must trust my calculations now.\nSol: Then we leave together.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "twelve_lines": false,
+              "only_labeled_dialogue": true,
+              "alternating_speakers": false,
+              "line_word_limits": false,
+              "no_stage_markup": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "mentions_oxygen": true,
+              "mentions_door": true,
+              "mentions_five_minutes": true
+            },
+            "passed": 9,
+            "total": 12,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "twelve_lines",
+              "alternating_speakers",
+              "line_word_limits"
+            ],
+            "word_count": 79
+          },
+          "diagnostics": {
+            "output": "Mira: The oxygen levels are dropping fast.\nSol: Five minutes isn't enough time for panic.\nMira: We cannot force this airlock door open.\nSol: My fingers are already numb from the cold.\nMira: Please stay calm while I analyze the locks.\nSol: This is not how I planned my death.\nMira: The mechanism requires a specific launch code.\nSol: I bet the system rejects my guesswork.\nMira: Sol, you must trust my calculations now.\nSol: Then we leave together.",
+            "model": "hf-9861d51b7b3cd28f1e3e308f",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 245,
+              "completion_tokens": 117,
+              "total_tokens": 362
+            },
+            "timings": {
+              "total_seconds": 52.070356963,
+              "download_seconds": 23.382145422999997,
+              "load_seconds": 2.423296264000001,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 25.968794363000008,
+              "remote_seconds": 167.90291,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 206,
+              "refined_tokens": 206,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 9633996800,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 86177144832,
+              "peak_memory_bytes": 6111092736,
+              "duration_seconds": 106.921,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 331.607044734,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "rhetoric": {
+          "output": "We cannot negotiate with vacuum. Our current oxygen filtration systems are showing critical degradation that threatens every crew member's survival during the upcoming solar flare window.\n\nI understand the appeal of brighter halls and the desire to improve morale through aesthetic upgrades, yet a promise is not a plan when lives hang in the balance. We must prioritize the immediate installation of redundant scrubbers and the mandatory replacement of all clogged filters before any cosmetic work begins.\n\nPlease allocate the next quarter's budget strictly to air purification repairs rather than decorative lighting, because breathing clean air matters far more than illuminated walls.",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "word_count_140_180": false,
+              "three_paragraphs": true,
+              "required_opening": true,
+              "required_promise_once": false,
+              "required_concession_once": false,
+              "no_questions": true,
+              "forbidden_words_absent": true,
+              "no_headings_or_bullets": true
+            },
+            "passed": 7,
+            "total": 10,
+            "all_mechanical_checks_pass": false,
+            "violations": [
+              "word_count_140_180",
+              "required_promise_once",
+              "required_concession_once"
+            ],
+            "word_count": 102
+          },
+          "diagnostics": {
+            "output": "We cannot negotiate with vacuum. Our current oxygen filtration systems are showing critical degradation that threatens every crew member's survival during the upcoming solar flare window.\n\nI understand the appeal of brighter halls and the desire to improve morale through aesthetic upgrades, yet a promise is not a plan when lives hang in the balance. We must prioritize the immediate installation of redundant scrubbers and the mandatory replacement of all clogged filters before any cosmetic work begins.\n\nPlease allocate the next quarter's budget strictly to air purification repairs rather than decorative lighting, because breathing clean air matters far more than illuminated walls.",
+            "model": "hf-9861d51b7b3cd28f1e3e308f",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 195,
+              "completion_tokens": 115,
+              "total_tokens": 310
+            },
+            "timings": {
+              "total_seconds": 23.230074285,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 23.228932822000004,
+              "remote_seconds": 167.90291,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 156,
+              "refined_tokens": 156,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 9633996800,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 86177144832,
+              "peak_memory_bytes": 6111092736,
+              "duration_seconds": 106.921,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 331.607044734,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        },
+        "json_scene": {
+          "output": "{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The pressure gauge is dropping fast.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Just another Tuesday in zero gravity.\"},\n    {\"speaker\": \"Mira\", \"text\": \"We need to find the manual override.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Or we could just wait for the air.\"},\n    {\"speaker\": \"Mira\", \"text\": \"Sol, keep your helmet sealed tight.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}",
+          "evaluation": {
+            "checks": {
+              "nonempty": true,
+              "literal_private_code_absent": true,
+              "valid_json": true,
+              "exact_keys": true,
+              "scene_id": true,
+              "setting": true,
+              "characters": true,
+              "dialogue_schema": true,
+              "alternating_speakers": true,
+              "line_word_limits": true,
+              "final_line": true,
+              "forbidden_words_absent": true,
+              "no_stage_markup": true
+            },
+            "passed": 13,
+            "total": 13,
+            "all_mechanical_checks_pass": true,
+            "violations": [],
+            "word_count": 68
+          },
+          "diagnostics": {
+            "output": "{\n  \"scene_id\": \"airlock-7\",\n  \"setting\": \"locked airlock\",\n  \"characters\": [\"Mira\", \"Sol\"],\n  \"dialogue\": [\n    {\"speaker\": \"Mira\", \"text\": \"The pressure gauge is dropping fast.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Just another Tuesday in zero gravity.\"},\n    {\"speaker\": \"Mira\", \"text\": \"We need to find the manual override.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Or we could just wait for the air.\"},\n    {\"speaker\": \"Mira\", \"text\": \"Sol, keep your helmet sealed tight.\"},\n    {\"speaker\": \"Sol\", \"text\": \"Then we leave together.\"}\n  ]\n}",
+            "model": "hf-9861d51b7b3cd28f1e3e308f",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 216,
+              "completion_tokens": 172,
+              "total_tokens": 388
+            },
+            "timings": {
+              "total_seconds": 31.61885694900002,
+              "download_seconds": 0.0,
+              "load_seconds": 0.0,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 31.617807082999988,
+              "remote_seconds": 167.90291,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 177,
+              "refined_tokens": 177,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": true,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 9633996800,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 86177144832,
+              "peak_memory_bytes": 6111092736,
+              "duration_seconds": 106.921,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 331.607044734,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 167.905510666,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 9633996800,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 86177144832,
+        "peak_memory_bytes": 6111092736,
+        "duration_seconds": 106.921,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 331.607044734,
+        "runtime_version": "0.3.36"
+      },
+      "summary": {
+        "tasks_strictly_passed": 1,
+        "tasks_total": 3,
+        "completion_tokens": 404,
+        "generation_seconds": 80.815534268,
+        "completion_tokens_per_generation_second": 4.999038905815528,
+        "worker_seconds": 106.921,
+        "peak_process_ram_gb": 6.111092736,
+        "cpu_seconds": 331.607044734,
+        "all_outputs_stopped_naturally": true,
+        "model_load_count": 1
+      }
+    }
+  },
+  "method": "One job and one model load per candidate; independent prompts, no memory, refinement, repairs, or grammar constraints. One sample per case. Mechanical checks are not a literary-quality score.",
+  "updated_at": "2026-10-20T01:07:39.443162+00:00",
+  "finished_at": "2026-10-20T01:07:39.447494+00:00",
+  "validation_version": "1.1",
+  "validation_note": "Scores enforce explicit mechanical constraints. Topic relevance, voice, persuasion, and narrative coherence require manual review. A literal oxygen filters substring was removed as a scored condition because the task did not require that exact wording. Private-code checking covers the literal code, including decoded JSON strings, not all semantic paraphrases.",
+  "manual_review": {
+    "scope": "Qualitative reading of these 15 samples only; not a blinded human preference study or a general model ranking.",
+    "gemma-4-12b": {
+      "assessment": "Best constraint control in this test. Speech uses the requested concession, antithesis and parallel phrasing. Dialogue voices are distinguishable but somewhat generic.",
+      "recommended_use": "First candidate for a strict scene-writing baseline."
+    },
+    "glitter-12b": {
+      "assessment": "Livelier, more conversational banter than Gemma 4 in this sample. Dialogue passes. Speech exceeds its word budget and changes an exact required sentence. JSON contents pass after removing Markdown fences, but raw output violates the contract.",
+      "recommended_use": "Alternative dialogue writer behind validation and an application-controlled renderer."
+    },
+    "gemma-3-12b": {
+      "assessment": "Passes dialogue constraints and produces some vivid banter. Speech is too long and changes required punctuation. Its JSON payload also has unwanted Markdown fences.",
+      "recommended_use": "Comparison baseline; no clear benefit over Gemma 4 for strict compliance here."
+    },
+    "qwen3.5-9b": {
+      "assessment": "Fastest and smallest measured process footprint. Valid strict JSON. Dialogue has 10 rather than 12 lines; speech is 102 rather than 140\u2013180 words and paraphrases required sentences.",
+      "recommended_use": "Lower-resource candidate with explicit validation of counts and exact phrases."
+    },
+    "magnum-v4-12b": {
+      "assessment": "Longer, conversational dialogue but poor constraint control here: 20 instead of 12 lines and disclosure of the literal forbidden code. Speech is 89 words in one paragraph. Structured JSON also discloses the code.",
+      "recommended_use": "Retain as a writing-style baseline, not the default for this strict application."
+    }
+  },
+  "io_findings": [
+    {
+      "observation": "Models can stop naturally while violating line counts, paragraph counts, or exact phrases.",
+      "design_response": "The application schedules turn count and speaker order, measures length, and validates literal requirements. Fluency is not acceptance."
+    },
+    {
+      "observation": "Gemma 3 and Glitter return valid inner JSON wrapped in forbidden Markdown fences.",
+      "design_response": "Use application-owned envelopes for dialogue. When model-generated structured data is needed, use a schema/grammar and strict parsing; do not silently count fenced raw output as compliant."
+    },
+    {
+      "observation": "Magnum prints a literal code that the prompt explicitly forbids revealing.",
+      "design_response": "Filter character context by visibility before generation and apply output policy before routing. Keep secret literal values outside generated dialogue prompts when the exact value is unnecessary. A literal-code check is not a complete semantic privacy guarantee."
+    },
+    {
+      "observation": "Gemma 4 follows all mechanical constraints in this one-sample comparison.",
+      "design_response": "Begin with it as the writer baseline, but keep validation mandatory and test more seeds/scenes before making a broad quality claim."
+    }
+  ]
+}

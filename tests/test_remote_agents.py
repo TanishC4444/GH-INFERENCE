@@ -255,5 +255,5 @@ def test_invalid_template_options_fail_before_dispatch(value):
 def test_runtime_version_is_pinned_and_separates_cached_environments():
     from gh_ai_runner.runner import RUNTIME_VERSION, WORKFLOW_YAML
     assert f'llama-cpp-python=={RUNTIME_VERSION}' in WORKFLOW_YAML
-    assert f'python311-llama-cpp-{RUNTIME_VERSION}-v5' in WORKFLOW_YAML
+    assert f'python311-llama-cpp-{RUNTIME_VERSION}-v6' in WORKFLOW_YAML
     assert '__RUNTIME_VERSION__' not in WORKFLOW_YAML

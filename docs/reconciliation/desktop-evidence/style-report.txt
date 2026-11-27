@@ -1,0 +1,189 @@
+FOUR-MODEL SCREENPLAY COMPARISON
+
+Actual GitHub generations, same prompt and settings. One sample per model; no editing or repair.
+Q4_K_M, 4096 context, temperature 0.7, seed 42, top_p 0.9, 4 CPU threads, 16 GB runner.
+768 output-token safety limit; all four stopped naturally. Native thinking disabled for Gemma 4 variants.
+The GGUF embedded chat template is used; no custom roleplay template tuning.
+
+PROMPT
+Write a short screenplay scene, around 180 to 240 words.
+Mira, a cautious station engineer, and Sol, a pilot who uses dry humor to avoid emotional honesty, are trapped in a failing airlock. There is enough oxygen for only one person to reach the escape capsule. They used to be married. Neither wants to be the first to admit they still care.
+Let their practical argument carry the emotional subtext. Give them distinct voices, concrete physical details, and a small change in their relationship by the end. Avoid stock romantic declarations and exposition about their history. Brief action lines are welcome. Return only the scene.
+
+MEASUREMENTS
+Model | Words | Generation seconds | Output tokens/sec | Peak process RAM GB
+gemma-4-styletune-12b | 212 | 97.59 | 3.40 | 9.77
+rocinante-x-12b | 186 | 63.74 | 4.82 | 8.34
+glitter-12b | 239 | 116.04 | 3.28 | 9.13
+gemma-4-12b | 251 | 87.66 | 4.52 | 9.51
+
+Generation seconds includes prompt processing; excludes downloads, model loading and GitHub queue/setup.
+RAM is measured peak process memory. Throughput varies by worker and output; not a definitive speed ranking.
+
+EDITORIAL OBSERVATIONS (subjective, one sample)
+Glitter: liveliest banter; the final tool handoff suggests care. The wrench/electrocution joke is muddled and their former marriage is weakly implied.
+Gemma 4: clearest mix of technical argument, relationship tension and self-sacrifice; some stock stage directions; 251 words exceeds the approximate 180-240 request.
+StyleTune: competent practical conflict but no clear stylistic improvement here. The navigation argument and Mira saying she should stay are underexplained.
+Rocinante-X: emotional hesitation, but less dry humor and more direct exposition about their relationship than requested.
+All four use familiar red lights, hissing air and crossed arms. None establishes best-in-class writing from this single test.
+
+========================================================================
+gemma-4-styletune-12b
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708666
+
+INT. AIRLOCK - NIGHT
+
+Emergency lighting casts crimson shadows across the cracked viewport. The hiss of escaping atmosphere carries a metallic tang. The oxygen gauge flickers: 12%.
+
+MIRA (40s) frantically adjusts a valve. Her hands shake slightly. SOL (40s) leans against the bulkhead, arms crossed, watching her.
+
+MIRA
+The seals won't hold another cycle. The pod's manual override requires someone to stay behind and cycle the pressure release.
+
+SOL
+(Dryly)
+Then you should go. You're the one who insisted we take the scenic route through the asteroid belt. Your navigation choices are legendary.
+
+MIRA
+Don't deflect. The pod only seats one pilot. The other stays to stabilize the systems until the pod detaches.
+
+SOL
+I'm not a hero, Mira. I'm just a guy who hates being trapped in small spaces with people who lecture him about safety protocols.
+
+Mira freezes. Her knuckles whiten against the wrench.
+
+MIRA
+I'm not lecturing. I'm calculating survival.
+
+SOL
+You're calculating logistics. I'm calculating the fact that you're the only one who knows how to calibrate the nav-com.
+
+Mira looks at him. "Logically," she says, "I should stay."
+
+Sol's smirk falters. His gaze softens.
+
+SOL
+The pod's manual override is already primed. Just get in.
+
+Mira's grip loosens. "The manual says—"
+
+SOL
+Forget the manual. Just move.
+
+========================================================================
+rocinante-x-12b
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708667
+
+INT. FAILING AIRLOCK - NIGHT
+
+*The emergency light flickers. The airlock hisses, venting precious air into space. Two figures stand frozen in the shrinking space between them.*
+
+**Mira:** (checking her gauge) "It's down to twenty percent. We have maybe—" *She stops, looking at Sol with something unreadable in her eyes.*
+
+**Sol:** *Crosses his arms, gaze fixed on the wall.* "Don't say it. I already know. One of us walks out. Other stays here." *His jaw tightens.* "Standard protocol. You're the engineer. You should go."
+
+**Mira:** *Steps closer, voice strained.* "I'm not leaving you here to die, Sol. Not after—" *She catches herself, looking away.* "I can survive longer. My metabolism is better suited for—"
+
+**Sol:** *Turns sharply.* "That's not how this works! You don't get to play hero, not with me." *His hand reaches out, stops short of touching her shoulder.* "Dammit, Mira. We used to be—" *He pauses, swallowing hard.* "...We're not them anymore."
+
+*The airlock groans. They're closer now, forced by the narrowing space.*
+
+**Mira:** *Softly, almost imperceptibly.* "Maybe not. But I can still see you're scared." *A small, sad smile.* "I'm scared too."
+
+========================================================================
+glitter-12b
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708629
+
+[SCENE START]
+
+**INT. AIRLOCK - DAY**
+
+Red emergency lights strobe. Mira (30s, wiry, grease-stained coveralls) frantically works at a panel, sparks flying. Sol (40s, lean, weathered flight suit) leans against the inner hatch, arms crossed, observing. Both are breathing heavily.
+
+SOL
+Well, this is suboptimal. Did you try hitting it with a wrench? Sometimes that works.
+
+MIRA
+(Without looking up)
+I'm rerouting power to the magnetic clamps. It's not a malfunctioning toaster, Sol.
+
+SOL
+Just saying. Less chance of electrocution than a wrench. Oxygen levels are… dropping steadily. Capsule's ready. One seat.
+
+Mira slams her fist on the panel.
+
+MIRA
+The clamps aren’t engaging! We have maybe fifteen minutes.
+
+SOL
+Fifteen minutes is generous, considering the rate we’re losing air. You sure you're not just upset about the sparks? Makes you look…flustered.
+
+MIRA
+(Turns to him, wiping her hands)
+I'm upset about being trapped in a collapsing airlock with someone who thinks a wrench is a viable engineering solution. You go. You're the pilot.
+
+SOL
+And you're the engineer who built this deathtrap. Seems only fair you experience it firsthand. Besides, someone needs to document the failure. For posterity.
+
+Mira stares at him, then back at the panel. She takes a deep breath. 
+
+MIRA
+There's a manual override. It'll take longer, but…
+
+Sol pushes himself off the hatch. He pulls a small tool from his belt, hands it to her.
+
+SOL
+Here. Might help with the sparks.
+
+[SCENE END]
+
+========================================================================
+gemma-4-12b
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708671
+
+INT. AIRLOCK - NIGHT
+
+Red emergency lights pulse. Hissing steam coats the walls. MIRA (40s, grease-stained jumpsuit) frantically turns a wrench on a seized valve. SOL (40s, flight suit) leans against the door, arms crossed, eyes tracking the oxygen gauge.
+
+SOL
+The pressure’s dropping. At this rate, the seal holds for another six minutes.
+
+MIRA
+(Straining)
+Then stop watching the gauge and hold the manual override. It’s jamming.
+
+SOL
+I’m supervising. Someone has to ensure you don’t strip the gears.
+
+MIRA
+You’re hovering. It’s a safety hazard.
+
+SOL
+It’s called oversight, Mira. You always were prone to over-torquing things.
+
+Mira’s hand slips. She winces, her knuckles white. The gauge drops: 3% remaining.
+
+MIRA
+The capsule only has one seat. The weight sensors are calibrated for a single occupant.
+
+SOL
+I know the specs. I’m the one who signed the flight plan.
+
+MIRA
+Then you know the math. One stays. One goes.
+
+Sol looks at her—really looks at her—past the grease and the panic. He reaches out, his hand hovering near hers before he pulls back, gripping his own arm.
+
+SOL
+You’re the engineer. You know how to fix the life support on the way out.
+
+MIRA
+(Voice trembling)
+I’m just trying to keep the air in the room, Sol.
+
+Sol exhales, a long, shaky breath. He steps closer, his shoulder brushing hers.
+
+SOL
+Fine. You take the seat. I’ll stay here and make sure the door stays shut.
+
+He doesn't look away. For the first time in years, he doesn't blink.

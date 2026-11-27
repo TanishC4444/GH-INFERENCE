@@ -1,0 +1,4009 @@
+{
+  "agents": 20,
+  "rounds": 3,
+  "max_tokens": 64,
+  "peer_chars": 240,
+  "estimated_worker_watts": null,
+  "energy_method": "unavailable",
+  "concurrency_method": "GitHub inference-job started_at/completed_at intervals, one-second resolution",
+  "records": [
+    {
+      "round": 0,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 5.098011235999998,
+          "download_seconds": 2.6723899409999987,
+          "load_seconds": 0.5668527619999963,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7012187350000048,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14857531392,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91366313984,
+          "peak_memory_bytes": 740376576,
+          "duration_seconds": 5.098,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 7.5982477699999995
+        }
+      },
+      "run_id": 39323413623,
+      "job_id": "ae92d6ba621b4f0293fec2335fd97bd1",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413623",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:27Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 8.452482904999997,
+          "download_seconds": 4.7499997050000005,
+          "load_seconds": 0.8644198289999991,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.6453033280000042,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14039359488,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90740297728,
+          "peak_memory_bytes": 1512968192,
+          "duration_seconds": 8.453,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 11.801295413
+        }
+      },
+      "run_id": 39323413683,
+      "job_id": "624da0ff6a824479960f52ec136960ea",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413683",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:34Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 9.163150677000004,
+          "download_seconds": 5.721172678999999,
+          "load_seconds": 0.5108413620000007,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.6300446179999994,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14790037504,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91188912128,
+          "peak_memory_bytes": 815353856,
+          "duration_seconds": 9.164,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 11.33543974
+        }
+      },
+      "run_id": 39323413687,
+      "job_id": "977ff413afde4a63a3dfa7c348970679",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413687",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:31Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 6.525904367999999,
+          "download_seconds": 3.5966019009999997,
+          "load_seconds": 0.852139416,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7689244289999948,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760340480,
+          "memory_available_bytes": 15033958400,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90579918848,
+          "peak_memory_bytes": 723193856,
+          "duration_seconds": 6.526,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.271693539000001
+        }
+      },
+      "run_id": 39323413730,
+      "job_id": "f8ea9f0289914326a367881edd748db4",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413730",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:28Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 8.418690115999993,
+          "download_seconds": 3.696833841,
+          "load_seconds": 1.0652264440000039,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.344695337999994,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14254497792,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90740465664,
+          "peak_memory_bytes": 1512665088,
+          "duration_seconds": 8.419,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 14.694322789
+        }
+      },
+      "run_id": 39323413759,
+      "job_id": "b0c229ba1b1a4f3cb3db14659858f623",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413759",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:34Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 8.350804530000005,
+          "download_seconds": 5.345637302,
+          "load_seconds": 0.639984381000005,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.1307674950000006,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760340480,
+          "memory_available_bytes": 14760140800,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90402545664,
+          "peak_memory_bytes": 795381760,
+          "duration_seconds": 8.351,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 9.285881472
+        }
+      },
+      "run_id": 39323413777,
+      "job_id": "3de297abbda74d4ba5c683cb1d2d8932",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413777",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:30Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 10.447935124999994,
+          "download_seconds": 4.646444370999994,
+          "load_seconds": 1.2769459969999986,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 4.217644007000004,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765378560,
+          "memory_available_bytes": 14127669248,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90740322304,
+          "peak_memory_bytes": 1512927232,
+          "duration_seconds": 10.448,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 17.121404284
+        }
+      },
+      "run_id": 39323413795,
+      "job_id": "32ec1d942a98498d9be50b2e406bf280",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413795",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:38Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 8.243065479000002,
+          "download_seconds": 4.8548801859999955,
+          "load_seconds": 0.5139076130000007,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.5897274059999944,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16770744320,
+          "memory_available_bytes": 14598643712,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91188899840,
+          "peak_memory_bytes": 811245568,
+          "duration_seconds": 8.244,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 11.035914169
+        }
+      },
+      "run_id": 39323413819,
+      "job_id": "bb5a5d691482439c94a7ec77fefc31ba",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413819",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:31Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 11.439808364000001,
+          "download_seconds": 9.826200155000002,
+          "load_seconds": 0.36295287800000153,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.0309011629999958,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14781444096,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91366277120,
+          "peak_memory_bytes": 741138432,
+          "duration_seconds": 11.44,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 5.195565381
+        }
+      },
+      "run_id": 39323413837,
+      "job_id": "7471174e4fe64330b2ded78cdd1cc02f",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413837",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:29Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 5.397332472999999,
+          "download_seconds": 3.197970271999999,
+          "load_seconds": 0.43590729999999667,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.5722008070000015,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14633234432,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91188916224,
+          "peak_memory_bytes": 811982848,
+          "duration_seconds": 5.398,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 7.215294136000001
+        }
+      },
+      "run_id": 39323413872,
+      "job_id": "8f615b9b758342b1bddab369ec06c0ac",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413872",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:29Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 21.974242135000004,
+          "download_seconds": 19.155347657999997,
+          "load_seconds": 0.6939674019999984,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.023743460999995,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14271143936,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90740359168,
+          "peak_memory_bytes": 1510744064,
+          "duration_seconds": 21.975,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 10.561605241
+        }
+      },
+      "run_id": 39323413918,
+      "job_id": "4ba2d721ace1409e885d916af6914580",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413918",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:40Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 6.686171696000002,
+          "download_seconds": 2.5082435059999995,
+          "load_seconds": 1.1710620090000035,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.7962041210000024,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14329901056,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91049988096,
+          "peak_memory_bytes": 1257639936,
+          "duration_seconds": 6.687,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.696954873000001
+        }
+      },
+      "run_id": 39323413929,
+      "job_id": "404e6c675a484765859a420d9f83ddc9",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413929",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:26Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 19.53323157899996,
+          "download_seconds": 15.323966202999998,
+          "load_seconds": 1.013214333999997,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.8878475139999864,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14536515584,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91049955328,
+          "peak_memory_bytes": 1257525248,
+          "duration_seconds": 19.534,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 13.279929866000002
+        }
+      },
+      "run_id": 39323413957,
+      "job_id": "ec924134447c4c31a770db5bb9c9c2f1",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413957",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:42Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 7.630362978999997,
+          "download_seconds": 3.5752229349999993,
+          "load_seconds": 1.0498906329999969,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.7279503999999974,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14340153344,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91050000384,
+          "peak_memory_bytes": 1257644032,
+          "duration_seconds": 7.631,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.442757534
+        }
+      },
+      "run_id": 39323413982,
+      "job_id": "808da7c30b7d4556a267c645099a9edc",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323413982",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:30Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 4.818795913000002,
+          "download_seconds": 2.623588085999998,
+          "load_seconds": 0.4605787480000032,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.4317786300000037,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766406656,
+          "memory_available_bytes": 14860546048,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91366301696,
+          "peak_memory_bytes": 741089280,
+          "duration_seconds": 4.819,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 6.2896554259999995
+        }
+      },
+      "run_id": 39323414008,
+      "job_id": "0131d943b5f54eb9928760858763025f",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414008",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:03Z",
+      "worker_job_completed_at": "2026-10-19T20:56:29Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 6.488235670000002,
+          "download_seconds": 3.966788401999999,
+          "load_seconds": 0.625360809,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7419485120000004,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14293581824,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91049951232,
+          "peak_memory_bytes": 1258471424,
+          "duration_seconds": 6.489,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.369365403000002
+        }
+      },
+      "run_id": 39323414032,
+      "job_id": "d4018c26fed64c62834e442b06b47d65",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414032",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:25Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 4.068271905000003,
+          "download_seconds": 2.2925951389999994,
+          "load_seconds": 0.4373333480000028,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.1129454450000011,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14806802432,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91366305792,
+          "peak_memory_bytes": 745115648,
+          "duration_seconds": 4.069,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 5.254843343
+        }
+      },
+      "run_id": 39323414043,
+      "job_id": "403f16f7cd7d43f5845d4f92ed735dd0",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414043",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:26Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 9.134731250999998,
+          "download_seconds": 4.406771622999997,
+          "load_seconds": 1.0889219769999983,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.2597650000000016,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16770801664,
+          "memory_available_bytes": 14066294784,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90740404224,
+          "peak_memory_bytes": 1510453248,
+          "duration_seconds": 9.135,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 14.508680046999999
+        }
+      },
+      "run_id": 39323414103,
+      "job_id": "989c196d39044fe6967232cb92f97cf2",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414103",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:36Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 11.492346294,
+          "download_seconds": 7.748179163999993,
+          "load_seconds": 0.7811344350000127,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.6956126640000093,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14808473600,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90402557952,
+          "peak_memory_bytes": 794828800,
+          "duration_seconds": 11.493,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.059358313
+        }
+      },
+      "run_id": 39323414116,
+      "job_id": "3f000eee8287438eb701065765e2a6b6",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414116",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:30Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "round": 0,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 19.915644002999997,
+          "download_seconds": 14.204404261,
+          "load_seconds": 1.1395760589999995,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.4696230700000044,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": false,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14466469888,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91049922560,
+          "peak_memory_bytes": 1258385408,
+          "duration_seconds": 19.916,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 14.68595884
+        }
+      },
+      "run_id": 39323414173,
+      "job_id": "594adf3aacc74a809058e800c4803e0c",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39323414173",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "client_seconds": null,
+      "worker_job_started_at": "2026-10-19T20:56:02Z",
+      "worker_job_completed_at": "2026-10-19T20:56:47Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ],
+      "agent": null,
+      "original_client_error": "ReadTimeout during dispatch; artifact recovered later"
+    },
+    {
+      "agent": 16,
+      "round": 1,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 1.9709783970000032,
+          "download_seconds": 2.610900000021843e-05,
+          "load_seconds": 0.42661210100000346,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.0856384500000047,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14370385920,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411779584,
+          "peak_memory_bytes": 740499456,
+          "duration_seconds": 1.971,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 4.251263646
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590283",
+      "client_seconds": 18.005913042000003,
+      "run_id": 39325590283,
+      "job_id": "a2e7912cc7f445ffbf5a6fa5feb8335b",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:18Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 13,
+      "round": 1,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 4.678893337999995,
+          "download_seconds": 3.2058000016377264e-05,
+          "load_seconds": 1.4970939920000035,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.688322836999987,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14231883776,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90309165056,
+          "peak_memory_bytes": 1231802368,
+          "duration_seconds": 4.679,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 10.810189534000001
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590401",
+      "client_seconds": 18.018327917000008,
+      "run_id": 39325590401,
+      "job_id": "7f8bcf1127db451fae96b046b5aff9d5",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:19Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 9,
+      "round": 1,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 3.6834224390000117,
+          "download_seconds": 2.4907999986112372e-05,
+          "load_seconds": 0.9468028019999934,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.3183650520000043,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14268235776,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095560192,
+          "peak_memory_bytes": 1254830080,
+          "duration_seconds": 3.684,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.917246748
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590431",
+      "client_seconds": 17.231048459000007,
+      "run_id": 39325590431,
+      "job_id": "6e71200d07d44f0b8c9bc3cd42f05aa0",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:24Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 19,
+      "round": 1,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 4.38575299,
+          "download_seconds": 2.649900000051275e-05,
+          "load_seconds": 0.6600875580000007,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.354188895000007,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765378560,
+          "memory_available_bytes": 14454304768,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234492416,
+          "peak_memory_bytes": 813195264,
+          "duration_seconds": 4.386,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.071123181
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590433",
+      "client_seconds": 17.030114499999996,
+      "run_id": 39325590433,
+      "job_id": "ed6e84a597fb4562875e36566fd4b94c",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:02Z",
+      "worker_job_completed_at": "2026-10-19T21:12:22Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 4,
+      "round": 1,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 2.2798937210000005,
+          "download_seconds": 2.673000000186221e-05,
+          "load_seconds": 0.6552917110000003,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.2030744230000003,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14443364352,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90625388544,
+          "peak_memory_bytes": 720519168,
+          "duration_seconds": 2.28,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 4.9195276109999995
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590546",
+      "client_seconds": 18.070998167000013,
+      "run_id": 39325590546,
+      "job_id": "006df64d212c4697a41d52a8b94515c6",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:02Z",
+      "worker_job_completed_at": "2026-10-19T21:12:17Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 7,
+      "round": 1,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 4.6412864910000025,
+          "download_seconds": 2.7531000000635686e-05,
+          "load_seconds": 0.9499783250000036,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.498639998999998,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14324371456,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90448064512,
+          "peak_memory_bytes": 792068096,
+          "duration_seconds": 4.642,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.424793411
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590550",
+      "client_seconds": 17.31329749999999,
+      "run_id": 39325590550,
+      "job_id": "dbd23750cafb4e029db4ca669f01df5b",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:22Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 18,
+      "round": 1,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 6.668195435000001,
+          "download_seconds": 2.888299999881383e-05,
+          "load_seconds": 1.2115805139999978,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 5.234119589999999,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 13546369024,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785865728,
+          "peak_memory_bytes": 1514496000,
+          "duration_seconds": 6.669,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 17.744589951000002
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590563",
+      "client_seconds": 18.49280979199999,
+      "run_id": 39325590563,
+      "job_id": "70c40a270f3c4b50bc4738d417c4bcd7",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:31Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 15,
+      "round": 1,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 4.402554068000001,
+          "download_seconds": 2.5047000001165998e-05,
+          "load_seconds": 0.8303971750000017,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.6478509720000005,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14538539008,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90447986688,
+          "peak_memory_bytes": 791986176,
+          "duration_seconds": 4.403,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 10.154179764
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590648",
+      "client_seconds": 17.471608458000006,
+      "run_id": 39325590648,
+      "job_id": "30523ebcb5f54e5496cf2ce183113baf",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:02Z",
+      "worker_job_completed_at": "2026-10-19T21:12:20Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 3,
+      "round": 1,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 3.393291546999997,
+          "download_seconds": 2.7953000000024986e-05,
+          "load_seconds": 0.5391401910000013,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.6493456239999986,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14270111744,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234430976,
+          "peak_memory_bytes": 812843008,
+          "duration_seconds": 3.394,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 9.874137898
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590649",
+      "client_seconds": 17.258693291,
+      "run_id": 39325590649,
+      "job_id": "2c16de003a4241838a53035ec87a8e26",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:02Z",
+      "worker_job_completed_at": "2026-10-19T21:12:18Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 17,
+      "round": 1,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 2.4899321569999984,
+          "download_seconds": 2.219300000660951e-05,
+          "load_seconds": 0.6374342990000059,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7158557390000055,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 13933158400,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095478272,
+          "peak_memory_bytes": 1254797312,
+          "duration_seconds": 2.49,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 6.589154441
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590673",
+      "client_seconds": 17.949228500000004,
+      "run_id": 39325590673,
+      "job_id": "77970e81433643d2ad1fa7b72eb318d6",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:18Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 11,
+      "round": 1,
+      "model": "tinyllama",
+      "result": {
+        "output": "Improving the Energy-Efficient Inference Library:\n\n1. Concrete Improvement:\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements we have made:\n\na. Improved Par",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 77,
+          "completion_tokens": 64,
+          "total_tokens": 141
+        },
+        "timings": {
+          "total_seconds": 3.3865237750000006,
+          "download_seconds": 2.746999999203581e-05,
+          "load_seconds": 0.671113436000013,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.10289978900002,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 45,
+          "refined_tokens": 45,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14747783168,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90447941632,
+          "peak_memory_bytes": 792293376,
+          "duration_seconds": 3.387,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.163841073
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590689",
+      "client_seconds": 17.43920358300001,
+      "run_id": 39325590689,
+      "job_id": "ab15b649185248dd929685d9c19b2ea4",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:25Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 1,
+      "round": 1,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 4.764874801999994,
+          "download_seconds": 2.3595000001819244e-05,
+          "load_seconds": 0.9819601420000055,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 3.5293180190000015,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14133166080,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095511040,
+          "peak_memory_bytes": 1254776832,
+          "duration_seconds": 4.765,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 12.77309293
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590705",
+      "client_seconds": 18.610489125,
+      "run_id": 39325590705,
+      "job_id": "cb1f500eb19a4bdaa6f16e061d9afbca",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:22Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 6,
+      "round": 1,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 4.883903746000001,
+          "download_seconds": 2.4766999999314976e-05,
+          "load_seconds": 1.371771188000011,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.743746511999987,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 13773897728,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 89999503360,
+          "peak_memory_bytes": 1489473536,
+          "duration_seconds": 4.884,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 10.70275723
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590772",
+      "client_seconds": 17.762601833999994,
+      "run_id": 39325590772,
+      "job_id": "a894a32885534eeaa4f42bcb43610c7c",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:26Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 10,
+      "round": 1,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 3.7476433349999994,
+          "download_seconds": 2.5928999995983304e-05,
+          "load_seconds": 0.7941448909999949,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.250783302000002,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 13791305728,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785845248,
+          "peak_memory_bytes": 1514692608,
+          "duration_seconds": 3.748,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.418808577
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590793",
+      "client_seconds": 18.603145708,
+      "run_id": 39325590793,
+      "job_id": "b4638ac86c554b26b7996873f80dddfa",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:08Z",
+      "worker_job_completed_at": "2026-10-19T21:12:27Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 2,
+      "round": 1,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 3.8995861530000013,
+          "download_seconds": 2.0370000001435074e-05,
+          "load_seconds": 0.8272439120000001,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.221699436999998,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 13501267968,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785820672,
+          "peak_memory_bytes": 1512738816,
+          "duration_seconds": 3.9,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 8.384266405
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590810",
+      "client_seconds": 17.263678958,
+      "run_id": 39325590810,
+      "job_id": "4cdbdd963fa34d3cb4373c164cc63717",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:24Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 12,
+      "round": 1,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 2.620649762999996,
+          "download_seconds": 2.5728000004221485e-05,
+          "load_seconds": 0.5823999879999988,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7492484769999948,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16770748416,
+          "memory_available_bytes": 14363930624,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411808256,
+          "peak_memory_bytes": 741203968,
+          "duration_seconds": 2.621,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 6.576293783
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590881",
+      "client_seconds": 17.913425667,
+      "run_id": 39325590881,
+      "job_id": "2d85606609734b8c871fcecce9036eed",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:16Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 14,
+      "round": 1,
+      "model": "qwen",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, optimized algorithms, and careful memory management. One concrete improvement is to implement a caching mechanism for frequently accessed data. This reduces the number of times data needs to be fetched from disk or network, thereby lowering the overall energy consumption.\n\nChallenge",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 5.661152415999993,
+          "download_seconds": 2.3678999980347726e-05,
+          "load_seconds": 1.271968208999965,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 4.207262655000022,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 13968007168,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785775616,
+          "peak_memory_bytes": 1512652800,
+          "duration_seconds": 5.662,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 15.124413078000002
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325590912",
+      "client_seconds": 17.998567791,
+      "run_id": 39325590912,
+      "job_id": "a5dd70bd44594ee984a3f02f366d2efa",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:29Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 8,
+      "round": 1,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 2.009033310999996,
+          "download_seconds": 2.8993000000809843e-05,
+          "load_seconds": 0.5265044979999942,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.1129962990000024,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14531784704,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411738624,
+          "peak_memory_bytes": 738377728,
+          "duration_seconds": 2.01,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 4.528694386
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325591015",
+      "client_seconds": 17.101273875000004,
+      "run_id": 39325591015,
+      "job_id": "743bb55492ff4213b518703314a2bdd4",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:02Z",
+      "worker_job_completed_at": "2026-10-19T21:12:18Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 5,
+      "round": 1,
+      "model": "llama",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the computation across multiple machines, reducing the load on individual machines and minimizing",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 73,
+          "completion_tokens": 64,
+          "total_tokens": 137
+        },
+        "timings": {
+          "total_seconds": 4.762725016999994,
+          "download_seconds": 2.6178000013032943e-05,
+          "load_seconds": 1.4570336949999927,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 2.9913816370000035,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14034706432,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90309029888,
+          "peak_memory_bytes": 1232277504,
+          "duration_seconds": 4.763,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 11.695882633
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325591025",
+      "client_seconds": 18.070123916,
+      "run_id": 39325591025,
+      "job_id": "1f0acc1644bb42fd9b83209b585f1c4b",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:20Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 0,
+      "round": 1,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "Designing a reliable, energy-efficient inference library involves several key components: efficient data structures, efficient algorithms, and efficient communication protocols. Here's a concrete improvement: using a distributed data structure to store and manage inference results. This approach allows for efficient communication between inference nodes, reducing the need for centralized data storage and improving overall",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 51,
+          "completion_tokens": 64,
+          "total_tokens": 115
+        },
+        "timings": {
+          "total_seconds": 2.496669010000005,
+          "download_seconds": 2.6849999983369344e-05,
+          "load_seconds": 0.5817291189999878,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 1.7230440060000092,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 32,
+          "refined_tokens": 32,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14711668736,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411898368,
+          "peak_memory_bytes": 738385920,
+          "duration_seconds": 2.497,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 6.608543147000001
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39325591517",
+      "client_seconds": 18.620379791999994,
+      "run_id": 39325591517,
+      "job_id": "5f16a0f889654240b8820e6c74c3506b",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:12:03Z",
+      "worker_job_completed_at": "2026-10-19T21:12:28Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 2,
+      "round": 2,
+      "model": "qwen",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the workload across multiple nodes for parallel processing.\n2. **Efficient",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 17.542782665000004,
+          "download_seconds": 2.3134000002755783e-05,
+          "load_seconds": 0.8878742539999962,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 15.769889414999994,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14147149824,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785849344,
+          "peak_memory_bytes": 1570070528,
+          "duration_seconds": 17.543,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 61.834993507
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304077",
+      "client_seconds": 42.636187792,
+      "run_id": 39326304077,
+      "job_id": "9bb763bb0fd94681a6f78c8c36b92fb6",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:58Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 6,
+      "round": 2,
+      "model": "qwen",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the workload across multiple nodes for parallel processing.\n2. **Efficient",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 20.37074002299994,
+          "download_seconds": 2.6219000005767157e-05,
+          "load_seconds": 1.0700759129999824,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 18.926770846000068,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14171533312,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785910784,
+          "peak_memory_bytes": 1569533952,
+          "duration_seconds": 20.371,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 74.26981646600001
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304140",
+      "client_seconds": 42.57927937500001,
+      "run_id": 39326304140,
+      "job_id": "50e5fe6f64d4438f9c73d85acee7cb24",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:18:03Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 9,
+      "round": 2,
+      "model": "llama",
+      "result": {
+        "output": "**Design: EcoInfer**\n\nEcoInfer is a reliable, energy-efficient inference library for machine learning models. It utilizes a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute computations across multiple machines.\n2. **Distributed Data Structures**: Use a distributed",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1012,
+          "completion_tokens": 64,
+          "total_tokens": 1076
+        },
+        "timings": {
+          "total_seconds": 14.576697904,
+          "download_seconds": 1.8314999991275727e-05,
+          "load_seconds": 0.9031214649999981,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 13.482423107999992,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 971,
+          "refined_tokens": 971,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 14216318976,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095461888,
+          "peak_memory_bytes": 1346461696,
+          "duration_seconds": 14.577,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 52.191807935
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304147",
+      "client_seconds": 34.326244208999995,
+      "run_id": 39326304147,
+      "job_id": "0665516d1a0f4429862926443ee4f960",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:55Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 5,
+      "round": 2,
+      "model": "llama",
+      "result": {
+        "output": "**Design: EcoInfer**\n\nEcoInfer is a reliable, energy-efficient inference library for machine learning models. It utilizes a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute computations across multiple machines.\n2. **Distributed Data Structures**: Use a distributed",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1012,
+          "completion_tokens": 64,
+          "total_tokens": 1076
+        },
+        "timings": {
+          "total_seconds": 15.966807920000065,
+          "download_seconds": 2.8864000000794476e-05,
+          "load_seconds": 1.0506791200000407,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 14.568935054000008,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 971,
+          "refined_tokens": 971,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14382010368,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095359488,
+          "peak_memory_bytes": 1345957888,
+          "duration_seconds": 15.967,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 57.302666968000004
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304155",
+      "client_seconds": 42.663704374999995,
+      "run_id": 39326304155,
+      "job_id": "3f288fc383b84aa18a802ebf177f412c",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:18:00Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 7,
+      "round": 2,
+      "model": "tinyllama",
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304158",
+      "client_seconds": null,
+      "result": {
+        "output": "Design a reliable, energy-efficient inference library that utilizes a combination of techniques such as distributed computing, optimized algorithmic design, and careful memory management. The library should be designed to be more efficient and reliable than existing ones, with a focus on inference for machine learning models. One concretely improved improvement is",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1311,
+          "completion_tokens": 64,
+          "total_tokens": 1375
+        },
+        "timings": {
+          "total_seconds": 21.836036041,
+          "download_seconds": 3.0866999999545897e-05,
+          "load_seconds": 0.5345857129999985,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 20.816233439,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1279,
+          "refined_tokens": 1279,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14817341440,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91233124352,
+          "peak_memory_bytes": 904835072,
+          "duration_seconds": 21.837,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 81.454594683
+        }
+      },
+      "run_id": 39326304158,
+      "job_id": "893f1cc563204873afbfe6859516e537",
+      "estimated_energy_wh": null,
+      "artifact_recovered": true,
+      "original_client_error": "ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/TanishC4444/ai-inference-runner/actions/runs/39326304158 (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:18:09Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 18,
+      "round": 2,
+      "model": "qwen",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the workload across multiple nodes for parallel processing.\n2. **Efficient",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 12.972674783000002,
+          "download_seconds": 2.014000000372107e-05,
+          "load_seconds": 0.7133750039999995,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 12.154385650999998,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 13865586688,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785865728,
+          "peak_memory_bytes": 1569673216,
+          "duration_seconds": 12.973,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 47.689336996
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304163",
+      "client_seconds": 34.344462707999995,
+      "run_id": 39326304163,
+      "job_id": "4b98b5ad0f5e49f6850a0c64d8695259",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:56Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 19,
+      "round": 2,
+      "model": "tinyllama",
+      "result": {
+        "output": "Design a reliable, energy-efficient inference library that utilizes a combination of techniques such as distributed computing, optimized algorithmic design, and careful memory management. The library should be designed to be more efficient and reliable than existing ones, with a focus on inference for machine learning models. One concretely improved improvement is",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1311,
+          "completion_tokens": 64,
+          "total_tokens": 1375
+        },
+        "timings": {
+          "total_seconds": 21.20936331,
+          "download_seconds": 3.110700001229816e-05,
+          "load_seconds": 0.5754226030000069,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 20.403373920999996,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1279,
+          "refined_tokens": 1279,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766410752,
+          "memory_available_bytes": 14803083264,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234390016,
+          "peak_memory_bytes": 907030528,
+          "duration_seconds": 21.21,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 80.110375488
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304171",
+      "client_seconds": 42.581703708000006,
+      "run_id": 39326304171,
+      "job_id": "263bbba554d34546b01c9e6891b36490",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:29Z",
+      "worker_job_completed_at": "2026-10-19T21:18:04Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 0,
+      "round": 2,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "**Improving the Energy-Efficient Inference Library:**\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements:\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 10.282494632999999,
+          "download_seconds": 2.6870999988659605e-05,
+          "load_seconds": 0.5745804789999909,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 9.366358856999994,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16770748416,
+          "memory_available_bytes": 14764343296,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411808256,
+          "peak_memory_bytes": 771772416,
+          "duration_seconds": 10.283,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 36.915971004999996
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304188",
+      "client_seconds": 26.599883417,
+      "run_id": 39326304188,
+      "job_id": "f01a03799c584ebd8f482ffc8143efe5",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:48Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 10,
+      "round": 2,
+      "model": "qwen",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the workload across multiple nodes for parallel processing.\n2. **Efficient",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 20.461269659000003,
+          "download_seconds": 2.65600000020072e-05,
+          "load_seconds": 1.1358450610000048,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 18.872792496000002,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14138380288,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785849344,
+          "peak_memory_bytes": 1569386496,
+          "duration_seconds": 20.462,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 74.148733281
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304192",
+      "client_seconds": 50.961903417,
+      "run_id": 39326304192,
+      "job_id": "ed8360c313194af68a8ab4e737fa54ce",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:18:05Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 1,
+      "round": 2,
+      "model": "llama",
+      "result": {
+        "output": "**Design: EcoInfer**\n\nEcoInfer is a reliable, energy-efficient inference library for machine learning models. It utilizes a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute computations across multiple machines.\n2. **Distributed Data Structures**: Use a distributed",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1012,
+          "completion_tokens": 64,
+          "total_tokens": 1076
+        },
+        "timings": {
+          "total_seconds": 15.420211758,
+          "download_seconds": 1.7495000001588323e-05,
+          "load_seconds": 0.9152540270000031,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 14.028688258999999,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 971,
+          "refined_tokens": 971,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765378560,
+          "memory_available_bytes": 14128545792,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095461888,
+          "peak_memory_bytes": 1346199552,
+          "duration_seconds": 15.421,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 54.203149072
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304199",
+      "client_seconds": 42.28985933300001,
+      "run_id": 39326304199,
+      "job_id": "962debf590404878860a508326839e76",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:58Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 17,
+      "round": 2,
+      "model": "llama",
+      "result": {
+        "output": "**Design: EcoInfer**\n\nEcoInfer is a reliable, energy-efficient inference library for machine learning models. It utilizes a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute computations across multiple machines.\n2. **Distributed Data Structures**: Use a distributed",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1012,
+          "completion_tokens": 64,
+          "total_tokens": 1076
+        },
+        "timings": {
+          "total_seconds": 10.876251284000002,
+          "download_seconds": 2.7101000000584463e-05,
+          "load_seconds": 0.7582628299999961,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 9.456321689,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 971,
+          "refined_tokens": 971,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14076518400,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095420928,
+          "peak_memory_bytes": 1346387968,
+          "duration_seconds": 10.877,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 37.054828164
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304211",
+      "client_seconds": 34.663512166000004,
+      "run_id": 39326304211,
+      "job_id": "8f3c5d3545d741808cd8d9087318a5f5",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:54Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 13,
+      "round": 2,
+      "model": "llama",
+      "result": {
+        "output": "**Design: EcoInfer**\n\nEcoInfer is a reliable, energy-efficient inference library for machine learning models. It utilizes a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute computations across multiple machines.\n2. **Distributed Data Structures**: Use a distributed",
+        "model": "llama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1012,
+          "completion_tokens": 64,
+          "total_tokens": 1076
+        },
+        "timings": {
+          "total_seconds": 15.975752639000007,
+          "download_seconds": 3.0656000035378383e-05,
+          "load_seconds": 1.0583399979999513,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 14.56844773299997,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 971,
+          "refined_tokens": 971,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14366564352,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91095392256,
+          "peak_memory_bytes": 1346039808,
+          "duration_seconds": 15.976,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 57.356320433
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304212",
+      "client_seconds": 42.61379291700001,
+      "run_id": 39326304212,
+      "job_id": "f708e7caee59475aac669e6fc68f3294",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:29Z",
+      "worker_job_completed_at": "2026-10-19T21:18:00Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 8,
+      "round": 2,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "**Improving the Energy-Efficient Inference Library:**\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements:\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 10.873159293000015,
+          "download_seconds": 2.8794000002108078e-05,
+          "load_seconds": 0.8590630630000078,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 9.54224004599999,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16760344576,
+          "memory_available_bytes": 14896689152,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90625445888,
+          "peak_memory_bytes": 767041536,
+          "duration_seconds": 10.874,
+          "runner_os": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 37.663730724000004
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304216",
+      "client_seconds": 42.63222033300001,
+      "run_id": 39326304216,
+      "job_id": "87482457259d482e8d32d5d0319a04f9",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:57Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 12,
+      "round": 2,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "**Improving the Energy-Efficient Inference Library:**\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements:\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 12.594049955000003,
+          "download_seconds": 2.1846999999297623e-05,
+          "load_seconds": 0.7052299610000006,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 10.77684618299999,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765370368,
+          "memory_available_bytes": 14611259392,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411873792,
+          "peak_memory_bytes": 774066176,
+          "duration_seconds": 12.595,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 40.936747335
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304247",
+      "client_seconds": 34.425352375,
+      "run_id": 39326304247,
+      "job_id": "7b3ff4215b914472b9b6e07a59d80f50",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:54Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 15,
+      "round": 2,
+      "model": "tinyllama",
+      "result": {
+        "output": "Design a reliable, energy-efficient inference library that utilizes a combination of techniques such as distributed computing, optimized algorithmic design, and careful memory management. The library should be designed to be more efficient and reliable than existing ones, with a focus on inference for machine learning models. One concretely improved improvement is",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1311,
+          "completion_tokens": 64,
+          "total_tokens": 1375
+        },
+        "timings": {
+          "total_seconds": 13.642721068,
+          "download_seconds": 2.5697999994633847e-05,
+          "load_seconds": 0.37167477500000246,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 12.828263491000001,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1279,
+          "refined_tokens": 1279,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14683078656,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234357248,
+          "peak_memory_bytes": 905003008,
+          "duration_seconds": 13.643,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 50.233132468
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304281",
+      "client_seconds": 42.32577470799998,
+      "run_id": 39326304281,
+      "job_id": "200fb6a072584aee82fed7d71c6dbf18",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:57Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 11,
+      "round": 2,
+      "model": "tinyllama",
+      "result": {
+        "output": "Design a reliable, energy-efficient inference library that utilizes a combination of techniques such as distributed computing, optimized algorithmic design, and careful memory management. The library should be designed to be more efficient and reliable than existing ones, with a focus on inference for machine learning models. One concretely improved improvement is",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1311,
+          "completion_tokens": 64,
+          "total_tokens": 1375
+        },
+        "timings": {
+          "total_seconds": 21.466156751,
+          "download_seconds": 2.7000000002885827e-05,
+          "load_seconds": 0.5322593570000009,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 20.587700747000007,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1279,
+          "refined_tokens": 1279,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14874087424,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234369536,
+          "peak_memory_bytes": 904712192,
+          "duration_seconds": 21.467,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 80.689571143
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304289",
+      "client_seconds": 51.012895000000015,
+      "run_id": 39326304289,
+      "job_id": "24bd44def31347ca8fd1ae620d6b5773",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:29Z",
+      "worker_job_completed_at": "2026-10-19T21:18:09Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 4,
+      "round": 2,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "**Improving the Energy-Efficient Inference Library:**\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements:\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 10.39766444,
+          "download_seconds": 2.456600000044773e-05,
+          "load_seconds": 0.5948866419999987,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 9.397769286999996,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14732754944,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411689472,
+          "peak_memory_bytes": 773873664,
+          "duration_seconds": 10.398,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 37.041226856
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304308",
+      "client_seconds": 42.606499416999995,
+      "run_id": 39326304308,
+      "job_id": "b1522448802043c993520d4a027bc54a",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:29Z",
+      "worker_job_completed_at": "2026-10-19T21:18:00Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 3,
+      "round": 2,
+      "model": "tinyllama",
+      "result": {
+        "output": "Design a reliable, energy-efficient inference library that utilizes a combination of techniques such as distributed computing, optimized algorithmic design, and careful memory management. The library should be designed to be more efficient and reliable than existing ones, with a focus on inference for machine learning models. One concretely improved improvement is",
+        "model": "tinyllama",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1311,
+          "completion_tokens": 64,
+          "total_tokens": 1375
+        },
+        "timings": {
+          "total_seconds": 12.826318413999957,
+          "download_seconds": 2.081100001305458e-05,
+          "load_seconds": 0.3541697320000594,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 12.328735469000094,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 1279,
+          "refined_tokens": 1279,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14737182720,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91234291712,
+          "peak_memory_bytes": 904765440,
+          "duration_seconds": 12.827,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 48.477905363999994
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304333",
+      "client_seconds": 34.521396666,
+      "run_id": 39326304333,
+      "job_id": "3392fb242bf842bda6f7b71480103d08",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:53Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 14,
+      "round": 2,
+      "model": "qwen",
+      "result": {
+        "output": "**Design:**\n\nThe library will be called \"EcoInfer\" and will focus on inference for machine learning models. It will utilize a combination of techniques such as:\n\n1. **Distributed Computing**: Utilize a cloud-based infrastructure to distribute the workload across multiple nodes for parallel processing.\n2. **Efficient",
+        "model": "qwen",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 17.581398946999997,
+          "download_seconds": 1.9117999997320112e-05,
+          "load_seconds": 1.1537298819999933,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 15.859107264999999,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16765374464,
+          "memory_available_bytes": 13935296512,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 90785861632,
+          "peak_memory_bytes": 1569853440,
+          "duration_seconds": 17.582,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 60.791880907
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304389",
+      "client_seconds": 42.41506149999999,
+      "run_id": 39326304389,
+      "job_id": "f2ddbc820731435988477007fb39f17f",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:29Z",
+      "worker_job_completed_at": "2026-10-19T21:18:02Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    },
+    {
+      "agent": 16,
+      "round": 2,
+      "model": "qwen0.5b",
+      "result": {
+        "output": "**Improving the Energy-Efficient Inference Library:**\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed to be more efficient and reliable than the existing ones. Here are some concrete improvements:\n\n1. **Concrete Improvement:**\n\nThe energy-efficient inference library we are proposing is designed",
+        "model": "qwen0.5b",
+        "backend": "github",
+        "usage": {
+          "prompt_tokens": 1000,
+          "completion_tokens": 64,
+          "total_tokens": 1064
+        },
+        "timings": {
+          "total_seconds": 6.320974045999996,
+          "download_seconds": 2.669099999508262e-05,
+          "load_seconds": 0.3907756959999986,
+          "refinement_seconds": 0.0,
+          "generation_seconds": 5.663867066000002,
+          "remote_seconds": 0.0
+        },
+        "refinement": {
+          "attempted": false,
+          "applied": false,
+          "original_tokens": 981,
+          "refined_tokens": 981,
+          "reason": "disabled",
+          "usage": {
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          }
+        },
+        "model_reused": false,
+        "weights_cached": true,
+        "dropped_history_turns": 0,
+        "finish_reason": "length",
+        "resources": {
+          "cpu_count": 4,
+          "memory_total_bytes": 16766414848,
+          "memory_available_bytes": 14278860800,
+          "disk_total_bytes": 154894188544,
+          "disk_free_bytes": 91411845120,
+          "peak_memory_bytes": 772030464,
+          "duration_seconds": 6.321,
+          "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+          "cpu_seconds": 22.285824988999998
+        }
+      },
+      "estimated_energy_wh": null,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39326304456",
+      "client_seconds": 27.158583541999988,
+      "run_id": 39326304456,
+      "job_id": "37f7d613921146d3a8c74f6f202380e0",
+      "artifact_recovered": true,
+      "worker_job_started_at": "2026-10-19T21:17:28Z",
+      "worker_job_completed_at": "2026-10-19T21:17:47Z",
+      "worker_labels": [
+        "ubuntu-latest"
+      ]
+    }
+  ],
+  "summary": {
+    "llama": {
+      "succeeded": 15,
+      "failed": 0,
+      "completion_tokens": 960,
+      "generation_seconds": 92.97163274399995,
+      "fastest_completion_tokens_per_second": 37.29917296969206,
+      "completion_tokens_per_generation_second": 10.325730243367754,
+      "median_client_seconds": 26.468366666999998,
+      "client_latency_samples": 10,
+      "cpu_seconds": 370.369305374,
+      "estimated_energy_wh": null,
+      "peak_process_memory_bytes": 1346461696,
+      "completion_tokens_per_cpu_second": 2.5920074532920303
+    },
+    "qwen": {
+      "succeeded": 15,
+      "failed": 0,
+      "completion_tokens": 960,
+      "generation_seconds": 113.73170830300006,
+      "fastest_completion_tokens_per_second": 31.62456172600829,
+      "completion_tokens_per_generation_second": 8.440917790862697,
+      "median_client_seconds": 26.473804207999997,
+      "client_latency_samples": 10,
+      "cpu_seconds": 447.7969041720001,
+      "estimated_energy_wh": null,
+      "peak_process_memory_bytes": 1570070528,
+      "completion_tokens_per_cpu_second": 2.1438290239524775
+    },
+    "qwen0.5b": {
+      "succeeded": 15,
+      "failed": 0,
+      "completion_tokens": 960,
+      "generation_seconds": 58.66685149599998,
+      "fastest_completion_tokens_per_second": 62.08160616848607,
+      "completion_tokens_per_generation_second": 16.363584810162425,
+      "median_client_seconds": 22.610131604499998,
+      "client_latency_samples": 10,
+      "cpu_seconds": 234.337828941,
+      "estimated_energy_wh": null,
+      "peak_process_memory_bytes": 774066176,
+      "completion_tokens_per_cpu_second": 4.0966497143818055
+    },
+    "tinyllama": {
+      "succeeded": 15,
+      "failed": 0,
+      "completion_tokens": 960,
+      "generation_seconds": 112.83558533600012,
+      "fastest_completion_tokens_per_second": 40.70726825418805,
+      "completion_tokens_per_generation_second": 8.507954269402923,
+      "median_client_seconds": 17.471608458000006,
+      "client_latency_samples": 9,
+      "cpu_seconds": 444.585542303,
+      "estimated_energy_wh": null,
+      "peak_process_memory_bytes": 907030528,
+      "completion_tokens_per_cpu_second": 2.1593144820389316
+    }
+  },
+  "original_client_failures": 21,
+  "verified_worker_successes": 60,
+  "max_overlapping_worker_jobs": 20,
+  "recovery_note": "Recovered all artifacts without redispatch. Round 0 peer replies were unavailable to round 1. First-round agent indices are unknown; job IDs preserve identity. Unknown client latencies are null.",
+  "metrics_scope": "successful inference processes; provisioning and install CPU/energy excluded",
+  "by_round": {
+    "0": {
+      "llama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 13.623573616999991,
+        "fastest_completion_tokens_per_second": 36.740465954713585,
+        "completion_tokens_per_generation_second": 23.488697532392848,
+        "median_client_seconds": null,
+        "client_latency_samples": 0,
+        "cpu_seconds": 61.474966516,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1258471424,
+        "completion_tokens_per_cpu_second": 5.205370871031122
+      },
+      "qwen": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 15.491151133999999,
+        "fastest_completion_tokens_per_second": 31.62456172600829,
+        "completion_tokens_per_generation_second": 20.65695423354715,
+        "median_client_seconds": null,
+        "client_latency_samples": 0,
+        "cpu_seconds": 68.687307774,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1512968192,
+        "completion_tokens_per_cpu_second": 4.658793747643849
+      },
+      "qwen0.5b": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 7.045768402,
+        "fastest_completion_tokens_per_second": 62.08160616848607,
+        "completion_tokens_per_generation_second": 45.41733161555031,
+        "median_client_seconds": null,
+        "client_latency_samples": 0,
+        "cpu_seconds": 32.610005459,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 745115648,
+        "completion_tokens_per_cpu_second": 9.81293917298881
+      },
+      "tinyllama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 11.618352990000005,
+        "fastest_completion_tokens_per_second": 40.70726825418805,
+        "completion_tokens_per_generation_second": 27.542630205453918,
+        "median_client_seconds": null,
+        "client_latency_samples": 0,
+        "cpu_seconds": 50.93188783000001,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 815353856,
+        "completion_tokens_per_cpu_second": 6.28290082370583
+      }
+    },
+    "1": {
+      "llama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 13.243243284000002,
+        "fastest_completion_tokens_per_second": 37.29917296969206,
+        "completion_tokens_per_generation_second": 24.163265231758764,
+        "median_client_seconds": 18.018327917000008,
+        "client_latency_samples": 5,
+        "cpu_seconds": 50.78556628599999,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1254830080,
+        "completion_tokens_per_cpu_second": 6.301002891213485
+      },
+      "qwen": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 16.65761149600001,
+        "fastest_completion_tokens_per_second": 28.80677689076628,
+        "completion_tokens_per_generation_second": 19.21043722726044,
+        "median_client_seconds": 17.998567791,
+        "client_latency_samples": 5,
+        "cpu_seconds": 60.37483524100001,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1514692608,
+        "completion_tokens_per_cpu_second": 5.300221503257882
+      },
+      "qwen0.5b": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 6.874001655000011,
+        "fastest_completion_tokens_per_second": 58.95148610478905,
+        "completion_tokens_per_generation_second": 46.55221457027704,
+        "median_client_seconds": 18.005913042000003,
+        "client_latency_samples": 5,
+        "cpu_seconds": 26.884322573,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 741203968,
+        "completion_tokens_per_cpu_second": 11.902847807717384
+      },
+      "tinyllama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 14.252925279000024,
+        "fastest_completion_tokens_per_second": 30.43416540092648,
+        "completion_tokens_per_generation_second": 22.45153143905705,
+        "median_client_seconds": 17.31329749999999,
+        "client_latency_samples": 5,
+        "cpu_seconds": 52.688075327,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 813195264,
+        "completion_tokens_per_cpu_second": 6.073480536420658
+      }
+    },
+    "2": {
+      "llama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 66.10481584299997,
+        "fastest_completion_tokens_per_second": 6.767959266280837,
+        "completion_tokens_per_generation_second": 4.840797087461907,
+        "median_client_seconds": 42.28985933300001,
+        "client_latency_samples": 5,
+        "cpu_seconds": 258.108772572,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1346461696,
+        "completion_tokens_per_cpu_second": 1.2397873842538043
+      },
+      "qwen": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 81.58294567300007,
+        "fastest_completion_tokens_per_second": 5.2655890505444365,
+        "completion_tokens_per_generation_second": 3.9223884031182292,
+        "median_client_seconds": 42.57927937500001,
+        "client_latency_samples": 5,
+        "cpu_seconds": 318.73476115700004,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 1570070528,
+        "completion_tokens_per_cpu_second": 1.0039695665399255
+      },
+      "qwen0.5b": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 44.74708143899997,
+        "fastest_completion_tokens_per_second": 11.29970023205343,
+        "completion_tokens_per_generation_second": 7.151304391465838,
+        "median_client_seconds": 34.425352375,
+        "client_latency_samples": 5,
+        "cpu_seconds": 174.843500909,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 774066176,
+        "completion_tokens_per_cpu_second": 1.830208148065789
+      },
+      "tinyllama": {
+        "succeeded": 5,
+        "failed": 0,
+        "completion_tokens": 320,
+        "generation_seconds": 86.9643070670001,
+        "fastest_completion_tokens_per_second": 5.1911244393980525,
+        "completion_tokens_per_generation_second": 3.6796705544202366,
+        "median_client_seconds": 42.453739207999995,
+        "client_latency_samples": 4,
+        "cpu_seconds": 340.965579146,
+        "estimated_energy_wh": null,
+        "peak_process_memory_bytes": 907030528,
+        "completion_tokens_per_cpu_second": 0.9385111564677249
+      }
+    }
+  },
+  "client_active_elapsed_seconds": 105.192675708,
+  "worker_window_started_at": "2026-10-19T20:56:02Z",
+  "worker_window_completed_at": "2026-10-19T21:18:09Z",
+  "worker_window_seconds": 1327.0,
+  "models": {
+    "llama": {
+      "name": "Llama 3.2 1B Instruct",
+      "parameters_b": 1,
+      "quantization": "Q4_K_M",
+      "size_bytes": 807694464,
+      "size_gb": 0.807694464,
+      "sha256": "6f85a640a97cf2bf5b8e764087b1e83da0fdb51d7c9fab7d0fece9385611df83",
+      "n_ctx": 8192,
+      "max_n_ctx": 131072,
+      "context_source": "https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct",
+      "max_output_tokens": null,
+      "yarn_original_context": null,
+      "ram_per_1k_ctx_gb": 0.25,
+      "url": "https://huggingface.co/bartowski/Llama-3.2-1B-Instruct-GGUF/resolve/main/Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+      "filename": "Llama-3.2-1B-Instruct-Q4_K_M.gguf"
+    },
+    "qwen": {
+      "name": "Qwen 2.5 1.5B Instruct",
+      "parameters_b": 1.5,
+      "quantization": "Q4_K_M",
+      "size_bytes": 1117320736,
+      "size_gb": 1.117320736,
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "n_ctx": 8192,
+      "max_n_ctx": 32768,
+      "context_source": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct",
+      "max_output_tokens": 8192,
+      "yarn_original_context": null,
+      "ram_per_1k_ctx_gb": 0.25,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "filename": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    "qwen0.5b": {
+      "name": "Qwen 2.5 0.5B Instruct",
+      "parameters_b": 0.5,
+      "quantization": "Q4_K_M",
+      "size_bytes": 491400032,
+      "size_gb": 0.491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+      "n_ctx": 8192,
+      "max_n_ctx": 32768,
+      "context_source": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct",
+      "max_output_tokens": 8192,
+      "yarn_original_context": null,
+      "ram_per_1k_ctx_gb": 0.125,
+      "url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/main/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+      "filename": "qwen2.5-0.5b-instruct-q4_k_m.gguf"
+    },
+    "tinyllama": {
+      "name": "TinyLlama 1.1B Chat",
+      "parameters_b": 1.1,
+      "quantization": "Q4_K_M",
+      "size_bytes": 668788096,
+      "size_gb": 0.668788096,
+      "sha256": "9fecc3b3cd76bba89d504f29b616eedf7da85b96540e490ca5824d3f7d2776a0",
+      "n_ctx": 2048,
+      "max_n_ctx": 2048,
+      "context_source": "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0/blob/main/config.json",
+      "max_output_tokens": null,
+      "yarn_original_context": null,
+      "ram_per_1k_ctx_gb": 0.25,
+      "url": "https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF/resolve/main/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf",
+      "filename": "tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
+    }
+  },
+  "sampling": {
+    "temperature": 0,
+    "max_tokens": 64,
+    "refine_prompt": false,
+    "remember": false
+  },
+  "workload_note": "Rounds 0 and 1 used the initial task because round 0 client calls timed out. Round 2 broadcast all 20 previous replies, capped at 240 characters per reply.",
+  "quality_note": "All responses reached the 64-token limit; no answer-quality score was measured."
+}

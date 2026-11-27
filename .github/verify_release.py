@@ -35,12 +35,17 @@ finally:
     report["passed"] = not failed
     data = json.dumps(report, indent=2).encode()
     path = f"verification-results/{os.environ['GITHUB_RUN_ID']}.json"
-    payload = {"message": "Record GitHub release verification", "content": base64.b64encode(data).decode()}
+    os.makedirs("verification-results", exist_ok=True)
+    with open(path, "wb") as stream:
+        stream.write(data)
+    payload = {"message": "Record GitHub release verification", "content": base64.b64encode(data).decode(),
+               "branch": os.environ["GITHUB_REF_NAME"]}
     request = urllib.request.Request(
         f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/{path}",
         data=json.dumps(payload).encode(), method="PUT",
         headers={"Authorization": "Bearer " + os.environ["REPORT_TOKEN"],
                  "Accept": "application/vnd.github+json", "Content-Type": "application/json"})
-    urllib.request.urlopen(request, timeout=30).close()
+    if os.environ["GITHUB_REF_NAME"] == "main":
+        urllib.request.urlopen(request, timeout=30).close()
     print(data.decode())
 sys.exit(int(failed))
