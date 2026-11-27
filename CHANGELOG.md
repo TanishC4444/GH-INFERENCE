@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.4
+
+- Replace the long package/GitHub introduction with a short quick start and common tasks.
+- Retain detailed documentation in the advanced guide and add focused troubleshooting.
+- Add package links for documentation and issue reports. Runtime behavior is unchanged.
+
 ## 0.6.3
 
 - Reconcile experimental image input, projector registration, and vision tests from local development.

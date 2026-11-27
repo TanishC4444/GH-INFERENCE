@@ -27,7 +27,7 @@ from .types import (
     TokenUsage,
 )
 
-__version__ = "0.6.3"
+__version__ = "0.6.4"
 __all__ = [
     "Limits",
     "DEFAULT_CONTEXT",
