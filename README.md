@@ -64,3 +64,5 @@ Or use the terminal: `gh-inference run "Explain recursion briefly."`
 
 The legacy `gh_ai_runner` import remains supported.
 [MIT license](https://github.com/TanishC4444/GH-INFERENCE/blob/main/LICENSE).
+
+[Consolidated source and history](docs/consolidation/README.md)

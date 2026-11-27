@@ -1,0 +1,28 @@
+{
+  "canonical": "GH-INFERENCE",
+  "base_commit": "d1ed29cf29c4cfee939b606e0555d191526b95f9",
+  "imports": [
+    {
+      "source": "github-ai",
+      "original_default_head": "8e330c26d93a8b11a0f80b8b0d83ae5c28b6de8a",
+      "original_default_tree": "12bfb0cbbff4c77b3fbd9d426f07b9a1b748b916",
+      "refs": [
+        {
+          "source_ref": "refs/heads/main",
+          "destination_ref": "refs/heads/history/github-ai/main",
+          "sha": "8e330c26d93a8b11a0f80b8b0d83ae5c28b6de8a"
+        },
+        {
+          "source_ref": "refs/tags/v0.1.0",
+          "destination_ref": "refs/tags/history/github-ai/v0.1.0",
+          "sha": "1b9f2f426dced929e92cd49b2c02f5faa77d1554"
+        }
+      ],
+      "history_sha_preserved": true
+    }
+  ],
+  "local_imports": [],
+  "archive_candidates": [
+    "github-ai"
+  ]
+}
