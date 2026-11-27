@@ -78,7 +78,7 @@ json.dump({"agent": {"results": [
     if published:
         assert "gh-inference==" + __version__ in install
         assert "https://pypi.org/simple" in install
-    if branch == "main":
+    if branch == "main" and not published:
         payload = json.loads(upload.call_args.args[0].data)
         assert payload["branch"] == branch
         assert json.loads(base64.b64decode(payload["content"])) == evidence

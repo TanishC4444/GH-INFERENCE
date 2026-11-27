@@ -71,7 +71,7 @@ finally:
         data=json.dumps(payload).encode(), method="PUT", headers={
             "Authorization": "Bearer " + os.environ["REPORT_TOKEN"], "Accept": "application/vnd.github+json",
             "Content-Type": "application/json"})
-    if os.environ["GITHUB_REF_NAME"] == "main":
+    if os.environ["GITHUB_REF_NAME"] == "main" and not published_version:
         urllib.request.urlopen(request, timeout=30).close()
     print(data.decode())
 sys.exit(int(failed))
