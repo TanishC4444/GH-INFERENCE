@@ -8,7 +8,7 @@ import sys
 import traceback
 import urllib.request
 
-from gh_inference import MODELS, resolve_model
+from gh_inference import MODELS, __version__, resolve_model
 from gh_ai_runner.runner import INFERENCE_SCRIPT
 
 report = {"source_sha": os.environ["GITHUB_SHA"], "inference": []}
@@ -17,7 +17,7 @@ try:
     subprocess.run([sys.executable, "-m", "build"], check=True)
     subprocess.run([sys.executable, "-m", "venv", "/tmp/gh-wheel"], check=True)
     subprocess.run(["/tmp/gh-wheel/bin/pip", "install", *glob.glob("dist/*.whl")], check=True)
-    for command in [["/tmp/gh-wheel/bin/python", "-c", "from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == '0.6.0'"],
+    for command in [["/tmp/gh-wheel/bin/python", "-c", f"from gh_inference import Agent, search_models; from gh_ai_runner import __version__; assert __version__ == {__version__!r}"],
                     ["/tmp/gh-wheel/bin/gh-inference", "--help"], ["/tmp/gh-wheel/bin/gh-inference", "models"]]:
         result = subprocess.run(command, cwd="/tmp", capture_output=True, text=True, check=True)
     report["installed_wheel"] = True
@@ -50,12 +50,18 @@ except Exception:
 finally:
     report["passed"] = not failed
     data = json.dumps(report, indent=2).encode()
-    payload = {"message": "Record real model smoke verification", "content": base64.b64encode(data).decode()}
+    path = f"verification-results/smoke-{os.environ['GITHUB_RUN_ID']}.json"
+    os.makedirs("verification-results", exist_ok=True)
+    with open(path, "wb") as stream:
+        stream.write(data)
+    payload = {"message": "Record real model smoke verification", "content": base64.b64encode(data).decode(),
+               "branch": os.environ["GITHUB_REF_NAME"]}
     request = urllib.request.Request(
-        f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/verification-results/smoke-{os.environ['GITHUB_RUN_ID']}.json",
+        f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/{path}",
         data=json.dumps(payload).encode(), method="PUT", headers={
             "Authorization": "Bearer " + os.environ["REPORT_TOKEN"], "Accept": "application/vnd.github+json",
             "Content-Type": "application/json"})
-    urllib.request.urlopen(request, timeout=30).close()
+    if os.environ["GITHUB_REF_NAME"] == "main":
+        urllib.request.urlopen(request, timeout=30).close()
     print(data.decode())
 sys.exit(int(failed))

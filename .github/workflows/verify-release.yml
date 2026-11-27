@@ -19,3 +19,8 @@ jobs:
         env:
           REPORT_TOKEN: ${{ github.token }}
         run: python .github/verify_release.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-verification
+          path: verification-results/${{ github.run_id }}.json

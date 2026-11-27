@@ -1,5 +1,5 @@
 include CHANGELOG.md showcase.py
-include .github/verify_release.py
+include .github/verify_release.py .github/open_model_smoke.py
 recursive-include examples *.py *.json *.md
 recursive-include docs/reconciliation *.md *.json *.txt
 recursive-include skills *.md

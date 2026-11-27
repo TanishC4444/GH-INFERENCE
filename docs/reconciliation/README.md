@@ -51,7 +51,11 @@ python -m build
 python -m twine check dist/*
 ```
 
-The existing CI matrix checks Python 3.9, 3.11, and 3.13. Keep model-runtime
+The CI matrix checks Python 3.9 on Ubuntu 22.04 and Python 3.11/3.13 on the
+current runner image. Python 3.9 is unavailable on Ubuntu 26.04. Branch checks
+upload verification artifacts without creating commits; main checks retain
+their reports in Git. Wheel checks read the current version instead of assuming
+an old release. Keep model-runtime
 installation on the execution host; installing the client does not require
 `llama-cpp-python`. No PyPI release is implied by reconciling this source tree.
 
