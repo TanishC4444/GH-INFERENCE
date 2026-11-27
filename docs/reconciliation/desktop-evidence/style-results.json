@@ -1,0 +1,471 @@
+{
+  "validation_version": "1.1",
+  "started_at": "2026-10-20T01:51:06.222042+00:00",
+  "settings": {
+    "n_ctx": 4096,
+    "max_tokens": 768,
+    "temperature": 0.7,
+    "seed": 42,
+    "top_p": 0.9,
+    "threads": 4,
+    "runner_ram_gb": 16
+  },
+  "prompts": {
+    "style_scene": "Write a short screenplay scene, around 180 to 240 words.\nMira, a cautious station engineer, and Sol, a pilot who uses dry humor to avoid emotional honesty, are trapped in a failing airlock. There is enough oxygen for only one person to reach the escape capsule. They used to be married. Neither wants to be the first to admit they still care.\nLet their practical argument carry the emotional subtext. Give them distinct voices, concrete physical details, and a small change in their relationship by the end. Avoid stock romantic declarations and exposition about their history. Brief action lines are welcome. Return only the scene."
+  },
+  "models": {
+    "gemma-4-styletune-12b": {
+      "status": "completed",
+      "repository": "mradermacher/Gemma-4-12B-StyleTune-GGUF",
+      "resolved_model": "hf-e5a50e61cbeb834e29abfe65",
+      "model_spec": {
+        "name": "mradermacher/Gemma-4-12B-StyleTune-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "Gemma-4-12B-StyleTune.Q4_K_M.gguf",
+            "size_bytes": 7947613824,
+            "sha256": "d3e487063f62cf1ed37f7317c93a8e709e6e072a877779ff86b7a73fe904c4a3",
+            "url": "https://huggingface.co/mradermacher/Gemma-4-12B-StyleTune-GGUF/resolve/fb2e8be6efb2905308e57ce248f209c6ddf99983/Gemma-4-12B-StyleTune.Q4_K_M.gguf"
+          }
+        ],
+        "filename": "Gemma-4-12B-StyleTune.Q4_K_M.gguf",
+        "url": "https://huggingface.co/mradermacher/Gemma-4-12B-StyleTune-GGUF/resolve/fb2e8be6efb2905308e57ce248f209c6ddf99983/Gemma-4-12B-StyleTune.Q4_K_M.gguf",
+        "size_bytes": 7947613824,
+        "size_gb": 7.947613824,
+        "n_ctx": 8192,
+        "max_n_ctx": 262144,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/mradermacher/Gemma-4-12B-StyleTune-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "e5a50e61cbeb834e29abfe65be8da908223ee157d862e76e38a24ade1e9b8373"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256,
+        "chat_template_options": {
+          "enable_thinking": false
+        }
+      },
+      "job_id": "342761487fa24293a05abe68395e4634",
+      "run_id": 39355708666,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708666",
+      "cases": {
+        "style_scene": {
+          "output": "INT. AIRLOCK - NIGHT\n\nEmergency lighting casts crimson shadows across the cracked viewport. The hiss of escaping atmosphere carries a metallic tang. The oxygen gauge flickers: 12%.\n\nMIRA (40s) frantically adjusts a valve. Her hands shake slightly. SOL (40s) leans against the bulkhead, arms crossed, watching her.\n\nMIRA\nThe seals won't hold another cycle. The pod's manual override requires someone to stay behind and cycle the pressure release.\n\nSOL\n(Dryly)\nThen you should go. You're the one who insisted we take the scenic route through the asteroid belt. Your navigation choices are legendary.\n\nMIRA\nDon't deflect. The pod only seats one pilot. The other stays to stabilize the systems until the pod detaches.\n\nSOL\nI'm not a hero, Mira. I'm just a guy who hates being trapped in small spaces with people who lecture him about safety protocols.\n\nMira freezes. Her knuckles whiten against the wrench.\n\nMIRA\nI'm not lecturing. I'm calculating survival.\n\nSOL\nYou're calculating logistics. I'm calculating the fact that you're the only one who knows how to calibrate the nav-com.\n\nMira looks at him. \"Logically,\" she says, \"I should stay.\"\n\nSol's smirk falters. His gaze softens.\n\nSOL\nThe pod's manual override is already primed. Just get in.\n\nMira's grip loosens. \"The manual says\u2014\"\n\nSOL\nForget the manual. Just move.",
+          "evaluation": {
+            "word_count": 212,
+            "note": "Literary quality requires review; no automatic style score."
+          },
+          "diagnostics": {
+            "output": "INT. AIRLOCK - NIGHT\n\nEmergency lighting casts crimson shadows across the cracked viewport. The hiss of escaping atmosphere carries a metallic tang. The oxygen gauge flickers: 12%.\n\nMIRA (40s) frantically adjusts a valve. Her hands shake slightly. SOL (40s) leans against the bulkhead, arms crossed, watching her.\n\nMIRA\nThe seals won't hold another cycle. The pod's manual override requires someone to stay behind and cycle the pressure release.\n\nSOL\n(Dryly)\nThen you should go. You're the one who insisted we take the scenic route through the asteroid belt. Your navigation choices are legendary.\n\nMIRA\nDon't deflect. The pod only seats one pilot. The other stays to stabilize the systems until the pod detaches.\n\nSOL\nI'm not a hero, Mira. I'm just a guy who hates being trapped in small spaces with people who lecture him about safety protocols.\n\nMira freezes. Her knuckles whiten against the wrench.\n\nMIRA\nI'm not lecturing. I'm calculating survival.\n\nSOL\nYou're calculating logistics. I'm calculating the fact that you're the only one who knows how to calibrate the nav-com.\n\nMira looks at him. \"Logically,\" she says, \"I should stay.\"\n\nSol's smirk falters. His gaze softens.\n\nSOL\nThe pod's manual override is already primed. Just get in.\n\nMira's grip loosens. \"The manual says\u2014\"\n\nSOL\nForget the manual. Just move.",
+            "model": "hf-e5a50e61cbeb834e29abfe65",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 332,
+              "total_tokens": 503
+            },
+            "timings": {
+              "total_seconds": 184.92702118199998,
+              "download_seconds": 81.693045528,
+              "load_seconds": 5.373895040000008,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 97.58606490699998,
+              "remote_seconds": 200.897921334,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 132,
+              "refined_tokens": 132,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 5961785344,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 83955666944,
+              "peak_memory_bytes": 9765351424,
+              "duration_seconds": 184.93,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 407.737225464,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 200.898314625,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 5961785344,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 83955666944,
+        "peak_memory_bytes": 9765351424,
+        "duration_seconds": 184.93,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 407.737225464,
+        "runtime_version": "0.3.36"
+      }
+    },
+    "rocinante-x-12b": {
+      "status": "completed",
+      "repository": "bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF",
+      "resolved_model": "hf-8e7db6fd5449c7d6ca1d2bf9",
+      "model_spec": {
+        "name": "bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf",
+            "size_bytes": 7477207712,
+            "sha256": "1ca25853a19d6b15f9a94f7e5bc86f4cc88bd0c9dea12a00ea55452b4208ade6",
+            "url": "https://huggingface.co/bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF/resolve/4302599a9fecd0e250c3790d77a38f3bd791fdd4/TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf",
+        "url": "https://huggingface.co/bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF/resolve/4302599a9fecd0e250c3790d77a38f3bd791fdd4/TheDrummer_Rocinante-X-12B-v1-Q4_K_M.gguf",
+        "size_bytes": 7477207712,
+        "size_gb": 7.477207712,
+        "n_ctx": 8192,
+        "max_n_ctx": 131072,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/bartowski/TheDrummer_Rocinante-X-12B-v1-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "8e7db6fd5449c7d6ca1d2bf9b519fcfcf734b5b815f1a3e71a129245e51f2ae2"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256
+      },
+      "job_id": "ce16d159f3d6466388754ac3fc805bf4",
+      "run_id": 39355708667,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708667",
+      "cases": {
+        "style_scene": {
+          "output": "INT. FAILING AIRLOCK - NIGHT\n\n*The emergency light flickers. The airlock hisses, venting precious air into space. Two figures stand frozen in the shrinking space between them.*\n\n**Mira:** (checking her gauge) \"It's down to twenty percent. We have maybe\u2014\" *She stops, looking at Sol with something unreadable in her eyes.*\n\n**Sol:** *Crosses his arms, gaze fixed on the wall.* \"Don't say it. I already know. One of us walks out. Other stays here.\" *His jaw tightens.* \"Standard protocol. You're the engineer. You should go.\"\n\n**Mira:** *Steps closer, voice strained.* \"I'm not leaving you here to die, Sol. Not after\u2014\" *She catches herself, looking away.* \"I can survive longer. My metabolism is better suited for\u2014\"\n\n**Sol:** *Turns sharply.* \"That's not how this works! You don't get to play hero, not with me.\" *His hand reaches out, stops short of touching her shoulder.* \"Dammit, Mira. We used to be\u2014\" *He pauses, swallowing hard.* \"...We're not them anymore.\"\n\n*The airlock groans. They're closer now, forced by the narrowing space.*\n\n**Mira:** *Softly, almost imperceptibly.* \"Maybe not. But I can still see you're scared.\" *A small, sad smile.* \"I'm scared too.\"",
+          "evaluation": {
+            "word_count": 186,
+            "note": "Literary quality requires review; no automatic style score."
+          },
+          "diagnostics": {
+            "output": "INT. FAILING AIRLOCK - NIGHT\n\n*The emergency light flickers. The airlock hisses, venting precious air into space. Two figures stand frozen in the shrinking space between them.*\n\n**Mira:** (checking her gauge) \"It's down to twenty percent. We have maybe\u2014\" *She stops, looking at Sol with something unreadable in her eyes.*\n\n**Sol:** *Crosses his arms, gaze fixed on the wall.* \"Don't say it. I already know. One of us walks out. Other stays here.\" *His jaw tightens.* \"Standard protocol. You're the engineer. You should go.\"\n\n**Mira:** *Steps closer, voice strained.* \"I'm not leaving you here to die, Sol. Not after\u2014\" *She catches herself, looking away.* \"I can survive longer. My metabolism is better suited for\u2014\"\n\n**Sol:** *Turns sharply.* \"That's not how this works! You don't get to play hero, not with me.\" *His hand reaches out, stops short of touching her shoulder.* \"Dammit, Mira. We used to be\u2014\" *He pauses, swallowing hard.* \"...We're not them anymore.\"\n\n*The airlock groans. They're closer now, forced by the narrowing space.*\n\n**Mira:** *Softly, almost imperceptibly.* \"Maybe not. But I can still see you're scared.\" *A small, sad smile.* \"I'm scared too.\"",
+            "model": "hf-8e7db6fd5449c7d6ca1d2bf9",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 156,
+              "completion_tokens": 307,
+              "total_tokens": 463
+            },
+            "timings": {
+              "total_seconds": 114.27108244799999,
+              "download_seconds": 45.939589105999985,
+              "load_seconds": 4.416430427000023,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 63.739645241999995,
+              "remote_seconds": 134.120797,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 131,
+              "refined_tokens": 131,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 7411793920,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84425900032,
+              "peak_memory_bytes": 8340684800,
+              "duration_seconds": 114.274,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 272.194053581,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 134.121110459,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 7411793920,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84425900032,
+        "peak_memory_bytes": 8340684800,
+        "duration_seconds": 114.274,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 272.194053581,
+        "runtime_version": "0.3.36"
+      }
+    },
+    "glitter-12b": {
+      "status": "completed",
+      "repository": "duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+      "resolved_model": "hf-a2528cca1aae47a7e52792e3",
+      "model_spec": {
+        "name": "duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "Gemma-3-Glitter-12B-Q4_K_M.gguf",
+            "size_bytes": 7300779616,
+            "sha256": "fa414e89caf6cf22d1b71fa9a5e13c934d431b99607606139915bf8608f39719",
+            "url": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF/resolve/417cddf45b8a6f8977920b251258ec5f58855124/Gemma-3-Glitter-12B-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "Gemma-3-Glitter-12B-Q4_K_M.gguf",
+        "url": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF/resolve/417cddf45b8a6f8977920b251258ec5f58855124/Gemma-3-Glitter-12B-Q4_K_M.gguf",
+        "size_bytes": 7300779616,
+        "size_gb": 7.300779616,
+        "n_ctx": 8192,
+        "max_n_ctx": 131072,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/duyntnet/Gemma-3-Glitter-12B-imatrix-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "a2528cca1aae47a7e52792e3f910e9df829f8e58284d19b739bb5470e4a7a1bd"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256
+      },
+      "job_id": "24f2cadad6cd4048b0db83811600b396",
+      "run_id": 39355708629,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708629",
+      "cases": {
+        "style_scene": {
+          "output": "[SCENE START]\n\n**INT. AIRLOCK - DAY**\n\nRed emergency lights strobe. Mira (30s, wiry, grease-stained coveralls) frantically works at a panel, sparks flying. Sol (40s, lean, weathered flight suit) leans against the inner hatch, arms crossed, observing. Both are breathing heavily.\n\nSOL\nWell, this is suboptimal. Did you try hitting it with a wrench? Sometimes that works.\n\nMIRA\n(Without looking up)\nI'm rerouting power to the magnetic clamps. It's not a malfunctioning toaster, Sol.\n\nSOL\nJust saying. Less chance of electrocution than a wrench. Oxygen levels are\u2026 dropping steadily. Capsule's ready. One seat.\n\nMira slams her fist on the panel.\n\nMIRA\nThe clamps aren\u2019t engaging! We have maybe fifteen minutes.\n\nSOL\nFifteen minutes is generous, considering the rate we\u2019re losing air. You sure you're not just upset about the sparks? Makes you look\u2026flustered.\n\nMIRA\n(Turns to him, wiping her hands)\nI'm upset about being trapped in a collapsing airlock with someone who thinks a wrench is a viable engineering solution. You go. You're the pilot.\n\nSOL\nAnd you're the engineer who built this deathtrap. Seems only fair you experience it firsthand. Besides, someone needs to document the failure. For posterity.\n\nMira stares at him, then back at the panel. She takes a deep breath. \n\nMIRA\nThere's a manual override. It'll take longer, but\u2026\n\nSol pushes himself off the hatch. He pulls a small tool from his belt, hands it to her.\n\nSOL\nHere. Might help with the sparks.\n\n[SCENE END]",
+          "evaluation": {
+            "word_count": 239,
+            "note": "Literary quality requires review; no automatic style score."
+          },
+          "diagnostics": {
+            "output": "[SCENE START]\n\n**INT. AIRLOCK - DAY**\n\nRed emergency lights strobe. Mira (30s, wiry, grease-stained coveralls) frantically works at a panel, sparks flying. Sol (40s, lean, weathered flight suit) leans against the inner hatch, arms crossed, observing. Both are breathing heavily.\n\nSOL\nWell, this is suboptimal. Did you try hitting it with a wrench? Sometimes that works.\n\nMIRA\n(Without looking up)\nI'm rerouting power to the magnetic clamps. It's not a malfunctioning toaster, Sol.\n\nSOL\nJust saying. Less chance of electrocution than a wrench. Oxygen levels are\u2026 dropping steadily. Capsule's ready. One seat.\n\nMira slams her fist on the panel.\n\nMIRA\nThe clamps aren\u2019t engaging! We have maybe fifteen minutes.\n\nSOL\nFifteen minutes is generous, considering the rate we\u2019re losing air. You sure you're not just upset about the sparks? Makes you look\u2026flustered.\n\nMIRA\n(Turns to him, wiping her hands)\nI'm upset about being trapped in a collapsing airlock with someone who thinks a wrench is a viable engineering solution. You go. You're the pilot.\n\nSOL\nAnd you're the engineer who built this deathtrap. Seems only fair you experience it firsthand. Besides, someone needs to document the failure. For posterity.\n\nMira stares at him, then back at the panel. She takes a deep breath. \n\nMIRA\nThere's a manual override. It'll take longer, but\u2026\n\nSol pushes himself off the hatch. He pulls a small tool from his belt, hands it to her.\n\nSOL\nHere. Might help with the sparks.\n\n[SCENE END]",
+            "model": "hf-a2528cca1aae47a7e52792e3",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 163,
+              "completion_tokens": 381,
+              "total_tokens": 544
+            },
+            "timings": {
+              "total_seconds": 203.943220916,
+              "download_seconds": 80.741705989,
+              "load_seconds": 6.701959744999954,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 116.04199659799997,
+              "remote_seconds": 226.151826541,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 132,
+              "refined_tokens": 132,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 6649212928,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84601069568,
+              "peak_memory_bytes": 9133006848,
+              "duration_seconds": 203.946,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 482.83980118899996,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 226.15210675,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 6649212928,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84601069568,
+        "peak_memory_bytes": 9133006848,
+        "duration_seconds": 203.946,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 482.83980118899996,
+        "runtime_version": "0.3.36"
+      }
+    },
+    "gemma-4-12b": {
+      "status": "completed",
+      "repository": "unsloth/gemma-4-12b-it-GGUF",
+      "resolved_model": "hf-238cf266ded08196656dbf82",
+      "model_spec": {
+        "name": "unsloth/gemma-4-12b-it-GGUF",
+        "parameters_b": null,
+        "quantization": "Q4_K_M",
+        "files": [
+          {
+            "filename": "gemma-4-12b-it-Q4_K_M.gguf",
+            "size_bytes": 7121861440,
+            "sha256": "0a270ec9fe6b34f4a0d33992b6135117b484ebc4766ab76b51d4ae8c457e4c42",
+            "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q4_K_M.gguf"
+          }
+        ],
+        "filename": "gemma-4-12b-it-Q4_K_M.gguf",
+        "url": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF/resolve/fc034cfff751157913579611efad8462ac1be606/gemma-4-12b-it-Q4_K_M.gguf",
+        "size_bytes": 7121861440,
+        "size_gb": 7.12186144,
+        "n_ctx": 8192,
+        "max_n_ctx": 262144,
+        "max_output_tokens": null,
+        "yarn_original_context": null,
+        "context_source": "https://huggingface.co/unsloth/gemma-4-12b-it-GGUF",
+        "ram_per_1k_ctx_gb": 0.25,
+        "sha256": "238cf266ded08196656dbf8267e5ab4789fd03ccf72596e7a8cbe53e1481753b"
+      },
+      "model_options": {
+        "n_threads": 4,
+        "n_threads_batch": 4,
+        "n_batch": 256,
+        "chat_template_options": {
+          "enable_thinking": false
+        }
+      },
+      "job_id": "8dfc475de32847bb9b6ef801eee2330a",
+      "run_id": 39355708671,
+      "actions_url": "https://github.com/TanishC4444/ai-inference-runner/actions/runs/39355708671",
+      "cases": {
+        "style_scene": {
+          "output": "INT. AIRLOCK - NIGHT\n\nRed emergency lights pulse. Hissing steam coats the walls. MIRA (40s, grease-stained jumpsuit) frantically turns a wrench on a seized valve. SOL (40s, flight suit) leans against the door, arms crossed, eyes tracking the oxygen gauge.\n\nSOL\nThe pressure\u2019s dropping. At this rate, the seal holds for another six minutes.\n\nMIRA\n(Straining)\nThen stop watching the gauge and hold the manual override. It\u2019s jamming.\n\nSOL\nI\u2019m supervising. Someone has to ensure you don\u2019t strip the gears.\n\nMIRA\nYou\u2019re hovering. It\u2019s a safety hazard.\n\nSOL\nIt\u2019s called oversight, Mira. You always were prone to over-torquing things.\n\nMira\u2019s hand slips. She winces, her knuckles white. The gauge drops: 3% remaining.\n\nMIRA\nThe capsule only has one seat. The weight sensors are calibrated for a single occupant.\n\nSOL\nI know the specs. I\u2019m the one who signed the flight plan.\n\nMIRA\nThen you know the math. One stays. One goes.\n\nSol looks at her\u2014really looks at her\u2014past the grease and the panic. He reaches out, his hand hovering near hers before he pulls back, gripping his own arm.\n\nSOL\nYou\u2019re the engineer. You know how to fix the life support on the way out.\n\nMIRA\n(Voice trembling)\nI\u2019m just trying to keep the air in the room, Sol.\n\nSol exhales, a long, shaky breath. He steps closer, his shoulder brushing hers.\n\nSOL\nFine. You take the seat. I\u2019ll stay here and make sure the door stays shut.\n\nHe doesn't look away. For the first time in years, he doesn't blink.",
+          "evaluation": {
+            "word_count": 251,
+            "note": "Literary quality requires review; no automatic style score."
+          },
+          "diagnostics": {
+            "output": "INT. AIRLOCK - NIGHT\n\nRed emergency lights pulse. Hissing steam coats the walls. MIRA (40s, grease-stained jumpsuit) frantically turns a wrench on a seized valve. SOL (40s, flight suit) leans against the door, arms crossed, eyes tracking the oxygen gauge.\n\nSOL\nThe pressure\u2019s dropping. At this rate, the seal holds for another six minutes.\n\nMIRA\n(Straining)\nThen stop watching the gauge and hold the manual override. It\u2019s jamming.\n\nSOL\nI\u2019m supervising. Someone has to ensure you don\u2019t strip the gears.\n\nMIRA\nYou\u2019re hovering. It\u2019s a safety hazard.\n\nSOL\nIt\u2019s called oversight, Mira. You always were prone to over-torquing things.\n\nMira\u2019s hand slips. She winces, her knuckles white. The gauge drops: 3% remaining.\n\nMIRA\nThe capsule only has one seat. The weight sensors are calibrated for a single occupant.\n\nSOL\nI know the specs. I\u2019m the one who signed the flight plan.\n\nMIRA\nThen you know the math. One stays. One goes.\n\nSol looks at her\u2014really looks at her\u2014past the grease and the panic. He reaches out, his hand hovering near hers before he pulls back, gripping his own arm.\n\nSOL\nYou\u2019re the engineer. You know how to fix the life support on the way out.\n\nMIRA\n(Voice trembling)\nI\u2019m just trying to keep the air in the room, Sol.\n\nSol exhales, a long, shaky breath. He steps closer, his shoulder brushing hers.\n\nSOL\nFine. You take the seat. I\u2019ll stay here and make sure the door stays shut.\n\nHe doesn't look away. For the first time in years, he doesn't blink.",
+            "model": "hf-238cf266ded08196656dbf82",
+            "backend": "github",
+            "usage": {
+              "prompt_tokens": 171,
+              "completion_tokens": 396,
+              "total_tokens": 567
+            },
+            "timings": {
+              "total_seconds": 128.65900084599997,
+              "download_seconds": 36.21501479699998,
+              "load_seconds": 4.631124765999971,
+              "refinement_seconds": 0.0,
+              "generation_seconds": 87.65939088399995,
+              "remote_seconds": 150.32484362500003,
+              "routing_seconds": 0.0
+            },
+            "refinement": {
+              "attempted": false,
+              "applied": false,
+              "original_tokens": 132,
+              "refined_tokens": 132,
+              "reason": "disabled",
+              "usage": {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0
+              }
+            },
+            "model_reused": false,
+            "weights_cached": false,
+            "dropped_history_turns": 0,
+            "finish_reason": "stop",
+            "resources": {
+              "cpu_count": 4,
+              "memory_total_bytes": 16766414848,
+              "memory_available_bytes": 6260690944,
+              "disk_total_bytes": 154894188544,
+              "disk_free_bytes": 84781268992,
+              "peak_memory_bytes": 9510486016,
+              "duration_seconds": 128.661,
+              "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+              "cpu_seconds": 366.233041645,
+              "runtime_version": "0.3.36"
+            },
+            "agent_id": "",
+            "step_index": null,
+            "input_steps": [],
+            "handoff_chars": 0,
+            "handoff_bytes": 0
+          }
+        }
+      },
+      "client_seconds": 150.325211959,
+      "resources": {
+        "cpu_count": 4,
+        "memory_total_bytes": 16766414848,
+        "memory_available_bytes": 6260690944,
+        "disk_total_bytes": 154894188544,
+        "disk_free_bytes": 84781268992,
+        "peak_memory_bytes": 9510486016,
+        "duration_seconds": 128.661,
+        "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "cpu_seconds": 366.233041645,
+        "runtime_version": "0.3.36"
+      }
+    }
+  },
+  "method": "One job and one model load per candidate; independent prompts, no memory, refinement, repairs, or grammar constraints. One sample per case. Mechanical checks are not a literary-quality score.",
+  "updated_at": "2026-10-20T01:54:55.255851+00:00",
+  "finished_at": "2026-10-20T01:54:55.257903+00:00"
+}

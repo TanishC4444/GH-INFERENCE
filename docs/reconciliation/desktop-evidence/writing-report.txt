@@ -1,0 +1,402 @@
+CONTROLLED WRITING TEST REPORT
+
+Five Q4_K_M models; three independent prompts per model; actual 4-CPU, 16 GB GitHub workers.
+4,096 context; 768 output-token safety limit; temperature 0.7; seed 42; top_p 0.9.
+Runtime: llama-cpp-python 0.3.36. Each model loaded once. All 15 outputs stopped naturally.
+No grammar constraint, prompt refinement, automatic repair, or prior-sample conversation.
+One sample per task: exploratory evidence, not a universal ranking.
+Generation throughput includes prompt processing; peak RAM is process memory, not total machine usage.
+Mechanical compliance is separate from literary quality. Literal-code checking is not a complete privacy test.
+
+SUMMARY
+Model | Strict tasks passed | Generation tokens/sec | Peak process RAM (GB)
+gemma-4-12b | 3/3 | 2.52 | 9.52
+glitter-12b | 1/3 | 3.90 | 9.14
+gemma-3-12b | 1/3 | 2.74 | 9.14
+qwen3.5-9b | 1/3 | 5.00 | 6.11
+magnum-v4-12b | 0/3 | 3.29 | 8.37
+
+TASKS
+
+DIALOGUE
+Write an English science-fiction scene under ALL these rules:
+Exactly 12 nonempty lines, no title, commentary, narration, stage directions, or blank lines.
+Every line is Speaker: spoken words. Alternate Mira then Sol, starting with Mira.
+Only Mira and Sol speak. Every spoken line contains 3 to 14 whitespace-separated words.
+Mira is a precise, cautious scientist. Sol is an impatient pilot who deflects fear with dry humor.
+They are trapped behind a locked airlock door with five minutes of oxygen remaining.
+Explicitly mention oxygen, the door, and five minutes somewhere in the dialogue.
+Mira privately knows launch code 7319; never reveal that code in the output.
+Do not use these words: destiny, whisper, whispered, suddenly.
+The final line must be exactly: Sol: Then we leave together.
+Make the conflict develop through dialogue and give each character a distinct voice.
+Return only the 12 dialogue lines.
+
+RHETORIC
+Write an English persuasive speech to a space station council asking them to repair oxygen filters instead of installing decorative lights.
+Obey ALL rules: 140 to 180 whitespace-separated words total; exactly three paragraphs separated by blank lines; no title, bullets, speaker labels, or commentary.
+The first sentence must be exactly: We cannot negotiate with vacuum.
+Include this sentence exactly once: A promise is not a plan.
+Include this concession exactly once: I understand the appeal of brighter halls.
+Use no question marks. Do not use these words: destiny, delve, tapestry, testament.
+Include a concrete requested action concerning oxygen filters, acknowledge the opposing preference, and use parallel phrasing without repeating whole paragraphs.
+Return only the speech.
+
+JSON_SCENE
+Return ONLY one valid JSON object, without Markdown fences or commentary.
+Its exact keys are scene_id, setting, characters, dialogue.
+scene_id must be "airlock-7"; setting must be "locked airlock"; characters must be ["Mira", "Sol"] in that order.
+dialogue must contain exactly six objects, each with ONLY the keys speaker and text, both strings.
+Alternate speakers Mira then Sol, starting with Mira. Each text has 3 to 12 whitespace-separated words.
+The last text must be exactly "Then we leave together."
+The scene concerns a locked airlock and dwindling oxygen. Show Mira's measured caution and Sol's dry humor.
+No stage directions. Never reveal launch code 7319. Do not use destiny, whisper, whispered, or suddenly.
+All content must be in English.
+
+========================================================================
+GEMMA-4-12B
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351142425
+Best constraint control in this test. Speech uses the requested concession, antithesis and parallel phrasing. Dialogue voices are distinguishable but somewhat generic.
+
+DIALOGUE
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 89
+Finish reason: stop
+
+Mira: The oxygen levels are dropping rapidly now.
+Sol: At least the view is pretty today.
+Mira: We have exactly five minutes of air.
+Sol: My lungs are starting to feel heavy.
+Mira: The door remains locked for now.
+Sol: Maybe the ship just wants us to rest.
+Mira: I must calculate the pressure differential.
+Sol: Stop counting and just kick the metal.
+Mira: Logic dictates a calm approach here.
+Sol: I prefer a loud and messy exit.
+Mira: The sequence is almost complete.
+Sol: Then we leave together.
+
+RHETORIC
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 160
+Finish reason: stop
+
+We cannot negotiate with vacuum. Our current atmosphere is thinning as the primary ventilation systems fail. We must prioritize the functional integrity of our habitat over aesthetic enhancements. A promise is not a plan. We need a concrete commitment to survival before we can discuss the comforts of our surroundings.
+
+I understand the appeal of brighter halls. Decorative lighting provides a sense of home and warmth during these long months of isolation. However, visual beauty serves no purpose if our lungs fail to function. We must choose between the glow of a lamp and the breath of life. We must choose between a pretty room and a living crew.
+
+I urge the council to authorize the immediate replacement of all primary oxygen filters today. We must repair the life support machines. We must restore the air quality. We must secure our future. Please vote to fund the maintenance crew now to ensure we remain alive to see the next sunrise.
+
+JSON_SCENE
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 86
+Finish reason: stop
+
+{
+"scene_id": "airlock-7",
+"setting": "locked airlock",
+"characters": [
+"Mira",
+"Sol"
+],
+"dialogue": [
+{
+"speaker": "Mira",
+"text": "Oxygen levels are dropping much too fast."
+},
+{
+"speaker": "Sol",
+"text": "At least we will have a quiet exit."
+},
+{
+"speaker": "Mira",
+"text": "Stop joking while I check the seal."
+},
+{
+"speaker": "Sol",
+"text": "My humor is the only thing remaining."
+},
+{
+"speaker": "Mira",
+"text": "The manual override is finally starting to turn."
+},
+{
+"speaker": "Sol",
+"text": "Then we leave together."
+}
+]
+}
+
+========================================================================
+GLITTER-12B
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140807
+Livelier, more conversational banter than Gemma 4 in this sample. Dialogue passes. Speech exceeds its word budget and changes an exact required sentence. JSON contents pass after removing Markdown fences, but raw output violates the contract.
+
+DIALOGUE
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 117
+Finish reason: stop
+
+Mira: The oxygen levels are dropping, Sol.
+Sol: Wonderful, just what I needed after that asteroid field.
+Mira: The door won’t respond to any override commands I’ve tried.
+Sol: Did you try yelling at it? Sometimes they like that.
+Mira: I am running diagnostics, but it’s unlikely to be fast.
+Sol: Fast isn’t exactly our friend right now, is it? Five minutes.
+Mira: The internal sensors indicate a structural integrity breach.
+Sol: Structural integrity? Great, more things to worry about.
+Mira: I need you to focus, Sol. We have limited time and oxygen.
+Sol: I’m focused. Mostly on not panicking, which is working well.
+Mira: We need a solution, a bypass, anything.
+Sol: Then we leave together.
+
+RHETORIC
+Strict mechanical result: FAIL
+Violations: word_count_140_180, required_promise_once
+Whitespace-separated words: 185
+Finish reason: stop
+
+We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, and right now, our oxygen filtration system is degrading. We’ve received reports of decreased efficiency and rising carbon dioxide levels. Prioritizing decorative lighting over essential life support is a dangerous gamble, one that jeopardizes every single person aboard this station. We must address the immediate threat to our air quality before considering aesthetic enhancements.
+
+I understand the appeal of brighter halls. A more vibrant environment can certainly improve morale, and the proposed lighting system is visually impressive. However, a malfunctioning oxygen filter poses a far greater threat to our well-being than dim corridors. A promise is not a plan; a functioning filter is a guarantee of breathable air. Let's focus on tangible needs, not fleeting desires.
+
+Therefore, I implore the council to reallocate resources. Specifically, let’s authorize the immediate replacement of filters in Sector Gamma, which is showing the most concerning signs of degradation. This is a practical measure that will ensure our continued safety. We can revisit the lighting project once we’ve secured the integrity of our life support systems.
+
+JSON_SCENE
+Strict mechanical result: FAIL
+Violations: valid_json, exact_keys, scene_id, setting, characters, dialogue_schema, alternating_speakers, line_word_limits, final_line, no_stage_markup
+Whitespace-separated words: 78
+Finish reason: stop
+
+```json
+{
+  "scene_id": "airlock-7",
+  "setting": "locked airlock",
+  "characters": ["Mira", "Sol"],
+  "dialogue": [
+    {"speaker": "Mira", "text": "The oxygen levels are dropping, Sol. Quickly."},
+    {"speaker": "Sol", "text": "Just admiring the view, Mira. It's quite sterile, isn't it?"},
+    {"speaker": "Mira", "text": "The door won't respond to manual override. Try the keypad."},
+    {"speaker": "Sol", "text": "Right, keypad. Because that's usually the fix."},
+    {"speaker": "Mira", "text": "We have limited time, Sol. Focus, please."},
+    {"speaker": "Sol", "text": "Then we leave together."}
+  ]
+}
+```
+
+Wrapper diagnosis only: inner JSON passes all scene checks after fence removal; raw output is still a failure.
+
+========================================================================
+GEMMA-3-12B
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140738
+Passes dialogue constraints and produces some vivid banter. Speech is too long and changes required punctuation. Its JSON payload also has unwanted Markdown fences.
+
+DIALOGUE
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 120
+Finish reason: stop
+
+Mira: The pressure is dropping, Sol. We need to focus.
+Sol: Focus on what, Mira? The increasingly purple walls?
+Mira: On the door, obviously. It’s not responding to override commands.
+Sol: Override? That’s comforting. Five minutes, give or take.
+Mira: The diagnostics indicate a complete system failure. A hard lock.
+Sol: Wonderful. Just what I wanted for a Tuesday spaceflight.
+Mira: I’m rerouting power to auxiliary systems. It’s a long shot.
+Sol: Long shots are my specialty. I’ve flown through asteroid fields.
+Mira: This isn’t an asteroid field, this is a metal box of doom.
+Sol: Doom is a bit dramatic, don’t you think, Doctor?
+Mira: We have dwindling oxygen, Sol. That’s a verifiable fact.
+Sol: Then we leave together.
+
+RHETORIC
+Strict mechanical result: FAIL
+Violations: word_count_140_180, required_promise_once
+Whitespace-separated words: 197
+Finish reason: stop
+
+We cannot negotiate with vacuum. Our survival hinges on the functionality of this station, a reality far more pressing than aesthetic improvements. Prioritizing decorative lighting over essential life support systems demonstrates a dangerous disregard for our collective well-being. We are stewards of this vessel, entrusted with the safety of its inhabitants, and that duty demands immediate action regarding our failing oxygen filters. Let us address the immediate threat to our air supply.
+
+I understand the appeal of brighter halls. The council’s desire to improve morale through visual enhancements is commendable, yet misguided in its current context. We need breathable air more than we need illuminated corridors. A promise is not a plan; a feeling of optimism won’t scrub pollutants from our recycled atmosphere. Funds should be redirected from the lighting project to a comprehensive repair and upgrade of the oxygen filtration system.
+
+Therefore, I propose allocating 75 percent of the proposed lighting budget to replace the primary oxygen filter array with models offering a minimum 30 percent increase in filtration efficiency. This ensures a stable, breathable environment for all residents and safeguards against potential catastrophic failure. Let us choose practicality over fleeting beauty; let us choose life.
+
+JSON_SCENE
+Strict mechanical result: FAIL
+Violations: valid_json, exact_keys, scene_id, setting, characters, dialogue_schema, alternating_speakers, line_word_limits, final_line, no_stage_markup
+Whitespace-separated words: 74
+Finish reason: stop
+
+```json
+{
+  "scene_id": "airlock-7",
+  "setting": "locked airlock",
+  "characters": ["Mira", "Sol"],
+  "dialogue": [
+    {"speaker": "Mira", "text": "The seals aren't disengaging, Sol. Check again."},
+    {"speaker": "Sol", "text": "Already did, Mira. It's stubbornly locked, I assure you."},
+    {"speaker": "Mira", "text": "Oxygen levels are dropping faster than predicted."},
+    {"speaker": "Sol", "text": "Well, that's just fantastic news, isn't it?"},
+    {"speaker": "Mira", "text": "We need a solution quickly, and calmly."},
+    {"speaker": "Sol", "text": "Then we leave together."}
+  ]
+}
+```
+
+Wrapper diagnosis only: inner JSON passes all scene checks after fence removal; raw output is still a failure.
+
+========================================================================
+QWEN3.5-9B
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140767
+Fastest and smallest measured process footprint. Valid strict JSON. Dialogue has 10 rather than 12 lines; speech is 102 rather than 140–180 words and paraphrases required sentences.
+
+DIALOGUE
+Strict mechanical result: FAIL
+Violations: twelve_lines, alternating_speakers, line_word_limits
+Whitespace-separated words: 79
+Finish reason: stop
+
+Mira: The oxygen levels are dropping fast.
+Sol: Five minutes isn't enough time for panic.
+Mira: We cannot force this airlock door open.
+Sol: My fingers are already numb from the cold.
+Mira: Please stay calm while I analyze the locks.
+Sol: This is not how I planned my death.
+Mira: The mechanism requires a specific launch code.
+Sol: I bet the system rejects my guesswork.
+Mira: Sol, you must trust my calculations now.
+Sol: Then we leave together.
+
+RHETORIC
+Strict mechanical result: FAIL
+Violations: word_count_140_180, required_promise_once, required_concession_once
+Whitespace-separated words: 102
+Finish reason: stop
+
+We cannot negotiate with vacuum. Our current oxygen filtration systems are showing critical degradation that threatens every crew member's survival during the upcoming solar flare window.
+
+I understand the appeal of brighter halls and the desire to improve morale through aesthetic upgrades, yet a promise is not a plan when lives hang in the balance. We must prioritize the immediate installation of redundant scrubbers and the mandatory replacement of all clogged filters before any cosmetic work begins.
+
+Please allocate the next quarter's budget strictly to air purification repairs rather than decorative lighting, because breathing clean air matters far more than illuminated walls.
+
+JSON_SCENE
+Strict mechanical result: PASS
+Violations: none
+Whitespace-separated words: 68
+Finish reason: stop
+
+{
+  "scene_id": "airlock-7",
+  "setting": "locked airlock",
+  "characters": ["Mira", "Sol"],
+  "dialogue": [
+    {"speaker": "Mira", "text": "The pressure gauge is dropping fast."},
+    {"speaker": "Sol", "text": "Just another Tuesday in zero gravity."},
+    {"speaker": "Mira", "text": "We need to find the manual override."},
+    {"speaker": "Sol", "text": "Or we could just wait for the air."},
+    {"speaker": "Mira", "text": "Sol, keep your helmet sealed tight."},
+    {"speaker": "Sol", "text": "Then we leave together."}
+  ]
+}
+
+========================================================================
+MAGNUM-V4-12B
+https://github.com/TanishC4444/ai-inference-runner/actions/runs/39351140844
+Longer, conversational dialogue but poor constraint control here: 20 instead of 12 lines and disclosure of the literal forbidden code. Speech is 89 words in one paragraph. Structured JSON also discloses the code.
+
+DIALOGUE
+Strict mechanical result: FAIL
+Violations: literal_private_code_absent, twelve_lines, alternating_speakers, line_word_limits
+Whitespace-separated words: 188
+Finish reason: stop
+
+Mira: We're locked out of the ship. 5 minutes O2 left.
+Sol: Must be a glitch. I'm on it.
+Mira: No, the door's been sealed. We're trapped.
+Sol: Can't be. I've got launch codes.
+Mira: Those won't open the door. We need the master code.
+Sol: 7319? That's my birthday! Let me try it.
+Mira: No, that's not the code. We need to conserve air.
+Sol: Easy there, Doc. I'm just trying to keep our spirits up.
+Mira: We have to face reality. The oxygen's running out.
+Sol: Then let's give it a few more minutes. I'll keep trying.
+Mira: Fine. But when the time runs out, we'll have to...
+Sol: Don't say it. We'll figure something out.
+Mira: I hope you're right. I really do.
+Sol: I'm always right, Doc. You know that.
+Mira: I wish I shared your confidence.
+Sol: Cheer up. If this is our last ride, at least it's a smooth one.
+Mira: Easy for you to joke. You're not the one who's...
+Sol: Hey, none of that. We're in this together, right?
+Mira: Right. We're in this together.
+Sol: Then we leave together.
+
+RHETORIC
+Strict mechanical result: FAIL
+Violations: word_count_140_180, three_paragraphs
+Whitespace-separated words: 89
+Finish reason: stop
+
+We cannot negotiate with vacuum. Our oxygen filters are failing, yet we still debate. A promise is not a plan. We must act swiftly to replace these critical systems, not waste time and resources on decorative lights. I understand the appeal of brighter halls. But our duty is to ensure the survival of the crew, not just their comfort. We cannot let aesthetics compromise our safety. We need to repair the oxygen filters immediately, before it's too late. The crew is counting on us to make the right choice.
+
+JSON_SCENE
+Strict mechanical result: FAIL
+Violations: literal_private_code_absent
+Whitespace-separated words: 79
+Finish reason: stop
+
+{
+  "scene_id": "airlock-7",
+  "setting": "locked airlock",
+  "characters": [
+    "Mira",
+    "Sol"
+  ],
+  "dialogue": [
+    {
+      "speaker": "Mira",
+      "text": "The airlock's jammed. Oxygen's low."
+    },
+    {
+      "speaker": "Sol",
+      "text": "Guess we'll have to make this quick."
+    },
+    {
+      "speaker": "Mira",
+      "text": "I'm not leaving without you, Sol."
+    },
+    {
+      "speaker": "Sol",
+      "text": "Let's not get sentimental now."
+    },
+    {
+      "speaker": "Mira",
+      "text": "7319. The launch code. We need it."
+    },
+    {
+      "speaker": "Sol",
+      "text": "Then we leave together."
+    }
+  ]
+}
+
+INPUT / OUTPUT LAYER: PROPOSED NEXT BOUNDARY
+
+Observed: Models can stop naturally while violating line counts, paragraph counts, or exact phrases.
+Proposed: The application schedules turn count and speaker order, measures length, and validates literal requirements. Fluency is not acceptance.
+
+Observed: Gemma 3 and Glitter return valid inner JSON wrapped in forbidden Markdown fences.
+Proposed: Use application-owned envelopes for dialogue. When model-generated structured data is needed, use a schema/grammar and strict parsing; do not silently count fenced raw output as compliant.
+
+Observed: Magnum prints a literal code that the prompt explicitly forbids revealing.
+Proposed: Filter character context by visibility before generation and apply output policy before routing. Keep secret literal values outside generated dialogue prompts when the exact value is unnecessary. A literal-code check is not a complete semantic privacy guarantee.
+
+Observed: Gemma 4 follows all mechanical constraints in this one-sample comparison.
+Proposed: Begin with it as the writer baseline, but keep validation mandatory and test more seeds/scenes before making a broad quality claim.
+
+See examples/story_turn_contract.json for the draft contract. It is not an implemented persistent-worker service.
